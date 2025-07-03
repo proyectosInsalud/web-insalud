@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  /* FUENTES */
+  --font-in-nunito: "Nunito", sans-serif;
+  --font-in-poppins: "Poppins", sans-serif;
+
+  /* COLORES */
+  --color-in-orange: #FFB531;
+  --color-in-blue: #3277E1;
+  --color-in-blue-dark: #004569;
+  --color-in-gray: #242424;
+  --color-in-gray-light: #A3A3A3;
+
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

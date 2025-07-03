@@ -3,7 +3,13 @@ import { HeroHome } from "@/components/pages/home/HeroHome";
 export default function Home() {
   return (
     <>
-      <HeroHome />
+      <header>
+        <HeroHome />
+      </header>
+
+      <main>
+        
+      </main>
     </>
   );
 }
