@@ -1,14 +1,18 @@
 import { HeroHome } from "@/components/pages/home/HeroHome";
+import { WhyChooseInSalud } from "@/components/pages/home/WhyChooseInSalud";
+import { ReserveDate } from "@/components/pages/home/ReserveDate";
 
 export default function Home() {
   return (
     <>
-      <header>
+      <header className="mb-12">
         <HeroHome />
       </header>
 
-      <main>
-        
+      <main className="space-y-12 md:space-y-32">
+        <ReserveDate
+        />
+        <WhyChooseInSalud />
       </main>
     </>
   );
