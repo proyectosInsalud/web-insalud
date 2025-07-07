@@ -15,6 +15,12 @@
   --color-in-cyan: #00BEB4;
   --color-in-gray-border: #BCC2C6;
   --color-in-blue-title: #13172C;
+
+  /* Texto claro */
+  --color-in-gray-base: #58656A;
+
+  /* Backgrounds */
+  --color-in-bg-testimonials: #EDFBFB;
 }
 
 @custom-variant dark (&:is(.dark *));

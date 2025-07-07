@@ -1,7 +1,7 @@
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { descriptionSpecialties  } from '@/data/featuredSpecialties'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export const FeaturedSpecialties = () => {
@@ -24,14 +24,10 @@ export const FeaturedSpecialties = () => {
                                 especialidad.cards.map((card) => (
                                     <div key={card.id}  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-2 flex flex-row md:flex-col gap-4 border items-center justify-center">
                                         <div className="p-0 w-5/12 md:w-full h-full grid">
-                                            <Image 
-                                                src={card.image} 
-                                                alt={card.title} 
-                                                width={200} 
-                                                height={200} 
-                                                unoptimized
-                                                className='w-full h-full object-cover rounded-lg ' 
-                                                />
+                                            <Avatar>
+                                                <AvatarImage src={card.image} className='w-full h-full object-cover rounded-lg' />
+                                                <AvatarFallback>CN</AvatarFallback>
+                                            </Avatar>
                                         </div>
                                         <div className='w-7/12 md:w-full pr-1 md:pr-0'>
                                             <div className='p-0'>
