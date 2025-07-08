@@ -6,11 +6,12 @@ import { CountClients } from "@/components/pages/home/CountClients";
 import { Testimonials } from "@/components/pages/home/Testimonials";
 import { MedicTeam } from "@/components/pages/home/MedicTeam";
 import { PlacesMedic } from "@/components/pages/home/PlacesMedic";
+import { AllAboutInsalud } from "@/components/pages/home/AllAboutInsalud";
 
 export default function Home() {
   return (
-    <>
-      <header className="mb-12">
+    <div className="relative">
+      <header className="mb-12 relative">
         <HeroHome />
       </header>
 
@@ -21,9 +22,10 @@ export default function Home() {
         <WhyChooseInSalud />
         <MedicTeam />
         <PlacesMedic />
+        <AllAboutInsalud />
         <Testimonials />
       </main>
-    </>
+    </div>
   );
 }
   
