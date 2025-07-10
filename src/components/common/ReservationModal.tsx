@@ -3,11 +3,11 @@
 import { 
     Sheet, 
     SheetContent,  
+    SheetDescription,  
     SheetHeader, 
     SheetTitle,  
 } from "@/components/ui/sheet";
 import { useModalStore } from "@/store/modalStore";
-// import { Button } from "../ui/button";
 import Image from "next/image";
 import { cdn } from "@/utils/cdn";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form";
@@ -19,7 +19,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
 export function ReservationModal() {
-    const { isReservationModalOpen, closeReservationModal } = useModalStore();
+    const { isReservationModalOpen, closeReservationModal, reservationData, resetReservationData } = useModalStore();
 
     const form = useForm<FormReservationType>({
         resolver: zodResolver(formReservationSchema),
@@ -28,13 +28,36 @@ export function ReservationModal() {
             apellidos: "",
             email: "",
             telefono: "",
-            // mensaje: "",
+            sede: "",
+            turno: "",
         }
     })
 
-
     function onSubmit(data: FormReservationType) {
-        console.log(data)
+        // Crear objeto completo con todos los datos
+        const datosCompletos = {
+            // Datos del formulario
+            nombres: data.nombres,
+            apellidos: data.apellidos,
+            email: data.email,
+            telefono: data.telefono,
+            
+            // Datos de las selecciones del store
+            problemaSalud: reservationData.problemaSalud,
+            sede: reservationData.sede,
+            turno: reservationData.turno,
+            
+        };
+        
+        console.log("Datos COMPLETOS de la reserva:", datosCompletos);
+        
+        // Aquí enviarías los datos a tu API
+        // await enviarReserva(datosCompletos);
+        
+        // Resetear todo después del envío exitoso
+        form.reset();
+        resetReservationData();
+        closeReservationModal();
     }
 
     return (
@@ -43,13 +66,22 @@ export function ReservationModal() {
                     <SheetHeader>
                             <Image src={cdn("/web/home/main/sheet-image.png")} 
                             alt="banner de laboratorio" width={800} height={100} className="w-full" />
-                        <SheetTitle className="text-xl md:text-2xl text-in-blue-title font-semibold font-in-nunito text-center py-6">
+                        <SheetTitle className="text-xl md:text-2xl text-in-blue-title font-semibold font-in-nunito text-center pt-6 pb-6 md:pb-0">
                             ¡Ya casi terminas! Agenda tu cita ahora
                         </SheetTitle>
+
+                        <SheetDescription className="hidden md:block text-center text-sm text-gray-600 mb-6">
+                            Completa el formulario con tus datos para agendar tu cita médica
+                        </SheetDescription>
                         
                         <div className="font-in-poppins">
                             <Form {...form}>
                                 <form onSubmit={form.handleSubmit(onSubmit)}>
+                                    {/* Campos ocultos para los datos de selección */}
+                                    <input type="hidden" name="problemaSalud" value={reservationData.problemaSalud} />
+                                    <input type="hidden" name="sede" value={reservationData.sede} />
+                                    <input type="hidden" name="turno" value={reservationData.turno} />
+                                    
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <FormField
                                             control={form.control}
@@ -102,23 +134,8 @@ export function ReservationModal() {
                                             />
                                     </div>
                                     
-  
-                                    {/* <div className="my-4">
-                                        <FormField
-                                            control={form.control}
-                                            name="mensaje"
-                                            render={({ field }) => (
-                                                <FormItem>
-                                                    <FormControl>
-                                                        <Textarea className="px-4 rounded-2xl resize-none" placeholder="Hola..." {...field}  />
-                                                    </FormControl>
-                                                    <FormMessage />
-                                                </FormItem>
-                                            )}
-                                        />
-                                    </div> */}
                                     <Button type="submit" className="w-full cursor-pointer bg-in-blue hover:bg-in-blue-hover mt-4 rounded-xl py-5 font-semibold">
-                                        Enviar
+                                        Confirmar Reserva
                                     </Button> 
                                 </form>
                             </Form>

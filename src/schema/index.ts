@@ -14,13 +14,15 @@ export const formReservationSchema = z.object({
         .max(50, { message: "El apellido no puede exceder 50 caracteres" })
         .regex(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/, { message: "El apellido solo puede contener letras y espacios" })
         .refine((val) => val.trim().length > 0, { message: "El apellido no puede estar vacío" }),
+    
     email: z.email({ message: "Ingresa un correo electrónico válido" }),
+    
     telefono: z.string()
         .min(1, { message: "Teléfono requerido" })
         .min(9, { message: "Mínimo 9 dígitos" })
         .regex(/^9\d{8}$/, { message: "Debe empezar con 9" }),
-    motivo: z.string().min(1, { message: "El motivo es requerido" }),
-    sede: z.string().min(1, { message: "La sede es requerida" }),
-    turno: z.string().min(1, { message: "El turno es requerido" }),
-    // mensaje: z.string().min(5, { message: "Mensaje mínimo de 5 caracteres" }),
+    
+    // Campos opcionales que coinciden con el formulario
+    sede: z.string().optional(),
+    turno: z.string().optional(),
 })

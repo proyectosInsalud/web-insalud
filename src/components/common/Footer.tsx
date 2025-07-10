@@ -89,26 +89,26 @@ export const Footer = () => {
                 <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">
                     <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">Contacto</p>
                     <div className="flex gap-2">
-                        <Input className="bg-[#999999]/10 rounded-full w-4/6 py-5" placeholder="Nombre" />
+                        <Input className="bg-[#999999]/10 rounded-full w-4/6 py-5" placeholder="Correo" />
                         <Button className="bg-in-gray text-white rounded-full w-2/6 py-5 cursor-pointer">Enviar</Button>
                     </div>    
                 </article>
             </div>
             <div className="flex order-2 md:order-3 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 mb-16">
                 <nav className="flex gap-4">
-                    <Link href="/">
+                    <Link href="https://www.instagram.com/insalud.oficial/?hl=es-la" target="_blank" rel="noopener noreferrer">
                         <FaInstagram size={24} />
                     </Link>
-                    <Link href="/">
+                    <Link href="https://x.com/AInsalud74017" target="_blank" rel="noopener noreferrer">
                         <FaXTwitter size={24} />
                     </Link>
-                    <Link href="/">
+                    <Link href="https://www.linkedin.com/company/78627776/admin/page-posts/published/" target="_blank" rel="noopener noreferrer">
                         <IoLogoLinkedin size={24} />
                     </Link>
-                    <Link href="/">
+                    <Link href="https://www.tiktok.com/@insalud_oficial" target="_blank" rel="noopener noreferrer">
                         <FaTiktok size={24} />
                     </Link>
-                    <Link href="/">
+                    <Link href="https://www.youtube.com/@InSalud-latam" target="_blank" rel="noopener noreferrer">
                         <FaYoutube size={24} />
                     </Link>
                 </nav>

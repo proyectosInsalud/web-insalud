@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { ChevronDownIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -17,6 +17,7 @@ interface StyledSelectProps {
   className?: string
   name?: string
   id?: string
+  value?: string
   onChange?: (value: string) => void
 }
 
@@ -27,15 +28,21 @@ export const StyledSelect = ({
   className,
   name,
   id,
+  value: controlledValue,
   onChange
 }: StyledSelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState(controlledValue || '')
   const selectRef = useRef<HTMLSelectElement>(null)
 
+  useEffect(() => {
+    setValue(controlledValue || '')
+  }, [controlledValue])
+
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setValue(e.target.value)
-    onChange?.(e.target.value)
+    const newValue = e.target.value
+    setValue(newValue)
+    onChange?.(newValue)
   }
 
   const handleFocus = () => {
@@ -86,6 +93,7 @@ export const StyledSelect = ({
           "relative w-full py-4 px-4 border rounded-lg bg-white transition-all duration-200",
           "border-gray-300 hover:border-gray-400",
           isOpen && "border-blue-500 ring-1 ring-blue-500",
+          className?.includes("border-red-500") && "border-red-500 ring-1 ring-red-200",
           icon && "pl-12"
         )}>
           {/* Icono */}

@@ -11,7 +11,7 @@ export const PlacesMedic = () => {
     <div className="container px-4 mx-auto max-w-7xl py-12">
       <section>
         <div className="space-y-4 mb-8">
-          <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-5xl">
+          <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-3  xl md:text-5xl">
             Encuentra una {` `}
             <span className="text-in-cyan">sede cerca de ti.</span>
           </h2>
