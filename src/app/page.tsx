@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/pages/home/Testimonials";
 import { MedicTeam } from "@/components/pages/home/MedicTeam";
 import { PlacesMedic } from "@/components/pages/home/PlacesMedic";
 import { AllAboutInsalud } from "@/components/pages/home/AllAboutInsalud";
+import { ReservationModal } from "@/components/common/ReservationModal";
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
         <AllAboutInsalud />
         <Testimonials />
       </main>
+
+      {/* Modal de reserva */}
+      <ReservationModal />
     </div>
   );
 }
