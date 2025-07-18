@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { ChevronDownIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 interface Option {
   id: string | number
@@ -13,7 +14,7 @@ interface Option {
 interface StyledSelectProps {
   options: Option[]
   placeholder?: string
-  icon?: React.ReactNode
+  icon?: string
   className?: string
   name?: string
   id?: string
@@ -72,7 +73,7 @@ export const StyledSelect = ({
             fontSize: '16px', // Evita zoom en iOS
           }}
         >
-          <option value="" className="py-3 px-4 font-in-poppins">{placeholder}</option>
+          <option value="" className='text-in-gray-base' disabled hidden>{placeholder}</option>
           {options.map((option) => (
             <option 
               key={option.id} 
@@ -98,9 +99,7 @@ export const StyledSelect = ({
         )}>
           {/* Icono */}
           {icon && (
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-blue-600">
-              {icon}
-            </div>
+            <Image src={icon} alt="icon" width={20} height={20} className="absolute left-4 top-1/2 -translate-y-1/2" />
           )}
 
           {/* Texto mostrado */}

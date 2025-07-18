@@ -7,13 +7,14 @@ import Link from 'next/link'
 export const FeaturedSpecialties = () => {
   return (
     <div className='max-w-7xl mx-auto px-4 container'>
-        <h2 className='text-center text-4xl md:text-5xl font-in-nunito font-bold text-in-blue-title'>Especialidades destacadas</h2>
-        <Tabs defaultValue="1" className='mt-12'>
-            <TabsList className='font-in-poppins bg-transparent space-x-4 mx-auto'>  
+        <h2 className='text-center text-4xl md:text-5xl font-in-nunito font-bold text-in-blue-title'>Enfermedades Urológicas</h2>
+        {/* <Tabs defaultValue="1" className='mt-12'> */}
+        <Tabs defaultValue="1" className='mt-0'>
+            <TabsList className='font-in-poppins bg-transparent space-x-4 mx-auto hidden absolute'>  
                 <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="1">Disfunción Eréctil</TabsTrigger>
-                <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="2">Clínica VPH</TabsTrigger>
+                <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="2">VPH</TabsTrigger>
                 <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="3">Prostatitis Crónica</TabsTrigger>
-                <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="4">Urología Avanzada</TabsTrigger>
+                <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="4">Otros</TabsTrigger>
             </TabsList>
             {
                 descriptionSpecialties.map((especialidad) => (
@@ -24,15 +25,20 @@ export const FeaturedSpecialties = () => {
                                 especialidad.cards.map((card) => (
                                     <div key={card.id}  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-2 flex flex-row md:flex-col gap-4 border items-center justify-center">
                                         <div className="p-0 w-5/12 md:w-full h-full grid">
-                                            <Image src={card.image} alt={card.title} width={100} height={100} className='w-full h-full object-cover rounded-lg' />
+                                            <Image 
+                                            src={card.image} 
+                                            alt={card.title} 
+                                                width={200} 
+                                                height={200} 
+                                                className='w-full h-[240px] object-cover rounded-lg' />
                                         </div>
                                         <div className='w-7/12 md:w-full pr-1 md:pr-0'>
                                             <div className='p-0'>
-                                            <div className='py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title'>
+                                            <div className='py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title md:h-[150px]'>
                                                     <CardTitle className="md:text-xl font-in-poppins font-semibold">
                                                         {card.title}
                                                     </CardTitle>
-                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-sm md:text-base">
+                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-sm md:text-base md:line-clamp-3">
                                                         {card.description}
                                                     </p>
                                                 </div>

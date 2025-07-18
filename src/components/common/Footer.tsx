@@ -22,28 +22,7 @@ export const Footer = () => {
                         className="mb-12"    
                     />
                 </div>
-                <div className="grid grid-cols-2 w-full sm:w-auto text-sm gap-2 md:gap-4 font-in-nunito h-full">
-                    <article className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative">
-                        <p className="text-white font-medium">Empezar un tratamiento</p>
-                        <Image 
-                            src={cdn("/shared/otros/icon-circle.svg")} 
-                            alt="arrow right" 
-                            width={32} 
-                            height={32} 
-                            className="absolute right-4 top-4"
-                        />  
-                    </article>
-                    <article className="bg-in-gray/10 pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative">
-                        <p className="font-medium">Libro de reclamaciones</p>
-                        <Image 
-                            src={cdn("/shared/otros/icon-circle-light.svg")} 
-                            alt="arrow right" 
-                            width={32} 
-                            height={32} 
-                            className="absolute right-4 top-4"
-                        />  
-                    </article>
-                </div>
+                
             </div>
             <div className="grid order-3 md:order-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 xl:gap-x-6 gap-y-12 gap-x-4 mb-16">
                 <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
@@ -87,11 +66,28 @@ export const Footer = () => {
                     </div>
                 </article>
                 <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">
-                    <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">Contacto</p>
-                    <div className="flex gap-2">
-                        <Input className="bg-[#999999]/10 rounded-full w-4/6 py-5" placeholder="Correo" />
-                        <Button className="bg-in-gray text-white rounded-full w-2/6 py-5 cursor-pointer">Enviar</Button>
-                    </div>    
+                <div className="space-y-4">
+                    <article className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative">
+                        <p className="text-white font-medium">Empezar un tratamiento</p>
+                        <Image 
+                            src={cdn("/shared/otros/icon-circle.svg")} 
+                            alt="arrow right" 
+                            width={32} 
+                            height={32} 
+                            className="absolute right-4 top-4"
+                        />  
+                    </article>
+                    <article className="bg-in-gray/10 pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative">
+                        <p className="font-medium">Libro de reclamaciones</p>
+                        <Image 
+                            src={cdn("/shared/otros/icon-circle-light.svg")} 
+                            alt="arrow right" 
+                            width={32} 
+                            height={32} 
+                            className="absolute right-4 top-4"
+                        />  
+                    </article>
+                </div>
                 </article>
             </div>
             <div className="flex order-2 md:order-3 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 mb-16">

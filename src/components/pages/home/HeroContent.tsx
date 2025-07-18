@@ -6,8 +6,8 @@ export const HeroContent = () => {
     <section className="max-w-7xl mx-auto px-4 container">
         <div className="font-in-nunito py-36 space-y-4">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-medium text-center text-white">Bienvenido a InSalud</h1>
-            <p className="text-center text-white">Tu clínica especializada en Urología, VPH, Prostatitis Crónica y Disfunción Eréctil</p>
+            <p className="text-4xl md:text-6xl font-medium text-center text-white">Bienvenido a InSalud</p>
+            <h1 className="text-center text-white">Atención especializada en Salud Urológica con enfoque personalizado. </h1>
           </div>
             <BtnReservar className="md:hidden mx-auto" />
         </div>

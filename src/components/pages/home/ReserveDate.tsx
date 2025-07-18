@@ -7,8 +7,8 @@ import { sedesAccordion } from "@/data/sedesAccordion"
 import { turnos } from "@/data/turnos"
 import { useModalStore } from "@/store/modalStore"
 import { CalendarIcon } from "lucide-react"
-import { FaStethoscope, FaLocationDot, FaClock } from "react-icons/fa6"
 import { useState } from "react"
+import { cdn } from "@/utils/cdn"
 
 export const ReserveDate = () => {
     const { 
@@ -49,7 +49,7 @@ export const ReserveDate = () => {
                     <StyledSelect
                         options={problemasSalud}
                         placeholder="Problema de salud"
-                        icon={<FaStethoscope />}
+                        icon={cdn("shared/iconos/doctor-problema.svg")}
                         name="problemaSalud"
                         id="problemaSalud"
                         value={reservationData.problemaSalud}
@@ -73,7 +73,7 @@ export const ReserveDate = () => {
                             value: sede.name
                         }))}
                         placeholder="Sede"
-                        icon={<FaLocationDot />}
+                        icon={cdn("shared/iconos/icono-sede.svg")}
                         name="sede"
                         id="sede"
                         value={reservationData.sede}
@@ -93,7 +93,7 @@ export const ReserveDate = () => {
                     <StyledSelect
                         options={turnos}
                         placeholder="Turno"
-                        icon={<FaClock />}
+                        icon={cdn("shared/iconos/icono-turno.svg")}
                         name="turno"
                         id="turno"
                         value={reservationData.turno}

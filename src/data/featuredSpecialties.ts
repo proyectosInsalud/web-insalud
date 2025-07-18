@@ -7,13 +7,13 @@ export const descriptionSpecialties = [
             {
                 id: 1,
                 title: 'Disfunción Eréctil',
-                description: 'Prevención, diagnóstico y tratamiento de enfermedades del aparato urinario y reproductor masculino.',
+                description: 'Logra erecciones más firmes mediante el diagnóstico y nuestros tratamientos innovadores para la disfunción eréctil.',
                 image: '/tabs/oncologia.png',
             },
             {
                 id: 2,
                 title: 'Disfunción Eréctil',
-                description: 'Previene, diagnostica y trata enfermedades del corazón y del sistema cardiovascular con atención especializada y tecnología avanzada.',
+                description: 'El VPH es una infección de transmisión sexual frecuente. Algunos tipos pueden ocasionar lesiones o estar asociados a ciertos tipos de cáncer.',
                 image: '/tabs/cardiologia.png',
             },
             {

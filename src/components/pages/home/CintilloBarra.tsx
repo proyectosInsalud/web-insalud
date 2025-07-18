@@ -1,13 +1,14 @@
-import { cdn } from "@/utils/cdn"
-import Image from "next/image"
-import Link from "next/link"
+// import { cdn } from "@/utils/cdn"
+// import Image from "next/image"
+// import Link from "next/link"
 
 export const CintilloBarra = () => {
   return (
-    <div className="bg-white/30">
+    <div className="bg-in-blue-title">
         <div className="container mx-auto max-w-7xl px-4">
-            <section className="flex justify-between items-center py-2 ">
-                <nav className="flex items-center gap-3 font-in-nunito text-white">
+            <section className="py-2 ">
+                <p className="text-white font-in-nunito text-center text-sm">¡Bienvenidos a la nueva web Insalud!</p>
+                {/* <nav className="flex items-center gap-3 font-in-nunito text-white">
                 <Link href="#">Latam</Link>
                 </nav>
                 <nav className="flex items-center gap-6">
@@ -23,7 +24,7 @@ export const CintilloBarra = () => {
                     <Link href="https://www.youtube.com/@InSalud-latam" target="_blank" rel="noopener noreferrer">
                         <Image src={cdn("/shared/iconos/youtube-white.svg")} alt="logo" width={24} height={24} />
                     </Link>
-                </nav>
+                </nav> */}
             </section>
         </div>
     </div>
