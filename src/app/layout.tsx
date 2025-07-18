@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/common/Footer";
+import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,6 +64,12 @@ export default function RootLayout({
         {children}
 
         <Footer />
+        
+        {/* Botón de WhatsApp flotante */}
+        <WhatsAppButton 
+          phoneNumber="+51967210241"
+          message="¡Hola! Me gustaría agendar una cita médica en InSalud"
+        />
       </body>
     </html>
   );
