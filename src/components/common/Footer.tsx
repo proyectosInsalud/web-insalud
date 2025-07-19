@@ -1,8 +1,6 @@
 import { cdn } from "@/utils/cdn"
 import Image from "next/image"
 import Link from "next/link"
-import { Input } from "../ui/input"
-import { Button } from "../ui/button"
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"
 import { IoLogoLinkedin } from "react-icons/io"
