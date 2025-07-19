@@ -6,19 +6,19 @@ export const descriptionSpecialties = [
         cards: [
             {
                 id: 1,
-                title: 'Disfunción Eréctil',
+                title: 'Tratamiento para Disfunción Eréctil ',
                 description: 'Logra erecciones más firmes mediante el diagnóstico y nuestros tratamientos innovadores para la disfunción eréctil.',
                 image: '/tabs/oncologia.png',
             },
             {
                 id: 2,
-                title: 'Disfunción Eréctil',
+                title: 'Tratamiento para Virus del Papiloma Humano (VPH)',
                 description: 'El VPH es una infección de transmisión sexual frecuente. Algunos tipos pueden ocasionar lesiones o estar asociados a ciertos tipos de cáncer.',
                 image: '/tabs/cardiologia.png',
             },
             {
                 id: 3,  
-                title: 'Disfunción Eréctil',
+                title: 'Solución a la Prostatitis Crónica',
                 description: 'Prevención y tratamiento de lesiones óseas, articulares y trastornos del sistema musculoesquelético.',
                 image: '/tabs/container.png',
             },

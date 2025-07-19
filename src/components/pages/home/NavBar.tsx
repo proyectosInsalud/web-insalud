@@ -14,7 +14,7 @@ export const NavBar = () => {
 
   return (
     <div className="md:bg-white/10">
-        <section className="max-w-7xl mx-auto px-4 container py-8 font-in-nunito">
+        <section className="max-w-7xl mx-auto px-4 container py-4 font-in-nunito">
             <div className="flex justify-between items-center">
                 <Link href="/">
                     <Image 

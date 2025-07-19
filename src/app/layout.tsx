@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     title: "InSalud - Centro Médico",
     description: "Servicios médicos especializados",
   },
-  viewport: "width=device-width, initial-scale=1",
   themeColor: "#00BEB4", // Color cyan de tu marca
 };
 

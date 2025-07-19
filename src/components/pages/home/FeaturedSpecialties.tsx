@@ -1,10 +1,15 @@
+'use client'
+import { Button } from '@/components/ui/button'
 import { CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { descriptionSpecialties  } from '@/data/featuredSpecialties'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useModalStore } from '@/store/modalStore'
 
 export const FeaturedSpecialties = () => {
+  const { openReservationModal } = useModalStore()
+
   return (
     <div className='max-w-7xl mx-auto px-4 container'>
         <h2 className='text-center text-4xl md:text-5xl font-in-nunito font-bold text-in-blue-title'>Enfermedades Urológicas</h2>
@@ -45,8 +50,8 @@ export const FeaturedSpecialties = () => {
                                             </div>
                                             <div className='p-0 mt-auto'>
                                                 <div className='flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4 '>
-                                                    <Link href={`/especialidades/${card.id}`} className='text-in-blue font-in-poppins font-medium border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue hover:text-white text-sm md:text-base p-0.5 w-1/2 text-center md:w-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Link>
-                                                    <Link href={`/especialidades/${card.id}`} className='text-in-blue-title font-in-poppins font-medium transition-all duration-300 border-in-blue-title border-2 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-sm md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
+                                                    <Button onClick={() => openReservationModal()} className='text-white font-in-poppins font-medium bg-in-blue border-in-blue border-2 md:px-4 md:py-5 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-sm md:text-base cursor-pointer py-0.5 w-1/2 text-center md:w-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
+                                                    <Link href={`/especialidades/${card.id}`} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-sm md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
                                                 </div>
                                             </div>
                                         </div>

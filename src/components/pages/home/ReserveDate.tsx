@@ -110,7 +110,7 @@ export const ReserveDate = () => {
 
                 {/* Botón Reservar */}
                 <div className="col-span-1">
-                    <Button 
+                    <Button
                         onClick={handleReservar}
                         className="w-full h-[60px] cursor-pointer font-in-poppins hover:bg-in-cyan bg-in-cyan/90 rounded-full"
                     >
