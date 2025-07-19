@@ -4,7 +4,7 @@
  * @returns URL completa del CDN
  */
 export const cdn = (ruta: string): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_CDN_URL || '';
+  const baseUrl = process.env.NEXT_PUBLIC_CDN_URL || 'https://cdn.insalud.pe';
   
   // Asegurar que la ruta comience con "/"
   const rutaNormalizada = ruta.startsWith('/') ? ruta : `/${ruta}`;
