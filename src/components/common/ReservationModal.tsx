@@ -17,6 +17,7 @@ import { formReservationSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { toast } from "sonner";
 
 export function ReservationModal() {
     const { isReservationModalOpen, closeReservationModal, reservationData, resetReservationData } = useModalStore();
@@ -60,6 +61,7 @@ export function ReservationModal() {
             if (!response.ok) {
                 throw new Error("Error al enviar el correo");
             }
+            toast.success("Cita agendada correctamente");
             form.reset();
             resetReservationData();
             closeReservationModal();

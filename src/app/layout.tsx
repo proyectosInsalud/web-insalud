@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/common/Footer";
@@ -29,6 +30,15 @@ const poppins = Poppins({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#00BEB4",
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
+
+
 export const metadata: Metadata = {
   title: "InSalud - Centro Médico Especializado",
   description: "Centro médico especializado en salud sexual integral. Ofrecemos servicios de urología, ginecología, etc. Con tecnología avanzada y profesionales altamente calificados",
@@ -50,7 +60,6 @@ export const metadata: Metadata = {
     title: "InSalud - Centro Médico",
     description: "Servicios médicos especializados",
   },
-  themeColor: "#00BEB4", // Color cyan de tu marca
 };
 
 export default function RootLayout({
@@ -87,6 +96,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
       >
+        <Toaster />
         {children}
 
         <Footer />
@@ -96,6 +106,7 @@ export default function RootLayout({
           phoneNumber="+51957016010"
           message="Vi su página web y me gustaría agendar una cita"
         />
+        
       </body>
     </html>
   );
