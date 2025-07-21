@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export const WhyChooseInSalud = () => {
     return (
-        <section className="max-w-7xl mx-auto px-4 container">
+        <section id="nosotros" className="max-w-7xl mx-auto px-4 container">
             <div className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-4">
                 <article className="w-full md:w-1/2">
                     <h2 className="font-in-nunito text-in-blue-dark text-3xl md:text-4xl font-bold pb-4 md:pb-0">¿Por qué <br />
@@ -52,7 +52,7 @@ export const WhyChooseInSalud = () => {
                     </div>
                 </article>
                 <Image 
-                    src="/imagen-video-ejemplo.png"
+                    src={cdn("/web/home/main/doctores-por-que-elegir.png")}
                     alt="Why Choose InSalud" 
                     width={500} 
                     height={500} 

@@ -30,7 +30,7 @@ export const CountClients = () => {
                         <div className="space-y-2">
                         <div className="flex items-center justify-center gap-4">
                             <Image src={cdn("/shared/iconos/sedes-latam.svg")} alt="Sedes en latam" width={42} height={42} className="w-[42px] h-[42px]" />
-                            <h3 className="text-3xl font-bold text-in-blue font-in-nunito text-center md:text-left">+9</h3>
+                            <h3 className="text-3xl font-bold text-in-blue font-in-nunito text-center md:text-left">9</h3>
                         </div>
                         <p className="text-sm text-gray-500 font-in-poppins text-center w-full">Unidades en latam</p>
                     </div>

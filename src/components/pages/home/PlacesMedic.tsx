@@ -21,21 +21,21 @@ export const PlacesMedic = () => {
 
   const getWhatsAppLink = (sedeName: string) => {
     const message = encodeURIComponent(
-      `¡Hola! Me gustaría consultar sobre sus servicios en la sede ${sedeName}. ¿Podrían brindarme más información?`
+      `¡Hola! vi su pagina web y me gustaría agendar una cita en la sede ${sedeName}. ¿Podrían brindarme más información?`
     );
-    return `https://wa.me/51999999999?text=${message}`;
+    return `https://wa.me/51957016010?text=${message}`;
   };
 
   return (
-    <div className="container px-4 mx-auto max-w-7xl py-12">
+    <div id="sedes" className="container px-4 mx-auto max-w-7xl py-12">
       <section className="flex flex-col gap-4">
         <div className="space-y-4 mb-8">
           <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl">
-            Encuentra una {` `}
-            <span className="text-in-cyan">sede cerca de ti.</span>
+          ¿Dónde se ubican las  {` `}
+            <span className="text-in-cyan">sedes Insalud?</span>
           </h2>
           <p className="text-in-blue-dark text-center font-in-poppins">
-            Contamos con equipos modernos y atención especializada en cada sede.
+          Contamos con equipos innovadores, modernos y atención especializada en cada sede.
           </p>
         </div>
         <section className="grid grid-cols-1 md:grid-cols-12 gap-16">
@@ -89,7 +89,7 @@ export const PlacesMedic = () => {
                 />
               ) : (
                 <Image 
-                  src={cdn("web/home/main/sede-accordion-1.png")}
+                  src={cdn("web/home/main/sede-accordion-0.png")}
                   alt="Sede General" 
                   width={500} 
                   height={500}

@@ -11,8 +11,8 @@ export const FeaturedSpecialties = () => {
   const { openReservationModal } = useModalStore()
 
   return (
-    <div className='max-w-7xl mx-auto px-4 container'>
-        <h2 className='text-center text-4xl md:text-5xl font-in-nunito font-bold text-in-blue-title'>Enfermedades Urológicas</h2>
+    <div id="servicios" className='max-w-7xl mx-auto px-4 container'>
+        <h2 className='text-center text-2xl md:text-5xl font-in-nunito font-bold text-in-blue-dark'>Enfermedades Urológicas</h2>
         {/* <Tabs defaultValue="1" className='mt-12'> */}
         <Tabs defaultValue="1" className='mt-0'>
             <TabsList className='font-in-poppins bg-transparent space-x-4 mx-auto hidden absolute'>  
@@ -24,7 +24,7 @@ export const FeaturedSpecialties = () => {
             {
                 descriptionSpecialties.map((especialidad) => (
                     <TabsContent key={especialidad.id} value={especialidad.id.toString()}>
-                        <p className='text-center font-in-poppins text-in-blue-title font-medium my-10'>{especialidad.description}</p>
+                        <p className='text-center font-in-poppins text-in-blue-title font-medium my-4 px-4'>{especialidad.description}</p>
                         <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                             {
                                 especialidad.cards.map((card) => (
@@ -35,7 +35,7 @@ export const FeaturedSpecialties = () => {
                                             alt={card.title} 
                                                 width={200} 
                                                 height={200} 
-                                                className='w-full h-[240px] object-cover rounded-lg' />
+                                                className='w-full h-full md:h-[240px] object-cover rounded-lg' />
                                         </div>
                                         <div className='w-7/12 md:w-full pr-1 md:pr-0'>
                                             <div className='p-0'>

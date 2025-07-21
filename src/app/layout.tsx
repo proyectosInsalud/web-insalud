@@ -66,8 +66,8 @@ export default function RootLayout({
         
         {/* Botón de WhatsApp flotante */}
         <WhatsAppButton 
-          phoneNumber="+51967210241"
-          message="¡Hola! Me gustaría agendar una cita médica en InSalud"
+          phoneNumber="+51957016010"
+          message="Vi su página web y me gustaría agendar una cita"
         />
       </body>
     </html>

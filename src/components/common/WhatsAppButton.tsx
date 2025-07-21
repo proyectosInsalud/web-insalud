@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 
 export const WhatsAppButton = ({ 
     phoneNumber, 
-    message = "¡Hola! Me gustaría agendar una cita médica" 
+    message = "¡Hola! vi su pagina web Insalud y me gustaría agendar una cita" 
 }: WhatsAppButtonProps) => {
     // Eliminar cualquier caracter que no sea número
     const cleanNumber = phoneNumber.replace(/\D/g, '');

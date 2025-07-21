@@ -1,3 +1,5 @@
+"use client"
+import { useModalStore } from "@/store/modalStore";
 import { cdn } from "@/utils/cdn"
 import Image from "next/image"
 import Link from "next/link"
@@ -5,10 +7,12 @@ import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"
 import { IoLogoLinkedin } from "react-icons/io"
 
-
 export const Footer = () => {
+
+   const openReservationModal = useModalStore(state => state.openReservationModal)
+
   return (
-    <div className="max-w-7xl mx-auto px-4 container">
+    <div id="contacto" className="max-w-7xl mx-auto px-4 container">
         <footer className="py-12 flex flex-col">
             <div className="flex order-1 flex-col sm:flex-row justify-between sm:items-center mb-16">
                 <div>
@@ -65,7 +69,7 @@ export const Footer = () => {
                 </article>
                 <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">
                 <div className="space-y-4">
-                    <article className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative">
+                    <article onClick={openReservationModal} className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative cursor-pointer max-w-[320px]">
                         <p className="text-white font-medium">Empezar un tratamiento</p>
                         <Image 
                             src={cdn("/shared/otros/icon-circle.svg")} 
@@ -75,7 +79,7 @@ export const Footer = () => {
                             className="absolute right-4 top-4"
                         />  
                     </article>
-                    <article className="bg-in-gray/10 pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative">
+                    <article className="bg-in-gray/10 pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative max-w-[320px]">
                         <p className="font-medium">Libro de reclamaciones</p>
                         <Image 
                             src={cdn("/shared/otros/icon-circle-light.svg")} 

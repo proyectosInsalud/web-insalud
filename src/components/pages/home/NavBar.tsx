@@ -31,12 +31,12 @@ export const NavBar = () => {
                     <div className="w-8 h-1 rounded-full bg-white"></div>
                 </div>
                 <nav className="hidden lg:flex items-center gap-6 text-white font-medium">
-                    <Link href="/">Nosotros</Link>
+                    <Link href="#nosotros">Nosotros</Link>
                     <Link href="/">Diagnósticos</Link>
-                    <Link href="/">Servicios</Link>
-                    <Link href="/">Sedes</Link>
-                    <Link href="/">Blog</Link>
-                    <Link href="/">Contacto</Link>
+                    <Link href="#servicios">Servicios</Link>
+                    <Link href="#sedes">Sedes</Link>
+                    <Link href="#blog">Blog</Link>
+                    <Link href="#contacto">Contacto</Link>
                 </nav>
                 <div className="hidden md:block relative font-in-poppins">
                     <Button className="bg-transparent border border-in-orange hover:bg-in-orange hover:text-white cursor-pointer text-white px-12 py-5 rounded-full">

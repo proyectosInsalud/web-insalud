@@ -115,7 +115,6 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                 Contacto
             </Link>
             </nav>
-            <Image src={cdn("/web/home/header/provisional-menu.png")} alt="logo" width={300} height={300}  unoptimized  className="object-cover" />
         </div>
         
         <div className="mt-12 flex justify-between items-center">

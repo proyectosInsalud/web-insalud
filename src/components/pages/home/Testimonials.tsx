@@ -24,9 +24,9 @@ export const Testimonials = () => {
 
     return (
         <section className="container mx-auto max-w-7xl px-4 py-12">
-            <article className="bg-in-bg-testimonials rounded-2xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
+            <article className="bg-in-bg-testimonials rounded-2xl p-6 py-8 md:py-12 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
                 <div>
-                    <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-in-blue-title font-in-nunito text-center md:text-left">
+                    <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-in-blue-dark font-in-nunito text-center md:text-left pb-2">
                         Testimonios reales de 
                         <span className="text-in-cyan block"> {` `}
                             nuestros pacientes
@@ -42,7 +42,7 @@ export const Testimonials = () => {
                                     <CarouselItem key={testimonial.id} className="pl-4 md:basis-[95%]">
                                         <div className="bg-white py-6 md:py-8 px-6 md:px-12 rounded-2xl h-full">
                                             <div className="flex flex-col justify-between h-full">
-                                                <p className="text-in-gray-base font-medium">{testimonial.description}</p>
+                                                <p className="text-in-gray-base text-sm md:text-base font-medium">{testimonial.description}</p>
                                                 <div className="flex items-center gap-4 mt-6">
                                                     <Image 
                                                         src={testimonial.image} 

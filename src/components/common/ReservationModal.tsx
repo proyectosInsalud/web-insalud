@@ -39,25 +39,34 @@ export function ReservationModal() {
             // Datos del formulario
             nombres: data.nombres,
             apellidos: data.apellidos,
-            email: data.email,
+            correo: data.email,
             telefono: data.telefono,
             
             // Datos de las selecciones del store
             problemaSalud: reservationData.problemaSalud,
             sede: reservationData.sede,
             turno: reservationData.turno,
-            
         };
         
-        console.log("Datos COMPLETOS de la reserva:", datosCompletos);
-        
-        // Aquí enviarías los datos a tu API
-        // await enviarReserva(datosCompletos);
-        
-        // Resetear todo después del envío exitoso
-        form.reset();
-        resetReservationData();
-        closeReservationModal();
+        // Enviar los datos al endpoint de correo
+        fetch("/api/mail", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datosCompletos)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error al enviar el correo");
+            }
+            form.reset();
+            resetReservationData();
+            closeReservationModal();
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
     }
 
     return (
