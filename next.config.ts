@@ -14,22 +14,7 @@ const nextConfig: NextConfig = {
     ],
   },
   
-  // Optimizaciones de rendimiento compatibles con Turbopack
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: [
-      'lucide-react',
-      'react-icons',
-      '@radix-ui/react-accordion',
-      '@radix-ui/react-avatar',
-      '@radix-ui/react-dialog',
-      '@radix-ui/react-label',
-      '@radix-ui/react-select',
-      '@radix-ui/react-slot',
-      '@radix-ui/react-tabs'
-    ],
-  },
-  
+
   // Configuración de Turbopack (ya estable)
   turbopack: {
     rules: {
