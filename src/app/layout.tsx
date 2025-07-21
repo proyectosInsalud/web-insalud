@@ -7,22 +7,26 @@ import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -55,7 +59,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        {/* Preconnect hints para mejorar la carga de recursos del CDN */}
+        <link rel="preconnect" href="https://cdn.insalud.pe" />
+        <link rel="preconnect" href="https://prensa.insalud.pe" />
+        <link rel="dns-prefetch" href="https://cdn.insalud.pe" />
+        <link rel="dns-prefetch" href="https://prensa.insalud.pe" />
+        
+        {/* Preload de fuentes críticas */}
+        <link
+          rel="preload"
+          href="/fonts/nunito-v25-latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/poppins-v20-latin-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}

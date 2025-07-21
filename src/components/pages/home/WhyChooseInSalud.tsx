@@ -37,11 +37,12 @@ export const WhyChooseInSalud = () => {
                         <div className="flex items-center gap-4">
                             <Image 
                                 src={cdn("/shared/otros/certificado-seguridad.png")}
-                                alt="Why Choose InSalud" 
+                                alt="Certificado de seguridad y calidad" 
                                 width={80} 
                                 height={80} 
                                 className="rounded-lg"
-                                quality={100}
+                                quality={90}
+                                loading="lazy"
                             />
                             <div>
                                 <p className="text-in-cyan font-semibold leading-6 text-lg">Certificado de 
@@ -53,11 +54,13 @@ export const WhyChooseInSalud = () => {
                 </article>
                 <Image 
                     src={cdn("/web/home/main/doctores-por-que-elegir.png")}
-                    alt="Why Choose InSalud" 
+                    alt="Doctores especialistas de InSalud" 
                     width={500} 
                     height={500} 
                     className="rounded-lg max-w-md md:max-w-none w-full md:w-1/2"
-                    quality={100}
+                    quality={85}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                 />
             </div>
         </section>

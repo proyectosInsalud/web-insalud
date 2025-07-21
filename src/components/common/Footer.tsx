@@ -94,19 +94,49 @@ export const Footer = () => {
             </div>
             <div className="flex order-2 md:order-3 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 mb-16">
                 <nav className="flex gap-4">
-                    <Link href="https://www.instagram.com/insalud.oficial/?hl=es-la" target="_blank" rel="noopener noreferrer">
+                    <Link 
+                        href="https://www.instagram.com/insalud.oficial/?hl=es-la" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Síguenos en Instagram"
+                        className="hover:text-in-cyan transition-colors"
+                    >
                         <FaInstagram size={24} />
                     </Link>
-                    <Link href="https://x.com/AInsalud74017" target="_blank" rel="noopener noreferrer">
+                    <Link 
+                        href="https://x.com/AInsalud74017" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Síguenos en X (Twitter)"
+                        className="hover:text-in-cyan transition-colors"
+                    >
                         <FaXTwitter size={24} />
                     </Link>
-                    <Link href="https://www.linkedin.com/company/78627776/admin/page-posts/published/" target="_blank" rel="noopener noreferrer">
+                    <Link 
+                        href="https://www.linkedin.com/company/78627776/admin/page-posts/published/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Síguenos en LinkedIn"
+                        className="hover:text-in-cyan transition-colors"
+                    >
                         <IoLogoLinkedin size={24} />
                     </Link>
-                    <Link href="https://www.tiktok.com/@insalud_oficial" target="_blank" rel="noopener noreferrer">
+                    <Link 
+                        href="https://www.tiktok.com/@insalud_oficial" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Síguenos en TikTok"
+                        className="hover:text-in-cyan transition-colors"
+                    >
                         <FaTiktok size={24} />
                     </Link>
-                    <Link href="https://www.youtube.com/@InSalud-latam" target="_blank" rel="noopener noreferrer">
+                    <Link 
+                        href="https://www.youtube.com/@InSalud-latam" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Síguenos en YouTube"
+                        className="hover:text-in-cyan transition-colors"
+                    >
                         <FaYoutube size={24} />
                     </Link>
                 </nav>

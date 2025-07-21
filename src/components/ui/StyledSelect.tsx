@@ -20,6 +20,8 @@ interface StyledSelectProps {
   id?: string
   value?: string
   onChange?: (value: string) => void
+  label?: string
+  ariaLabel?: string
 }
 
 export const StyledSelect = ({
@@ -30,7 +32,9 @@ export const StyledSelect = ({
   name,
   id,
   value: controlledValue,
-  onChange
+  onChange,
+  label,
+  ariaLabel
 }: StyledSelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [value, setValue] = useState(controlledValue || '')
@@ -58,6 +62,15 @@ export const StyledSelect = ({
 
   return (
     <div className={cn("relative", className)}>
+      {label && (
+        <label 
+          htmlFor={id}
+          className="block text-sm font-medium text-gray-700 mb-1"
+        >
+          {label}
+        </label>
+      )}
+      
       <div className="relative">
         {/* Select nativo (oculto) */}
         <select
@@ -68,6 +81,7 @@ export const StyledSelect = ({
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          aria-label={ariaLabel || label || placeholder}
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
           style={{
             fontSize: '16px', // Evita zoom en iOS
@@ -99,7 +113,7 @@ export const StyledSelect = ({
         )}>
           {/* Icono */}
           {icon && (
-            <Image src={icon} alt="icon" width={20} height={20} className="absolute left-4 top-1/2 -translate-y-1/2" />
+            <Image src={icon} alt="" width={20} height={20} className="absolute left-4 top-1/2 -translate-y-1/2" />
           )}
 
           {/* Texto mostrado */}

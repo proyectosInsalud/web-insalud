@@ -77,7 +77,7 @@ export const PlacesMedic = () => {
               {selectedSedeInfo ? (
                 <Image 
                   src={cdn(`web/home/main/sede-accordion-${selectedSede}.png`)}
-                  alt={`Sede ${selectedSedeInfo.name}`} 
+                  alt={`Sede ${selectedSedeInfo.name} de InSalud`} 
                   width={500} 
                   height={500}
                   onLoadingComplete={() => setIsLoading(false)}
@@ -85,12 +85,14 @@ export const PlacesMedic = () => {
                   className={`w-full h-full object-cover transition-all duration-500
                     ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
                   `}
-                  priority
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 0px, 66vw"
                 />
               ) : (
                 <Image 
                   src={cdn("web/home/main/sede-accordion-0.png")}
-                  alt="Sede General" 
+                  alt="Sede General de InSalud" 
                   width={500} 
                   height={500}
                   onLoadingComplete={() => setIsLoading(false)}
@@ -98,7 +100,9 @@ export const PlacesMedic = () => {
                   className={`w-full h-full object-cover transition-all duration-500
                     ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
                   `}
-                  priority
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 0px, 66vw"
                 />
               )}
             </div>

@@ -46,10 +46,12 @@ export const Testimonials = () => {
                                                 <div className="flex items-center gap-4 mt-6">
                                                     <Image 
                                                         src={testimonial.image} 
-                                                        alt={testimonial.name} 
+                                                        alt={`Foto de ${testimonial.name}`} 
                                                         width={40} 
                                                         height={40} 
                                                         className="rounded-full"
+                                                        loading="lazy"
+                                                        quality={90}
                                                     />
                                                     <div>
                                                         <p className="font-semibold">{testimonial.name}</p>

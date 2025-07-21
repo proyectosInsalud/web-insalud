@@ -57,6 +57,7 @@ export const ReserveDate = () => {
                             setProblemaSalud(value);
                             setErrors(prev => ({ ...prev, problemaSalud: false }));
                         }}
+                        ariaLabel="Seleccionar problema de salud"
                         className={errors.problemaSalud ? "border-red-500" : ""}
                     />
                     {errors.problemaSalud && (
@@ -81,6 +82,7 @@ export const ReserveDate = () => {
                             setSede(value);
                             setErrors(prev => ({ ...prev, sede: false }));
                         }}
+                        ariaLabel="Seleccionar sede médica"
                         className={errors.sede ? "border-red-500" : ""}
                     />
                     {errors.sede && (
@@ -101,6 +103,7 @@ export const ReserveDate = () => {
                             setTurno(value);
                             setErrors(prev => ({ ...prev, turno: false }));
                         }}
+                        ariaLabel="Seleccionar turno de atención"
                         className={errors.turno ? "border-red-500" : ""}
                     />
                     {errors.turno && (

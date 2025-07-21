@@ -20,7 +20,17 @@ export const MedicTeam = () => {
             </div>
         </div>
         <div className="w-full h-full flex items-center justify-center">
-          <Image src={cdn("/web/home/main/equipo-medicos-expertos.png")} unoptimized alt="Medic Team" width={500} height={500} className="w-full h-full object-cover"/>
+          <Image 
+            src={cdn("/web/home/main/equipo-medicos-expertos.png")} 
+            alt="Equipo médico de expertos de InSalud" 
+            width={500} 
+            height={500} 
+            className="w-full h-full object-cover"
+            priority={false}
+            loading="lazy"
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       </section>
     </div>

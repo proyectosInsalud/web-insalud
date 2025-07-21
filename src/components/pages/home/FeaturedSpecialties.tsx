@@ -31,11 +31,15 @@ export const FeaturedSpecialties = () => {
                                     <div key={card.id}  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-2 flex flex-row md:flex-col gap-4 border items-center justify-center">
                                         <div className="p-0 w-5/12 md:w-full h-full grid">
                                             <Image 
-                                            src={card.image} 
-                                            alt={card.title} 
+                                                src={card.image} 
+                                                alt={card.title} 
                                                 width={200} 
                                                 height={200} 
-                                                className='w-full h-full md:h-[240px] object-cover rounded-lg' />
+                                                className='w-full h-full md:h-[240px] object-cover rounded-lg'
+                                                loading="lazy"
+                                                quality={85}
+                                                sizes="(max-width: 768px) 42vw, (max-width: 1024px) 50vw, 33vw"
+                                            />
                                         </div>
                                         <div className='w-7/12 md:w-full pr-1 md:pr-0'>
                                             <div className='p-0'>

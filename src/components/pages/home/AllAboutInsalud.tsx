@@ -21,11 +21,13 @@ export const AllAboutInsalud = () => {
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
                   src={"https://prensa.insalud.pe/images/noticias/noticia-5.png"} 
-                  alt="Síntomas y enfermedades" 
+                  alt="In-Aesthetics: Descubre tu belleza y libera tu mejor versión" 
                   width={100} 
                   height={100} 
                   className="w-full h-[200px] object-cover rounded-[10px]"
-                  unoptimized
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Lifestyle</p>
                 <div className="space-y-1">
@@ -38,11 +40,13 @@ export const AllAboutInsalud = () => {
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
                   src={"https://prensa.insalud.pe/images/noticias/noticia-4.png"} 
-                  alt="Síntomas y enfermedades" 
+                  alt="INSALUD - Centro Médico Especializado" 
                   width={100} 
                   height={100} 
                   className="w-full h-[200px] object-cover rounded-[10px]"
-                  unoptimized
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
                 <div className="space-y-1">
@@ -57,11 +61,13 @@ export const AllAboutInsalud = () => {
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
                   src={"https://prensa.insalud.pe/images/noticias/noticia-1.png"} 
-                  alt="Síntomas y enfermedades" 
+                  alt="Hombres jóvenes, en riesgo por VPH: campaña de detección" 
                   width={100} 
                   height={100} 
                   className="w-full h-[200px] object-cover rounded-[10px]"
-                  unoptimized
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
                 <div className="space-y-1">
