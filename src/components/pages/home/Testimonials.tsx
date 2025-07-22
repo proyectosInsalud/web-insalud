@@ -44,7 +44,7 @@ export const Testimonials = () => {
                                             <div className="flex flex-col justify-between h-full">
                                                 <p className="text-in-gray-base text-sm md:text-base font-medium">{testimonial.description}</p>
                                                 <div className="flex items-center gap-4 mt-6">
-                                                    <Image 
+                                                    {/* <Image 
                                                         src={testimonial.image} 
                                                         alt={`Foto de ${testimonial.name}`} 
                                                         width={40} 
@@ -52,7 +52,7 @@ export const Testimonials = () => {
                                                         className="rounded-full"
                                                         loading="lazy"
                                                         quality={90}
-                                                    />
+                                                    /> */}
                                                     <div>
                                                         <p className="font-semibold">{testimonial.name}</p>
                                                         <p className="text-sm text-in-gray">{testimonial.anio}</p>
