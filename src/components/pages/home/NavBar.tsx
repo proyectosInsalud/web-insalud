@@ -6,12 +6,9 @@ import Link from "next/link"
 import { useState } from "react";    
 import { HamburguerMenu } from "./HamburguerMenu";
 
-export const NavBar = () => {
+export const NavBar = () => { 
   const [isOpen, setIsOpen] = useState(false);
-
   
-  console.log(isOpen);
-
   return (
     <div className="md:bg-white/10">
         <section className="max-w-7xl mx-auto px-4 container py-4 font-in-nunito">
@@ -39,7 +36,7 @@ export const NavBar = () => {
                     <Link href="#contacto">Contacto</Link>
                 </nav>
                 <div className="hidden md:block relative font-in-poppins">
-                    <Button className="bg-transparent border border-in-orange hover:bg-in-orange hover:text-white cursor-pointer text-white px-12 py-5 rounded-full">
+                    <Button className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-black px-12 py-5 rounded-full">
                         <Link href="https://experience.insalud.pe/auth" target="_blank" rel="noopener noreferrer">
                             <p className="font-semibold">Intranet</p>
                         </Link>

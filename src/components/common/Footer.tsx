@@ -69,7 +69,7 @@ export const Footer = () => {
                 </article>
                 <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">
                 <div className="space-y-4">
-                    <article onClick={openReservationModal} className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative cursor-pointer max-w-[320px]">
+                    <div onClick={openReservationModal} className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative cursor-pointer max-w-[320px]">
                         <p className="text-white font-medium">Empezar un tratamiento</p>
                         <Image 
                             src={cdn("/shared/otros/icon-circle.svg")} 
@@ -78,8 +78,8 @@ export const Footer = () => {
                             height={32} 
                             className="absolute right-4 top-4"
                         />  
-                    </article>
-                    <article className="bg-in-gray/10 pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative max-w-[320px]">
+                    </div>
+                    {/* <div className="bg-in-gray/10 pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative max-w-[320px]">
                         <p className="font-medium">Libro de reclamaciones</p>
                         <Image 
                             src={cdn("/shared/otros/icon-circle-light.svg")} 
@@ -88,7 +88,7 @@ export const Footer = () => {
                             height={32} 
                             className="absolute right-4 top-4"
                         />  
-                    </article>
+                    </div> */}
                 </div>
                 </article>
             </div>

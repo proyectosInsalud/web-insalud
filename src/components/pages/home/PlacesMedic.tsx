@@ -13,7 +13,6 @@ import { useState } from "react";
 
 export const PlacesMedic = () => {
   const [selectedSede, setSelectedSede] = useState<string | undefined>(undefined);
-  const [isLoading, setIsLoading] = useState(true);
 
   const selectedSedeInfo = selectedSede 
     ? sedesAccordion.find(sede => sede.id.toString() === selectedSede)
@@ -27,7 +26,7 @@ export const PlacesMedic = () => {
   };
 
   return (
-    <div id="sedes" className="container px-4 mx-auto max-w-7xl py-12">
+    <div id="sedes" className="container px-4 mx-auto max-w-7xl py-6 md:py-12">
       <section className="flex flex-col gap-4">
         <div className="space-y-4 mb-8">
           <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl">
@@ -71,20 +70,13 @@ export const PlacesMedic = () => {
           </div>
           <div className="hidden md:block col-span-12 md:col-span-8">
             <div className="relative w-full h-[500px] bg-gray-100 rounded-lg overflow-hidden">
-              {isLoading && (
-                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-              )}
               {selectedSedeInfo ? (
                 <Image 
                   src={cdn(`web/home/main/sede-accordion-${selectedSede}.png`)}
                   alt={`Sede ${selectedSedeInfo.name} de InSalud`} 
                   width={500} 
                   height={500}
-                  onLoadingComplete={() => setIsLoading(false)}
-                  onLoad={() => setIsLoading(false)}
-                  className={`w-full h-full object-cover transition-all duration-500
-                    ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
-                  `}
+                  className="w-full h-full object-cover"
                   loading="lazy"
                   quality={85}
                   sizes="(max-width: 768px) 0px, 66vw"
@@ -95,11 +87,7 @@ export const PlacesMedic = () => {
                   alt="Sede General de InSalud" 
                   width={500} 
                   height={500}
-                  onLoadingComplete={() => setIsLoading(false)}
-                  onLoad={() => setIsLoading(false)}
-                  className={`w-full h-full object-cover transition-all duration-500
-                    ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
-                  `}
+                  className="w-full h-full object-cover"
                   loading="lazy"
                   quality={85}
                   sizes="(max-width: 768px) 0px, 66vw"

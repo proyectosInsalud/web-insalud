@@ -76,21 +76,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cdn.insalud.pe" />
         <link rel="dns-prefetch" href="https://prensa.insalud.pe" />
         
-        {/* Preload de fuentes críticas */}
-        <link
-          rel="preload"
-          href="/fonts/nunito-v25-latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/poppins-v20-latin-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </head>
       <body
         suppressHydrationWarning

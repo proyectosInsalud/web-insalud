@@ -5,13 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
-interface HamburguerMenuProps {
+type HamburguerMenuProps = {
     isOpen: boolean;
     setIsOpen: (isOpen: boolean) => void;
 }
 
 export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
-
     useEffect(() => {
         const isMobile = () => window.innerWidth < 768;
         
@@ -71,45 +70,45 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
         
         {/* Navegación */}
         <div className="flex justify-between items-start gap-8">
-            <nav className="flex flex-col space-y-4 font-in-poppins">
+            <nav className="flex flex-col text-3xl space-y-4 font-in-poppins">
             <Link 
                 href="/" 
-                className="text-white text-base hover:text-in-orange transition-colors"
+                className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Nosotros
             </Link>
             <Link 
                 href="/" 
-                className="text-white text-base hover:text-in-orange transition-colors"
+                className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Diagnósticos
             </Link>
             <Link 
                 href="/" 
-                className="text-white text-base hover:text-in-orange transition-colors"
+                className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Servicios
             </Link>
             <Link 
                 href="/" 
-                className="text-white text-base hover:text-in-orange transition-colors"
+                className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Sedes
             </Link>
             <Link 
                 href="/" 
-                className="text-white text-base hover:text-in-orange transition-colors"
+                className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Blog
             </Link>
             <Link 
                 href="/" 
-                className="text-white text-base hover:text-in-orange transition-colors"
+                className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Contacto
@@ -118,21 +117,34 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
         </div>
         
         <div className="mt-12 flex justify-between items-center">
-            <div>
-                <Link href="/" className="text-white text-lg hover:text-in-orange transition-colors">Blog</Link>
-            </div>
-            <nav className="flex items-center gap-6">
+            <nav className="flex items-center justify-between gap-6">
                     <Link href="/">
-                        <Image src={cdn("/shared/iconos/facebook-white.svg")} alt="logo" width={24} height={24} />
+                        <Image 
+                            src={cdn("/shared/iconos/facebook-white.svg")} 
+                            alt="logo" 
+                            width={48} 
+                            height={48} />
                     </Link>
                     <Link href="/">
-                        <Image src={cdn("/shared/iconos/tiktok-white.svg")} alt="logo" width={24} height={24} />
+                        <Image 
+                            src={cdn("/shared/iconos/tiktok-white.svg")} 
+                            alt="logo" 
+                            width={48} 
+                            height={48} />
                     </Link>
                     <Link href="/">
-                        <Image src={cdn("/shared/iconos/instagram-white.svg")} alt="logo" width={24} height={24} />
+                        <Image 
+                            src={cdn("/shared/iconos/instagram-white.svg")} 
+                            alt="logo" 
+                            width={48}
+                            height={48} />
                     </Link>
                     <Link href="/">
-                        <Image src={cdn("/shared/iconos/youtube-white.svg")} alt="logo" width={24} height={24} />
+                        <Image 
+                            src={cdn("/shared/iconos/youtube-white.svg")} 
+                            alt="logo" 
+                            width={48} 
+                            height={48} />
                     </Link>
                 </nav>
         </div>
