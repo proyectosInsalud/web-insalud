@@ -43,7 +43,7 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-gray-800 text-xl font-semibold" aria-label="Menú">
-            <Image src={cdn("/shared/logos/insalud-white.svg")} alt="logo" width={120} height={28} />
+            <Image src={cdn("/shared/logos/u-insalud-white.svg")} alt="logo" width={120} height={28} />
           </h2>
           <div className="flex items-center gap-4">
             <div className="mt-auto">
@@ -120,28 +120,28 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
             <nav className="flex items-center justify-between gap-6">
                     <Link href="/">
                         <Image 
-                            src={cdn("/shared/iconos/facebook-white.svg")} 
+                            src={cdn("/shared/iconos/u-facebook-white.svg")} 
                             alt="logo" 
                             width={48} 
                             height={48} />
                     </Link>
                     <Link href="/">
                         <Image 
-                            src={cdn("/shared/iconos/tiktok-white.svg")} 
+                            src={cdn("/shared/iconos/u-tiktok-white.svg")} 
                             alt="logo" 
                             width={48} 
                             height={48} />
                     </Link>
                     <Link href="/">
                         <Image 
-                            src={cdn("/shared/iconos/instagram-white.svg")} 
+                            src={cdn("/shared/iconos/u-instagram-white.svg")} 
                             alt="logo" 
                             width={48}
                             height={48} />
                     </Link>
                     <Link href="/">
                         <Image 
-                            src={cdn("/shared/iconos/youtube-white.svg")} 
+                            src={cdn("/shared/iconos/u-youtube-white.svg")} 
                             alt="logo" 
                             width={48} 
                             height={48} />

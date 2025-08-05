@@ -9,10 +9,15 @@ import { sedesAccordion } from "@/data/sedesAccordion";
 import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const PlacesMedic = () => {
   const [selectedSede, setSelectedSede] = useState<string | undefined>(undefined);
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const selectedSedeInfo = selectedSede 
     ? sedesAccordion.find(sede => sede.id.toString() === selectedSede)
@@ -70,9 +75,15 @@ export const PlacesMedic = () => {
           </div>
           <div className="hidden md:block col-span-12 md:col-span-8">
             <div className="relative w-full h-[500px] bg-gray-100 rounded-lg overflow-hidden">
-              {selectedSedeInfo ? (
+
+              {
+                !isClient ? (
+                  <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                ): (
+                  <>
+                                  {selectedSedeInfo ? (
                 <Image 
-                  src={cdn(`web/home/main/sede-accordion-${selectedSede}.png`)}
+                  src={cdn(`web/home/main/sede-accordion-${selectedSedeInfo.id}.png`)}
                   alt={`Sede ${selectedSedeInfo.name} de InSalud`} 
                   width={500} 
                   height={500}
@@ -93,6 +104,11 @@ export const PlacesMedic = () => {
                   sizes="(max-width: 768px) 0px, 66vw"
                 />
               )}
+                  </>
+                )
+              }
+
+
             </div>
           </div>
         </section>

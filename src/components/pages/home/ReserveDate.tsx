@@ -43,13 +43,13 @@ export const ReserveDate = () => {
     
     return (
         <div className="max-w-5xl container mx-auto px-4">
-            <section className="grid grid-cols-1 md:grid-cols-4 gap-4 shadow-lg rounded-lg p-4">
+            <section className="grid grid-cols-1 md:grid-cols-4 gap-4 shadow-lg rounded-lg p-4 bg-white -mt-32">
                 {/* Problema de Salud */}
                 <div className="flex flex-col gap-2 col-span-1">
                     <StyledSelect
                         options={problemasSalud}
                         placeholder="Problema de salud"
-                        icon={cdn("shared/iconos/doctor-problema.svg")}
+                        icon={cdn("shared/iconos/u-doctor-problema.svg")}
                         name="problemaSalud"
                         id="problemaSalud"
                         value={reservationData.problemaSalud}
@@ -74,7 +74,7 @@ export const ReserveDate = () => {
                             value: sede.name
                         }))}
                         placeholder="Sede"
-                        icon={cdn("shared/iconos/icono-sede.svg")}
+                        icon={cdn("shared/iconos/u-icono-sede.svg")}
                         name="sede"
                         id="sede"
                         value={reservationData.sede}
@@ -95,7 +95,7 @@ export const ReserveDate = () => {
                     <StyledSelect
                         options={turnos}
                         placeholder="Turno"
-                        icon={cdn("shared/iconos/icono-turno.svg")}
+                        icon={cdn("shared/iconos/u-icono-turno.svg")}
                         name="turno"
                         id="turno"
                         value={reservationData.turno}

@@ -16,7 +16,7 @@ export default function Home() {
         <HeroHome />
       </header>
 
-      <main className="space-y-12 md:space-y-32 overflow-hidden">
+      <main className="space-y-12 md:space-y-32">
         <ReserveDate/>
         <FeaturedSpecialties/>
         <CountClients />
