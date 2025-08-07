@@ -43,7 +43,7 @@ export const ReserveDate = () => {
     
     return (
         <div className="max-w-5xl container mx-auto px-4">
-            <section className="grid grid-cols-1 md:grid-cols-4 gap-4 shadow-lg rounded-lg p-4 bg-white -mt-32">
+            <section className="grid grid-cols-1 md:grid-cols-4 gap-4 shadow-lg rounded-lg p-4 bg-white -mt-24 md:mt-0">
                 {/* Problema de Salud */}
                 <div className="flex flex-col gap-2 col-span-1">
                     <StyledSelect

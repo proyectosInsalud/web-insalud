@@ -16,7 +16,7 @@ export const FeaturedSpecialties = () => {
                         <p className='text-center font-in-poppins text-in-blue-title font-medium my-4 px-4'>Tratamiento para Disfunción Eréctil
                         </p>
                         <section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-                                    <div  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-2 flex flex-row md:flex-col gap-4 border items-center justify-center">
+                                    <div  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
                                         <div className="p-0 w-5/12 md:w-full h-full grid">
                                             <Image 
                                                 src={'/images/tratamiento-disfuncion-erectil.png'} 
@@ -29,29 +29,27 @@ export const FeaturedSpecialties = () => {
                                                 sizes="(max-width: 768px) 42vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>
-                                        <div className='w-7/12 md:w-full pr-1 md:pr-0'>
+                                        <div className='w-7/12 md:w-full pr-1 md:pr-0 md:space-y-4'>
                                             <div className='p-0'>
                                             <div className='py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title md:h-[150px]'>
-                                                    <CardTitle className="md:text-xl font-in-poppins font-semibold">
+                                                    <CardTitle className="text-sm md:text-xl font-in-poppins font-semibold">
                                                     Tratamiento para Disfunción Eréctil
 
                                                     </CardTitle>
-                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-sm md:text-base md:line-clamp-3">
+                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-xs md:text-base line-clamp-3">
                                                     Logra erecciones más firmes mediante el diagnóstico y nuestros tratamientos innovadores para la disfunción eréctil.
-
-
                                                     </p>
                                                 </div>
                                             </div>
                                             <div className='p-0 mt-auto'>
-                                                <div className='flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4 '>
-                                                    <Button onClick={() => openReservationModal()} className='text-white font-in-poppins font-medium bg-in-blue border-in-blue border-2 md:px-4 md:py-5 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-sm md:text-base cursor-pointer py-0.5 w-1/2 text-center md:w-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
-                                                    <Link href={``} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-sm md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
+                                                <div className='flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4'>
+                                                    <Button size={"personal"} onClick={() => openReservationModal()} className='text-white font-in-poppins font-normal bg-in-blue border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-xs md:text-base cursor-pointer w-1/2 text-center md:w-auto h-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
+                                                    <Link href={``} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-xs md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-2 flex flex-row md:flex-col gap-4 border items-center justify-center">
+                                    <div  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
                                         <div className="p-0 w-5/12 md:w-full h-full grid">
                                             <Image 
                                                 src={'/images/tratamiento-vph.png'} 
@@ -64,28 +62,26 @@ export const FeaturedSpecialties = () => {
                                                 sizes="(max-width: 768px) 42vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>
-                                        <div className='w-7/12 md:w-full pr-1 md:pr-0'>
+                                        <div className='w-7/12 md:w-full pr-1 md:pr-0 md:space-y-4'>
                                             <div className='p-0'>
                                             <div className='py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title md:h-[150px]'>
-                                                    <CardTitle className="md:text-xl font-in-poppins font-semibold">
+                                                    <CardTitle className="text-sm md:text-xl font-in-poppins font-semibold">
                                                     Tratamiento para Virus del Papiloma Humano (VPH)
                                                     </CardTitle>
-                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-sm md:text-base md:line-clamp-3">
+                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-xs md:text-base line-clamp-3">
                                                     El VPH es una infección de transmisión sexual frecuente. Algunos tipos pueden ocasionar lesiones o estar asociados a ciertos tipos de cáncer.
-
-
                                                     </p>
                                                 </div>
                                             </div>
                                             <div className='p-0 mt-auto'>
                                                 <div className='flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4 '>
-                                                    <Button onClick={() => openReservationModal()} className='text-white font-in-poppins font-medium bg-in-blue border-in-blue border-2 md:px-4 md:py-5 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-sm md:text-base cursor-pointer py-0.5 w-1/2 text-center md:w-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
-                                                    <Link href={``} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-sm md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
+                                                    <Button size={"personal"} onClick={() => openReservationModal()} className='text-white font-in-poppins font-normal bg-in-blue border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-xs md:text-base cursor-pointer w-1/2 text-center md:w-auto h-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
+                                                    <Link href={``} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-xs md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-2 flex flex-row md:flex-col gap-4 border items-center justify-center">
+                                    <div  className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
                                         <div className="p-0 w-5/12 md:w-full h-full grid">
                                             <Image 
                                                 src={'/images/tratamiento-disfuncion-erectil.png'} 
@@ -98,13 +94,13 @@ export const FeaturedSpecialties = () => {
                                                 sizes="(max-width: 768px) 42vw, (max-width: 1024px) 50vw, 33vw"
                                             />
                                         </div>
-                                        <div className='w-7/12 md:w-full pr-1 md:pr-0'>
+                                        <div className='w-7/12 md:w-full pr-1 md:pr-0 md:space-y-4'>
                                             <div className='p-0'>
                                             <div className='py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title md:h-[150px]'>
-                                                    <CardTitle className="md:text-xl font-in-poppins font-semibold">
+                                                    <CardTitle className="text-sm md:text-xl font-in-poppins font-semibold">
                                                     Solución a la Prostatitis Crónica
                                                     </CardTitle>
-                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-sm md:text-base md:line-clamp-3">
+                                                    <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-xs md:text-base line-clamp-3">
                                                     Prevención y tratamiento de lesiones óseas, articulares y trastornos del sistema musculoesquelético.
 
 
@@ -113,8 +109,8 @@ export const FeaturedSpecialties = () => {
                                             </div>
                                             <div className='p-0 mt-auto'>
                                                 <div className='flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4 '>
-                                                    <Button onClick={() => openReservationModal()} className='text-white font-in-poppins font-medium bg-in-blue border-in-blue border-2 md:px-4 md:py-5 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-sm md:text-base cursor-pointer py-0.5 w-1/2 text-center md:w-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
-                                                    <Link href={``} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-sm md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
+                                                    <Button size={"personal"} onClick={() => openReservationModal()} className='text-white font-in-poppins font-normal bg-in-blue border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-xs md:text-base cursor-pointer w-1/2 text-center md:w-auto h-auto'>Reservar <span className='hidden xl:inline'>ahora</span></Button>
+                                                    <Link href={``} className='text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-xs md:text-base p-0.5 w-1/2 text-center md:w-auto'>Conoce <span className='hidden xl:inline'>más</span></Link>
                                                 </div>
                                             </div>
                                         </div>

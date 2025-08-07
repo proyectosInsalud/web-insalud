@@ -10,7 +10,7 @@ export const MedicTeam = () => {
 
   return (
      <div className="container mx-auto max-w-6xl px-4 py-6 md:py-12">
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 items-center">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-4 items-center">
         <div>
             <div className="space-y-4 md:space-y-6 flex flex-col items-center md:items-start">
                 <h2 className="font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl text-in-blue-dark text-center md:text-left">Un equipo médico de expertos, <span className="text-in-cyan">listos para atenderte.</span> </h2>
