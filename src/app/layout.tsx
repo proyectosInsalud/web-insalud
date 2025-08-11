@@ -53,7 +53,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     siteName: "InSalud",
-    
   },
   twitter: {
     card: "summary_large_image",

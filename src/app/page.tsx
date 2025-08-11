@@ -1,12 +1,12 @@
-import { HeroHome } from "@/components/pages/home/HeroHome";
-import { FeaturedSpecialties } from "@/components/pages/home/FeaturedSpecialties";
-import { WhyChooseInSalud } from "@/components/pages/home/WhyChooseInSalud";
-import { ReserveDate } from "@/components/pages/home/ReserveDate";
-import { CountClients } from "@/components/pages/home/CountClients";
-import { Testimonials } from "@/components/pages/home/Testimonials";
-import { MedicTeam } from "@/components/pages/home/MedicTeam";
-import { PlacesMedic } from "@/components/pages/home/PlacesMedic";
-import { AllAboutInsalud } from "@/components/pages/home/AllAboutInsalud";
+import { HeroHome } from "@/components/home/HeroHome";
+import { FeaturedSpecialties } from "@/components/home/FeaturedSpecialties";
+import { WhyChooseInSalud } from "@/components/home/WhyChooseInSalud";
+import { ReserveDate } from "@/components/home/ReserveDate";
+import { CountClients } from "@/components/home/CountClients";
+import { Testimonials } from "@/components/home/Testimonials";
+import { MedicTeam } from "@/components/home/MedicTeam";
+import { PlacesMedic } from "@/components/home/PlacesMedic";
+import { AllAboutInsalud } from "@/components/home/AllAboutInsalud";
 import { ReservationModal } from "@/components/common/ReservationModal";
 
 export default function Home() {

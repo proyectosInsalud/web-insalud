@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "eyaculacion-precoz",
+    "titulo": "Eyaculación Precoz",
+    "categoria": "disfuncion-erectil",
+    "imagen": "/images/a.jpg",
+    "sintomas": [ 
+      "Eyaculación rápida", 
+      "Incapacidad para retrasar la eyaculación", 
+      "Malestar emocional", 
+      "Impacto en la relación de pareja." 
+    ]
+  },
+  {
+    "slug": "ondas-de-choque",
+    "titulo": "Ondas de Choque",
+    "categoria": "disfuncion-erectil",
+    "imagen": "/images/b.jpg",
+    "sintomas": [ "Síntoma X", "Síntoma Y" ]
+  },
+  {
+    "slug": "tratamiento-c",
+    "titulo": "Tratamiento C",
+    "categoria": "clinica-vph",
+    "imagen": "/images/c.jpg",
+    "sintomas": [ "Síntoma Q", "Síntoma R" ]
+  }
+
+]

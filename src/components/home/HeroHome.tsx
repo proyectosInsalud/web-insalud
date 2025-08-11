@@ -1,5 +1,5 @@
 import { CintilloBarra } from "./CintilloBarra";
-import { NavBar } from "../../common/NavBar";
+import { NavBar } from "../common/NavBar";
 import { HeroContent } from "./HeroContent";
 
 export const HeroHome = () => {

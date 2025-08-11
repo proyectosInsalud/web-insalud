@@ -4,13 +4,19 @@ import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { HamburguerMenu } from "../pages/home/HamburguerMenu";
+import { HamburguerMenu } from "../home/HamburguerMenu";
+import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 
 export const NavBar = () => {
+
+  
   const [isOpen, setIsOpen] = useState(false);
+  const pathName = usePathname();
+  
 
   return (
-    <div className="md:bg-white/10">
+    <div className="md:bg-white/10 text-black">
       <section className="max-w-7xl mx-auto px-4 container py-4 font-in-nunito">
         <div className="flex justify-between items-center">
           <Link href="/">
@@ -44,12 +50,13 @@ export const NavBar = () => {
             </div>
           </div>
           <nav className="hidden lg:flex items-center gap-6 text-white font-medium">
-            <Link href="#nosotros">Nosotros</Link>
-            <Link href="/">Diagnósticos</Link>
-            <Link href="#servicios">Servicios</Link>
-            <Link href="#sedes">Sedes</Link>
-            <Link href="#blog">Blog</Link>
-            <Link href="#contacto">Contacto</Link>
+            
+            <Link className={`${pathName === '/nosotros' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150` } href="#nosotros">Nosotros</Link>
+            <Link className={`${pathName === '/diagnosticos' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/diagnosticos">Diagnósticos</Link>
+            <Link className={`${pathName === '/servicios' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="#servicios">Servicios</Link>
+            <Link className={`${pathName === '/sedes' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="#sedes">Sedes</Link>
+            <Link className={`${pathName === '/blog' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="#blog">Blog</Link>
+            <Link className={`${pathName === '/contacto' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`}  href="#contacto">Contacto</Link>
           </nav>
           <div className="hidden md:block relative font-in-poppins">
             <Link
