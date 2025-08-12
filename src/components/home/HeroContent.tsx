@@ -10,7 +10,7 @@ export const HeroContent = () => {
             <h1 className="text-center text-white px-4">Atención especializada en Salud Urológica con enfoque personalizado. </h1>
           </div>
         </div>
-        <div className="hidden md:flex items-end justify-between absolute bottom-8 left-4 right-4 mx-auto max-w-7xl px-4">
+        <div className="hidden md:flex items-end justify-between absolute bottom-[42px] left-4 right-4 mx-auto max-w-7xl px-4">
             <CtaServicios />
             <BtnReservar />
         </div>

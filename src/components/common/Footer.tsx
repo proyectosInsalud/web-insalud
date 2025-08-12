@@ -17,7 +17,7 @@ export const Footer = () => {
             <div className="flex order-1 flex-col sm:flex-row justify-between sm:items-center mb-16">
                 <div>
                     <Image 
-                        src={cdn("/shared/logos/logo-insalud.svg")} 
+                        src={cdn("/shared/logos/u-logo-insalud.svg")} 
                         alt="logo insalud" 
                         width={160} 
                         height={160} 

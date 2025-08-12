@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Button } from "../ui/button";
 import tratamientos from "@/data/diagnosticos/tratamientos-detalle.json";
-// import Link from "next/link";
+import Link from "next/link";
 
 export const ListDiagnostico = () => {
   const categories = [
@@ -60,9 +60,16 @@ export const ListDiagnostico = () => {
                       </ul>
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 mt-auto">
-                      <Button className="bg-in-cyan w-full hover:bg-in-cyan/80 text-white px-6 py-5 rounded-xl cursor-pointer">
-                        Agendar cita
-                      </Button>
+                      <Link 
+                        href={`https://wa.me/+51957016010?text=Hola%2C%20vi%20su%20web%20de%20Insalud%20y%20quisiera%20información%20sobre%20el%20tratamiento%20de%20${encodeURIComponent(tratamiento.titulo)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
+                        <Button className="bg-in-cyan w-full hover:bg-in-cyan/80 text-white px-6 py-5 rounded-xl cursor-pointer">
+                          Agendar cita
+                        </Button>
+                      </Link>
                       {/* <Link href={`/diagnosticos/${tratamiento.slug}`}>
                           <Button className="bg-white text-in-blue px-6 py-5 rounded-full border hover:text-white hover:bg-in-blue border-in-blue cursor-pointer">
                           Conoce mas

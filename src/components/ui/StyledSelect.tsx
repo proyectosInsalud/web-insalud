@@ -119,7 +119,7 @@ export const StyledSelect = ({
           {/* Texto mostrado */}
           <span className={cn(
             "block truncate",
-            !selectedOption && "text-gray-500 font-medium font-in-nunito"
+            !selectedOption && "text-gray-500 text-sm font-medium font-in-nunito"
           )}>
             {selectedOption ? selectedOption.name : placeholder}
           </span>
