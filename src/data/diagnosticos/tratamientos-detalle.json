@@ -14,9 +14,37 @@
     ]
   },
   {
+    "slug": "eyaculacion-precoz",
+    "titulo": "Eyaculación Precoz",
+    "categoria": "mas-consultados",
+    "imagen": "/images/diagnosticos/eyaculacion-precoz-insalud.png",
+    "alt": "Pareja estilizada con reloj y dial para ilustrar eyaculación precoz, sin contenido explícito.",
+    "sintomas": [
+      "Eyaculación antes o poco después de iniciar la penetración",
+      "Dificultad para retrasar la eyaculación",
+      "Sensación de poco control sobre el momento de eyacular",
+      "Ansiedad, estrés o frustración por el desempeño",
+      "Evitación de relaciones por preocupación recurrente"
+    ]
+  },
+  {
     "slug": "disfuncion-erectil",
     "titulo": "Disfunción Eréctil",
     "categoria": "disfunciones-sexuales",
+    "imagen": "/images/diagnosticos/disfuncion-erectil-insalud.png",
+    "alt": "Silueta masculina con iconos de baja firmeza y estrés por disfunción eréctil.",
+    "sintomas": [
+      "Dificultad para lograr la erección",
+      "Dificultad para mantener la erección el tiempo deseado",
+      "Erecciones menos firmes que antes",
+      "Disminución del deseo sexual",
+      "Ansiedad o estrés relacionados con el rendimiento"
+    ]
+  },
+  {
+    "slug": "disfuncion-erectil",
+    "titulo": "Disfunción Eréctil",
+    "categoria": "mas-consultados",
     "imagen": "/images/diagnosticos/disfuncion-erectil-insalud.png",
     "alt": "Silueta masculina con iconos de baja firmeza y estrés por disfunción eréctil.",
     "sintomas": [
@@ -101,6 +129,20 @@
     "slug": "prostatitis-cronica",
     "titulo": "Prostatitis Crónica",
     "categoria": "disfuncion-erectil",
+    "imagen": "/images/diagnosticos/prostatitis-cronica-insalud.png",
+    "alt": "Zona prostática resaltada con símbolos de ardor, urgencia nocturna y chorro débil.",
+    "sintomas": [
+      "Dolor pélvico o perineal persistente",
+      "Ardor o dolor al orinar",
+      "Micción frecuente o urgente (sobre todo nocturna)",
+      "Dolor durante o después de la eyaculación",
+      "Chorro urinario débil o sensación de vaciado incompleto"
+    ]
+  },
+  {
+    "slug": "prostatitis-cronica",
+    "titulo": "Prostatitis Crónica",
+    "categoria": "mas-consultados",
     "imagen": "/images/diagnosticos/prostatitis-cronica-insalud.png",
     "alt": "Zona prostática resaltada con símbolos de ardor, urgencia nocturna y chorro débil.",
     "sintomas": [
