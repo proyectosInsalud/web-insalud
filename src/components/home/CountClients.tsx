@@ -3,8 +3,8 @@ import Image from "next/image"
 
 export const CountClients = () => {
   return (
-    <div className="relative overflow-hidden py-24">
-        <div className="hidden md:block w-32 h-32 bg-in-cyan/30 rounded-full blur-xl shadow-2xl scale-150 absolute top-1/2 -translate-y-1/2 -left-16"></div>
+    <div className="relative">
+        <div className="hidden z-20 md:block w-32 h-32 bg-in-cyan/30 rounded-full blur-xl shadow-2xl scale-150 absolute top-1/2 -translate-y-1/2 -left-16"></div>
         <div className="hidden md:block w-32 h-32 bg-in-cyan/30 rounded-full blur-xl shadow-2xl scale-150 absolute top-1/2 -translate-y-1/2 -right-16"></div>
         <section className="container mx-auto max-w-5xl px-4 py-2">
             <div className="grid grid-cols-1 gap-y-6 md:gap-y-12 md:grid-cols-3 md:gap-24 ">

@@ -11,7 +11,7 @@ import { ReservationModal } from "@/components/common/ReservationModal";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <header className="mb-24 relative">
         <HeroHome />
       </header>

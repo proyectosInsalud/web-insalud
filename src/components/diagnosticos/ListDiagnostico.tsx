@@ -6,20 +6,20 @@ import Link from "next/link";
 
 export const ListDiagnostico = () => {
   const categories = [
-    { value: "disfuncion-erectil", label: "Disfunción Eréctil" },
-    { value: "clinica-vph", label: "Clínica VPH" },
-    { value: "prostatitis-cronica", label: "Prostatitis Crónica" },
-    { value: "urologia-avanzada", label: "Urología Avanzada" },
+    { value: "mas-consultados", label: "Mas consultados" },
+    { value: "disfunciones-sexuales", label: "Disfunciónes sexuales" },
+    { value: "infecciones-its", label: "Infecciones ITS" },
+    { value: "enfermedades-inflamatorias", label: "Enfermedades Inflamatorias" },
   ];
 
   return (
-    <section className="max-w-7xl container mx-auto px-4 py-8 md:py-16">
+    <section className="max-w-7xl container mx-auto px-4 py-8 md:py-16 space-y-4">
       <div className="text-center text-in-blue-title space-y-2">
         <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold">Diagnósticos confiables para tu salud íntima</h1>
         <p className="font-in-poppins">Evaluación precisa, trato cercano y opciones de tratamiento claras.</p>
       </div>
-      <Tabs defaultValue="disfuncion-erectil">
-        <TabsList className="hidden bg-transparent mx-auto space-x-2 font-in-poppins">
+      <Tabs className="py-8" defaultValue="disfunciones-sexuales">
+        <TabsList className="bg-transparent mx-auto space-x-2 font-in-poppins">
           {categories.map((category) => (
             <TabsTrigger
               key={category.value}

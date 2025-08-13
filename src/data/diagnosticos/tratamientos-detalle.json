@@ -2,7 +2,7 @@
   {
     "slug": "eyaculacion-precoz",
     "titulo": "Eyaculación Precoz",
-    "categoria": "disfuncion-erectil",
+    "categoria": "disfunciones-sexuales",
     "imagen": "/images/diagnosticos/eyaculacion-precoz-insalud.png",
     "alt": "Pareja estilizada con reloj y dial para ilustrar eyaculación precoz, sin contenido explícito.",
     "sintomas": [
@@ -16,7 +16,7 @@
   {
     "slug": "disfuncion-erectil",
     "titulo": "Disfunción Eréctil",
-    "categoria": "disfuncion-erectil",
+    "categoria": "disfunciones-sexuales",
     "imagen": "/images/diagnosticos/disfuncion-erectil-insalud.png",
     "alt": "Silueta masculina con iconos de baja firmeza y estrés por disfunción eréctil.",
     "sintomas": [
@@ -30,7 +30,7 @@
   {
     "slug": "enfermedad-peyronie",
     "titulo": "Enfermedad de Peyronie",
-    "categoria": "disfuncion-erectil",
+    "categoria": "disfunciones-sexuales",
     "imagen": "/images/diagnosticos/enfermedad-de-peyronie-insalud.png",
     "alt": "Curvatura peneana representada de forma abstracta con marcador de placa y dolor.",
     "sintomas": [
@@ -44,7 +44,7 @@
   {
     "slug": "vph",
     "titulo": "Virus del Papiloma Humano (VPH)",
-    "categoria": "disfuncion-erectil",
+    "categoria": "infecciones-its",
     "imagen": "/images/diagnosticos/vph-verrugas-genitales-insalud.png",
     "alt": "Verrugas por VPH con textura tipo coliflor e iconos de picazón y sangrado leve.",
     "sintomas": [
@@ -58,7 +58,7 @@
   {
     "slug": "vph-recurrente",
     "titulo": "VPH Recurrente",
-    "categoria": "disfuncion-erectil",
+    "categoria": "infecciones-its",
     "imagen": "/images/diagnosticos/vph-recurrente-insalud.png",
     "alt": "VPH recurrente con flechas de reaparición y calendario de control.",
     "sintomas": [
@@ -72,7 +72,7 @@
   {
     "slug": "herpes-genital",
     "titulo": "Herpes Genital",
-    "categoria": "disfuncion-erectil",
+    "categoria": "disfunciones-sexuales",
     "imagen": "/images/diagnosticos/herpes-genital-insalud.png",
     "alt": "Vesículas típicas de herpes genital con iconos de hormigueo, fiebre leve y recurrencia.",
     "sintomas": [
@@ -86,7 +86,7 @@
   {
     "slug": "micosis-genital",
     "titulo": "Micosis Genital (Candidiasis)",
-    "categoria": "disfuncion-erectil",
+    "categoria": "enfermedades-inflamatorias",
     "imagen": "/images/diagnosticos/micosis-genital-candidiasis-insalud.png",
     "alt": "Candidiasis genital con picazón, enrojecimiento y secreción característica.",
     "sintomas": [
@@ -114,7 +114,7 @@
   {
     "slug": "cistitis-cronica",
     "titulo": "Cistitis Crónica Intersticial",
-    "categoria": "disfuncion-erectil",
+    "categoria": "enfermedades-inflamatorias",
     "imagen": "/images/diagnosticos/cistitis-cronica-intersticial-insalud.png",
     "alt": "Vejiga resaltada con urgencia, frecuencia urinaria y dolor pélvico típico de cistitis intersticial.",
     "sintomas": [
@@ -128,7 +128,7 @@
   {
     "slug": "ulcera-genital",
     "titulo": "Úlcera Genital",
-    "categoria": "disfuncion-erectil",
+    "categoria": "infecciones-its",
     "imagen": "/images/diagnosticos/ulcera-genital-insalud.png",
     "alt": "Úlcera genital estilizada con bordes definidos y ganglios inguinales aumentados.",
     "sintomas": [
@@ -142,7 +142,7 @@
   {
     "slug": "infertilidad",
     "titulo": "Evaluación de Fertilidad",
-    "categoria": "disfuncion-erectil",
+    "categoria": "disfunciones-sexuales",
     "imagen": "/images/diagnosticos/evaluacion-de-fertilidad-masculina-insalud.png",
     "alt": "Evaluación de fertilidad masculina con seminograma, bulto testicular y tiempo de búsqueda.",
     "sintomas": [
@@ -155,7 +155,7 @@
   {
     "slug": "its-general",
     "titulo": "Enfermedades de Transmisión Sexual",
-    "categoria": "disfuncion-erectil",
+    "categoria": "infecciones-its",
     "imagen": "/images/diagnosticos/its-sintomas-frecuentes-insalud.png",
     "alt": "Cuatro signos frecuentes de ITS: secreción anormal, ardor al orinar, llagas y dolor pélvico/testicular.",
     "sintomas": [
