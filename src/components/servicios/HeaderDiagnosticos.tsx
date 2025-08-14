@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { NavBar } from "../common/NavBar";
+import Image from "next/image"
+import { NavBar } from "../common/NavBar"
 
 export const HeaderDiagnosticos = () => {
   return (
     <>
-      <div className="relative">
+        <div className="relative">
         <Image
           src="/images/banner-diagnosticos.png"
           alt="banner de diagnósticos"
@@ -21,5 +21,5 @@ export const HeaderDiagnosticos = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}

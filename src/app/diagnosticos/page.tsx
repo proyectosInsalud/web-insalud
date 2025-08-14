@@ -1,5 +1,6 @@
 import { HeaderDiagnosticos } from "@/components/diagnosticos/HeaderDiagnosticos";
 import { ListDiagnostico } from "@/components/diagnosticos/ListDiagnostico";
+import { CintilloBarra } from "@/components/home/CintilloBarra";
 
 
 export const metadata = {
@@ -36,6 +37,7 @@ export const metadata = {
 export default function page() {
   return (
     <>
+      <CintilloBarra />
       <HeaderDiagnosticos />
       <ListDiagnostico />
     </>
