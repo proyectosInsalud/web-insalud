@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { CardTypeService } from "./CardTypeService";
-import { TabTratamientos } from "./TabTratamientos";
+import { TabItemService } from "./TabItemService";
 
 export const ListServices = () => {
   return (
@@ -48,11 +48,11 @@ export const ListServices = () => {
 
         {/* Paneles: bajo las dos cards y con padding propio */}
         <TabsContent value="tratamientos" className="md:col-span-2 mt-2">
-          <TabTratamientos />
+          <TabItemService category="tratamientos"/>
         </TabsContent>
 
         <TabsContent value="examenes" className="md:col-span-2 mt-2">
-          <div className="rounded-2xl border p-6">exámenes</div>
+          <TabItemService category="examenes"/>
         </TabsContent>
       </Tabs>
     </section>

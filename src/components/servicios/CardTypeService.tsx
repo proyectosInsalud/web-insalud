@@ -40,9 +40,9 @@ export const CardTypeService = ({
           </div>
         </div>
         
-        <h3 className="text-lg text-left md:text-2xl lg:text-3xl font-semibold text-white mb-2 break-words hyphens-auto">
+        <h2 className="text-lg text-left md:text-2xl lg:text-3xl font-semibold text-white mb-2 break-words hyphens-auto">
           {title}
-        </h3>
+        </h2>
         
         <p className="text-white text-left text-sm md:text-base opacity-90 break-words hyphens-auto whitespace-normal">
           {description}
