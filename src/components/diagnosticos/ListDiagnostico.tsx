@@ -26,7 +26,7 @@ export const ListDiagnostico = () => {
           {categories.map((category) => (
             <TabsTrigger
               key={category.value}
-              className={` ${category.value === "mas-consultados" ? "data-[state=active]:bg-in-orange" : "data-[state=active]:bg-in-cyan"} cursor-pointer data-[state=active]:text-white text-in-blue rounded-3xl py-4 md:py-6 px-4 transition-all duration-150 md:text-lg border border-in-gray-base/50`}
+              className={` ${category.value === "mas-consultados" ? "data-[state=active]:bg-in-orange data-[state=active]:border-transparent" : "data-[state=active]:bg-in-cyan data-[state=active]:border-transparent"} cursor-pointer data-[state=active]:text-white text-in-blue rounded-3xl py-4 md:py-6 px-4 transition-all duration-150 md:text-lg border border-in-blue`}
               value={category.value}
             >
               {category.label}

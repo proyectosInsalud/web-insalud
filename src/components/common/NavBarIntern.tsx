@@ -15,7 +15,7 @@ export const NavBarIntern = () => {
                 <Image src="/svg/logo-insalud-color.svg" alt="Logo" width={160} height={160} />
             </Link>
             <div className="gap-6 font-medium font-in-nunito hidden lg:flex">
-                <Link className="hover:text-in-cyan transition-all duration-150" href="/nosotros">Nosotros</Link>
+                <Link className="hover:text-in-cyan transition-all duration-150" href="#nosotros">Nosotros</Link>
                 <Link className="hover:text-in-cyan transition-all duration-150" href="/diagnosticos">Diagnosticos</Link>
                 <Link className="hover:text-in-cyan transition-all duration-150" href="/servicios">Servicios</Link>
                 <Link className="hover:text-in-cyan transition-all duration-150" href="/sedes">Sedes</Link>
