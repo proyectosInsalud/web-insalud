@@ -42,7 +42,7 @@ export const ReserveDate = () => {
   };
 
   return (
-    <div className="max-w-5xl container mx-auto px-4">
+    <div className="max-w-5xl container mx-auto px-4 pt-24">
       <section
         className="grid grid-cols-1 gap-y-8 md:gap-y-0 md:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
         style={{ boxShadow: "0 4px 24px rgba(0, 180, 216, 0.20)" }}

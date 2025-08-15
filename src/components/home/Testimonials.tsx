@@ -23,7 +23,7 @@ export const Testimonials = () => {
     }, [api])
 
     return (
-        <section className="container mx-auto max-w-7xl px-4 py-12">
+        <section className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
             <div className="bg-in-bg-testimonials rounded-2xl p-6 py-8 md:py-12 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
                 <div>
                     <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-in-blue-dark font-in-nunito text-center md:text-left pb-2">

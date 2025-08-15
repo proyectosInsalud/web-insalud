@@ -9,7 +9,7 @@ export const MedicTeam = () => {
   const { openReservationModal } = useModalStore()
 
   return (
-     <div className="container mx-auto max-w-6xl px-4 py-6 md:py-12">
+     <div className="container mx-auto max-w-6xl px-4 pt-16 md:pt-24">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-4 items-center">
         <div>
             <div className="space-y-4 md:space-y-6 flex flex-col items-center md:items-start">

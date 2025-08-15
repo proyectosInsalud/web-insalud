@@ -31,7 +31,7 @@ export const PlacesMedic = () => {
   };
 
   return (
-    <div id="sedes" className="container px-4 mx-auto max-w-7xl py-6 md:py-12">
+    <div id="sedes" className="container px-4 mx-auto max-w-7xl pt-16 md:pt-24">
       <section className="flex flex-col gap-4">
         <div className="space-y-4 mb-8">
           <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl">

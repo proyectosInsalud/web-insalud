@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export const AllAboutInsalud = () => {
   return (
-    <div id="blog" className="container mx-auto max-w-7xl px-4">
+    <div id="blog" className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
       <section>
         <div className="text-center space-y-4 mb-10">
           <h2 className="font-in-lato text-in-blue-dark text-center text-2xl md:text-4xl lg:text-5xl font-semibold">Todo sobre <span className="text-in-cyan">salud</span></h2>

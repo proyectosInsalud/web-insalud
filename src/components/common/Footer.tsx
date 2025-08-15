@@ -12,7 +12,7 @@ export const Footer = () => {
    const openReservationModal = useModalStore(state => state.openReservationModal)
 
   return (
-    <div id="contacto" className="max-w-7xl mx-auto px-4 container">
+    <div id="contacto" className="max-w-7xl mx-auto px-4 pt-16 md:pt-24 container">
         <footer className="py-12 flex flex-col">
             <div className="flex order-1 flex-col sm:flex-row justify-between sm:items-center mb-16">
                 <div>

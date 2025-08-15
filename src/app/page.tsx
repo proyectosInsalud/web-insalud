@@ -12,11 +12,11 @@ import { ReservationModal } from "@/components/common/ReservationModal";
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
-      <header className="mb-24 relative">
+      <header className="relative">
         <HeroHome />
       </header>
 
-      <main className="space-y-12 md:space-y-32">
+      <main>
         <ReserveDate/>
         <FeaturedSpecialties/>
         <CountClients />
