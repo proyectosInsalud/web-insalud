@@ -41,7 +41,7 @@ export const FormSection = () => {
                                     <FormControl>
                                         <Input className="bg-white rounded-2xl py-6 placeholder:text-in-blue-title placeholder:font-in-nunito font-semibold border-none outline-none focus-visible:ring-0 pl-4 text-in-blue-title" placeholder="Nombre completo" {...field} />
                                     </FormControl>
-                                    <FormMessage />
+                                    <FormMessage className="pl-2" />
                                 </FormItem>
                             )}
                         />
@@ -53,7 +53,7 @@ export const FormSection = () => {
                                     <FormControl>
                                         <Input className="bg-white rounded-2xl py-6 placeholder:text-in-blue-title placeholder:font-in-nunito font-semibold border-none outline-none focus-visible:ring-0 pl-4 text-in-blue-title" placeholder="Apellidos" {...field} />
                                     </FormControl>
-                                    <FormMessage />
+                                    <FormMessage className="pl-2"/>
                                 </FormItem>
                             )}
                         />
@@ -67,7 +67,7 @@ export const FormSection = () => {
                                     <FormControl>
                                         <Input className="bg-white rounded-2xl py-6 placeholder:text-in-blue-title placeholder:font-in-nunito font-semibold border-none outline-none focus-visible:ring-0 pl-4 text-in-blue-title" placeholder="Correo electronico" {...field} />
                                     </FormControl>
-                                    <FormMessage />
+                                    <FormMessage className="pl-2"/>
                                 </FormItem>
                             )}
                         />
@@ -79,7 +79,7 @@ export const FormSection = () => {
                                     <FormControl>
                                         <Input className="bg-white rounded-2xl py-6 placeholder:text-in-blue-title placeholder:font-in-nunito font-semibold border-none outline-none focus-visible:ring-0 pl-4 text-in-blue-title" placeholder="Celular" {...field} />
                                     </FormControl>
-                                    <FormMessage />
+                                    <FormMessage className="pl-2"/>
                                 </FormItem>
                             )}
                         />
@@ -98,7 +98,7 @@ export const FormSection = () => {
                                     />
                                     
                                 </FormControl>
-                                <FormMessage /> 
+                                <FormMessage className="pl-2"/> 
                             </FormItem>
                         )}
                     />

@@ -23,6 +23,6 @@ export const formReservationSchema = z.object({
     sede: z.string().optional(),
     turno: z.string().optional(),
     detalleConsulta: z.string()
-  .min(10, { message: "Proporciona más detalles sobre tu consulta (mínimo 10 caracteres)" })
-  .max(500, { message: "El detalle es demasiado largo (máximo 500 caracteres)" })
+  .min(10, { message: "Proporciona más detalles (mínimo 10 caracteres)" })
+  .max(500, { message: "Demasiado largo (máximo 500 caracteres)" })
 })
