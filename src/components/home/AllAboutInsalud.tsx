@@ -8,7 +8,7 @@ export const AllAboutInsalud = () => {
       <section>
         <div className="text-center space-y-4 mb-10">
           <h2 className="font-in-lato text-in-blue-dark text-center text-2xl md:text-4xl lg:text-5xl font-semibold">Todo sobre <span className="text-in-cyan">salud</span></h2>
-          <p className="font-in-poppins text-base text-in-blue-dark">Lo que necesitas saber para cuidar de ti y de tu familia.</p>
+          <p className="font-in-poppins text-base text-in-blue-dark">Consejos y prevención en salud sexual y urología</p>
         </div>
 
         <Tabs className="font-in-poppins space-y-4" defaultValue="all">

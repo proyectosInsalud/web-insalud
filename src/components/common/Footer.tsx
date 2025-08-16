@@ -130,7 +130,7 @@ export const Footer = () => {
                         <FaYoutube size={24} />
                     </Link>
                 </nav>
-                <p className="text-lg font-in-poppins">+20 especialistas disponibles en Lima, Perú y Latam.</p>
+                <p className="text-lg font-in-poppins">+50 especialistas disponibles en Lima, Perú y Latam.</p>
             </div>
             <div className="flex order-4 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 font-in-poppins">
                 <p className="text-in-gray-light text-sm">© 2025 IN-SALUD CORP</p>

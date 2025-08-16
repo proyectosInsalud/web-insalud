@@ -9,14 +9,20 @@ export const FeaturedSpecialties = () => {
   const { openReservationModal } = useModalStore();
 
   return (
-    <div id="servicios" className="max-w-7xl mx-auto px-4 container pt-16 md:pt-24">
-      <h2 className="text-center text-2xl md:text-5xl font-in-nunito font-bold text-in-blue-dark">
-        Enfermedades Urológicas
-      </h2>
+    <div
+      id="servicios"
+      className="max-w-7xl mx-auto px-4 container pt-16 md:pt-24 md:space-y-6 lg:space-y-8"
+    >
+      <div>
+        <h2 className="text-center text-2xl md:text-5xl font-in-nunito font-bold text-in-blue-dark">
+          Tratamientos para enfermedades urológicas
+        </h2>
+        <p className="text-center font-in-poppins text-in-blue-title font-medium my-4 px-4">
+          Tecnología avanzada y tratamientos personalizados, pensados para tu
+          salud masculina.
+        </p>
+      </div>
 
-      <p className="text-center font-in-poppins text-in-blue-title font-medium my-4 px-4">
-        Tratamiento para Disfunción Eréctil
-      </p>
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
@@ -35,11 +41,11 @@ export const FeaturedSpecialties = () => {
             <div className="p-0">
               <div className="py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title md:h-[150px]">
                 <CardTitle className="text-sm md:text-xl font-in-poppins font-semibold">
-                  Tratamiento para Disfunción Eréctil
+                  Tratamiento de Disfunción Eréctil
                 </CardTitle>
                 <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-xs md:text-base line-clamp-3">
-                  Logra erecciones más firmes mediante el diagnóstico y nuestros
-                  tratamientos innovadores para la disfunción eréctil.
+                  Logra erecciones más firmes y seguras con diagnóstico
+                  especializado y tratamientos innovadores.
                 </p>
               </div>
             </div>
@@ -79,12 +85,12 @@ export const FeaturedSpecialties = () => {
             <div className="p-0">
               <div className="py-1 md:px-2 md:py-4 space-y-2 text-in-blue-title md:h-[150px]">
                 <CardTitle className="text-sm md:text-xl font-in-poppins font-semibold">
-                  Tratamiento para Virus del Papiloma Humano (VPH)
+                  Tratamiento del Virus del Papiloma Humano (VPH)
                 </CardTitle>
                 <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-xs md:text-base line-clamp-3">
-                  El VPH es una infección de transmisión sexual frecuente.
-                  Algunos tipos pueden ocasionar lesiones o estar asociados a
-                  ciertos tipos de cáncer.
+                  Diagnóstico y tratamiento del VPH con pruebas avanzadas,
+                  incluyendo penescopia a precio accesible y atención por
+                  urólogos expertos.
                 </p>
               </div>
             </div>
@@ -127,8 +133,8 @@ export const FeaturedSpecialties = () => {
                   Solución a la Prostatitis Crónica
                 </CardTitle>
                 <p className="pb-1 md:pb-0 font-in-nunito leading-5 md:leading-relaxed text-xs md:text-base line-clamp-3">
-                  Prevención y tratamiento de lesiones óseas, articulares y
-                  trastornos del sistema musculoesquelético.
+                  Tratamiento especializado para prostatitis y enfermedades
+                  urológicas con urólogos certificados de InSalud.
                 </p>
               </div>
             </div>

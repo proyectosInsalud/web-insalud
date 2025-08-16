@@ -35,11 +35,11 @@ export const PlacesMedic = () => {
       <section className="flex flex-col gap-4">
         <div className="space-y-4 mb-8">
           <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl">
-          ¿Dónde se ubican las  {` `}
-            <span className="text-in-cyan">sedes Insalud?</span>
+          Ubica nuestras Sedes  {` `}
+            <span className="text-in-cyan">en Lima y Latinoamérica</span>
           </h2>
           <p className="text-in-blue-dark text-center font-in-poppins">
-          Contamos con equipos innovadores, modernos y atención especializada en cada sede.
+          Exámenes de urología y diagnóstico avanzado en todas nuestras sedes.
           </p>
         </div>
         <section className="grid grid-cols-1 md:grid-cols-12 gap-16">

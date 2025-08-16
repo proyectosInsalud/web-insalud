@@ -15,11 +15,11 @@ export const WhyChooseInSalud = () => {
                         <ul className="hidden md:block space-y-2 mt-6">
                             <li className="flex items-start">
                                 <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">Más de 120,000 consultas atendidas.</span>
+                                <span className="text-in-gray">Más de 120,000 casos de éxito en tratamientos</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">+20 especialistas disponibles en Lima, Perú y Latam.</span>
+                                <span className="text-in-gray">+50 especialistas certificados en urología y salud sexual masculina</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-in-blue-dark mr-3">•</span>

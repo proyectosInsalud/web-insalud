@@ -59,7 +59,7 @@ export const NavBar = () => {
               className={`${pathName === '/blog' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} 
               href={`${pathName === '/' ? '#blog' : 'https://prensa.insalud.pe'}`}
               >Blog</Link>
-            <Link className={`${pathName === '/contacto' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`}  href="#contacto">Contacto</Link>
+            <Link className={`${pathName === '/contacto' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`}  href="/contacto">Contacto</Link>
           </nav>
           <div className="hidden md:block relative font-in-poppins">
             <Link

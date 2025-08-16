@@ -23,7 +23,7 @@ export const CountClients = () => {
                             <Image src={cdn("/shared/iconos/u-procedimientos-realizados.svg")} alt="Procedimientos realizados" width={42} height={42} />
                             <h3 className="text-3xl font-bold text-in-blue font-in-nunito text-center md:text-left">+25 000</h3>
                         </div>
-                        <p className="text-sm text-gray-500 font-in-poppins text-center w-full">Pacientes tratados</p>
+                        <p className="text-sm text-gray-500 font-in-poppins text-center w-full">Tratamientos exitosos</p>
                     </div>
                 </article>
                 <article className="border border-in-cyan rounded-xl flex-col items-center md:items-start justify-center gap-4 py-5">
@@ -32,7 +32,7 @@ export const CountClients = () => {
                             <Image src={cdn("/shared/iconos/u-sedes-latam.svg")} alt="Sedes en latam" width={42} height={42} className="w-[42px] h-[42px]" />
                             <h3 className="text-3xl font-bold text-in-blue font-in-nunito text-center md:text-left">9</h3>
                         </div>
-                        <p className="text-sm text-gray-500 font-in-poppins text-center w-full">Unidades en latam</p>
+                        <p className="text-sm text-gray-500 font-in-poppins text-center w-full">Sedes especializadas</p>
                     </div>
                 </article>
             </div>

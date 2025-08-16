@@ -112,7 +112,7 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                 Blog
             </Link>
             <Link 
-                href="#contacto" 
+                href="/contacto" 
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
