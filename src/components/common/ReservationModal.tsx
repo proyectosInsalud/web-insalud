@@ -18,9 +18,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
+import { useState } from "react";
 
 export function ReservationModal() {
     const { isReservationModalOpen, closeReservationModal, reservationData, resetReservationData } = useModalStore();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<FormReservationType>({
         resolver: zodResolver(formReservationSchema),
@@ -29,7 +31,7 @@ export function ReservationModal() {
             apellidos: "",
             email: "",
             telefono: "",
-            detalleConsulta: "",
+            detalleConsulta: "Sin detalles",
             sede: "",
             turno: "",
         }
@@ -48,7 +50,10 @@ export function ReservationModal() {
             problemaSalud: reservationData.problemaSalud,
             sede: reservationData.sede,
             turno: reservationData.turno,
+            detalleConsulta: data.detalleConsulta
         };
+
+        setIsSubmitting(true);
         
         // Enviar los datos al endpoint de correo
         fetch("/api/mail", {
@@ -57,12 +62,15 @@ export function ReservationModal() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(datosCompletos)
+            
         })
         .then(response => {
+            
             if (!response.ok) {
                 throw new Error("Error al enviar el correo");
             }
             toast.success("Cita agendada correctamente");
+            setIsSubmitting(false);
             form.reset();
             resetReservationData();
             closeReservationModal();
@@ -145,8 +153,8 @@ export function ReservationModal() {
                                                 )}
                                             />
                                     </div>
-                                    
-                                    <Button type="submit" className="w-full cursor-pointer bg-in-blue hover:bg-in-blue-hover mt-4 rounded-xl py-5 font-semibold">
+
+                                    <Button disabled={isSubmitting} type="submit" className="w-full cursor-pointer bg-in-blue hover:bg-in-blue-hover mt-4 rounded-xl py-5 font-semibold">
                                         Confirmar Reserva
                                     </Button> 
                                 </form>

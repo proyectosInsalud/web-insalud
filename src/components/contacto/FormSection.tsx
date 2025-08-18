@@ -7,8 +7,11 @@ import { Input } from "../ui/input"
 import { useForm } from "react-hook-form"
 import { Textarea } from "../ui/textarea"
 import { Button } from "../ui/button"
+import { useState } from "react"
+import { toast } from "sonner"
 
 export const FormSection = () => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<FormReservationType>({
         resolver: zodResolver(formReservationSchema),
@@ -24,7 +27,41 @@ export const FormSection = () => {
     })
 
     function onSubmit(values: FormReservationType) {
-        console.log("Form submitted with values:", values);
+        // Crear objeto completo con todos los datos
+        const datosCompletos = {
+            // Datos del formulario
+            nombres: values.nombres,
+            apellidos: values.apellidos,
+            correo: values.email,
+            telefono: values.telefono,
+            sede: values.sede,
+            turno: values.turno,
+            detalleConsulta: values.detalleConsulta
+        };
+
+        setIsSubmitting(true);
+        
+        // Enviar los datos al endpoint de correo
+        fetch("/api/mail", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(datosCompletos)
+            
+        })
+        .then(response => {
+            
+            if (!response.ok) {
+                throw new Error("Error al enviar el correo");
+            }
+            toast.success("Cita agendada correctamente");
+            setIsSubmitting(false);
+            form.reset();
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
     }
 
   return ( 
@@ -104,7 +141,8 @@ export const FormSection = () => {
                     />
                 </div>
                 <Button 
-                    className="w-full bg-in-blue cursor-pointer hover:bg-in-blue mt-4 rounded-full py-6" 
+                    className="w-full bg-in-blue cursor-pointer hover:bg-in-blue mt-4 rounded-full py-6"
+                    disabled={isSubmitting}
                     type="submit">Agendar
                 </Button>
             </form>

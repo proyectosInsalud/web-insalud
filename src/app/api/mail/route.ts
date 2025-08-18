@@ -1,42 +1,66 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT || '465'),
-    secure: true,
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-    },
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || "465"),
+  secure: true,
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASSWORD,
+  },
+
+  // 👇 claves para estrés
+  pool: true, // reutiliza conexiones
+  maxConnections: 3, // # máximo de conexiones al SMTP
+  maxMessages: 100, // mensajes por conexión antes de reciclarla
+  rateDelta: 1000, // ventana de 1 segundo
+  rateLimit: 5, // máx. 5 correos/segundo en total
+
+  logger: true,
+  debug: true,
+  connectionTimeout: 20_000,
+  greetingTimeout: 10_000,
+  socketTimeout: 30_000,
 });
 
 export async function POST(request: NextRequest) {
-    try {
-        const {
-            nombres,
-            apellidos,
-            correo,
-            telefono,
-            tipoAtencion,
-            modalidad,
-            sede,
-            turno
-        } = await request.json()
+  try {
+    const {
+      nombres,
+      apellidos,
+      correo,
+      telefono,
+      tipoAtencion,
+      problemaSalud,
+      detalleConsulta,
+      sede,
+      turno,
+    } = await request.json();
 
-        if(!nombres || !apellidos || !correo || !telefono) {
-            return NextResponse.json({error: "Todos los campos son requeridos"}, {status: 400})
-        }
-        
-        // Email de destino: si se proporciona gestorEmail, usar ese; sino usar el por defecto
-        const destinatario = process.env.GESTOR_EMAIL || process.env.SMTP_USER
+    if (!nombres || !apellidos || !correo || !telefono) {
+      return NextResponse.json(
+        { error: "Todos los campos son requeridos" },
+        { status: 400 }
+      );
+    }
 
-        // Configuración del correo
-        const mailOptions = {
-            from: process.env.SMTP_USER,
-            to: destinatario,
-            subject: 'Nueva Solicitud de Reserva - INSALUD',
-            html: `
+    // pruebas de estrés
+    const isTestRun = request.headers.get("x-test-run") === "true";
+
+    // Email de destino: si se proporciona gestorEmail, usar ese; sino usar el por defecto
+    const destinatario = isTestRun
+  ? process.env.SMTP_USER    // 👉 tu buzón de pruebas
+  : (process.env.GESTOR_EMAIL || process.env.SMTP_USER);
+
+    // Configuración del correo
+    const mailOptions = {
+      from: process.env.SMTP_USER,
+      to: destinatario,
+      replyTo: correo,  
+      subject: `${isTestRun ? "[STRESS] " : ""}Nueva Solicitud de Reserva - INSALUD`,
+      headers: { "X-Test-Run": String(isTestRun) }, // para filtrar en tu buzón
+      html: `
                 <div style="background: #f4f8fb; padding: 40px 0; font-family: 'Segoe UI', 'Arial', sans-serif; color: #1a237e;">
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(30, 136, 229, 0.08); overflow: hidden;">
                         <tr>
@@ -71,38 +95,66 @@ export async function POST(request: NextRequest) {
                                             <a href="tel:${telefono}" style="color: #1565c0; text-decoration: underline; margin-left: 8px;">${telefono}</a>
                                         </td>
                                     </tr>
-                                    ${tipoAtencion ? `
+                                    ${
+                                      tipoAtencion
+                                        ? `
                                     <tr>
                                         <td style="padding: 12px 0; border-bottom: 1px solid #e3eaf2;">
                                             <strong style="color: #1976d2;">Tipo de Atención:</strong>
                                             <span style="color: #222; margin-left: 8px;">${tipoAtencion}</span>
                                         </td>
                                     </tr>
-                                    ` : ''}
-                                    ${modalidad ? `
+                                    `
+                                        : ""
+                                    }
+                                    ${
+                                      detalleConsulta
+                                        ? `
                                     <tr>
                                         <td style="padding: 12px 0; border-bottom: 1px solid #e3eaf2;">
-                                            <strong style="color: #1976d2;">Modalidad:</strong>
-                                            <span style="color: #222; margin-left: 8px;">${modalidad}</span>
+                                            <strong style="color: #1976d2;">Detalles de la Consulta:</strong>
+                                            <span style="color: #222; margin-left: 8px;">${detalleConsulta}</span>
                                         </td>
                                     </tr>
-                                    ` : ''}
-                                    ${sede ? `
+                                    `
+                                        : ""
+                                    }
+                                    ${
+                                      problemaSalud
+                                        ? `
+                                    <tr>
+                                        <td style="padding: 12px 0; border-bottom: 1px solid #e3eaf2;">
+                                            <strong style="color: #1976d2;">Problema salud:</strong>
+                                            <span style="color: #222; margin-left: 8px;">${problemaSalud}</span>
+                                        </td>
+                                    </tr>
+                                    `
+                                        : ""
+                                    }
+                                    ${
+                                      sede
+                                        ? `
                                     <tr>
                                         <td style="padding: 12px 0; border-bottom: 1px solid #e3eaf2;">
                                             <strong style="color: #1976d2;">Sede:</strong>
                                             <span style="color: #222; margin-left: 8px;">${sede}</span>
                                         </td>
                                     </tr>
-                                    ` : ''}
-                                    ${turno ? `
+                                    `
+                                        : ""
+                                    }
+                                    ${
+                                      turno
+                                        ? `
                                     <tr>
                                         <td style="padding: 12px 0;">
                                             <strong style="color: #1976d2;">Turno:</strong>
                                             <span style="color: #222; margin-left: 8px;">${turno}</span>
                                         </td>
                                     </tr>
-                                    ` : ''}
+                                    `
+                                        : ""
+                                    }
                                 </table>
                             </td>
                         </tr>
@@ -120,22 +172,21 @@ export async function POST(request: NextRequest) {
                         </tr>
                     </table>
                 </div>
-            `
-        };
+            `,
+    };
 
-        // Enviar el correo
-        await transporter.sendMail(mailOptions);
+    // Enviar el correo
+    await transporter.sendMail(mailOptions);
 
-        return NextResponse.json(
-            { message: "Correo enviado exitosamente" },
-            { status: 200 }
-        );
-
-    } catch (error) {
-        console.error('Error al enviar el correo:', error);
-        return NextResponse.json(
-            { error: "Error al enviar el correo" },
-            { status: 500 }
-        );
-    }
+    return NextResponse.json(
+      { message: "Correo enviado exitosamente" },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error("Error al enviar el correo:", error);
+    return NextResponse.json(
+      { error: "Error al enviar el correo" },
+      { status: 500 }
+    );
+  }
 }
