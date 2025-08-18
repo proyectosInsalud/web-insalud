@@ -22,7 +22,8 @@ export const formReservationSchema = z.object({
     // Campos opcionales que coinciden con el formulario
     sede: z.string().optional(),
     turno: z.string().optional(),
+    problemaSalud: z.string().optional(),
     detalleConsulta: z.string()
   .min(10, { message: "Proporciona más detalles (mínimo 10 caracteres)" })
-  .max(500, { message: "Demasiado largo (máximo 500 caracteres)" })
+  .max(500, { message: "Demasiado largo (máximo 500 caracteres)" }).optional(),
 })

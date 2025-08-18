@@ -29,6 +29,7 @@ export function ReservationModal() {
             apellidos: "",
             email: "",
             telefono: "",
+            detalleConsulta: "",
             sede: "",
             turno: "",
         }

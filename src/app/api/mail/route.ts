@@ -18,7 +18,8 @@ export async function POST(request: NextRequest) {
             apellidos,
             correo,
             telefono,
-            problemaSalud,
+            tipoAtencion,
+            modalidad,
             sede,
             turno
         } = await request.json()
@@ -70,11 +71,19 @@ export async function POST(request: NextRequest) {
                                             <a href="tel:${telefono}" style="color: #1565c0; text-decoration: underline; margin-left: 8px;">${telefono}</a>
                                         </td>
                                     </tr>
-                                    ${problemaSalud ? `
+                                    ${tipoAtencion ? `
                                     <tr>
                                         <td style="padding: 12px 0; border-bottom: 1px solid #e3eaf2;">
-                                            <strong style="color: #1976d2;">Problema de Salud:</strong>
-                                            <span style="color: #222; margin-left: 8px;">${problemaSalud}</span>
+                                            <strong style="color: #1976d2;">Tipo de Atención:</strong>
+                                            <span style="color: #222; margin-left: 8px;">${tipoAtencion}</span>
+                                        </td>
+                                    </tr>
+                                    ` : ''}
+                                    ${modalidad ? `
+                                    <tr>
+                                        <td style="padding: 12px 0; border-bottom: 1px solid #e3eaf2;">
+                                            <strong style="color: #1976d2;">Modalidad:</strong>
+                                            <span style="color: #222; margin-left: 8px;">${modalidad}</span>
                                         </td>
                                     </tr>
                                     ` : ''}
