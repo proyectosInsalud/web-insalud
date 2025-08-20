@@ -6,7 +6,14 @@ import {
 } from "../ui/hover-card";
 import { ItemServiceInfo } from "./ItemServiceInfo";
 
-export const CardService = () => {
+type CardServiceProps = { 
+  name: string;
+  slug?: string;
+  image: string;
+  description: string;
+}
+
+export const CardService = ({ name, image, description }: CardServiceProps) => {
   return (
     <div>
       <div className="hidden md:block">
@@ -14,17 +21,20 @@ export const CardService = () => {
           <HoverCardTrigger asChild>
             <article className="w-full rounded-xl border data-[state=open]:border-b-0 data-[state=open]:rounded-b-none p-2 cursor-pointer">
               <Image
-                src="/prueba-imagen.png"
-                alt="Description of image"
+                src={image}
+                alt={name}
                 width={200}
                 height={100}
                 className="w-full rounded-lg"
               />
               <h3 className="font-in-nunito text-center text-lg pt-2 text-in-cyan">
-                Cauterización Láser
+                {name}
               </h3>
+
               <div className="block md:hidden">
-                <ItemServiceInfo />
+                <ItemServiceInfo 
+                  name={name}
+                  description={description} />
               </div>
             </article>
           </HoverCardTrigger>
@@ -34,26 +44,30 @@ export const CardService = () => {
             avoidCollisions={false}
             align="center"
             className="w-[var(--radix-hover-card-trigger-width)] border-t-0 rounded-b-2xl rounded-t-none font-in-nunito text-in-blue-title"
-            sideOffset={0}
+            sideOffset={-12}
           >
-            <ItemServiceInfo />
+            <ItemServiceInfo 
+            name={name}
+            description={description} />
           </HoverCardContent>
         </HoverCard>
       </div>
       <div className="block md:hidden">
-        <article className="w-full rounded-xl border data-[state=open]:border-b-0 data-[state=open]:rounded-b-none p-2 cursor-pointer">
+        <article className="w-full rounded-xl border data-[state=open]:border-b-0 data-[state=open]:rounded-b-none p-4 cursor-pointer">
           <Image
-            src="/prueba-imagen.png"
+            src={image}
             alt="Description of image"
             width={200}
             height={100}
             className="w-full rounded-lg"
           />
-          <h3 className="font-in-nunito text-center text-lg pt-2 text-in-cyan">
-            Cauterización Láser
+          <h3 className="font-in-nunito text-center text-lg pt-2 mb-0 text-in-cyan">
+            {name}
           </h3>
           <div className="block md:hidden">
-            <ItemServiceInfo />
+            <ItemServiceInfo 
+              name={name}
+              description={description} />
           </div>
         </article>
       </div>

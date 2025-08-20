@@ -68,8 +68,8 @@ export const FormSection = () => {
     <div className="font-in-nunito">
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
-                <div className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                             control={form.control}
                             name="nombres"
@@ -95,7 +95,7 @@ export const FormSection = () => {
                             )}
                         />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                             control={form.control}
                             name="email"
@@ -141,7 +141,7 @@ export const FormSection = () => {
                     />
                 </div>
                 <Button 
-                    className="w-full bg-in-blue cursor-pointer hover:bg-in-blue mt-4 rounded-full py-6"
+                    className="w-full bg-in-blue cursor-pointer hover:bg-in-blue mt-6 rounded-full py-6"
                     disabled={isSubmitting}
                     type="submit">Agendar
                 </Button>

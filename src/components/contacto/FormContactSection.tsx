@@ -8,7 +8,7 @@ export const FormContactSection = () => {
   return (
     <div className="pt-16 md:pt-24 container max-w-7xl mx-auto px-4 -mt-24 md:mt-0">
       <section className="bg-[#e6f9f8] rounded-3xl md:rounded-[40px] grid grid-cols-1 md:grid-cols-5">
-        <div className="bg-[#012436] h-full flex flex-col justify-between md:col-span-2 text-white p-6 py-10 rounded-3xl md:rounded-[40px] font-in-poppins space-y-8">
+        <div className="bg-[#012436] h-full flex flex-col justify-between md:col-span-2 text-white p-8 md:p-12 lg:p-16 rounded-3xl md:rounded-[40px] font-in-poppins space-y-8">
           <h2 className="text-xl">
             Deja tus datos y recibe atención rápida, clara y personalizada.
           </h2>
@@ -67,7 +67,7 @@ export const FormContactSection = () => {
             </Link>
           </nav>
         </div>
-        <div className="md:col-span-3 p-6 py-10 row-start-1 md:row-start-auto">
+        <div className="md:col-span-3 py-8 md:py-12 pr-8 md:pr-12 pl-8 lg:pr-20 lg:py-16 row-start-1 md:row-start-auto">
             <FormSection />
         </div>
       </section>

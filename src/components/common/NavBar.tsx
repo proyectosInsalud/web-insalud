@@ -38,7 +38,7 @@ export const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-black px-6 py-3 rounded-full">
+                <Button className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-6 py-3 rounded-full">
                   <p className="font-semibold">Intranet</p>
                 </Button>
               </Link>
@@ -67,7 +67,8 @@ export const NavBar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-black px-12 py-5 rounded-full">
+              
+              <Button className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-12 py-5 rounded-full">
                 <p className="font-semibold">Intranet</p>
               </Button>
             </Link>

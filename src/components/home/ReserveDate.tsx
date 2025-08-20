@@ -43,7 +43,7 @@ export const ReserveDate = () => {
 
   return (
     <div className="px-4 pt-24 space-y-8">
-      <h2 className="text-center text-in-blue-dark font-in-nunito md:text-3xl lg:text-4xl xl:text-5xl font-bold">Encuentra tu tratamiento en InSalud</h2>
+      <h2 className="text-center hidden md:block text-in-blue-dark font-in-nunito md:text-3xl lg:text-4xl xl:text-5xl font-bold">Encuentra tu tratamiento en InSalud</h2>
       <section
         className="grid max-w-5xl container mx-auto grid-cols-1 gap-y-8 md:gap-y-0 md:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
         style={{ boxShadow: "0 4px 24px rgba(0, 180, 216, 0.20)" }}

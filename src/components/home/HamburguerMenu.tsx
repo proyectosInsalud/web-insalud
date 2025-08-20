@@ -121,7 +121,7 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
             </nav>
         </div>
         
-        <div className="mt-12 flex justify-between items-center">
+        {/* <div className="mt-12 flex justify-between items-center">
             <nav className="flex items-center justify-between gap-6">
                     <Link href="/">
                         <Image 
@@ -152,7 +152,7 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                             height={48} />
                     </Link>
                 </nav>
-        </div>
+        </div> */}
       </div>
     </div>
   </>
