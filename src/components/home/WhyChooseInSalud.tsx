@@ -11,11 +11,11 @@ export const WhyChooseInSalud = () => {
                     <span className="text-in-cyan">InSalud</span>
                     </h2>
                     <div className="space-y-6">
-                        <p className="md:hidden">Con más de 120,000 procedimientos realizados y un equipo de más de 20 especialistas disponibles en Lima, Perú y toda Latinoamérica, somos líderes en salud masculina. Contamos con certificaciones internacionales en calidad médica y ofrecemos atención especializada en disfunción eréctil, salud prostática y tratamientos avanzados contra el Virus del Papiloma Humano (VPH). Nuestro compromiso con la excelencia médica nos posiciona como referentes en urología y medicina sexual en la región.</p>
+                        <p className="md:hidden">Con más de 105,000 procedimientos realizados y un equipo de más de 20 especialistas disponibles en Lima, Perú y toda Latinoamérica, somos líderes en salud masculina. Contamos con certificaciones internacionales en calidad médica y ofrecemos atención especializada en disfunción eréctil, salud prostática y tratamientos avanzados contra el Virus del Papiloma Humano (VPH). Nuestro compromiso con la excelencia médica nos posiciona como referentes en urología y medicina sexual en la región.</p>
                         <ul className="hidden md:block space-y-2 mt-6">
                             <li className="flex items-start">
                                 <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">Más de 120,000 casos de éxito en tratamientos</span>
+                                <span className="text-in-gray">Más de 105,000 casos de éxito en tratamientos</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-in-blue-dark mr-3">•</span>

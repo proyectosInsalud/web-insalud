@@ -14,7 +14,7 @@ export const Footer = () => {
   return (
     <div id="contacto" className="max-w-7xl mx-auto px-4 pt-16 md:pt-24 container">
         <footer className="py-12 flex flex-col">
-            <div className="flex order-1 flex-col sm:flex-row justify-between sm:items-center mb-16">
+            <div className="flex order-1 flex-col sm:flex-row justify-between sm:items-center mb-8 md:mb-12">
                 <div>
                     <Image 
                         src={cdn("/shared/logos/u-logo-insalud.svg")} 
@@ -30,41 +30,40 @@ export const Footer = () => {
                 <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
                     <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">Nuestras Sedes</p>
                     <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-                        <Link href="/">El Golf</Link>
-                        <Link href="/">Sur</Link>
-                        <Link href="/">Jesus Maria</Link>
-                        <Link href="/">Guayaquil</Link>
-                        <Link href="/">Panamá</Link>
+                        <Link href="#">El Golf</Link>
+                        <Link href="#">Sur</Link>
+                        <Link href="#">Jesus Maria</Link>
+                        <Link target="_blank" href="https://insalud.ec">Guayaquil</Link>
+                        <Link target="_blank" href="https://insalud.pa">Panamá</Link>
                     </div>
                 </article>
                 <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
                     <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">Pacientes</p>
                     <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-                        <Link href="/">¿Cómo me atiendo?</Link>
-                        <Link href="/">Deberes y Derechos del paciente</Link>
-                        <Link href="/">Términos y Condiciones</Link>
+                        <Link href="#">¿Cómo me atiendo?</Link>
+                        <Link href="#">Deberes y Derechos del paciente</Link>
+                        <Link href="#">Términos y Condiciones</Link>
                     </div>
                 </article>
                 <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
                     <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">Sobre INSALUD</p>
                     <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-                        <Link href="/">Nosotros</Link>
-                        <Link href="/">Blog</Link>
-                        <Link href="/">Prensa</Link>
-                        <Link href="/">Trabaja con nosotros</Link>
+                        <Link href="#nosostros">Nosotros</Link>
+                        <Link href="#blog">Blog</Link>
+                        <Link href="#">Trabaja con nosotros</Link>
                     </div>
                 </article>
                 <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-3">
                     <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">Diagnósticos</p>
                     <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-                        <Link href="/">Prostatitis Crónica</Link>
-                        <Link href="/">Eyaculación Precoz</Link>
-                        <Link href="/">Micosis Genital</Link>
-                        <Link href="/">Enfermedad de Transmisión Sexual</Link>
-                        <Link href="/">Disfunción Eréctil</Link>
-                        <Link href="/">Herpes Genital</Link>
-                        <Link href="/">Infertilidad</Link>
-                        <Link href="/">Chequeo Prostático</Link>
+                        <Link href="/diagnosticos">Prostatitis Crónica</Link>
+                        <Link href="/diagnosticos">Eyaculación Precoz</Link>
+                        <Link href="/diagnosticos">Micosis Genital</Link>
+                        <Link href="/diagnosticos">Enfermedad de Transmisión Sexual</Link>
+                        <Link href="/diagnosticos">Disfunción Eréctil</Link>
+                        <Link href="/diagnosticos">Herpes Genital</Link>
+                        <Link href="/diagnosticos">Infertilidad</Link>
+                        <Link href="/diagnosticos">Chequeo Prostático</Link>
                     </div>
                 </article>
                 <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">

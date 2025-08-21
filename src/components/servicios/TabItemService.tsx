@@ -65,7 +65,7 @@ export const TabItemService = ({ category }: TabItemServiceProps) => {
         </div>
         <div className="mt-4">
           <TabsContent value="golf">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-x-4 lg:gap-x-6  gap-y-4 sm:gap-y-6 lg:gap-y-8 xl:gap-y-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-x-4 lg:gap-x-6  gap-y-8 sm:gap-y-6 lg:gap-y-8 xl:gap-y-10">
               {servicesItems
                 .filter((item) => item.sedes.includes("golf"))
                 .map((item) => (
@@ -74,7 +74,7 @@ export const TabItemService = ({ category }: TabItemServiceProps) => {
             </div>
           </TabsContent>
           <TabsContent value="sur">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-x-4 lg:gap-x-6  gap-y-4 sm:gap-y-6 lg:gap-y-8 xl:gap-y-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-x-4 lg:gap-x-6  gap-y-8 sm:gap-y-6 lg:gap-y-8 xl:gap-y-10">
               {servicesItems
                 .filter((item) => item.sedes.includes("sur"))
                 .map((item) => (
@@ -83,7 +83,7 @@ export const TabItemService = ({ category }: TabItemServiceProps) => {
             </div>
           </TabsContent>
           <TabsContent value="jesus-maria">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-x-4 lg:gap-x-6  gap-y-4 sm:gap-y-6 lg:gap-y-8 xl:gap-y-10">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:gap-x-4 lg:gap-x-6  gap-y-8 sm:gap-y-6 lg:gap-y-8 xl:gap-y-10">
               {servicesItems
                 .filter((item) => item.sedes.includes("jesus-maria"))
                 .map((item) => (

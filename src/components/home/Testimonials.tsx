@@ -44,15 +44,7 @@ export const Testimonials = () => {
                                             <div className="flex flex-col justify-between h-full">
                                                 <p className="text-in-gray-base text-sm md:text-base font-medium">{testimonial.description}</p>
                                                 <div className="flex items-center gap-4 mt-6">
-                                                    {/* <Image 
-                                                        src={testimonial.image} 
-                                                        alt={`Foto de ${testimonial.name}`} 
-                                                        width={40} 
-                                                        height={40} 
-                                                        className="rounded-full"
-                                                        loading="lazy"
-                                                        quality={90}
-                                                    /> */}
+
                                                     <div>
                                                         <p className="font-semibold">{testimonial.name}</p>
                                                         <p className="text-sm text-in-gray">{testimonial.anio}</p>
@@ -72,7 +64,7 @@ export const Testimonials = () => {
                                     <Image src="/svg/arrow-left.svg" alt="arrow-left" width={24} height={24} />
                                 </button>
                                 <span className="text-in-gray-base font-medium">
-                                    0{current} de 0{count}
+                                    {current} de {count}
                                 </span>
                                 <button 
                                     className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"

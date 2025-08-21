@@ -113,7 +113,7 @@ export const StyledSelect = ({
         )}>
           {/* Icono */}
           {icon && (
-            <Image src={icon} alt="" width={20} height={20} className="absolute left-4 top-1/2 -translate-y-1/2" />
+            <Image src={icon} alt={`Icono ${name}`} width={20} height={20} className="absolute left-4 top-1/2 -translate-y-1/2" />
           )}
 
           {/* Texto mostrado */}

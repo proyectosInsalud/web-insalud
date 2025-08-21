@@ -12,6 +12,7 @@ const staticRoutes: string[] = [
     '/',
     '/diagnosticos',
     '/servicios',
+    '/contacto'
 ]
 
 // 🔧 Rutas de diagnósticos individuales (puedes renombrar slugs)

@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { useModalStore } from "@/store/modalStore";
 
 export const FeaturedSpecialties = () => {
@@ -58,12 +58,12 @@ export const FeaturedSpecialties = () => {
                 >
                   Reservar <span className="hidden xl:inline">ahora</span>
                 </Button>
-                <Link
+                {/* <Link
                   href={``}
                   className="text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-xs md:text-base p-0.5 w-1/2 text-center md:w-auto"
                 >
                   Conoce <span className="hidden xl:inline">más</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -103,12 +103,12 @@ export const FeaturedSpecialties = () => {
                 >
                   Reservar <span className="hidden xl:inline">ahora</span>
                 </Button>
-                <Link
+                {/* <Link
                   href={``}
                   className="text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-xs md:text-base p-0.5 w-1/2 text-center md:w-auto"
                 >
                   Conoce <span className="hidden xl:inline">más</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -147,12 +147,12 @@ export const FeaturedSpecialties = () => {
                 >
                   Reservar <span className="hidden xl:inline">ahora</span>
                 </Button>
-                <Link
+                {/* <Link
                   href={``}
                   className="text-in-blue-title font-in-poppins pointer-events-none font-medium transition-all duration-300 border-in-blue-title border-2 py-1.5 md:px-4 md:py-2 rounded-full hover:bg-in-blue-title hover:text-white text-xs md:text-base p-0.5 w-1/2 text-center md:w-auto"
                 >
                   Conoce <span className="hidden xl:inline">más</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
