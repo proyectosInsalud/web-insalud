@@ -1,4 +1,4 @@
-import { HeaderDiagnosticos } from "@/components/diagnosticos/HeaderDiagnosticos";
+import { HeaderBannerPage } from "@/components/diagnosticos/HeaderBannerPage";
 import { ListDiagnostico } from "@/components/diagnosticos/ListDiagnostico";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 
@@ -78,7 +78,8 @@ export default function Page() {
   return (
     <>
       <CintilloBarra />
-      <HeaderDiagnosticos 
+      <HeaderBannerPage 
+        image="/images/banner-diagnosticos.png"
          title1="Diagnósticos confiables "
          title2="para tu salud íntima"
          paragraph2="opciones de tratamiento claras."

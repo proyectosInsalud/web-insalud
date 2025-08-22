@@ -6,14 +6,15 @@ type HeaderItemProps = {
   title2: string;
   paragraph: string;
   paragraph2?: string;
+  image: string;
 };
 
-export const HeaderDiagnosticos = ({ title1,title2,paragraph,paragraph2 }: HeaderItemProps) => {
+export const HeaderBannerPage = ({ title1,title2,paragraph,paragraph2,image }: HeaderItemProps) => {
   return (
     <>
       <div className="relative">
         <Image
-          src="/images/banner-diagnosticos.png"
+          src={image}
           alt="banner de diagnósticos"
           width={300}
           height={300}

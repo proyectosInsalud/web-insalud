@@ -1,4 +1,4 @@
-import { HeaderDiagnosticos } from "@/components/diagnosticos/HeaderDiagnosticos";
+import { HeaderBannerPage } from "@/components/diagnosticos/HeaderBannerPage";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { ListServices } from "@/components/servicios/ListServices";
 import type { Metadata } from "next";
@@ -74,7 +74,8 @@ export default function page() {
   return (
     <>
       <CintilloBarra />
-      <HeaderDiagnosticos 
+      <HeaderBannerPage 
+        image="/images/banner-servicios.png"
         title1="Servicios de urología" 
         title2="y salud sexual"
         paragraph="Soluciones seguras en exámenes"
