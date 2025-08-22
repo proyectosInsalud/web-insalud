@@ -7,8 +7,8 @@ export const AllAboutInsalud = () => {
     <div id="blog" className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
       <section>
         <div className="text-center space-y-4 mb-10">
-          <h2 className="font-in-lato text-in-blue-dark text-center text-2xl md:text-4xl lg:text-5xl font-semibold">Todo sobre <span className="text-in-cyan">salud</span></h2>
-          <p className="font-in-poppins text-base text-in-blue-dark">Consejos y prevención en salud sexual y urología</p>
+          <h2 className="font-in-lato text-in-blue-dark text-center leading-8 text-[28px] md:text-4xl lg:text-5xl font-semibold">Todo sobre <span className="text-in-cyan">salud</span></h2>
+          <p className="font-in-poppins text-[13px] md:text-base text-in-blue-dark">Consejos y prevención en salud sexual y urología</p>
         </div>
 
         <Tabs className="font-in-poppins space-y-4" defaultValue="all">
@@ -61,7 +61,7 @@ export const AllAboutInsalud = () => {
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
                   src={"https://prensa.insalud.pe/images/noticias/noticia-1.png"} 
-                  alt="Hombres jóvenes, en riesgo por VPH: campaña de detección" 
+                  alt="Hombres jóvenes en riesgo por VPH: campaña de detección" 
                   width={100} 
                   height={100} 
                   className="w-full h-[200px] object-cover rounded-[10px]"
@@ -71,7 +71,7 @@ export const AllAboutInsalud = () => {
                 />
                 <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-in-blue-title">Hombres jóvenes, en riesgo por VPH: campaña de detección
+                  <h3 className="font-semibold text-lg text-in-blue-title">Hombres jóvenes en riesgo por VPH: campaña de detección
                   </h3>
                   <p>Insalud lanza campaña hasta el 15 de junio con pruebas. </p>
                 </div>

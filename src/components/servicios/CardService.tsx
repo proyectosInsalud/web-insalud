@@ -61,7 +61,7 @@ export const CardService = ({ name, image, description }: CardServiceProps) => {
             height={100}
             className="w-full rounded-lg"
           />
-          <h3 className="font-in-nunito text-center text-lg pt-2 mb-0 text-in-cyan">
+          <h3 className="font-in-nunito font-bold text-2xl pt-4 mb-3 text-in-cyan">
             {name}
           </h3>
           <div className="block md:hidden">

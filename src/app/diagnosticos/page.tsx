@@ -78,7 +78,12 @@ export default function Page() {
   return (
     <>
       <CintilloBarra />
-      <HeaderDiagnosticos />
+      <HeaderDiagnosticos 
+         title1="Diagnósticos confiables "
+         title2="para tu salud íntima"
+         paragraph2="opciones de tratamiento claras."
+         paragraph="Evaluación precisa, trato cercano y "
+      />
       <ListDiagnostico />
     </>
   );

@@ -12,13 +12,13 @@ export const ItemServiceInfo = ({ name, description }: ItemServiceInfoProps) => 
   const encodedMessage = encodeURIComponent(whatsappMessage);
   
   return (
-    <div className="space-y-2">
-            <p className="text-sm md:text-base">
+    <div className="space-y-5">
+            <p className="text-[13px] md:text-base">
               {description}
             </p>
             <Link target="_blank" href={`https://wa.me/51957016010?text=${encodedMessage}`}>
               <Button
-                className="w-full bg-in-cyan text-sm font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
+                className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
                 size={"personal"}
               >
                 Solicitar Cita

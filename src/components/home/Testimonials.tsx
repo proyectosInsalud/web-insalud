@@ -26,13 +26,13 @@ export const Testimonials = () => {
         <section className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
             <div className="bg-in-bg-testimonials rounded-2xl p-6 py-8 md:py-12 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
                 <div>
-                    <h2 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-in-blue-dark font-in-nunito text-center md:text-left pb-2">
+                    <h2 className="text-[28px] leading-8 lg:text-4xl xl:text-5xl font-bold text-in-blue-dark font-in-nunito text-center md:text-left pb-2">
                         Testimonios reales de 
                         <span className="text-in-cyan block"> {` `}
                             nuestros pacientes
                         </span> 
                     </h2>
-                    <p className="text-in-gray text-center md:text-left font-in-poppins">Conoce los testimonios</p>
+                    <p className="text-in-gray text-[13px] text-center md:text-left font-in-poppins">Ellos ya nos eligieron</p>
                 </div>
                 <div>
                     <div className="overflow-hidden">

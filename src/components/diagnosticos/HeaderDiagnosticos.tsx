@@ -1,7 +1,14 @@
 import Image from "next/image";
 import { NavBar } from "../common/NavBar";
 
-export const HeaderDiagnosticos = () => {
+type HeaderItemProps = {
+  title1: string;
+  title2: string;
+  paragraph: string;
+  paragraph2?: string;
+};
+
+export const HeaderDiagnosticos = ({ title1,title2,paragraph,paragraph2 }: HeaderItemProps) => {
   return (
     <>
       <div className="relative">
@@ -15,9 +22,9 @@ export const HeaderDiagnosticos = () => {
           unoptimized
         />
         <NavBar />
-        <div className="text-center pt-12 md:pt-20 py-20 space-y-4 text-white px-4">
-            <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold">Diagnósticos confiables para tu salud íntima</h1>
-            <p className="font-in-poppins">Evaluación precisa, trato cercano y opciones de tratamiento claras.</p>
+        <div className="text-center pt-6 md:py-20 pb-9  space-y-4 text-white px-4">
+            <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold">{title1} <span className="block md:inline">{title2}</span></h1>
+            <p className="font-in-poppins text-[13px] md:text-base">{paragraph} <span className="block md:inline">{paragraph2}</span> </p>
         </div>
       </div>
     </>

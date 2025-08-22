@@ -1,18 +1,18 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { CardTypeService } from "./CardTypeService";
 import { TabItemService } from "./TabItemService";
 
 export const ListServices = () => {
   return (
-    <section className="max-w-7xl container mx-auto px-4 py-12">
+    <section className="max-w-7xl container mx-auto px-4 py-6 md:py-12">
       {/* Tabs es la grid */}
       <Tabs
         defaultValue="tratamientos"
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
         {/* List no debe crear otra "caja": contents */}
-        <div className="md:hidden grid grid-cols-2 gap-4 -mt-20 text-in-blue font-bold leading-5">
+        {/* <div className="md:hidden grid grid-cols-2 gap-4 -mt-20 text-in-blue font-bold leading-5">
           <div className="bg-in-bg-testimonials flex flex-col md:gap-2 items-center text-center font-in-nunito text-sm sm:text-base px-4 py-6 rounded-2xl">
             <Image
               src="/svg/icon-treatment-medic-insalud-blue.svg"
@@ -33,7 +33,7 @@ export const ListServices = () => {
             <h2>Exámenes <br /> médicos <span className="hidden sm:inline-block md:hidden">
               especializados</span></h2>
           </div>
-        </div>
+        </div> */}
 
         <TabsList className="hidden md:contents p-0 bg-transparent">
           <TabsTrigger
@@ -49,7 +49,7 @@ export const ListServices = () => {
                 description="Mejora tu salud con soluciones efectivas, seguras y adaptadas a tus necesidades."
                 iconImage="/svg/icon-treatment-medic-insalud.svg"
                 bgImage="/images/bg-treatment-medic-insalud.png"
-                gradient="bg-[linear-gradient(26deg,#3277E1_8.7%,rgba(11,29,38,0)_91.29%)]"
+                gradient="bg-[linear-gradient(26deg,#0B1D26_8.7%,rgba(11,29,38,0)_91.29%)]"
                 colorIcon="#3277E1"
               />
             </div>

@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { useModalStore } from "@/store/modalStore";
-import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 
 export const MedicTeam = () => {
@@ -13,23 +12,23 @@ export const MedicTeam = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-4 items-center">
         <div>
             <div className="space-y-4 md:space-y-6 flex flex-col items-center md:items-start">
-                <h2 className="font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl text-in-blue-dark text-center md:text-left">Médicos expertos en <span className="text-in-cyan block md:inline"> salud sexual</span> </h2>
-                <p className="text-in-blue-title text-center md:text-left">Atiendete con uno de nuestros +50 especialistas.</p>
+                <h2 className="font-in-nunito font-bold leading-8 text-[28px] md:text-4xl lg:text-5xl text-in-blue-dark text-center md:text-left">Médicos expertos en <span className="text-in-cyan block md:inline"> salud sexual</span> </h2>
+                <p className="text-in-blue-title text-[13px] text-center md:text-left">Atiéndete con uno de nuestros +50 especialistas.</p>
                 <Button onClick={() => openReservationModal()} className="bg-in-blue cursor-pointer hover:bg-in-blue-dark transition-all duration-300 rounded-full py-6 px-8 text-white">
                     Reservar cita
                 </Button>
             </div>
         </div>
         <div className="w-full h-full flex items-center justify-center">
-          <Image 
-            src={cdn("/web/home/main/equipo-medicos-expertos.png")} 
-            alt="Equipo médico de expertos de InSalud" 
-            width={500} 
-            height={500} 
+          <Image
+            src={"/images/doctor-antonio-grandez.png"}
+            alt="Doctor antonio grandez" 
+            width={800} 
+            height={800} 
             className="w-full h-full object-cover"
             priority={false}
             loading="lazy"
-            quality={85}
+            quality={95}
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

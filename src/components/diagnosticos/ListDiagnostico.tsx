@@ -13,7 +13,7 @@ export const ListDiagnostico = () => {
   ];
 
   return (
-    <section className="max-w-7xl container mx-auto px-4 py-8 md:py-12 space-y-4">
+    <section className="max-w-7xl container mx-auto px-4 py-4 md:py-12 space-y-4">
       <div className="text-center text-in-blue-title space-y-2">
         {/* <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold">Diagnósticos confiables para tu salud íntima</h1>
         <p className="font-in-poppins">Evaluación precisa, trato cercano y opciones de tratamiento claras.</p> */}
@@ -26,7 +26,7 @@ export const ListDiagnostico = () => {
           {categories.map((category) => (
             <TabsTrigger
               key={category.value}
-              className={` ${category.value === "mas-consultados" ? "data-[state=active]:bg-in-orange data-[state=active]:border-transparent" : "data-[state=active]:bg-in-cyan data-[state=active]:border-transparent"} cursor-pointer data-[state=active]:text-white text-in-blue rounded-3xl py-4 md:py-6 px-4 transition-all duration-150 md:text-lg border border-in-blue`}
+              className={` ${category.value === "mas-consultados" ? "data-[state=active]:bg-in-orange data-[state=active]:border-transparent" : "data-[state=active]:bg-in-cyan data-[state=active]:border-transparent"} cursor-pointer data-[state=active]:text-white text-in-blue rounded-3xl py-4 md:py-6 px-7 transition-all duration-150 md:text-lg border border-in-blue`}
               value={category.value}
             >
               {category.label}
@@ -61,7 +61,7 @@ export const ListDiagnostico = () => {
                     <div>
                       <ul className="list-disc pl-6 space-y-2 text-sm">
                         {tratamiento.sintomas.map((sintoma, i) => (
-                          <li key={i}>{sintoma}</li>
+                          <li className="text-[13px] md:text-base" key={i}>{sintoma}</li>
                         ))}
                       </ul>
                     </div>

@@ -14,10 +14,10 @@ export const FeaturedSpecialties = () => {
       className="max-w-7xl mx-auto px-4 container pt-16 md:pt-24 md:space-y-6 lg:space-y-8"
     >
       <div>
-        <h2 className="text-center text-2xl md:text-5xl font-in-nunito font-bold text-in-blue-dark">
-          Tratamientos para enfermedades urológicas
+        <h2 className="text-center text-[28px] leading-9 md:text-5xl font-in-nunito font-bold text-in-blue-dark">
+          Tratamientos para enfermedades <span className="text-in-cyan">urológicas</span>
         </h2>
-        <p className="text-center font-in-poppins text-in-blue-title font-medium my-4 px-4">
+        <p className="text-center font-in-poppins text-[13px] md:text-base text-in-blue-title py-4 px-2 mb-2">
           Tecnología avanzada y tratamientos personalizados, pensados para tu
           salud masculina.
         </p>

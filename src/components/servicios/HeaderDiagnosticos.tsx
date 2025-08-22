@@ -16,7 +16,7 @@ export const HeaderDiagnosticos = () => {
         />
         <NavBar />
         <div className="text-center py-20 space-y-4 text-white px-4">
-            <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold">Diagnósticos confiables para tu salud íntima</h1>
+            <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold">Servicios de urología y salud sexual</h1>
             <p className="font-in-poppins">Evaluación precisa, trato cercano y opciones de tratamiento claras.</p>
         </div>
       </div>

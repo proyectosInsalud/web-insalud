@@ -34,11 +34,11 @@ export const PlacesMedic = () => {
     <div id="sedes" className="container px-4 mx-auto max-w-7xl pt-16 md:pt-24">
       <section className="flex flex-col gap-4">
         <div className="space-y-4 mb-8">
-          <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-2xl md:text-4xl lg:text-5xl">
+          <h2 className="text-in-blue-dark text-center font-in-nunito font-bold text-[28px] leading-8 md:text-4xl lg:text-5xl">
           Ubica nuestras Sedes  {` `}
             <span className="text-in-cyan">en Lima y Latinoamérica</span>
           </h2>
-          <p className="text-in-blue-dark text-center font-in-poppins">
+          <p className="text-[13px] text-in-blue-dark text-center font-in-poppins">
           Exámenes de urología y diagnóstico avanzado en todas nuestras sedes.
           </p>
         </div>

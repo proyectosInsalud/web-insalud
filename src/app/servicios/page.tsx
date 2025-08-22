@@ -74,7 +74,12 @@ export default function page() {
   return (
     <>
       <CintilloBarra />
-      <HeaderDiagnosticos />
+      <HeaderDiagnosticos 
+        title1="Servicios de urología" 
+        title2="y salud sexual"
+        paragraph="Soluciones seguras en exámenes"
+        paragraph2="y tratamientos para tu bienestar."
+        />
       <ListServices />
     </>
   );
