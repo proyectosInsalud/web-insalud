@@ -16,11 +16,10 @@ export const HeaderBannerPage = ({ title1,title2,paragraph,paragraph2,image }: H
         <Image
           src={image}
           alt="banner de diagnósticos"
-          width={300}
+          width={900}
           height={300}
           className="w-full h-full absolute -z-10 object-cover"
           priority
-          unoptimized
         />
         <NavBar />
         <div className="text-center pt-6 md:py-20 pb-9  space-y-4 text-white px-4">
