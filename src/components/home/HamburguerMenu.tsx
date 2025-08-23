@@ -3,7 +3,6 @@
 import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 type HamburguerMenuProps = {
@@ -12,8 +11,6 @@ type HamburguerMenuProps = {
 }
 
 export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
-
-    const pathName = usePathname();
 
     useEffect(() => {
         const isMobile = () => window.innerWidth < 768;
@@ -78,7 +75,7 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
         <div className="flex justify-between items-start gap-8">
             <nav className="flex flex-col text-3xl space-y-4 font-in-poppins">
             <Link 
-                href="#nosotros" 
+                href="https://insalud.pe/#nosotros" 
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
@@ -99,14 +96,14 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                 Servicios
             </Link>
             <Link 
-                href="#sedes" 
+                href="https://insalud.pe/#sedes" 
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
             >
                 Sedes
             </Link>
             <Link 
-                href={`${pathName === '/' ? '#blog' : 'https://prensa.insalud.pe'}`} 
+                href={"https://insalud.pe/#blog"}
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
                 

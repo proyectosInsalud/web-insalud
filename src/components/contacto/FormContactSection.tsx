@@ -67,7 +67,7 @@ export const FormContactSection = () => {
             </Link>
           </nav>
         </div>
-        <div className="md:col-span-3 py-8 md:py-12 pr-8 md:pr-12 pl-8 lg:pr-20 lg:py-16 row-start-1 md:row-start-auto">
+        <div className="md:col-span-3 py-20 px-16 row-start-1 md:row-start-auto">
             <FormSection />
         </div>
       </section>
