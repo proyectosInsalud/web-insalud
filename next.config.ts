@@ -23,8 +23,7 @@ const nextConfig: NextConfig = {
       { source: "/nosotros", destination: "/", permanent: true },
       { source: "/sedes", destination: "/contacto", permanent: true },
       { source: "/jesusmaria-chequeo-prostatico-2/", destination: "/contacto", permanent: true },
-      { source: "/jesusmaria-chequeo-prostatico-2", destination: "/contacto", permanent: true },
-
+      { source: "/jesusmaria-chequeo-prostatico-2", destination: "/", permanent: true },
       // Media heredada de WordPress (evita imágenes rotas de enlaces antiguos)
       {
         source: "/wp-content/uploads/:path*",
