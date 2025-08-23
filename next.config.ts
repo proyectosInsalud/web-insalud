@@ -12,39 +12,33 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // Blog (no hay sección nueva, mándalo a home o a /noticias si la creas)
+      // Viejas URLs del WP -> tus 4 vistas reales
       { source: "/blog", destination: "/", permanent: true },
-
-      // Cómo me atiendo → podrías llevarlo a contacto o a una landing de pasos
       { source: "/como-me-atiendo", destination: "/contacto", permanent: true },
-
-      // Contacto → ya existe
-      { source: "/contacto", destination: "/contacto", permanent: true },
-
-      // Deberes y derechos del paciente → si no hay sección nueva, al home
       { source: "/deberes-y-derechos-del-paciente", destination: "/", permanent: true },
-
-      // Diagnóstico (WordPress) → Diagnosticos (Next.js)
       { source: "/diagnostico", destination: "/diagnosticos", permanent: true },
-
-      // Empleabilidad (no existe en Next, mándalo al home o crea sección)
       { source: "/empleabilidad", destination: "/", permanent: true },
-
-      // Inicio
-      { source: "/", destination: "/", permanent: true },
-
-      // Libro de reclamaciones
       { source: "/libro-de-reclamaciones", destination: "/contacto", permanent: true },
-
-      // Nosotros (mal escrito en WP)
-      { source: "/noisotros", destination: "/nosotros", permanent: true },
-      { source: "/nosotros", destination: "/nosotros", permanent: true },
-
-      // Sedes
-      { source: "/sedes", destination: "/sedes", permanent: true },
-
-      // Servicios
+      { source: "/noisotros", destination: "/", permanent: true },
+      { source: "/nosotros", destination: "/", permanent: true },
+      { source: "/sedes", destination: "/contacto", permanent: true },
       { source: "/servicios", destination: "/servicios", permanent: true },
+
+      // Media heredada de WordPress (evita imágenes rotas de enlaces antiguos)
+      {
+        source: "/wp-content/uploads/:path*",
+        destination: "https://legacy.insalud.pe/wp-content/uploads/:path*",
+        permanent: true,
+      },
+
+      // Catch-all: manda TODO lo demás a la home,
+      // pero NO atrapes raíz ni tus 4 rutas ni assets/sitemaps
+      {
+        source:
+          "/:path((?!$|diagnosticos$|servicios$|contacto$|sitemap\\.xml$|robots\\.txt$|favicon\\.ico$|apple-touch-icon\\.png$|manifest\\.json$|_next/|static/|assets/).*)",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };
