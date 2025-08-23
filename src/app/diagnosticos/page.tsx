@@ -1,6 +1,7 @@
 import { HeaderBannerPage } from "@/components/diagnosticos/HeaderBannerPage";
 import { ListDiagnostico } from "@/components/diagnosticos/ListDiagnostico";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
+export const dynamic = 'force-static';
 
 
 // app/diagnosticos/page.tsx

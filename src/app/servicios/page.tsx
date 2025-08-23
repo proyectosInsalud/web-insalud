@@ -2,7 +2,7 @@ import { HeaderBannerPage } from "@/components/diagnosticos/HeaderBannerPage";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { ListServices } from "@/components/servicios/ListServices";
 import type { Metadata } from "next";
-
+export const revalidate = 300;
 
 export const metadata: Metadata = {
   title: "Servicios y Tratamientos Urológicos | InSalud – Exámenes Médicos Especializados",

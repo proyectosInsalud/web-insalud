@@ -2,6 +2,8 @@ import { FormContactSection } from "@/components/contacto/FormContactSection";
 import { HeroContacto } from "@/components/contacto/HeroContacto";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { Metadata } from "next";
+export const dynamic = 'force-static';
+
 
 export const metadata: Metadata = {
   title: "Contacto y Citas | InSalud – Urólogo en Lima",
