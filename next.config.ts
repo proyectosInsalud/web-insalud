@@ -33,12 +33,12 @@ const nextConfig: NextConfig = {
 
       // Catch-all: manda TODO lo demás a la home,
       // pero NO atrapes raíz ni tus 4 rutas ni assets/sitemaps
-      {
-        source:
-          "/:path((?!$|diagnosticos$|servicios$|contacto$|sitemap\\.xml$|robots\\.txt$|favicon\\.ico$|apple-touch-icon\\.png$|manifest\\.json$|_next/|static/|assets/).*)",
-        destination: "/",
-        permanent: true,
-      },
+      // {
+      //   source:
+      //     "/:path((?!$|diagnosticos$|servicios$|contacto$|sitemap\\.xml$|robots\\.txt$|favicon\\.ico$|apple-touch-icon\\.png$|manifest\\.json$|_next/|static/|assets/).*)",
+      //   destination: "/",
+      //   permanent: true,
+      // },
     ];
   },
 };
