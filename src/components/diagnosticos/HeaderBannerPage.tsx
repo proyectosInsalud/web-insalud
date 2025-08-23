@@ -19,6 +19,7 @@ export const HeaderBannerPage = ({ title1,title2,paragraph,paragraph2,image }: H
           width={900}
           height={300}
           className="w-full h-full absolute -z-10 object-cover"
+          fetchPriority="high"
           priority
         />
         <NavBar />
