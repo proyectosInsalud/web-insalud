@@ -1,37 +1,13 @@
 import type { MetadataRoute } from 'next'
 
-function getSiteUrl() {
-    const envUrl =
-        process.env.NEXT_PUBLIC_SITE_URL ||
-        (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "")
-    return envUrl || 'http://localhost:3000'
-}
-
-// Rutas de navegacion estaticas 
-const staticRoutes: string[] = [
-    '/',
-    '/diagnosticos',
-    '/servicios',
-    '/contacto'
-]
-
-// 🔧 Rutas de diagnósticos individuales (puedes renombrar slugs)
-// const diagnosticosSlugs: string[] = [
-//   'eyaculacion-precoz',
-//   'disfuncion-erectil',
-//   'prostatitis-cronica',
-//   'its', // infecciones de transmisión sexual
-// ]
-
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = getSiteUrl()
-  const now = new Date()
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://insalud.pe'
+  const now = new Date().toISOString()
 
-  return staticRoutes.map((path) => ({
-    url: `${siteUrl}${path}`,
-    lastModified: now,
-    changeFrequency: path === '/' ? 'weekly' : 'monthly',
-    priority: path === '/' ? 1 : 0.8,
-  }))
+  return [
+    { url: `${siteUrl}/`,             lastModified: now, changeFrequency: 'weekly',  priority: 1 },
+    { url: `${siteUrl}/diagnosticos`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteUrl}/servicios`,    lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${siteUrl}/contacto`,     lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+  ]
 }

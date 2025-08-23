@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   description: "Centro médico especializado en salud sexual integral. Ofrecemos servicios de urología, ginecología, etc. Con tecnología avanzada y profesionales altamente calificados",
   keywords: "clínica de salud sexual, urología, ginecología, dermatología, cirugía plástica, medicina general, nutrición, endocrinología, gastroenterología, estética, laboratorio clínico, clínica en Lima, clínica en Jesús María, urologo Lima, ginecólogo Lima, salud íntima, vasectomía sin bisturí, disfunción eréctil, infecciones urinarias, control hormonal, estética íntima, clínica Guayaquil, clínica Quito, clínica Panamá, salud sexual masculina, salud sexual femenina, citas médicas, médicos especialistas",
   authors: [{ name: "InSalud" }],
-  creator: "InSalud",
   publisher: "InSalud",
+  metadataBase: new URL('https://insalud.pe'),
   robots: "index, follow",
   openGraph: {
     title: "InSalud - Centro Médico Especializado",
