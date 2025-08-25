@@ -53,7 +53,7 @@ export const ReserveDate = () => {
           <div className="flex flex-col gap-2 md:gap-0 col-span-1">
             <StyledSelect
               options={problemasSalud}
-              placeholder="Problema de salud"
+              placeholder="Consulta médica"
               // icon={cdn("shared/iconos/u-doctor-problema.svg")}
               icon="/svg/doctor-problema.svg"
               name="problemaSalud"
@@ -63,7 +63,7 @@ export const ReserveDate = () => {
                 setProblemaSalud(value);
                 setErrors((prev) => ({ ...prev, problemaSalud: false }));
               }}
-              ariaLabel="Seleccionar problema de salud"
+              ariaLabel="Seleccionar consulta medica"
               className={errors.problemaSalud ? "border-red-500" : ""}
             />
             {errors.problemaSalud && (
