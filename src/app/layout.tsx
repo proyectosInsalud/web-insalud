@@ -92,6 +92,11 @@ export default function RootLayout({
       `}
         </Script>
 
+      </head>
+      <body
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
+      >
         <noscript>
           <Image
             height="1"
@@ -101,11 +106,6 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-      </head>
-      <body
-        suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
-      >
         <Toaster />
         {children}
 
