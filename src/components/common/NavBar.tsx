@@ -56,7 +56,7 @@ export const NavBar = () => {
             <Link className={`${pathName === '/sedes' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="#sedes">Sedes</Link>
             <Link 
               className={`${pathName === '/blog' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} 
-              href={`${pathName === '/' ? '#blog' : 'https://prensa.insalud.pe'}`}
+              href={`https://insalud.pe/#blog`}
               >Blog</Link>
             <Link className={`${pathName === '/contacto' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`}  href="/contacto">Contacto</Link>
           </nav>
