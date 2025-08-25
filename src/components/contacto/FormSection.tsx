@@ -57,7 +57,9 @@ export const FormSection = () => {
                 throw new Error("Error al enviar el correo");
             }
             toast.success("Cita agendada correctamente");
+            console.log("Datos enviados:", datosCompletos);
             fbqTrack("Lead", { source: "Formulario contacto" });
+            console.log("fbq Lead enviado")
             setIsSubmitting(false);
             form.reset();
         })
