@@ -50,10 +50,10 @@ export const NavBar = () => {
             </div>
           </div>
           <nav className="hidden lg:flex items-center gap-6 text-white font-medium">
-            <Link className={`${pathName === 'https://insalud.pe/nosotros' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150` } href="#nosotros">Nosotros</Link>
+            <Link className={`${pathName === 'https://insalud.pe/#nosotros' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150` } href="#nosotros">Nosotros</Link>
             <Link className={`${pathName === '/diagnosticos' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/diagnosticos">Diagnósticos</Link>
             <Link className={`${pathName === '/servicios' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/servicios">Servicios</Link>
-            <Link className={`${pathName === 'https://insalud.pe/sedes' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="#sedes">Sedes</Link>
+            <Link className={`${pathName === 'https://insalud.pe/#sedes' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="#sedes">Sedes</Link>
             <Link 
               className={`${pathName === '/blog' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} 
               href={`https://insalud.pe/#blog`}
