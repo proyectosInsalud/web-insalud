@@ -4,6 +4,8 @@ import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
+import Script from "next/script";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,22 +34,24 @@ const poppins = Poppins({
 
 export const viewport: Viewport = {
   themeColor: "#00BEB4",
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-}
-
+};
 
 export const metadata: Metadata = {
   title: "InSalud - Centro Médico Especializado",
-  description: "Centro médico especializado en salud sexual integral. Ofrecemos servicios de urología, ginecología, etc. Con tecnología avanzada y profesionales altamente calificados",
-  keywords: "clínica de salud sexual, urología, ginecología, dermatología, cirugía plástica, medicina general, nutrición, endocrinología, gastroenterología, estética, laboratorio clínico, clínica en Lima, clínica en Jesús María, urologo Lima, ginecólogo Lima, salud íntima, vasectomía sin bisturí, disfunción eréctil, infecciones urinarias, control hormonal, estética íntima, clínica Guayaquil, clínica Quito, clínica Panamá, salud sexual masculina, salud sexual femenina, citas médicas, médicos especialistas",
+  description:
+    "Centro médico especializado en salud sexual integral. Ofrecemos servicios de urología, ginecología, etc. Con tecnología avanzada y profesionales altamente calificados",
+  keywords:
+    "clínica de salud sexual, urología, ginecología, dermatología, cirugía plástica, medicina general, nutrición, endocrinología, gastroenterología, estética, laboratorio clínico, clínica en Lima, clínica en Jesús María, urologo Lima, ginecólogo Lima, salud íntima, vasectomía sin bisturí, disfunción eréctil, infecciones urinarias, control hormonal, estética íntima, clínica Guayaquil, clínica Quito, clínica Panamá, salud sexual masculina, salud sexual femenina, citas médicas, médicos especialistas",
   authors: [{ name: "InSalud" }],
   publisher: "InSalud",
-  metadataBase: new URL('https://insalud.pe'),
+  metadataBase: new URL("https://insalud.pe"),
   robots: "index, follow",
   openGraph: {
     title: "InSalud - Centro Médico Especializado",
-    description: "Servicios médicos especializados con los mejores profesionales",
+    description:
+      "Servicios médicos especializados con los mejores profesionales",
     type: "website",
     locale: "es_ES",
     siteName: "InSalud",
@@ -72,7 +76,31 @@ export default function RootLayout({
         <link rel="preconnect" href="https://prensa.insalud.pe" />
         <link rel="dns-prefetch" href="https://cdn.insalud.pe" />
         <link rel="dns-prefetch" href="https://prensa.insalud.pe" />
-        
+
+        {/* Meta Pixel */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1404063285054270');
+        fbq('track', 'PageView');
+      `}
+        </Script>
+
+        <noscript>
+          <Image
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1404063285054270&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
       </head>
       <body
         suppressHydrationWarning
@@ -82,13 +110,12 @@ export default function RootLayout({
         {children}
 
         <Footer />
-        
+
         {/* Botón de WhatsApp flotante */}
-        <WhatsAppButton 
+        <WhatsAppButton
           phoneNumber="+51957016010"
           message="Vi su página web y me gustaría agendar una cita"
         />
-        
       </body>
     </html>
   );
