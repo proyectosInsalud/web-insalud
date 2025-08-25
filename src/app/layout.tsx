@@ -6,6 +6,8 @@ import "./globals.css";
 import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import Script from "next/script";
+import { injectContentsquareScript } from '@contentsquare/tag-sdk';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +64,12 @@ export const metadata: Metadata = {
     description: "Servicios médicos especializados",
   },
 };
+
+injectContentsquareScript({
+  siteId: "6502900",
+  async: true, // Optional: Set to false to wait for script execution until after document parsing.
+  defer: false // Optional: Set to true to defer script execution after document parsing.
+});
 
 export default function RootLayout({
   children,
