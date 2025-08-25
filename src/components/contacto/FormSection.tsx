@@ -9,6 +9,7 @@ import { Textarea } from "../ui/textarea"
 import { Button } from "../ui/button"
 import { useState } from "react"
 import { toast } from "sonner"
+import { fbqTrack } from "@/lib/fbq"
 
 export const FormSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,6 +57,7 @@ export const FormSection = () => {
                 throw new Error("Error al enviar el correo");
             }
             toast.success("Cita agendada correctamente");
+            fbqTrack("Lead", { source: "Formulario contacto" });
             setIsSubmitting(false);
             form.reset();
         })

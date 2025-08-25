@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
@@ -5,7 +6,6 @@ import "./globals.css";
 import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import Script from "next/script";
-import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,6 +68,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
@@ -87,7 +89,7 @@ export default function RootLayout({
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1404063285054270');
+        fbq('init', '${PIXEL_ID}');
         fbq('track', 'PageView');
       `}
         </Script>
@@ -98,11 +100,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
       >
         <noscript>
-          <Image
+          <img
             height="1"
             width="1"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1404063285054270&ev=PageView&noscript=1"
+            src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
             alt=""
           />
         </noscript>
