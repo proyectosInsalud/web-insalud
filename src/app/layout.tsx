@@ -6,7 +6,6 @@ import "./globals.css";
 import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import Script from "next/script";
-import { injectContentsquareScript } from '@contentsquare/tag-sdk';
 
 
 const geistSans = Geist({
@@ -65,11 +64,7 @@ export const metadata: Metadata = {
   },
 };
 
-injectContentsquareScript({
-  siteId: "6502900",
-  async: true, // Optional: Set to false to wait for script execution until after document parsing.
-  defer: false // Optional: Set to true to defer script execution after document parsing.
-});
+
 
 export default function RootLayout({
   children,
@@ -101,6 +96,20 @@ export default function RootLayout({
         fbq('track', 'PageView');
       `}
         </Script>
+
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "sygd6wo4ge");
+            `,
+          }}
+        />
 
       </head>
       <body
