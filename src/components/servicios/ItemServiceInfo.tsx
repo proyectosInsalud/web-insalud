@@ -1,6 +1,7 @@
 // import Image from "next/image"
 import Link from "next/link";
 import { Button } from "../ui/button"
+import { eventRegisterGtm } from "@/lib/utils";
 
 type ItemServiceInfoProps = {
   name:string
@@ -10,13 +11,21 @@ type ItemServiceInfoProps = {
 export const ItemServiceInfo = ({ name, description }: ItemServiceInfoProps) => {
   const whatsappMessage = `Hola, vi su web de Insalud y estoy interesado por el servicio de ${name}`;
   const encodedMessage = encodeURIComponent(whatsappMessage);
+
+  
   
   return (
     <div className="space-y-5">
             <p className="text-[13px] md:text-base">
               {description}
             </p>
-            <Link target="_blank" href={`https://wa.me/51957016010?text=${encodedMessage}`}>
+            <Link 
+              onClick={() => eventRegisterGtm("service_whatsapp_click", {
+                service_name: name,
+                interaction_type: "lead", 
+              })}
+              target="_blank" 
+              href={`https://wa.me/51957016010?text=${encodedMessage}`}>
               <Button
                 className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
                 size={"personal"}
