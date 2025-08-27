@@ -7,7 +7,6 @@ import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import Script from "next/script";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -64,14 +63,11 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || "1404063285054270";
   return (
     <html lang="es" suppressHydrationWarning>
@@ -97,6 +93,16 @@ export default function RootLayout({
       `}
         </Script>
 
+        <Script id="gtm" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id=GTM-PR66DQ7B'+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PR66DQ7B');
+          `}
+        </Script>
+
         <Script
           id="microsoft-clarity"
           strategy="afterInteractive"
@@ -110,12 +116,19 @@ export default function RootLayout({
             `,
           }}
         />
-
       </head>
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
       >
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PR66DQ7B"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <noscript>
           <img
             height="1"
