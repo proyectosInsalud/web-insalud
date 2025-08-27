@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import { HamburguerMenu } from "../home/HamburguerMenu"
 import { useState } from "react"
+import { handleClickIntranet } from "@/lib/utils"
 
 export const NavBarIntern = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,11 @@ export const NavBarIntern = () => {
                 <Link className="hover:text-in-cyan transition-all duration-150" href="/contacto">Contacto</Link>
             </div>
             <div className="flex items-center gap-2">
-                <Link className="cursor-pointer" href={"https://experience.insalud.pe/auth"} target="_blank" rel="noopener noreferrer">
+                <Link 
+                    className="cursor-pointer" 
+                    href={"https://experience.insalud.pe/auth"} 
+                    target="_blank" rel="noopener noreferrer"
+                    onClick={handleClickIntranet}>
                     <Button className="bg-in-orange hover:bg-in-orange/90 cursor-pointer font-in-poppins text-black rounded-full font-semibold py-2 text-sm px-12" size={"personal"}>Intranet</Button>
                 </Link>
                 <div 
