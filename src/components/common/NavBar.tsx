@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { HamburguerMenu } from "../home/HamburguerMenu";
 import { usePathname } from "next/navigation";
-import { handleClickIntranet } from "@/lib/utils";
+import { eventRegisterGtm } from "@/lib/utils";
 // import { usePathname } from "next/navigation";
 
 export const NavBar = () => {
@@ -41,7 +41,7 @@ export const NavBar = () => {
               >
                 <Button 
                   className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-6 py-3 rounded-full"
-                  onClick={handleClickIntranet}
+                  onClick={() => eventRegisterGtm("btn-intranet")}
                 >
                   <p className="font-semibold">Intranet</p>
                 </Button>
@@ -72,7 +72,7 @@ export const NavBar = () => {
             >
               
               <Button 
-                onClick={handleClickIntranet}
+                onClick={() => eventRegisterGtm("btn-intranet")}
                 className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-12 py-5 rounded-full">
                 <p className="font-semibold">Intranet</p>
               </Button>

@@ -19,6 +19,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { useState } from "react";
+import { eventRegisterGtm } from "@/lib/utils";
 
 export function ReservationModal() {
     const { isReservationModalOpen, closeReservationModal, reservationData, resetReservationData } = useModalStore();
@@ -69,6 +70,7 @@ export function ReservationModal() {
             if (!response.ok) {
                 throw new Error("Error al enviar el correo");
             }
+            eventRegisterGtm("form_submission");
             toast.success("Cita agendada correctamente");
             setIsSubmitting(false);
             form.reset();

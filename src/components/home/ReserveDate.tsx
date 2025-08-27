@@ -5,6 +5,7 @@ import { StyledSelect } from "@/components/ui/StyledSelect";
 import { problemasSalud } from "@/data/problemasSalud";
 import { sedesAccordion } from "@/data/sedesAccordion";
 import { turnos } from "@/data/turnos";
+import { eventRegisterGtm } from "@/lib/utils";
 import { useModalStore } from "@/store/modalStore";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
@@ -37,6 +38,7 @@ export const ReserveDate = () => {
 
     // Solo abrir el modal si todos los campos están llenos
     if (!newErrors.problemaSalud && !newErrors.sede && !newErrors.turno) {
+      eventRegisterGtm("booking_start")
       openReservationModal();
     }
   };

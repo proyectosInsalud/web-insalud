@@ -10,6 +10,7 @@ import { Button } from "../ui/button"
 import { useState } from "react"
 import { toast } from "sonner"
 import { fbqTrack } from "@/lib/fbq"
+import { eventRegisterGtm } from "@/lib/utils"
 
 export const FormSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -56,7 +57,8 @@ export const FormSection = () => {
             if (!response.ok) {
                 throw new Error("Error al enviar el correo");
             }
-            toast.success("Cita agendada correctamente");
+            eventRegisterGtm("form_submission");
+            toast.success("Mensaje enviado correctamente");
             console.log("Datos enviados:", datosCompletos);
             fbqTrack("Lead", { source: "Formulario contacto" });
             console.log("fbq Lead enviado")

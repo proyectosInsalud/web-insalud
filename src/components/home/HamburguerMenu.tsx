@@ -1,6 +1,6 @@
 "use client";
 
-import { handleClickIntranet } from "@/lib/utils";
+import { eventRegisterGtm } from "@/lib/utils";
 import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,8 +61,8 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
             <div className="flex items-center gap-4">
               <div className="mt-auto">
                 <Link
-                    onClick={handleClickIntranet} 
-                    target="_blank" 
+                    onClick={() => eventRegisterGtm("btn-intranet")}
+                    target="_blank"
                     href="https://experience.insalud.pe/auth">
                   <button className="w-full bg-in-orange hover:bg-in-orange/90 text-white px-6 py-2 rounded-full transition-colors cursor-pointer">
                     <span className="font-semibold">Intranet</span>

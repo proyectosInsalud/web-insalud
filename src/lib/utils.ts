@@ -5,12 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function handleClickIntranet() {
+export function eventRegisterGtm(name:string) {
   // Notificacion a google tag manager
   if (typeof window !== "undefined") {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: "btn-intranet",
+      event: name,
     });
   }
 };

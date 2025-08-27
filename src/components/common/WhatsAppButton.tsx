@@ -1,5 +1,6 @@
 "use client";
 
+import { eventRegisterGtm } from "@/lib/utils";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -20,22 +21,14 @@ export const WhatsAppButton = ({
     message
   )}`;
 
-  const handleClick = () => {
-    if (typeof window !== "undefined") {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "whatsapp_floating_click",
-      });
-    }
-  };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50" onClick={handleClick}>
+    <div className="fixed bottom-6 right-6 z-50">
       <Link
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleClick}
+        onClick={() => eventRegisterGtm("whatsapp_floating_click")}
         className="relative flex items-center"
         aria-label="Contactar por WhatsApp"
       >

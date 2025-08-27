@@ -4,9 +4,15 @@ import { CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 // import Link from "next/link";
 import { useModalStore } from "@/store/modalStore";
+import { eventRegisterGtm } from "@/lib/utils";
 
 export const FeaturedSpecialties = () => {
   const { openReservationModal } = useModalStore();
+
+  const handleOpenReservationModal = () => {
+    eventRegisterGtm("booking_start")
+    openReservationModal()
+  }
 
   return (
     <div
@@ -53,7 +59,7 @@ export const FeaturedSpecialties = () => {
               <div className="flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4">
                 <Button
                   size={"personal"}
-                  onClick={() => openReservationModal()}
+                  onClick={handleOpenReservationModal}
                   className="text-white font-in-poppins font-normal bg-in-blue border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-xs md:text-base cursor-pointer w-1/2 text-center md:w-auto h-auto"
                 >
                   Reservar <span className="hidden xl:inline">ahora</span>
@@ -98,7 +104,7 @@ export const FeaturedSpecialties = () => {
               <div className="flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4 ">
                 <Button
                   size={"personal"}
-                  onClick={() => openReservationModal()}
+                  onClick={handleOpenReservationModal}
                   className="text-white font-in-poppins font-normal bg-in-blue border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-xs md:text-base cursor-pointer w-1/2 text-center md:w-auto h-auto"
                 >
                   Reservar <span className="hidden xl:inline">ahora</span>
@@ -142,7 +148,7 @@ export const FeaturedSpecialties = () => {
               <div className="flex items-center justify-start md:gap-6 gap-2 w-full md:mb-4 ">
                 <Button
                   size={"personal"}
-                  onClick={() => openReservationModal()}
+                  onClick={handleOpenReservationModal}
                   className="text-white font-in-poppins font-normal bg-in-blue border-in-blue border-2 md:px-4 md:py-2 rounded-full transition-all duration-150 hover:bg-in-blue/90 hover:text-white text-xs md:text-base cursor-pointer w-1/2 text-center md:w-auto h-auto"
                 >
                   Reservar <span className="hidden xl:inline">ahora</span>
