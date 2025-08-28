@@ -33,7 +33,6 @@ export const MedicTeam = () => {
             height={800} 
             className="w-full h-full object-cover"
             priority={false}
-            loading="lazy"
             quality={95}
             sizes="(max-width: 768px) 100vw, 50vw"
           />

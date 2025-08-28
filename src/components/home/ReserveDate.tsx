@@ -1,58 +1,94 @@
 "use client";
 
+import Image from "next/image";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+
 import { Button } from "@/components/ui/button";
-import { StyledSelect } from "@/components/ui/StyledSelect";
+// import { StyledSelect } from "@/components/ui/StyledSelect";
 import { problemasSalud } from "@/data/problemasSalud";
 import { sedesAccordion } from "@/data/sedesAccordion";
-import { turnos } from "@/data/turnos";
-import { eventRegisterGtm } from "@/lib/utils";
-import { useModalStore } from "@/store/modalStore";
-import { CalendarIcon } from "lucide-react";
+// import { sedesAccordion } from "@/data/sedesAccordion";
+// import { turnos } from "@/data/turnos";
+// import { eventRegisterGtm } from "@/lib/utils";
+// import { useModalStore } from "@/store/modalStore";
+// import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { CalendarDays, CalendarIcon, ChevronDownIcon } from "lucide-react";
+import { Calendar } from "../ui/calendar";
+import { Form, FormField, FormItem, FormMessage } from "../ui/form";
+import { useForm } from "react-hook-form";
+import { FormPreReservationType } from "@/types";
+import { formPreReservationSchema } from "@/schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 // import { cdn } from "@/utils/cdn"
 
 export const ReserveDate = () => {
-  const {
-    reservationData,
-    setProblemaSalud,
-    setSede,
-    setTurno,
-    openReservationModal,
-  } = useModalStore();
+  const [openCallendar, setOpenCallendar] = useState(false);
+  const [date, setDate] = useState<Date | undefined>(undefined);
 
-  const [errors, setErrors] = useState({
-    problemaSalud: false,
-    sede: false,
-    turno: false,
+  const form = useForm<FormPreReservationType>({
+    resolver: zodResolver(formPreReservationSchema),
+    defaultValues: {
+      consultaMedica: "",
+      sede: "",
+      date: undefined,
+    },
   });
 
-  const handleReservar = () => {
-    // Mostrar errores visuales para campos vacíos
-    const newErrors = {
-      problemaSalud: !reservationData.problemaSalud,
-      sede: !reservationData.sede,
-      turno: !reservationData.turno,
-    };
-
-    setErrors(newErrors);
-
-    // Solo abrir el modal si todos los campos están llenos
-    if (!newErrors.problemaSalud && !newErrors.sede && !newErrors.turno) {
-      eventRegisterGtm("booking_start")
-      openReservationModal();
-    }
+  const onSubmit = (data: FormPreReservationType) => {
+    console.log(data);
   };
+
+  // const {
+  //   reservationData,
+  //   setProblemaSalud,
+  //   setSede,
+  //   setTurno,
+  //   openReservationModal,
+  // } = useModalStore();
+
+  // const [errors, setErrors] = useState({
+  //   problemaSalud: false,
+  //   sede: false,
+  //   turno: false,
+  // });
+
+  // const handleReservar = () => {
+  //   // Mostrar errores visuales para campos vacíos
+  //   const newErrors = {
+  //     problemaSalud: !reservationData.problemaSalud,
+  //     sede: !reservationData.sede,
+  //     turno: !reservationData.turno,
+  //   };
+
+  //   setErrors(newErrors);
+
+  //   // Solo abrir el modal si todos los campos están llenos
+  //   if (!newErrors.problemaSalud && !newErrors.sede && !newErrors.turno) {
+  //     eventRegisterGtm("booking_start")
+  //     openReservationModal();
+  //   }
+  // };
 
   return (
     <div className="px-4 pt-24 space-y-8">
-      <h2 className="text-center hidden md:block text-in-blue-dark font-in-nunito md:text-3xl lg:text-4xl xl:text-5xl font-bold">Encuentra tu tratamiento en InSalud</h2>
+      <h2 className="text-center hidden md:block text-in-blue-dark font-in-nunito md:text-3xl lg:text-4xl xl:text-5xl font-bold">
+        Encuentra tu tratamiento en InSalud
+      </h2>
       <section
         className="grid max-w-5xl container mx-auto grid-cols-1 gap-y-8 md:gap-y-0 md:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
         style={{ boxShadow: "0 4px 24px rgba(0, 180, 216, 0.20)" }}
       >
         <div className="grid gap-y-4 grid-cols-1 col-span-1 md:gap-y-0 md:grid-cols-3 md:col-span-9 gap-x-2">
           {/* Problema de Salud */}
-          <div className="flex flex-col gap-2 md:gap-0 col-span-1">
+          {/* <div className="flex flex-col gap-2 md:gap-0 col-span-1">
             <StyledSelect
               options={problemasSalud}
               placeholder="Consulta médica"
@@ -73,10 +109,10 @@ export const ReserveDate = () => {
                 Selecciona un problema de salud
               </p>
             )}
-          </div>
+          </div> */}
 
           {/* Sede */}
-          <div className="flex flex-col gap-2 col-span-1">
+          {/* <div className="flex flex-col gap-2 col-span-1">
             <StyledSelect
               options={sedesAccordion.map((sede) => ({
                 id: sede.id,
@@ -98,10 +134,10 @@ export const ReserveDate = () => {
             {errors.sede && (
               <p className="text-red-500 text-xs">Selecciona una sede</p>
             )}
-          </div>
+          </div> */}
 
           {/* Turno */}
-          <div className="flex flex-col gap-2 col-span-1">
+          {/* <div className="flex flex-col gap-2 col-span-1">
             <StyledSelect
               options={turnos}
               placeholder="Turno"
@@ -120,11 +156,11 @@ export const ReserveDate = () => {
             {errors.turno && (
               <p className="text-red-500 text-xs">Selecciona un turno</p>
             )}
-          </div>
+          </div> */}
         </div>
 
         {/* Botón Reservar */}
-        <div className="md:col-span-3">
+        {/* <div className="md:col-span-3">
           <Button
             onClick={handleReservar}
             size={"personal"}
@@ -133,7 +169,128 @@ export const ReserveDate = () => {
             <CalendarIcon className="w-6 h-4 mr-2" />
             Reservar ahora
           </Button>
-        </div>
+        </div> */}
+      </section>
+
+      <section>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="grid max-w-5xl container mx-auto shadow-[0_4px_24px_rgba(0,180,216,0.20)] grid-cols-1 gap-y-8 md:gap-y-0 md:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
+          >
+            <div className="grid gap-y-4 grid-cols-1 col-span-1 md:gap-y-0 md:grid-cols-3 md:col-span-9 gap-x-2">
+              <FormField
+                control={form.control}
+                name="consultaMedica"
+                render={({ field }) => (
+                  <FormItem>
+                    <Select
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger className="w-full relative font-in-nunito py-6 pl-12 text-sm">
+                        <div>
+                          <Image
+                            src={"/svg/doctor-problema.svg"}
+                            alt="Consulta medica"
+                            width={20}
+                            height={20}
+                            className="absolute left-4"
+                          />
+                          <SelectValue placeholder="Consulta medica" />
+                        </div>
+                      </SelectTrigger>
+
+                      <SelectContent>
+                        {problemasSalud.map((problema) => (
+                          <SelectItem key={problema.id} value={problema.value}>
+                            {problema.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="consultaMedica"
+                render={({ field }) => (
+                  <FormItem>
+                    <Select onValueChange={field.onChange}
+                      defaultValue={field.value}>
+                      <SelectTrigger className="w-full relative font-in-nunito py-6 pl-12 text-sm">
+                        <div>
+                          <Image
+                            src={"/svg/icono-sede.svg"}
+                            alt="Consulta medica"
+                            width={20}
+                            height={20}
+                            className="absolute left-4"
+                          />
+                          <SelectValue placeholder="Sede" />
+                        </div>
+                      </SelectTrigger>
+
+                      <SelectContent>
+                        {sedesAccordion.map((sede) => (
+                          <SelectItem key={sede.id} value={sede.name}>
+                            {sede.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Popover open={openCallendar} onOpenChange={setOpenCallendar}>
+                <PopoverTrigger className="relative py-3.5 md:py-3" asChild>
+                  <Button
+                    variant="outline"
+                    id="date"
+                    className="w-full h-full hover:text-in-gray-base text-in-gray-base font-in-nunito justify-between font-normal"
+                  >
+                    <p className="pl-9 ">
+                      {date ? date.toLocaleDateString() : "Fecha"}
+                    </p>
+
+                    <CalendarDays className="w-4 h-4 left-4 absolute text-in-cyan" />
+                    <ChevronDownIcon className="text-in-gray-light" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent
+                  className="w-auto overflow-hidden p-0"
+                  align="start"
+                >
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    captionLayout="dropdown"
+                    onSelect={(date) => {
+                      setDate(date);
+                      setOpenCallendar(false);
+                    }}
+                  />
+                </PopoverContent>
+              </Popover>
+            </div>
+            <div className="md:col-span-3">
+              <Button
+                // onClick={handleReservar}
+                type="submit"
+                size={"personal"}
+                className="w-full h-full py-3 text-base cursor-pointer font-in-poppins hover:bg-in-cyan bg-in-cyan/90 rounded-full"
+              >
+                <CalendarIcon className="w-6 h-4 mr-2" />
+                Reservar ahora
+              </Button>
+            </div>
+          </form>
+        </Form>
       </section>
     </div>
   );

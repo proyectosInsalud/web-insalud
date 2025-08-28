@@ -10,22 +10,62 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async headers() {
+    return [
+      // Noindex global para el host del CDN
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "cdn.insalud.pe" }],
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive, nosnippet",
+          },
+        ],
+      },
+    ];
+  },
+
   async redirects() {
     return [
       // Viejas URLs del WP -> tus 4 vistas reales
       { source: "/blog", destination: "/", permanent: true },
       { source: "/como-me-atiendo", destination: "/contacto", permanent: true },
-      { source: "/deberes-y-derechos-del-paciente", destination: "/", permanent: true },
+      {
+        source: "/deberes-y-derechos-del-paciente",
+        destination: "/",
+        permanent: true,
+      },
       { source: "/diagnostico", destination: "/diagnosticos", permanent: true },
       { source: "/empleabilidad", destination: "/", permanent: true },
-      { source: "/libro-de-reclamaciones", destination: "/contacto", permanent: true },
+      {
+        source: "/libro-de-reclamaciones",
+        destination: "/contacto",
+        permanent: true,
+      },
       { source: "/noisotros", destination: "/", permanent: true },
       { source: "/nosotros", destination: "/", permanent: true },
       { source: "/sedes", destination: "/contacto", permanent: true },
-      { source: "/jesusmaria-chequeo-prostatico-2/", destination: "/contacto", permanent: true },
-      { source: "/jesusmaria-chequeo-prostatico-2", destination: "/", permanent: true },
-      { source: "/jesusmaria-ondas-de-choque-1", destination: "/", permanent: true },
-      { source: "/jesusmaria-ondas-de-choque-2", destination: "/", permanent: true },
+      {
+        source: "/jesusmaria-chequeo-prostatico-2/",
+        destination: "/contacto",
+        permanent: true,
+      },
+      {
+        source: "/jesusmaria-chequeo-prostatico-2",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/jesusmaria-ondas-de-choque-1",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/jesusmaria-ondas-de-choque-2",
+        destination: "/",
+        permanent: true,
+      },
       // Media heredada de WordPress (evita imágenes rotas de enlaces antiguos)
       {
         source: "/wp-content/uploads/:path*",

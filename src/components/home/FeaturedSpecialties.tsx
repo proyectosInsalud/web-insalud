@@ -38,7 +38,6 @@ export const FeaturedSpecialties = () => {
               width={200}
               height={200}
               className="w-full h-full md:h-[240px] object-cover rounded-lg"
-              loading="lazy"
               quality={85}
               sizes="(max-width: 768px) 42vw, (max-width: 1024px) 50vw, 33vw"
             />
@@ -122,13 +121,12 @@ export const FeaturedSpecialties = () => {
         <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
-              src={"/images/tratamiento-disfuncion-erectil.png"}
+              src={"/images/tratamiento-prostatitis.png"}
               alt={"Disfunción Eréctil"}
               width={200}
               height={200}
               className="w-full h-full md:h-[240px] object-cover rounded-lg"
-              loading="lazy"
-              quality={85}
+              quality={95}
               sizes="(max-width: 768px) 42vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>

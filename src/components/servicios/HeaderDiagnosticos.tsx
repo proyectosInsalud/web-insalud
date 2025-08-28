@@ -11,7 +11,6 @@ export const HeaderDiagnosticos = () => {
           width={300}
           height={300}
           className="w-full h-full absolute -z-10 object-cover"
-          loading="lazy"
           unoptimized
         />
         <NavBar />

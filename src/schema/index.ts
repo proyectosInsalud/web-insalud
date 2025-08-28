@@ -1,5 +1,11 @@
 import { z } from "zod";
 
+export const formPreReservationSchema = z.object({
+  consultaMedica: z.string().min(1, { message: "La consulta médica es requerida" }),
+  sede: z.string().min(1, { message: "La sede es requerida" }),
+  date: z.string().min(1, { message: "La fecha es requerida" }),
+});
+
 export const formReservationSchema = z.object({
   nombres: z
     .string()
