@@ -20,10 +20,7 @@ export const ItemServiceInfo = ({ name, description }: ItemServiceInfoProps) => 
               {description}
             </p>
             <Link 
-              onClick={() => eventRegisterGtm("service_whatsapp_click", {
-                service_name: name,
-                interaction_type: "lead", 
-              })}
+              onClick={() => eventRegisterGtm("service_whatsapp_click")}
               target="_blank" 
               href={`https://wa.me/51957016010?text=${encodedMessage}`}>
               <Button

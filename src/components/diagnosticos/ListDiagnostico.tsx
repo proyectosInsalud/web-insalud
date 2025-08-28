@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Button } from "../ui/button";
 import tratamientos from "@/data/diagnosticos/tratamientos-detalle.json";
 import Link from "next/link";
+import { eventRegisterGtm } from "@/lib/utils";
 
 export const ListDiagnostico = () => {
   const categories = [
@@ -67,6 +68,7 @@ export const ListDiagnostico = () => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 mt-auto py-4 px-4">
                       <Link 
+                        onClick={() => eventRegisterGtm("service_whatsapp_click")}
                         href={`https://wa.me/+51957016010?text=Hola%2C%20vi%20su%20web%20de%20Insalud%20y%20quisiera%20información%20sobre%20el%20tratamiento%20de%20${encodeURIComponent(tratamiento.titulo)}`}
                         target="_blank"
                         rel="noopener noreferrer"
