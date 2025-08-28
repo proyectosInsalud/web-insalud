@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Button } from "../ui/button";
@@ -68,13 +69,16 @@ export const ListDiagnostico = () => {
                     </div>
                     <div className="flex flex-col md:flex-row gap-4 mt-auto py-4 px-4">
                       <Link 
-                        onClick={() => eventRegisterGtm("service_whatsapp_click")}
+                      onClick={() => eventRegisterGtm("service_whatsapp_click")}
                         href={`https://wa.me/+51957016010?text=Hola%2C%20vi%20su%20web%20de%20Insalud%20y%20quisiera%20información%20sobre%20el%20tratamiento%20de%20${encodeURIComponent(tratamiento.titulo)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full"
                       >
-                        <Button className={`${c.value === "mas-consultados" ? "border-2 border-white bg-[#F7FAFA1A] hover:bg-[#F7FAFA1A] " : "bg-in-cyan hover:bg-in-cyan"} w-full  text-white px-6 py-5 rounded-3xl cursor-pointer`}>
+                        <Button 
+                          className={`${c.value === "mas-consultados" ? "border-2 border-white bg-[#F7FAFA1A] hover:bg-[#F7FAFA1A] " : "bg-in-cyan hover:bg-in-cyan"} w-full  text-white px-6 py-5 rounded-3xl cursor-pointer`}
+                          
+                          >
                           Agendar cita
                         </Button>
                       </Link>
