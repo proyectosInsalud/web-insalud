@@ -1,11 +1,9 @@
 import { create } from "zustand";
 
 interface ReservationData {
-    tipoAtencion: string;
-    modalidad: string;
     problemaSalud: string;
     sede: string;
-    turno: string;
+    fecha: Date | null;
 }
 
 interface ModalStore {
@@ -17,16 +15,14 @@ interface ModalStore {
     setModalidad: (modalidad: string) => void;
     setProblemaSalud: (problema: string) => void;
     setSede: (sede: string) => void;
-    setTurno: (turno: string) => void;
+    setFecha: (fecha: Date | null) => void;
     resetReservationData: () => void;
 }
 
 const initialReservationData: ReservationData = {
-    tipoAtencion: '',
-    modalidad: '',
     problemaSalud: '',
     sede: '',
-    turno: ''
+    fecha: new Date(),  
 };
 
 export const useModalStore = create<ModalStore>((set) => ({
@@ -49,9 +45,8 @@ export const useModalStore = create<ModalStore>((set) => ({
     setSede: (sede: string) => set((state) => ({ 
         reservationData: { ...state.reservationData, sede: sede }
     })),
-    setTurno: (turno: string) => set((state) => ({ 
-        reservationData: { ...state.reservationData, turno: turno }
-    })),
+    setFecha: (fecha) =>
+    set((s) => ({ reservationData: { ...s.reservationData, fecha } })),
     resetReservationData: () => set({ reservationData: initialReservationData }),
 }))
 

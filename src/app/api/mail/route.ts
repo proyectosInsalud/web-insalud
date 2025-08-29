@@ -1,3 +1,4 @@
+import { formatFechaPeru } from "@/helpers/formatFechaPeru";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -24,6 +25,7 @@ const transporter = nodemailer.createTransport({
   socketTimeout: 30_000,
 });
 
+
 export async function POST(request: NextRequest) {
   try {
     const {
@@ -35,8 +37,10 @@ export async function POST(request: NextRequest) {
       problemaSalud,
       detalleConsulta,
       sede,
-      turno,
+      fecha,
     } = await request.json();
+
+    const fechaFormateada = formatFechaPeru(fecha);
 
     if (!nombres || !apellidos || !correo || !telefono) {
       return NextResponse.json(
@@ -50,15 +54,17 @@ export async function POST(request: NextRequest) {
 
     // Email de destino: si se proporciona gestorEmail, usar ese; sino usar el por defecto
     const destinatario = isTestRun
-  ? process.env.SMTP_USER    // 👉 tu buzón de pruebas
-  : (process.env.GESTOR_EMAIL || process.env.SMTP_USER);
+      ? process.env.SMTP_USER // 👉 tu buzón de pruebas
+      : process.env.GESTOR_EMAIL || process.env.SMTP_USER;
 
     // Configuración del correo
     const mailOptions = {
       from: process.env.SMTP_USER,
       to: destinatario,
-      replyTo: correo,  
-      subject: `${isTestRun ? "[STRESS] " : ""}Nueva Solicitud de Reserva - INSALUD`,
+      replyTo: correo,
+      subject: `${
+        isTestRun ? "[STRESS] " : ""
+      }Nueva Solicitud de Reserva - INSALUD`,
       headers: { "X-Test-Run": String(isTestRun) }, // para filtrar en tu buzón
       html: `
                 <div style="background: #f4f8fb; padding: 40px 0; font-family: 'Segoe UI', 'Arial', sans-serif; color: #1a237e;">
@@ -144,12 +150,12 @@ export async function POST(request: NextRequest) {
                                         : ""
                                     }
                                     ${
-                                      turno
+                                      fechaFormateada
                                         ? `
                                     <tr>
                                         <td style="padding: 12px 0;">
-                                            <strong style="color: #1976d2;">Turno:</strong>
-                                            <span style="color: #222; margin-left: 8px;">${turno}</span>
+                                            <strong style="color: #1976d2;">Fecha:</strong>
+                                            <span style="color: #222; margin-left: 8px;">${fechaFormateada}</span>
                                         </td>
                                     </tr>
                                     `

@@ -10,14 +10,10 @@ import {
 } from "../ui/select";
 
 import { Button } from "@/components/ui/button";
-// import { StyledSelect } from "@/components/ui/StyledSelect";
 import { problemasSalud } from "@/data/problemasSalud";
 import { sedesAccordion } from "@/data/sedesAccordion";
-// import { sedesAccordion } from "@/data/sedesAccordion";
-// import { turnos } from "@/data/turnos";
-// import { eventRegisterGtm } from "@/lib/utils";
-// import { useModalStore } from "@/store/modalStore";
-// import { CalendarIcon } from "lucide-react";
+import { eventRegisterGtm } from "@/lib/utils";
+import { useModalStore } from "@/store/modalStore";
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { CalendarDays, CalendarIcon, ChevronDownIcon } from "lucide-react";
@@ -27,11 +23,16 @@ import { useForm } from "react-hook-form";
 import { FormPreReservationType } from "@/types";
 import { formPreReservationSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-// import { cdn } from "@/utils/cdn"
 
 export const ReserveDate = () => {
   const [openCallendar, setOpenCallendar] = useState(false);
-  const [date, setDate] = useState<Date | undefined>(undefined);
+
+  const openReservationModal = useModalStore(
+    (state) => state.openReservationModal
+  );
+  const setProblemaSalud = useModalStore((state) => state.setProblemaSalud);
+  const setSede = useModalStore((state) => state.setSede);
+  const setFecha = useModalStore((state) => state.setFecha);
 
   const form = useForm<FormPreReservationType>({
     resolver: zodResolver(formPreReservationSchema),
@@ -42,17 +43,11 @@ export const ReserveDate = () => {
     },
   });
 
-  const onSubmit = (data: FormPreReservationType) => {
+  const handleReservar = (data: FormPreReservationType) => {
     console.log(data);
+    eventRegisterGtm("booking_start");
+    openReservationModal();
   };
-
-  // const {
-  //   reservationData,
-  //   setProblemaSalud,
-  //   setSede,
-  //   setTurno,
-  //   openReservationModal,
-  // } = useModalStore();
 
   // const [errors, setErrors] = useState({
   //   problemaSalud: false,
@@ -72,8 +67,8 @@ export const ReserveDate = () => {
 
   //   // Solo abrir el modal si todos los campos están llenos
   //   if (!newErrors.problemaSalud && !newErrors.sede && !newErrors.turno) {
-  //     eventRegisterGtm("booking_start")
-  //     openReservationModal();
+  //
+  //
   //   }
   // };
 
@@ -82,85 +77,9 @@ export const ReserveDate = () => {
       <h2 className="text-center hidden md:block text-in-blue-dark font-in-nunito md:text-3xl lg:text-4xl xl:text-5xl font-bold">
         Encuentra tu tratamiento en InSalud
       </h2>
-      <section
-        className="grid max-w-5xl container mx-auto grid-cols-1 gap-y-8 md:gap-y-0 md:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
-        style={{ boxShadow: "0 4px 24px rgba(0, 180, 216, 0.20)" }}
-      >
-        <div className="grid gap-y-4 grid-cols-1 col-span-1 md:gap-y-0 md:grid-cols-3 md:col-span-9 gap-x-2">
-          {/* Problema de Salud */}
-          {/* <div className="flex flex-col gap-2 md:gap-0 col-span-1">
-            <StyledSelect
-              options={problemasSalud}
-              placeholder="Consulta médica"
-              // icon={cdn("shared/iconos/u-doctor-problema.svg")}
-              icon="/svg/doctor-problema.svg"
-              name="problemaSalud"
-              id="problemaSalud"
-              value={reservationData.problemaSalud}
-              onChange={(value) => {
-                setProblemaSalud(value);
-                setErrors((prev) => ({ ...prev, problemaSalud: false }));
-              }}
-              ariaLabel="Seleccionar consulta medica"
-              className={errors.problemaSalud ? "border-red-500" : ""}
-            />
-            {errors.problemaSalud && (
-              <p className="text-red-500 text-xs mt-2">
-                Selecciona un problema de salud
-              </p>
-            )}
-          </div> */}
 
-          {/* Sede */}
-          {/* <div className="flex flex-col gap-2 col-span-1">
-            <StyledSelect
-              options={sedesAccordion.map((sede) => ({
-                id: sede.id,
-                name: sede.name,
-                value: sede.name,
-              }))}
-              placeholder="Sede"
-              icon="/svg/icono-sede.svg"
-              name="sede"
-              id="sede"
-              value={reservationData.sede}
-              onChange={(value) => {
-                setSede(value);
-                setErrors((prev) => ({ ...prev, sede: false }));
-              }}
-              ariaLabel="Seleccionar sede médica"
-              className={errors.sede ? "border-red-500" : ""}
-            />
-            {errors.sede && (
-              <p className="text-red-500 text-xs">Selecciona una sede</p>
-            )}
-          </div> */}
-
-          {/* Turno */}
-          {/* <div className="flex flex-col gap-2 col-span-1">
-            <StyledSelect
-              options={turnos}
-              placeholder="Turno"
-              // icon={cdn("shared/iconos/u-icono-turno.svg")}
-              icon="/svg/icono-turno.svg"
-              name="turno"
-              id="turno"
-              value={reservationData.turno}
-              onChange={(value) => {
-                setTurno(value);
-                setErrors((prev) => ({ ...prev, turno: false }));
-              }}
-              ariaLabel="Seleccionar turno de atención"
-              className={errors.turno ? "border-red-500" : ""}
-            />
-            {errors.turno && (
-              <p className="text-red-500 text-xs">Selecciona un turno</p>
-            )}
-          </div> */}
-        </div>
-
-        {/* Botón Reservar */}
-        {/* <div className="md:col-span-3">
+      {/* Botón Reservar */}
+      {/* <div className="md:col-span-3">
           <Button
             onClick={handleReservar}
             size={"personal"}
@@ -170,22 +89,24 @@ export const ReserveDate = () => {
             Reservar ahora
           </Button>
         </div> */}
-      </section>
 
       <section>
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="grid max-w-5xl container mx-auto shadow-[0_4px_24px_rgba(0,180,216,0.20)] grid-cols-1 gap-y-8 md:gap-y-0 md:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
+            onSubmit={form.handleSubmit(handleReservar)}
+            className="grid max-w-5xl container mx-auto shadow-[0_4px_24px_rgba(0,180,216,0.20)] grid-cols-1 gap-y-8 lg:gap-y-0 lg:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
           >
-            <div className="grid gap-y-4 grid-cols-1 col-span-1 md:gap-y-0 md:grid-cols-3 md:col-span-9 gap-x-2">
+            <div className="grid gap-y-4 grid-cols-1 col-span-1 lg:gap-y-0 lg:grid-cols-3 lg:col-span-9 gap-x-2">
               <FormField
                 control={form.control}
                 name="consultaMedica"
                 render={({ field }) => (
                   <FormItem>
                     <Select
-                      onValueChange={field.onChange}
+                      onValueChange={(v) => {
+                        field.onChange(v);
+                        setProblemaSalud(v);
+                      }}
                       defaultValue={field.value}
                     >
                       <SelectTrigger className="w-full relative font-in-nunito py-6 pl-12 text-sm">
@@ -216,12 +137,17 @@ export const ReserveDate = () => {
 
               <FormField
                 control={form.control}
-                name="consultaMedica"
+                name="sede"
                 render={({ field }) => (
                   <FormItem>
-                    <Select onValueChange={field.onChange}
-                      defaultValue={field.value}>
-                      <SelectTrigger className="w-full relative font-in-nunito py-6 pl-12 text-sm">
+                    <Select
+                      onValueChange={(v) => {
+                        field.onChange(v);
+                        setSede(v);
+                      }}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger className="overflow-hidden min-w-0 w-full relative font-in-nunito py-6 pl-12 text-sm">
                         <div>
                           <Image
                             src={"/svg/icono-sede.svg"}
@@ -230,7 +156,10 @@ export const ReserveDate = () => {
                             height={20}
                             className="absolute left-4"
                           />
-                          <SelectValue placeholder="Sede" />
+                          <SelectValue
+                            className="truncate"
+                            placeholder="Sede"
+                          />
                         </div>
                       </SelectTrigger>
 
@@ -247,40 +176,63 @@ export const ReserveDate = () => {
                 )}
               />
 
-              <Popover open={openCallendar} onOpenChange={setOpenCallendar}>
-                <PopoverTrigger className="relative py-3.5 md:py-3" asChild>
-                  <Button
-                    variant="outline"
-                    id="date"
-                    className="w-full h-full hover:text-in-gray-base text-in-gray-base font-in-nunito justify-between font-normal"
-                  >
-                    <p className="pl-9 ">
-                      {date ? date.toLocaleDateString() : "Fecha"}
-                    </p>
+              <FormField
+                control={form.control}
+                name="date"
+                render={({ field }) => (
+                  <FormItem>
+                    <Popover
+                      open={openCallendar}
+                      onOpenChange={setOpenCallendar}
+                    >
+                      <PopoverTrigger
+                        className="relative py-3.5 md:py-3"
+                        asChild
+                      >
+                        <Button
+                          variant="outline"
+                          id="date"
+                          className="w-full h-full hover:text-in-gray-base text-in-gray-base font-in-nunito justify-between font-normal"
+                        >
+                          <p className="pl-9 ">
+                            {field.value
+                              ? field.value.toLocaleDateString()
+                              : "Fecha"}
+                          </p>
 
-                    <CalendarDays className="w-4 h-4 left-4 absolute text-in-cyan" />
-                    <ChevronDownIcon className="text-in-gray-light" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent
-                  className="w-auto overflow-hidden p-0"
-                  align="start"
-                >
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    captionLayout="dropdown"
-                    onSelect={(date) => {
-                      setDate(date);
-                      setOpenCallendar(false);
-                    }}
-                  />
-                </PopoverContent>
-              </Popover>
+                          <CalendarDays className="w-4 h-4 left-4 absolute text-in-cyan" />
+                          <ChevronDownIcon className="text-in-gray-light" />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent
+                        className="w-auto overflow-hidden p-0"
+                        align="start"
+                      >
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={(date) => {
+                            field.onChange(date);
+                            setFecha(date || null);
+                          }}
+                          captionLayout="dropdown"
+                          disabled={(date) => {
+                            const startOfToday = new Date();
+                            startOfToday.setHours(0, 0, 0, 0);
+
+                            // ❌ deshabilita si es antes de hoy o si es domingo
+                            return date < startOfToday || date.getDay() === 0;
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
-            <div className="md:col-span-3">
+            <div className="col-span-full lg:col-span-3">
               <Button
-                // onClick={handleReservar}
                 type="submit"
                 size={"personal"}
                 className="w-full h-full py-3 text-base cursor-pointer font-in-poppins hover:bg-in-cyan bg-in-cyan/90 rounded-full"

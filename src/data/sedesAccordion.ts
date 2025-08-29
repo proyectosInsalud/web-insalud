@@ -13,7 +13,7 @@ export const sedesAccordion = [
     },
     {
         id: 3,
-        name: "Sur - San Juan de Miraflores",
+        name: "San Juan de Miraflores",
         description: "Av. José C. Mariátegui Mz J • Lote 27, San Juan de Miraflores 15801",
         link: "https://maps.app.goo.gl/1234567890"
     },

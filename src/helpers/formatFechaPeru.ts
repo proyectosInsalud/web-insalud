@@ -1,0 +1,23 @@
+export function formatFechaPeru(f?: string | Date): string {
+  if (!f) return "";
+  const raw = typeof f === "string" ? f.trim() : f;
+
+  let date: Date;
+  if (typeof raw === "string" && /^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    const [y, m, d] = raw.split("-").map(Number);
+    date = new Date(Date.UTC(y, m - 1, d));
+  } else if (raw instanceof Date) {
+    date = raw;
+  } else {
+    date = new Date(raw);
+  }
+  if (isNaN(date.getTime())) return "";
+
+  return new Intl.DateTimeFormat("es-PE", {
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    timeZone: "America/Lima",
+  }).format(date);
+}
