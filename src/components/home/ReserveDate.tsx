@@ -113,7 +113,7 @@ export const ReserveDate = () => {
                         <div>
                           <Image
                             src={"/svg/doctor-problema.svg"}
-                            alt="Consulta medica"
+                            alt="icono urologo"
                             width={20}
                             height={20}
                             className="absolute left-4"
@@ -151,7 +151,7 @@ export const ReserveDate = () => {
                         <div>
                           <Image
                             src={"/svg/icono-sede.svg"}
-                            alt="Consulta medica"
+                            alt="Icono sede"
                             width={20}
                             height={20}
                             className="absolute left-4"

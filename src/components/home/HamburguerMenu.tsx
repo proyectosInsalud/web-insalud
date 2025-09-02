@@ -53,7 +53,7 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
             >
               <Image
                 src={cdn("/shared/logos/u-insalud-white.svg")}
-                alt="logo"
+                alt="logo insalud"
                 width={120}
                 height={28}
               />

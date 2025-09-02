@@ -7,7 +7,7 @@ type BreadcrumbProps = {
 
 export const BreadCrumbInsa = ({ title }: BreadcrumbProps) => {
   return (
-    <div className='max-w-7xl px-4 mx-auto container py-4'>
+    <div className='max-w-7xl px-4 mx-auto text-sm container py-4'>
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>

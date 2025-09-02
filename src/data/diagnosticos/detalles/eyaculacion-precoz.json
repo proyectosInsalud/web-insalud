@@ -19,9 +19,5 @@
     "4. Recomendaciones inmediatas y plan de manejo personalizado.",
     "5. Opciones terapéuticas explicadas (conductuales, tópicos, fármacos)."
   ],
-  "duracion": "30 minutos. 1 sesion por mes",
-  "prices": {
-    "ahora": 310,
-    "antes": 350
-  }
+  "duracion": "30 minutos. 1 sesion por mes"
 }

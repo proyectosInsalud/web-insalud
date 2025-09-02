@@ -8,6 +8,7 @@ import { MedicTeam } from "@/components/home/MedicTeam";
 import { PlacesMedic } from "@/components/home/PlacesMedic";
 import { AllAboutInsalud } from "@/components/home/AllAboutInsalud";
 import { ReservationModal } from "@/components/common/ReservationModal";
+import { testimonials } from "@/data/testimonials";
 
 // app/(root)/page.tsx o app/layout.tsx
 export const metadata = {
@@ -89,7 +90,7 @@ export default function Home() {
         <MedicTeam />
         <PlacesMedic />
         <AllAboutInsalud />
-        <Testimonials />
+        <Testimonials testimonials={testimonials} />
       </main>
 
       {/* Modal de reserva */}

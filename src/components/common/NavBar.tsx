@@ -23,7 +23,7 @@ export const NavBar = () => {
           <Link href="/">
             <Image
               src={cdn("/shared/logos/u-insalud-white.svg")}
-              alt="logo"
+              alt="logo insalud"
               width={150}
               height={28}
               className="w-full h-full"

@@ -15,7 +15,7 @@ export const HeaderBannerPage = ({ title1,title2,paragraph,paragraph2,image }: H
       <div className="relative">
         <Image
           src={image}
-          alt="banner de diagnósticos"
+          alt="Laboratorio de muestras urológicas"
           width={900}
           height={300}
           className="w-full h-full absolute -z-10 object-cover"

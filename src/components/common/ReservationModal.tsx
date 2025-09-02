@@ -100,7 +100,7 @@ export function ReservationModal() {
         <SheetHeader>
           <Image
             src={cdn("/web/home/main/sheet-image.png")}
-            alt="banner de laboratorio"
+            alt="laboratorio de urología"
             width={800}
             height={100}
             className="w-full"

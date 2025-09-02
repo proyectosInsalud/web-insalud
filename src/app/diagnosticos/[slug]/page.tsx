@@ -5,7 +5,7 @@ import { TypeDiagnostico } from "@/types";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { NavBarIntern } from "@/components/common/NavBarIntern";
 import { BreadCrumbInsa } from "@/components/common/BreadCrumbInsa";
-import { DiagnosticPDPHero } from "@/components/diagnostico/DiagnosticPDPHero";
+// import { DiagnosticPDPHero } from "@/components/diagnostico/DiagnosticPDPHero";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -41,13 +41,15 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
       <CintilloBarra/>
       <NavBarIntern />
       <BreadCrumbInsa title={tratamiento.title}/>
-      <DiagnosticPDPHero
+      {/* <DiagnosticPDPHero
         images={tratamiento.images}
         title={tratamiento.title}
         pasos={tratamiento.pasosDiagnostico}
         duracion={tratamiento.duracion}
-      />
-
+      /> */}
+      <section>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iure expedita doloremque veritatis debitis, quos, quo tenetur, consequuntur quaerat deserunt voluptatibus nisi explicabo beatae quasi omnis aspernatur. Soluta, voluptates ullam!
+      </section>
     </>
   );
 }

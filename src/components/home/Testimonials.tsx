@@ -1,10 +1,14 @@
 "use client"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/components/ui/carousel"
-import { testimonials } from "@/data/testimonials"
+import { TestimonialSchemaType } from "@/types"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 
-export const Testimonials = () => {
+type TestimonialsProps = {
+    testimonials: TestimonialSchemaType[]
+}
+
+export const Testimonials = ({ testimonials }: TestimonialsProps) => {
     const [api, setApi] = useState<CarouselApi>()
     const [current, setCurrent] = useState(0)
     const [count, setCount] = useState(0)
@@ -47,7 +51,7 @@ export const Testimonials = () => {
 
                                                     <div>
                                                         <p className="font-semibold">{testimonial.name}</p>
-                                                        <p className="text-sm text-in-gray">{testimonial.anio}</p>
+                                                        <p className="text-sm text-in-gray">{testimonial.meta}</p>
                                                     </div>
                                                 </div>
                                             </div>

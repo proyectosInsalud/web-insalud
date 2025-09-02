@@ -10,14 +10,22 @@ export const NavBarIntern = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="max-w-7xl mx-auto px-4">
-      <div className="flex py-4 justify-between items-center">
+    <header className="max-w-7xl mx-auto">
+      <div className="flex py-4 justify-between items-center md:from-transparent md:to-transparent bg-gradient-to-b from-black/40 to-black/0 px-4">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/svg/logo-insalud-color.svg"
-            alt="Logo"
+            alt="Logo Insalud"
             width={160}
-            height={160}
+            height={24}
+            className="hidden md:block"
+          />
+          <Image
+            src="/svg/logo-insalud-white.svg"
+            alt="Logo Insalud"
+            width={160}
+            height={24}
+            className="md:hidden"
           />
         </Link>
         <div className="gap-6 font-medium font-in-nunito hidden lg:flex">
@@ -67,7 +75,7 @@ export const NavBarIntern = () => {
             onClick={() => eventRegisterGtm("btn-intranet")}
           >
             <Button
-              className="bg-in-orange hover:bg-in-orange/90 cursor-pointer font-in-poppins text-black rounded-full font-semibold py-2 text-sm px-12"
+              className="hidden sm:block bg-in-orange hover:bg-in-orange/90 cursor-pointer font-in-poppins text-black rounded-full font-semibold py-2 text-sm px-12"
               size={"personal"}
             >
               Intranet
@@ -77,9 +85,9 @@ export const NavBarIntern = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="flex md:hidden flex-col items-end gap-1 cursor-pointer"
           >
-            <div className="w-10 h-1 rounded-full bg-black"></div>
-            <div className="w-8 h-1 rounded-full bg-black"></div>
-            <div className="w-6 h-1 rounded-full bg-black"></div>
+            <div className="w-10 h-1 rounded-full bg-white"></div>
+            <div className="w-8 h-1 rounded-full bg-white"></div>
+            <div className="w-6 h-1 rounded-full bg-white"></div>
           </div>
         </div>
         <HamburguerMenu isOpen={isOpen} setIsOpen={setIsOpen} />

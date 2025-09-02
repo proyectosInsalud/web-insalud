@@ -77,7 +77,7 @@ export const FeaturedSpecialties = () => {
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
               src={"/images/tratamiento-vph.png"}
-              alt={"Disfunción Eréctil"}
+              alt={"Tratamiento del Virus del Papiloma Humano (VPH)"}
               width={200}
               height={200}
               className="w-full h-full md:h-[240px] object-cover rounded-lg"
@@ -122,7 +122,7 @@ export const FeaturedSpecialties = () => {
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
               src={"/images/tratamiento-prostatitis.png"}
-              alt={"Disfunción Eréctil"}
+              alt={"Tratamiento de la Prostatitis"}
               width={200}
               height={200}
               className="w-full h-full md:h-[240px] object-cover rounded-lg"

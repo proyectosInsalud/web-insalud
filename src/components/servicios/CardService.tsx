@@ -56,7 +56,7 @@ export const CardService = ({ name, image, description }: CardServiceProps) => {
         <article className="w-full rounded-xl border data-[state=open]:border-b-0 data-[state=open]:rounded-b-none p-4 cursor-pointer">
           <Image
             src={image}
-            alt="Description of image"
+            alt={name}
             width={200}
             height={100}
             className="w-full rounded-lg"

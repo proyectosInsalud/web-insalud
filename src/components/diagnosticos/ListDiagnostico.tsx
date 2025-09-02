@@ -16,10 +16,7 @@ export const ListDiagnostico = () => {
 
   return (
     <section className="max-w-7xl container mx-auto px-4 py-4 md:py-12 space-y-4">
-      <div className="text-center text-in-blue-title space-y-2">
-        {/* <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold">Diagnósticos confiables para tu salud íntima</h1>
-        <p className="font-in-poppins">Evaluación precisa, trato cercano y opciones de tratamiento claras.</p> */}
-      </div>
+  
       <Tabs defaultValue="mas-consultados">
         <div  className="-mx-4 px-4
                 overflow-x-auto overflow-y-hidden

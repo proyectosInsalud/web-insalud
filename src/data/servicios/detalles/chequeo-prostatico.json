@@ -1,0 +1,151 @@
+{
+  "title": "Ondas de Choque",
+  "slug": "disfuncion-erectil-ondas-de-choque",
+  "summary": "Tratamiento no invasivo y seguro con ondas de choque de baja intensidad para mejorar la función eréctil.",
+  "hero": {
+    "badge": "No invasivo",
+    "progressPct": 10,
+    "heading": "Recupera tu vida sexual con tecnología de ondas de choque",
+    "subheading": "Tratamiento no invasivo, seguro y clínicamente comprobado para la disfunción eréctil.",
+    "cta": { "text": "Agendar Evaluación Gratuita", "href": "/reservar" },
+    "image": {
+      "src": "/images/servicios/chequeo-prostatico/hero.png",
+      "alt": "Pareja preocupada por la disfunción eréctil"
+    }
+  },
+  "proceso": {
+    "title": "Proceso del Tratamiento",
+    "items": [
+      "Evaluación inicial: consulta con urólogo especializado.",
+      "Sesiones de ondas de choque: aplicaciones de 15–20 minutos, sin dolor y sin necesidad de anestesia.",
+      "Seguimiento: control de avances y recomendaciones personalizadas.",
+      "Recomendaciones inmediatas y plan de manejo personalizado."
+    ],
+    "duration": "Generalmente se requieren entre 6 a 12 sesiones según el diagnóstico."
+  },
+  "impacto": {
+    "lead": "La disfunción eréctil afecta a más del",
+    "suffix": "50% de los hombres mayores de 40 años.",
+    "description": "El tratamiento con ondas de choque de baja intensidad es una terapia innovadora que estimula la regeneración de vasos sanguíneos, mejora la circulación y favorece la recuperación natural de la función eréctil sin necesidad de medicamentos ni cirugía."
+  },
+  "benefitsGrid": [
+    {
+      "title": "Seguro y efectivo",
+      "description": "No invasivo y sin efectos secundarios.",
+      "image": {
+        "src": "/images/servicios/chequeo-prostatico/beneficio-1.png",
+        "alt": "Beneficio 1"
+      }
+    },
+    {
+      "title": "Resultados visibles",
+      "description": "Mejora la erección de forma progresiva y permanente.",
+      "image": {
+        "src": "/images/servicios/chequeo-prostatico/beneficio-2.png",
+        "alt": "Beneficio 2"
+      } 
+    },
+    {
+      "title": "Sin dolor",
+      "description": "Tecnología de última generación que minimiza molestias.",
+      "image": {
+        "src": "/images/servicios/chequeo-prostatico/beneficio-3.png",
+        "alt": "Beneficio 3"
+      }
+    },
+    {
+      "title": "Rápido retorno",
+      "description": "Vuelve a tu rutina al instante.",
+      "image": {
+        "src": "/images/servicios/chequeo-prostatico/beneficio-4.png",
+        "alt": "Beneficio 4"
+      }
+    }
+  ],
+  "beneficiosDetalle": {
+    "title": "Conoce los beneficios que te ofrecen las",
+    "titleHighlight": "Ondas de Choque",
+    "bullets": [
+      "Mejora de la microvascularización y oxigenación del tejido eréctil.",
+      "Estimulación de factores de crecimiento y neoangiogénesis.",
+      "Puede usarse como alternativa o complemento a fármacos PDE5."
+    ]
+  },
+  "respaldoMedico": {
+    "title": "Respaldo",
+    "titleHighlight": "médico",
+    "note": "Tecnología avalada por la evidencia clínica internacional y aplicada por especialistas en urología y medicina sexual.",
+    "cta": { "text": "Reserva tu consulta inicial ahora", "href": "/reservar" },
+    "image": {
+      "src": "/images/servicios/chequeo-prostatico/medical-support.png",
+      "alt": "Equipo médico especializado en urología"
+    }
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Salvador Hilares",
+      "description": "Volví a tener erecciones firmes sin depender siempre de pastillas.",
+      "image": "/images/testimonios/walter.png",
+      "meta": "Paciente InSalud, 24 años"
+    },
+    {
+      "id": 2,
+      "name": "Salvador Hilares",
+      "description": "Volví a tener erecciones firmes sin depender siempre de pastillas.",
+      "image": "/images/testimonios/walter.png",
+      "meta": "Paciente InSalud, 24 años"
+    },
+    {
+      "id": 3,
+      "name": "Salvador Hilares",
+      "description": "Volví a tener erecciones firmes sin depender siempre de pastillas.",
+      "image": "/images/testimonios/walter.png",
+      "meta": "Paciente InSalud, 24 años"
+    }
+  ],
+  "faq": [
+    {
+      "q": "¿El procedimiento duele?",
+      "a": "No. Se percibe como pequeños golpecitos; no requiere anestesia."
+    },
+    {
+      "q": "¿Cuándo veo resultados?",
+      "a": "Muchos pacientes notan mejoras entre la 3.ª y 6.ª semana; el máximo beneficio se observa al completar las sesiones."
+    },
+    {
+      "q": "¿Hay riesgos?",
+      "a": "Bajos y locales (enrojecimiento leve o sensibilidad transitoria). Se evalúa cada caso antes de iniciar."
+    }
+  ],
+  "equipo": {
+    "title": "Equipo médico y tecnología",
+    "description": "InSalud utiliza equipos de última generación, aprobados internacionalmente, aplicados por especialistas en urología y medicina regenerativa.",
+    "image": {
+      "src": "/images/servicios/chequeo-prostatico/equipo.png",
+      "alt": "Equipo de ondas de choque para disfunción eréctil"
+    },
+    "badges": ["Seguridad", "Certificación FDA del producto"]
+  },
+  "ctaFinal": {
+    "text": "Recupera tu confianza y tu vida sexual",
+    "subtext": "Más de 6,000 pacientes tratados en Perú y Latinoamérica.",
+    "button": { "text": "Agenda tu cita hoy mismo", "href": "/reservar" }
+  },
+  "media": [
+    {
+      "src": "/images/servicios/disfuncion-erectil/ejemplo-1.png",
+      "alt": "Aplicación de ondas de choque"
+    }
+  ],
+  "highlights": [
+    { "label": "Pacientes atendidos", "value": "6,000+" },
+    { "label": "Especialistas", "value": "20+" }
+  ],
+  "seo": {
+    "title": "Ondas de choque para disfunción eréctil | InSalud",
+    "description": "Tratamiento no invasivo y con respaldo médico para mejorar la función eréctil. Agenda tu evaluación.",
+    "canonical": "https://insalud.pe/diagnosticos/disfuncion-erectil-ondas-de-choque",
+    "ogImage": "/og/disfuncion-erectil-ondas-de-choque.png"
+  }
+}

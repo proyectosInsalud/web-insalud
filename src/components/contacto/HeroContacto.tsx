@@ -6,7 +6,7 @@ export const HeroContacto = () => {
     <div className="relative">
         <Image
           src="/images/banner-contacto.png"
-          alt="banner de diagnósticos"
+          alt="Persona marcando telefono"
           width={300}
           height={300}
           className="w-full h-full hidden md:block absolute -z-10 object-cover"
@@ -15,7 +15,7 @@ export const HeroContacto = () => {
         />
         <Image
           src="/images/banner-contacto-mobile.png"
-          alt="banner de diagnósticos"
+          alt="Persona marcando telefono"
           width={300}
           height={300}
           className="w-full h-full md:hidden absolute -z-10 object-cover"

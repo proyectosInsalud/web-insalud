@@ -7,7 +7,7 @@ export const HeaderDiagnosticos = () => {
         <div className="relative">
         <Image
           src="/images/banner-diagnosticos.png"
-          alt="banner de diagnósticos"
+          alt="laboratorio de muestras urologicas"
           width={300}
           height={300}
           className="w-full h-full absolute -z-10 object-cover"

@@ -36,7 +36,7 @@ export const CardTypeService = ({
             className="w-12 h-12 flex items-center justify-center rounded-full" 
             style={{ backgroundColor: colorIcon === "#FFFFFF" ? "rgba(255,255,255,0.2)" : "rgba(50,119,225,0.2)" }}
           >
-            <Image src={iconImage} alt="" width={24} height={24} className="w-6 h-6" />
+            <Image src={iconImage} alt={title} width={24} height={24} className="w-6 h-6" />
           </div>
         </div>
         
