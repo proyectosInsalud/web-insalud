@@ -24,20 +24,20 @@ export const metadata: Metadata = {
     "Lima"
   ],
   alternates: {
-    canonical: "https://www.insalud.pe/diagnosticos"
+    canonical: "/diagnosticos"
   },
   openGraph: {
     title: "Diagnósticos de Urología Confiables | InSalud",
     description:
       "Evaluación integral de disfunciones sexuales e infecciones ITS. Urólogos certificados, tecnología avanzada y opciones de tratamiento claras.",
-    url: "https://www.insalud.pe/diagnosticos",
+    url: "https://insalud.pe/diagnosticos",
     siteName: "InSalud",
     locale: "es_PE",
     type: "website",
     // images: [
     //   {
-    //     url: "https://www.insalud.pe/og/diagnosticos-1200x630.jpg",
-    //     secureUrl: "https://www.insalud.pe/og/diagnosticos-1200x630.jpg",
+    //     url: "https://insalud.pe/og/diagnosticos-1200x630.jpg",
+    //     secureUrl: "https://insalud.pe/og/diagnosticos-1200x630.jpg",
     //     width: 1200,
     //     height: 630,
     //     alt:
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Diagnósticos de Urología Confiables | InSalud",
     description:
       "Urólogos en Lima para disfunción eréctil, eyaculación precoz, prostatitis crónica e ITS. Resultados precisos y atención cercana.",
-    // images: ["https://www.insalud.pe/og/diagnosticos-1200x630.jpg"],
+    // images: ["https://insalud.pe/og/diagnosticos-1200x630.jpg"],
     creator: "@insalud_pe" // opcional si tienen cuenta en X/Twitter
   },
   robots: {

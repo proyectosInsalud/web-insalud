@@ -21,20 +21,20 @@ export const metadata: Metadata = {
     "urología"
   ],
   alternates: {
-    canonical: "https://www.insalud.pe/contacto"
+    canonical: "/contacto"
   },
   openGraph: {
     title: "Contacto y Citas | InSalud",
     description:
       "Agenda tu consulta urológica en nuestras clínicas. Escríbenos o llama y recibe atención clara y personalizada.",
-    url: "https://www.insalud.pe/contacto",
+    url: "https://insalud.pe/contacto",
     siteName: "InSalud",
     locale: "es_PE",
     type: "website",
     // images: [
     //   {
-    //     url: "https://www.insalud.pe/og/contacto-1200x630.jpg",
-    //     secureUrl: "https://www.insalud.pe/og/contacto-1200x630.jpg",
+    //     url: "https://insalud.pe/og/contacto-1200x630.jpg",
+    //     secureUrl: "https://insalud.pe/og/contacto-1200x630.jpg",
     //     width: 1200,
     //     height: 630,
     //     alt: "Contacto InSalud: agenda tu cita en nuestras clínicas de urología en Lima"
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Contacto y Citas | InSalud",
     description:
       "Agenda tu cita con nuestros urólogos en Lima. Contáctanos por WhatsApp, teléfono o formulario.",
-    // images: ["https://www.insalud.pe/og/contacto-1200x630.jpg"],
+    // images: ["https://insalud.pe/og/contacto-1200x630.jpg"],
     creator: "@insalud_pe"
   },
   robots: {

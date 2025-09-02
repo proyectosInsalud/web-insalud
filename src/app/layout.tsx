@@ -48,6 +48,7 @@ export const metadata: Metadata = {
   authors: [{ name: "InSalud" }],
   publisher: "InSalud",
   metadataBase: new URL("https://insalud.pe"),
+  alternates: { canonical: "/" },
   robots: "index, follow",
   openGraph: {
     title: "InSalud - Centro Médico Especializado",

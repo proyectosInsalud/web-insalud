@@ -28,6 +28,14 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // 👇 Fuerza canónico sin www (cámbialo si quieres www como canónico)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.insalud.pe" }],
+        destination: "https://insalud.pe/:path*",
+        permanent: true,
+      },
+
       // Viejas URLs del WP -> tus 4 vistas reales
       { source: "/blog", destination: "/", permanent: true },
       { source: "/como-me-atiendo", destination: "/contacto", permanent: true },

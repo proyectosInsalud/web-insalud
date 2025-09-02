@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     "clínica urológica Lima"
   ],
   alternates: {
-    canonical: "https://www.insalud.pe/servicios"
+    canonical: "/servicios",
   },
   openGraph: {
     title: "Servicios y Tratamientos Urológicos | InSalud",
     description:
       "Servicios médicos de urología: tratamientos personalizados, exámenes especializados y procedimientos avanzados como vasectomía y cauterización láser.",
-    url: "https://www.insalud.pe/servicios",
+    url: "https://insalud.pe/servicios",
     siteName: "InSalud",
     locale: "es_PE",
     type: "website",
     images: [
       {
-        url: "https://www.insalud.pe/og/servicios-1200x630.jpg",
-        secureUrl: "https://www.insalud.pe/og/servicios-1200x630.jpg",
+        url: "https://insalud.pe/og/servicios-1200x630.jpg",
+        secureUrl: "https://insalud.pe/og/servicios-1200x630.jpg",
         width: 1200,
         height: 630,
         alt: "Servicios médicos de urología en InSalud: tratamientos personalizados y exámenes especializados"
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Servicios y Tratamientos Urológicos | InSalud",
     description:
       "Tratamientos médicos personalizados y exámenes de urología especializados en InSalud. Urólogos expertos en Lima y Latinoamérica.",
-    images: ["https://www.insalud.pe/og/servicios-1200x630.jpg"],
+    images: ["https://insalud.pe/og/servicios-1200x630.jpg"],
     creator: "@insalud_pe" // opcional si tienen cuenta en X/Twitter
   },
   robots: {

@@ -29,20 +29,20 @@ export const metadata = {
     "sedes en Lima y Latinoamérica"
   ],
   alternates: {
-    canonical: "https://www.insalud.pe/"
+    canonical: "https://insalud.pe/"
   },
   openGraph: {
     title: "Los Mejores Urólogos en Lima | InSalud",
     description:
       "Especialistas en urología y salud sexual masculina: disfunción eréctil, VPH y prostatitis crónica. Tecnología avanzada y atención personalizada.",
-    url: "https://www.insalud.pe/",
+    url: "https://insalud.pe/",
     siteName: "InSalud",
     locale: "es_PE",
     type: "website",
     // images: [
     //   {
-    //     url: "https://www.insalud.pe/og/insalud-home-1200x630.jpg",
-    //     secureUrl: "https://www.insalud.pe/og/insalud-home-1200x630.jpg",
+    //     url: "https://insalud.pe/og/insalud-home-1200x630.jpg",
+    //     secureUrl: "https://insalud.pe/og/insalud-home-1200x630.jpg",
     //     width: 1200,
     //     height: 630,
     //     alt: "InSalud - Urólogos en Lima, tratamientos de disfunción eréctil, VPH y prostatitis crónica"
@@ -55,7 +55,7 @@ export const metadata = {
     description:
       "Urólogos expertos en Lima para disfunción eréctil, VPH y prostatitis crónica. Atención confiable y resultados reales.",
     // images: [
-    //   "https://www.insalud.pe/og/insalud-home-1200x630.jpg"
+    //   "https://insalud.pe/og/insalud-home-1200x630.jpg"
     // ],
     creator: "@insalud_pe" // opcional si tienen cuenta
   },
