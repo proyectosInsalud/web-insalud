@@ -8,7 +8,7 @@ type ContentBeneficiosDeskProps = {
 
 export const BeneficiosDesk = ({ tratamiento }: ContentBeneficiosDeskProps) => {
   return (
-    <div className="hidden md:block">
+    <div className="hidden md:block px-4">
       <div className="md:flex justify-center gap-12 xl:gap-0 xl:justify-between hidden">
         <article>
           <BenefitItem beneficio={tratamiento.benefitsGrid[0]} />
