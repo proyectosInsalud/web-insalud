@@ -23,8 +23,8 @@ export const NavBarIntern = () => {
           <Image
             src="/svg/logo-insalud-white.svg"
             alt="Logo Insalud"
-            width={160}
-            height={24}
+            width={107}
+            height={19}
             className="md:hidden"
           />
         </Link>

@@ -15,7 +15,7 @@ export const MedicalSupportSection = ({ tratamiento }: MedicalSupportSectionProp
             alt={tratamiento.respaldoMedico.image.alt}
             width={500}
             height={300}
-            className="object-cover mx-auto max-w-[400px]"
+            className="object-cover mx-auto w-full max-w-[400px]"
             />
             <div className="font-in-poppins space-y-6 text-in-blue-title text-center md:text-left">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium">{tratamiento.respaldoMedico.title} <span className="text-in-cyan">{tratamiento.respaldoMedico.titleHighlight}</span></h2>
