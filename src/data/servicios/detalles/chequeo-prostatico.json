@@ -43,7 +43,7 @@
       "image": {
         "src": "/images/servicios/chequeo-prostatico/beneficio-2.png",
         "alt": "Beneficio 2"
-      } 
+      }
     },
     {
       "title": "Sin dolor",
@@ -104,25 +104,30 @@
       "meta": "Paciente InSalud, 24 años"
     }
   ],
-  "faq": [
-    {
-      "q": "¿El procedimiento duele?",
-      "a": "No. Se percibe como pequeños golpecitos; no requiere anestesia."
-    },
-    {
-      "q": "¿Cuándo veo resultados?",
-      "a": "Muchos pacientes notan mejoras entre la 3.ª y 6.ª semana; el máximo beneficio se observa al completar las sesiones."
-    },
-    {
-      "q": "¿Hay riesgos?",
-      "a": "Bajos y locales (enrojecimiento leve o sensibilidad transitoria). Se evalúa cada caso antes de iniciar."
-    }
-  ],
+  "faq": {
+    "image":"/images/servicios/chequeo-prostatico/faq-image-section.png",
+    "alt": "Doctor urologo - Insalud",
+    "faqs": [
+      {
+        "q": "¿El procedimiento duele?",
+        "a": "No. Se percibe como pequeños golpecitos; no requiere anestesia."
+      },
+      {
+        "q": "¿Cuándo veo resultados?",
+        "a": "Muchos pacientes notan mejoras entre la 3.ª y 6.ª semana; el máximo beneficio se observa al completar las sesiones."
+      },
+      {
+        "q": "¿Hay riesgos?",
+        "a": "Bajos y locales (enrojecimiento leve o sensibilidad transitoria). Se evalúa cada caso antes de iniciar."
+      }
+    ]
+  },
+
   "equipo": {
     "title": "Equipo médico y tecnología",
     "description": "InSalud utiliza equipos de última generación, aprobados internacionalmente, aplicados por especialistas en urología y medicina regenerativa.",
     "image": {
-      "src": "/images/servicios/chequeo-prostatico/equipo.png",
+      "src": "/images/servicios/chequeo-prostatico/device-medic.png",
       "alt": "Equipo de ondas de choque para disfunción eréctil"
     },
     "badges": ["Seguridad", "Certificación FDA del producto"]

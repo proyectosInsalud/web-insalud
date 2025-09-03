@@ -11,6 +11,9 @@ import Image from "next/image";
 import { SeccionBeneficios } from "@/components/servicios/item/SeccionBeneficios";
 import { MedicalSupportSection } from "@/components/servicios/item/MedicalSupportSection";
 import { Testimonials } from "@/components/home/Testimonials";
+import { FAQSection } from "@/components/servicios/item/FAQSection";
+import { EquipoMedicoSection } from "@/components/servicios/item/EquipoMedicoSection";
+import { HighlightCTASection } from "@/components/servicios/item/HighlightCTASection";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -63,6 +66,9 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
           <MedicalSupportSection tratamiento={tratamiento} />
         </div>
         <Testimonials testimonials={tratamiento.testimonials} />
+        <FAQSection faq={tratamiento.faq} />
+        <EquipoMedicoSection equipo={tratamiento.equipo} />
+        <HighlightCTASection />
       </div>
     </>
   );

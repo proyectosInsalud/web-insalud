@@ -77,6 +77,12 @@ const FAQSchema = z.object({
   a: z.string().min(1),
 });
 
+const FAQSectionSchema = z.object({
+  image: PathOrUrlSchema,
+  alt: z.string().min(1),
+  faqs: z.array(FAQSchema).min(1),
+});
+
 const EquipoSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
@@ -98,7 +104,7 @@ const HighlightSchema = z.object({
 const SEOSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
-  canonical: z.string().url(),
+  canonical: z.string(),
   ogImage: PathOrUrlSchema,
 });
 
@@ -118,7 +124,7 @@ export const DiagnosticoSchema = z.object({
   respaldoMedico: RespaldoMedicoSchema,
 
   testimonials: z.array(TestimonialSchema).min(1),
-  faq: z.array(FAQSchema).min(1),
+  faq: FAQSectionSchema,
 
   equipo: EquipoSchema,
   ctaFinal: CTAFinalSchema,

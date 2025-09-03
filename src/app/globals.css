@@ -23,6 +23,21 @@
   --color-in-bg-testimonials: #EDFBFB;
 }
 
+@keyframes pulseSoft {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+}
+
+.animate-pulseSoft {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
