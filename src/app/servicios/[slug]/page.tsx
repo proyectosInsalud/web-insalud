@@ -52,9 +52,9 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
           alt={tratamiento.hero.image?.alt}
           width={500}
           height={300}
-          className="w-full sm:hidden -z-10 pt-6"
+          className="w-full md:hidden -z-10 pt-6"
         />
-        <div className="absolute sm:relative top-0 left-0 right-0">
+        <div className="absolute md:relative top-0 left-0 right-0">
           <CintilloBarra />
           <NavBarIntern />
         </div>
