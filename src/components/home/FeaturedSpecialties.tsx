@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 // import Link from "next/link";
-import { useModalStore } from "@/store/modalStore";
+import { useModalStore } from "@/schema/store/modalStore";
 import { eventRegisterGtm } from "@/lib/utils";
 
 export const FeaturedSpecialties = () => {

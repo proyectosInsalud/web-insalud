@@ -1,12 +1,19 @@
+'use client'
 import { Button } from "@/components/ui/button";
+import { useOpenForm } from "@/hooks/useOpenForm";
 import { TypeDiagnostico } from "@/types";
 import Image from "next/image";
+
+
 
 type HeroDiagnosticoProps = {
   tratamiento: TypeDiagnostico;
 };
 
-export const HeroDiagnostico = ({ tratamiento }: HeroDiagnosticoProps) => {
+export const HeroService = ({ tratamiento }: HeroDiagnosticoProps) => {
+
+  const { handleTrackReservation } = useOpenForm();
+
   return (
     <section className="max-w-7xl mx-auto px-4 md:py-4">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
@@ -46,12 +53,13 @@ export const HeroDiagnostico = ({ tratamiento }: HeroDiagnosticoProps) => {
               {tratamiento.proceso.duration}
             </p>
           </div>
-          <Button
-            className="cursor-pointer bg-in-blue hover:bg-in-blue-dark rounded-2xl mt-auto block w-full md:w-auto md:inline-block self-start text-base py-4 px-12 font-in-poppins"
-            size={"personal"}
-          >
-            {tratamiento.hero.cta.text}
-          </Button>
+            <Button
+              onClick={handleTrackReservation}
+              className="cursor-pointer bg-in-blue hover:bg-in-blue-dark rounded-2xl mt-auto block w-full md:w-auto md:inline-block self-start text-base py-4 px-12 font-in-poppins"
+              size={"personal"}
+            >
+              {tratamiento.hero.cta.text}
+            </Button>
         </div>
       </div>
     </section>

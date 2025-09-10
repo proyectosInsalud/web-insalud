@@ -12,8 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { problemasSalud } from "@/data/problemasSalud";
 import { sedesAccordion } from "@/data/sedesAccordion";
-import { eventRegisterGtm } from "@/lib/utils";
-import { useModalStore } from "@/store/modalStore";
+import { useModalStore } from "@/schema/store/modalStore";
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { CalendarDays, CalendarIcon, ChevronDownIcon } from "lucide-react";
@@ -23,13 +22,12 @@ import { useForm } from "react-hook-form";
 import { FormPreReservationType } from "@/types";
 import { formPreReservationSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useOpenForm } from "@/hooks/useOpenForm";
 
 export const ReserveDate = () => {
   const [openCallendar, setOpenCallendar] = useState(false);
+  const { handleTrackReservation } = useOpenForm();
 
-  const openReservationModal = useModalStore(
-    (state) => state.openReservationModal
-  );
   const setProblemaSalud = useModalStore((state) => state.setProblemaSalud);
   const setSede = useModalStore((state) => state.setSede);
   const setFecha = useModalStore((state) => state.setFecha);
@@ -43,34 +41,8 @@ export const ReserveDate = () => {
     },
   });
 
-  const handleReservar = (data: FormPreReservationType) => {
-    console.log(data);
-    eventRegisterGtm("booking_start");
-    openReservationModal();
-  };
 
-  // const [errors, setErrors] = useState({
-  //   problemaSalud: false,
-  //   sede: false,
-  //   turno: false,
-  // });
-
-  // const handleReservar = () => {
-  //   // Mostrar errores visuales para campos vacíos
-  //   const newErrors = {
-  //     problemaSalud: !reservationData.problemaSalud,
-  //     sede: !reservationData.sede,
-  //     turno: !reservationData.turno,
-  //   };
-
-  //   setErrors(newErrors);
-
-  //   // Solo abrir el modal si todos los campos están llenos
-  //   if (!newErrors.problemaSalud && !newErrors.sede && !newErrors.turno) {
-  //
-  //
-  //   }
-  // };
+  
 
   return (
     <div className="px-4 pt-24 space-y-8">
@@ -78,22 +50,10 @@ export const ReserveDate = () => {
         Encuentra tu tratamiento en InSalud
       </h2>
 
-      {/* Botón Reservar */}
-      {/* <div className="md:col-span-3">
-          <Button
-            onClick={handleReservar}
-            size={"personal"}
-            className="w-full h-full py-4 text-base cursor-pointer font-in-poppins hover:bg-in-cyan bg-in-cyan/90 rounded-full"
-          >
-            <CalendarIcon className="w-6 h-4 mr-2" />
-            Reservar ahora
-          </Button>
-        </div> */}
-
       <section>
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(handleReservar)}
+            onSubmit={form.handleSubmit(handleTrackReservation)}
             className="grid max-w-5xl container mx-auto shadow-[0_4px_24px_rgba(0,180,216,0.20)] grid-cols-1 gap-y-8 lg:gap-y-0 lg:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
           >
             <div className="grid gap-y-4 grid-cols-1 col-span-1 lg:gap-y-0 lg:grid-cols-3 lg:col-span-9 gap-x-2">

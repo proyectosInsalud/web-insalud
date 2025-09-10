@@ -15,7 +15,7 @@ export const testimonials = [
     },
     {
         id: 3,
-        name: "Estefano Castillo",
+        name: "Daniela Romero",
         description: "Me atendieron en la sede de jesus maria y la verdad me sentí escuchada. habia ido antes a otras clinicas y nadie me explicaba bien. Acá si se toman el tiempo y te dan confianza. gracias por eso 🙌",
         image: "/images/testimonials/testimonial-3.jpg",
         meta: "2025",

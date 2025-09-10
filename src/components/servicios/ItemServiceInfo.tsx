@@ -6,30 +6,44 @@ import { eventRegisterGtm } from "@/lib/utils";
 type ItemServiceInfoProps = {
   name:string
   description: string;
+  slug?: string;
 }
 
-export const ItemServiceInfo = ({ name, description }: ItemServiceInfoProps) => {
+export const ItemServiceInfo = ({ name, description, slug }: ItemServiceInfoProps) => {
   const whatsappMessage = `Hola, vi su web de Insalud y estoy interesado por el servicio de ${name}`;
   const encodedMessage = encodeURIComponent(whatsappMessage);
 
-  
-  
   return (
     <div className="space-y-5">
             <p className="text-[13px] md:text-base">
               {description}
             </p>
-            <Link 
-              onClick={() => eventRegisterGtm("service_whatsapp_click")}
-              target="_blank" 
-              href={`https://wa.me/51957016010?text=${encodedMessage}`}>
-              <Button
-                className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
-                size={"personal"}
-              >
-                Solicitar Cita
-              </Button>
-            </Link>
+            <div className="grid grid-cols-2 gap-4">
+              <Link 
+                onClick={() => eventRegisterGtm("service_whatsapp_click")}
+                target="_blank" 
+                href={`https://wa.me/51957016010?text=${encodedMessage}`}>
+                <Button
+                  className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
+                  size={"personal"}
+                >
+                  Solicitar Cita
+                </Button>
+              </Link>
+
+              {
+                slug==="chequeo-prostatico" && (
+                  <Link href={"/servicios/" + slug}>
+                    <Button
+                      className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
+                      size={"personal"}
+                >
+                  Ver más
+                </Button>
+              </Link>
+                )
+              }
+            </div>
         </div>
   )
 }

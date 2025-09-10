@@ -5,15 +5,16 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { notFound } from "next/navigation";
 import { NavBarIntern } from "@/components/common/NavBarIntern";
 import { BreadCrumbServices } from "@/components/servicios/item/BreadCrumbServices";
-import { HeroDiagnostico } from "@/components/servicios/item/HeroDiagnostico";
+import { HeroService } from "@/components/servicios/item/HeroService";
 import { SeccionDatoImpacto } from "@/components/servicios/item/SeccionDatoImpacto";
 import Image from "next/image";
 import { SeccionBeneficios } from "@/components/servicios/item/SeccionBeneficios";
 import { MedicalSupportSection } from "@/components/servicios/item/MedicalSupportSection";
-import { Testimonials } from "@/components/home/Testimonials";
+// import { Testimonials } from "@/components/home/Testimonials";
 import { FAQSection } from "@/components/servicios/item/FAQSection";
 import { EquipoMedicoSection } from "@/components/servicios/item/EquipoMedicoSection";
 import { HighlightCTASection } from "@/components/servicios/item/HighlightCTASection";
+import { ReservationModal } from "@/components/common/ReservationModal";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -59,17 +60,18 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
           <NavBarIntern />
         </div>
         <BreadCrumbServices title={tratamiento.title} />
-        <HeroDiagnostico tratamiento={tratamiento} />
+        <HeroService tratamiento={tratamiento} />
         <div className="bg-[linear-gradient(180deg,_rgba(86,242,234,0.02)_0%,_rgba(203,255,252,0.42)_50.48%,_#fff_100%)]">
           <SeccionDatoImpacto tratamiento={tratamiento} />
           <SeccionBeneficios tratamiento={tratamiento} />
           <MedicalSupportSection tratamiento={tratamiento} />
         </div>
-        <Testimonials testimonials={tratamiento.testimonials} />
-        <FAQSection faq={tratamiento.faq} />
+        {/* <Testimonials testimonials={tratamiento.testimonials} /> */}
+        <FAQSection tratamiento={tratamiento} faq={tratamiento.faq} />
         <EquipoMedicoSection equipo={tratamiento.equipo} />
-        <HighlightCTASection />
+        <HighlightCTASection tratamiento={tratamiento.ctaFinal} />
       </div>
+      <ReservationModal />
     </>
   );
 }

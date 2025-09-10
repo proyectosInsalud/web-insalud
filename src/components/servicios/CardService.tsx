@@ -13,7 +13,7 @@ type CardServiceProps = {
   description: string;
 }
 
-export const CardService = ({ name, image, description }: CardServiceProps) => {
+export const CardService = ({ name, image, description,slug }: CardServiceProps) => {
   return (
     <div>
       <div className="hidden md:block">
@@ -34,7 +34,8 @@ export const CardService = ({ name, image, description }: CardServiceProps) => {
               <div className="block md:hidden">
                 <ItemServiceInfo 
                   name={name}
-                  description={description} />
+                  description={description}
+                  slug={slug} />
               </div>
             </article>
           </HoverCardTrigger>
@@ -48,7 +49,8 @@ export const CardService = ({ name, image, description }: CardServiceProps) => {
           >
             <ItemServiceInfo 
             name={name}
-            description={description} />
+            description={description}
+            slug={slug} />
           </HoverCardContent>
         </HoverCard>
       </div>
@@ -66,8 +68,10 @@ export const CardService = ({ name, image, description }: CardServiceProps) => {
           </h3>
           <div className="block md:hidden">
             <ItemServiceInfo 
+              slug={slug}
               name={name}
-              description={description} />
+              description={description} 
+              />
           </div>
         </article>
       </div>

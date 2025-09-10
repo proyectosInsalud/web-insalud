@@ -75,7 +75,7 @@ export const TabItemService = ({ category }: TabItemServiceProps) => {
               {servicesItems
                 .filter((item) => item.sedes.includes("golf"))
                 .map((item) => (
-                  <CardService key={item.slug} {...item} />
+                  <CardService key={item.id} {...item} />
                 ))}
             </div>
           </TabsContent>
@@ -84,7 +84,7 @@ export const TabItemService = ({ category }: TabItemServiceProps) => {
               {servicesItems
                 .filter((item) => item.sedes.includes("sur"))
                 .map((item) => (
-                  <CardService key={item.slug} {...item} />
+                  <CardService key={item.id} {...item} />
                 ))}
             </div>
           </TabsContent>
@@ -93,7 +93,7 @@ export const TabItemService = ({ category }: TabItemServiceProps) => {
               {servicesItems
                 .filter((item) => item.sedes.includes("jesus-maria"))
                 .map((item) => (
-                  <CardService key={item.slug} {...item} />
+                  <CardService key={item.id} {...item} />
                 ))}
             </div>
           </TabsContent>

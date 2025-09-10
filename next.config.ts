@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+
+    qualities: [75, 85, 90, 95, 100],
+
     remotePatterns: [
       { protocol: "https", hostname: "cdn.insalud.pe" },
       { protocol: "https", hostname: "prensa.insalud.pe" },
@@ -37,7 +40,6 @@ const nextConfig: NextConfig = {
       },
 
       // Viejas URLs del WP -> tus 4 vistas reales
-      { source: "/blog", destination: "/", permanent: true },
       { source: "/como-me-atiendo", destination: "/contacto", permanent: true },
       {
         source: "/deberes-y-derechos-del-paciente",

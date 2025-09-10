@@ -40,6 +40,7 @@ const ProcesoSchema = z.object({
 const ImpactoSchema = z.object({
   lead: z.string().min(1),
   suffix: z.string().min(1),
+  leadContinue: z.string().min(1),
   description: z.string().min(1),
 });
 

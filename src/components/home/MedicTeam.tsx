@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { eventRegisterGtm } from "@/lib/utils";
-import { useModalStore } from "@/store/modalStore";
+import { useModalStore } from "@/schema/store/modalStore";
 import Image from "next/image";
 
 export const MedicTeam = () => {

@@ -1,79 +1,17 @@
 'use client'
 import { Form, FormControl, FormField, FormItem, FormMessage } from "../ui/form"
-import { FormReservationType } from "@/types"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { formReservationSchema } from "@/schema"
 import { Input } from "../ui/input"
-import { useForm } from "react-hook-form"
 import { Textarea } from "../ui/textarea"
 import { Button } from "../ui/button"
-import { useState } from "react"
-import { toast } from "sonner"
-import { fbqTrack } from "@/lib/fbq"
-import { eventRegisterGtm } from "@/lib/utils"
+import { usePostLead } from "@/hooks/usePostLead"
 
 export const FormSection = () => {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const form = useForm<FormReservationType>({
-        resolver: zodResolver(formReservationSchema),
-        defaultValues: {
-            nombres: "",
-            apellidos: "",
-            email: "",
-            telefono: "",
-            sede: "",
-            turno: "",
-            detalleConsulta: ""
-        },
-    })
-
-    function onSubmit(values: FormReservationType) {
-        // Crear objeto completo con todos los datos
-        const datosCompletos = {
-            // Datos del formulario
-            nombres: values.nombres,
-            apellidos: values.apellidos,
-            correo: values.email,
-            telefono: values.telefono,
-            sede: values.sede,
-            turno: values.turno,
-            detalleConsulta: values.detalleConsulta
-        };
-
-        setIsSubmitting(true);
-        
-        // Enviar los datos al endpoint de correo
-        fetch("/api/mail", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(datosCompletos)
-            
-        })
-        .then(response => {
-            
-            if (!response.ok) {
-                throw new Error("Error al enviar el correo");
-            }
-            eventRegisterGtm("form_submission");
-            toast.success("Mensaje enviado correctamente");
-            console.log("Datos enviados:", datosCompletos);
-            fbqTrack("Lead", { source: "Formulario contacto" });
-            console.log("fbq Lead enviado")
-            setIsSubmitting(false);
-            form.reset();
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
-    }
+    const { form, onSubmitLead, isSubmitting } = usePostLead();
 
   return ( 
     <div className="font-in-nunito">
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form onSubmit={form.handleSubmit(onSubmitLead)}>
                 <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField

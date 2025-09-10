@@ -1,19 +1,24 @@
 import Image from "next/image"
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
+import { TypeDiagnostico } from "@/types"
 
-export const HighlightCTASection = () => {
+type HighlightCTASectionProps = {
+    tratamiento: TypeDiagnostico["ctaFinal"]
+}
+
+export const HighlightCTASection = ({tratamiento}: HighlightCTASectionProps) => {
   return (
     <section className="max-w-6xl mx-auto px-4 pt-24 md:pt-32 font-in-poppins ">
-        <div className="w-full bg-[#d1ffff] rounded-3xl py-14 space-y-6 px-4 shadow-xl relative">
+        <div className="w-full bg-[#d1ffff] rounded-3xl py-14 space-y-6 px-6 shadow-xl relative">
             <div className="text-center space-y-4">
-                <h2 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold text-in-blue-title">Recupera tu confianza y tu vida sexual</h2>
-                <p className="text-sm text-in-gray-base">Más de 5,000 pacientes tratados en Perú y Latinoamérica.</p>
+                <h2 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold text-in-blue-title">{tratamiento.text}</h2>
+                <p className="text-sm text-in-gray-base max-w-3xl mx-auto">{tratamiento.subtext}</p>
             </div>
             <Link className="flex justify-center items-center  rounded-lg" href={"#"}>
                 <div className="group bg-white flex items-center gap-2 py-4 transition hover:bg-in-cyan hover:text-white rounded-full px-8 shadow-lg">
                     <FaWhatsapp className="text-in-cyan group-hover:text-white" size={20} />
-                    <p className="font-semibold text-in-cyan group-hover:text-white">Agenda tu cita hoy mismo</p>
+                    <p className="font-semibold text-in-cyan group-hover:text-white">{tratamiento.button.text}</p>
                 </div>
             </Link>
         <Image src="/images/common/plus-green.png" alt="Onda Degradado" width={86} height={86} className="absolute animate-pulseSoft -bottom-28 lg:-bottom-11 z-10 right-12" />
