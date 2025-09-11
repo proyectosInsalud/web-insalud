@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/chequeo-prostatico-la-prevencion-es-el-primer-paso-hacia-una-vida-saludable",
-        destination: "/",
+        destination: "/servicios/chequeo-prostatico",
         permanent: true,
       },
       {
