@@ -155,9 +155,29 @@
     { "label": "Especialistas", "value": "20+" }
   ],
   "seo": {
-    "title": "Ondas de choque para disfunción eréctil | InSalud",
-    "description": "Tratamiento no invasivo y con respaldo médico para mejorar la función eréctil. Agenda tu evaluación.",
-    "canonical": "https://insalud.pe/diagnosticos/disfuncion-erectil-ondas-de-choque",
-    "ogImage": "/og/disfuncion-erectil-ondas-de-choque.png"
+    "title": "Chequeo Prostático en Perú | InSalud",
+    "description": "Chequeo prostático integral: PSA total y ecografía vésico-prostática. Resultados en 2 horas. Prevención de cáncer y prostatitis en InSalud Perú.",
+    "canonical": "https://insalud.pe/servicios/chequeo-prostatico",
+    "keywords": [
+      "chequeo prostático",
+      "examen PSA",
+      "ecografía prostática",
+      "prevención cáncer de próstata",
+      "prostatitis crónica",
+      "urología Lima",
+      "urología Perú"
+    ],
+    "ogTitle": "Chequeo Prostático con PSA y Ecografía | InSalud",
+    "ogDescription": "Resultados en 2 horas. Detección temprana de cáncer de próstata y prostatitis con urólogo especializado.",
+    "ogUrl": "https://insalud.pe/servicios/chequeo-prostatico",
+    "ogImage": "/og/chequeo-prostatico.png",
+    "ogType": "website",
+    "ogLocale": "es_PE",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "Chequeo Prostático en Perú | Resultados en 2 horas",
+    "twitterDescription": "PSA + ecografía vésico-prostática. Prevención de cáncer y prostatitis. Agenda tu evaluación gratuita.",
+    "twitterImage": "/og/chequeo-prostatico.png",
+    "author": "InSalud Perú",
+    "robots": "index, follow"
   }
 }

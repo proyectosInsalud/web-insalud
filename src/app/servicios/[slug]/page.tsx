@@ -15,12 +15,13 @@ import { FAQSection } from "@/components/servicios/item/FAQSection";
 import { EquipoMedicoSection } from "@/components/servicios/item/EquipoMedicoSection";
 import { HighlightCTASection } from "@/components/servicios/item/HighlightCTASection";
 import { ReservationModal } from "@/components/common/ReservationModal";
+import { Metadata  } from "next";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-// Función para obtener datos
+// Función para obtener datos (reutilizable)
 async function getServicioDetalle(
   slug: string
 ): Promise<TypeDiagnostico | null> {
@@ -36,6 +37,57 @@ async function getServicioDetalle(
     return null;
   }
 }
+
+export async function generateMetadata(
+  {params }: PageProps,
+): Promise<Metadata> {
+  const {slug} = await params;
+
+  // fetch post information
+  const post = await getServicioDetalle(slug);
+  const twitterImage = post?.seo.twitterImage;
+
+  return {
+    title: post?.seo.title,
+    description: post?.seo.description,
+    keywords: post?.seo.keywords,
+    alternates: {
+      canonical: post?.seo.canonical,
+    },
+    openGraph: {
+      title: post?.seo.ogTitle,
+      description: post?.seo.ogDescription,
+      url: post?.seo.ogUrl,
+      siteName: "InSalud",
+      locale: post?.seo.ogLocale,
+      type: "website",
+    },
+    twitter: {
+      card: post?.seo.twitterCard || "summary_large_image",  
+      title: post?.seo.twitterTitle,
+      description: post?.seo.twitterDescription,
+      images: twitterImage ? [twitterImage] : undefined,
+      creator: "@insalud_pe"
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1
+      }
+    },
+    category: "salud",
+  }
+  
+}
+
+
 
 export default async function TratamientoDetallePage({ params }: PageProps) {
   const { slug } = await params;

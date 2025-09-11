@@ -102,11 +102,24 @@ const HighlightSchema = z.object({
   value: z.string().min(1),
 });
 
-const SEOSchema = z.object({
+
+export const SEOSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
-  canonical: z.string(),
-  ogImage: PathOrUrlSchema,
+  canonical: z.string().min(1),
+  ogImage: z.string().min(1),
+  keywords: z.string().optional(),
+  ogTitle: z.string().optional(),
+  ogDescription: z.string().optional(),
+  ogUrl: z.string().optional(),
+  ogType: z.string().optional(),
+  ogLocale: z.string().optional(),
+  twitterCard: z.enum(["summary", "summary_large_image", "player", "app"]).optional(),
+  twitterTitle: z.string().optional(),
+  twitterDescription: z.string().optional(),
+  twitterImage: z.string().optional(),
+  author: z.string().optional(),
+  robots: z.string().default("index, follow"),
 });
 
 /** Schema principal */
