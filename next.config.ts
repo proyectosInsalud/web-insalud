@@ -62,8 +62,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/jesusmaria-chequeo-prostatico-2",
+        source: "/chequeo-prostatico-la-prevencion-es-el-primer-paso-hacia-una-vida-saludable",
         destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/jesusmaria-chequeo-prostatico-2",
+        destination: "/servicios/chequeo-prostatico",
         permanent: true,
       },
       {

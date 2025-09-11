@@ -7,7 +7,7 @@
     "progressPct": 10,
     "heading": "Chequeo prostático: Prevención del Cáncer y Prostatitis",
     "subheading": "Vive tranquilo y cuida tu salud prostática con un chequeo a tiempo.",
-    "cta": { "text": "Agendar Evaluación Gratuita", "href": "/reservar" },
+    "cta": { "text": "Agendar Evaluación", "href": "/reservar" },
     "image": {
       "src": "/images/servicios/chequeo-prostatico/hero.png",
       "alt": "Pareja preocupada por la disfunción eréctil"
