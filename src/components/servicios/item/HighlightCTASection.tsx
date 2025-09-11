@@ -4,21 +4,27 @@ import { FaWhatsapp } from "react-icons/fa"
 import { TypeDiagnostico } from "@/types"
 
 type HighlightCTASectionProps = {
-    tratamiento: TypeDiagnostico["ctaFinal"]
+    tratamiento: TypeDiagnostico
 }
 
 export const HighlightCTASection = ({tratamiento}: HighlightCTASectionProps) => {
+
+    const whatsappNumber = "51957016010";
+    const whatsappMessage = encodeURIComponent(`Hola, vi su pagina web Insalud y me gustaria agendar una cita para ${tratamiento.title}`);
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+
   return (
     <section className="max-w-6xl mx-auto px-4 pt-24 md:pt-32 font-in-poppins ">
         <div className="w-full bg-[#d1ffff] rounded-3xl py-14 space-y-6 px-6 shadow-xl relative">
             <div className="text-center space-y-4">
-                <h2 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold text-in-blue-title">{tratamiento.text}</h2>
-                <p className="text-sm text-in-gray-base max-w-3xl mx-auto">{tratamiento.subtext}</p>
+                <h2 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold text-in-blue-title">{tratamiento.ctaFinal.text}</h2>
+                <p className="text-sm text-in-gray-base max-w-3xl mx-auto">{tratamiento.ctaFinal.subtext}</p>
             </div>
-            <Link className="flex justify-center items-center  rounded-lg" href={"#"}>
+            <Link target="_blank" className="flex justify-center items-center  rounded-lg" href={whatsappLink}>
                 <div className="group bg-white flex items-center gap-2 py-4 transition hover:bg-in-cyan hover:text-white rounded-full px-8 shadow-lg">
                     <FaWhatsapp className="text-in-cyan group-hover:text-white" size={20} />
-                    <p className="font-semibold text-in-cyan group-hover:text-white">{tratamiento.button.text}</p>
+                    <p className="font-semibold text-in-cyan group-hover:text-white">{tratamiento.ctaFinal.button.text}</p>
                 </div>
             </Link>
         <Image src="/images/common/plus-green.png" alt="Onda Degradado" width={86} height={86} className="absolute animate-pulseSoft -bottom-28 lg:-bottom-11 z-10 right-12" />

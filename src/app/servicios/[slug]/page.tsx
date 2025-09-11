@@ -67,9 +67,9 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
           <MedicalSupportSection tratamiento={tratamiento} />
         </div>
         {/* <Testimonials testimonials={tratamiento.testimonials} /> */}
-        <FAQSection tratamiento={tratamiento} faq={tratamiento.faq} />
+        <FAQSection tratamiento={tratamiento} />
         <EquipoMedicoSection equipo={tratamiento.equipo} />
-        <HighlightCTASection tratamiento={tratamiento.ctaFinal} />
+        <HighlightCTASection tratamiento={tratamiento} />
       </div>
       <ReservationModal />
     </>

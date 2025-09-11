@@ -22,6 +22,7 @@ export const HeroService = ({ tratamiento }: HeroDiagnosticoProps) => {
           alt={tratamiento.hero.image?.alt}
           width={500}
           height={300}
+          priority
           className="hidden md:block w-full h-full object-cover md:rounded-2xl md:col-span-5"
         />
         <div className="space-y-6 md:space-y-4 flex flex-col py-2 md:col-span-7">

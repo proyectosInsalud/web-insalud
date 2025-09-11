@@ -18,13 +18,14 @@ export const ItemServiceInfo = ({ name, description, slug }: ItemServiceInfoProp
             <p className="text-[13px] md:text-base">
               {description}
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="flex gap-2">
               <Link 
+                className="flex-1"
                 onClick={() => eventRegisterGtm("service_whatsapp_click")}
                 target="_blank" 
                 href={`https://wa.me/51957016010?text=${encodedMessage}`}>
                 <Button
-                  className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
+                  className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-2xl hover:bg-in-cyan/80 cursor-pointer"
                   size={"personal"}
                 >
                   Solicitar Cita
@@ -33,9 +34,9 @@ export const ItemServiceInfo = ({ name, description, slug }: ItemServiceInfoProp
 
               {
                 slug==="chequeo-prostatico" && (
-                  <Link href={"/servicios/" + slug}>
+                  <Link className="flex-1" href={"/servicios/" + slug}>
                     <Button
-                      className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-full hover:bg-in-cyan/80 cursor-pointer"
+                      className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-2xl hover:bg-in-cyan/80 cursor-pointer"
                       size={"personal"}
                 >
                   Ver más
