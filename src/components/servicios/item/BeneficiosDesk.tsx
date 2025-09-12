@@ -17,7 +17,7 @@ export const BeneficiosDesk = ({ tratamiento }: ContentBeneficiosDeskProps) => {
           <BenefitItem beneficio={tratamiento.benefitsGrid[1]} />
         </article>
       </div>
-      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl max-w-[480px] md:py-16  font-medium font-in-nunito mx-auto text-in-blue-title">
+      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl max-w-[480px] md:py-16  font-medium  mx-auto text-in-blue-title">
         {tratamiento.beneficiosDetalle.title}{" "}
         <span className="text-in-cyan">
           {tratamiento.beneficiosDetalle.titleHighlight}

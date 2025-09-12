@@ -16,7 +16,7 @@ type BeneficiosMobileProps = {
 export const BeneficiosMobile = ({ tratamiento }: BeneficiosMobileProps) => {
   return (
     <div className="md:hidden space-y-6">
-      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl max-w-[480px] md:py-16  font-medium font-in-nunito mx-auto text-in-blue-title px-4">
+      <h2 className="text-center text-2xl md:text-3xl lg:text-4xl max-w-[480px] md:py-16  font-medium font-in-poppins mx-auto text-in-blue-title px-4">
         {tratamiento.beneficiosDetalle.title}{" "}
         <span className="text-in-cyan">
           {tratamiento.beneficiosDetalle.titleHighlight}
