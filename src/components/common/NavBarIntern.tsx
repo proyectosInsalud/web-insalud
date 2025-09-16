@@ -76,7 +76,6 @@ export const NavBarIntern = () => {
           >
             <Button
               className="bg-in-orange hover:bg-in-orange/90 cursor-pointer font-in-poppins text-white rounded-full font-semibold py-1 md:py-2 text-sm px-6 md:px-12"
-              size={"personal"}
             >
               Intranet
             </Button>

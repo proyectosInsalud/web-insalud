@@ -1,7 +1,9 @@
 
 import { formPreReservationSchema, formReservationSchema } from "@/schema";
-import { blogFrontmatterSchema, blogPostMetaSchema } from "@/schema/blog";
+import { zPost, zPostList } from "@/schema/blog";
+import { zPostEntrada } from "@/schema/blogEntrada";
 import { DiagnosticoSchema, SEOSchema, TestimonialSchema } from "@/schema/servicio";
+import { PortableTextBlock } from "next-sanity";
 import { z } from "zod";
 
 // Tipo para la reserva de citas
@@ -20,5 +22,11 @@ export type TestimonialSchemaType = z.infer<typeof TestimonialSchema>;
 export type SeoServicioType = z.infer<typeof SEOSchema>;
 
 // Tipos para el blog
-export type BlogFrontmatter = z.infer<typeof blogFrontmatterSchema>;
-export type BlogPostMeta = z.infer<typeof blogPostMetaSchema>;
+export type PostType = z.infer<typeof zPost>;
+export type PostListType = z.infer<typeof zPostList>;
+
+// Tipos para el blogEntrada
+export type PostBaseType = z.infer<typeof zPostEntrada>;
+export type PostTypeEntry = PostBaseType & {
+    body: PortableTextBlock[];
+};

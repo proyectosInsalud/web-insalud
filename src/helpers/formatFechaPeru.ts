@@ -21,3 +21,15 @@ export function formatFechaPeru(f?: string | Date): string {
     timeZone: "America/Lima",
   }).format(date);
 }
+
+export function formatMesDiaAnio(iso: string, tz = 'America/Lima') {
+  const d = new Date(iso);
+  const f = (opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('es-PE', { timeZone: tz, ...opts }).format(d);
+
+  const month = f({ month: 'long' });
+  const day   = f({ day: 'numeric' });
+  const year  = f({ year: 'numeric' });
+
+  const capMonth = month.charAt(0).toUpperCase() + month.slice(1);
+  return `${capMonth} ${day}, ${year}`;
+}

@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "cdn.insalud.pe" },
       { protocol: "https", hostname: "prensa.insalud.pe" },
       { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "cdn.sanity.io" },
     ],
   },
 

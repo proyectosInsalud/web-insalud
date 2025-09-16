@@ -30,7 +30,7 @@ export default function NotFound() {
                 />
                 <p className="text-center max-w-xl text-sm md:text-lg text-white">Lo sentimos, la página que busca no existe o ha sido movida. Le sugerimos volver a la página principal.</p>
                 <Link href={"/"}>
-                    <Button size={"personal"} className="text-sm py-3 px-4 md:py-4 md:px-6 md:text-base rounded-4xl bg-in-blue hover:bg-in-blue-dark cursor-pointer">
+                    <Button className="text-sm py-3 px-4 md:py-4 md:px-6 md:text-base rounded-4xl bg-in-blue hover:bg-in-blue-dark cursor-pointer">
                         Volver a la página principal
                     </Button>
                 </Link>

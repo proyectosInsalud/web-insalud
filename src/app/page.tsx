@@ -9,9 +9,10 @@ import { PlacesMedic } from "@/components/home/PlacesMedic";
 import { AllAboutInsalud } from "@/components/home/AllAboutInsalud";
 import { ReservationModal } from "@/components/common/ReservationModal";
 import { testimonials } from "@/data/testimonials";
+import { Metadata } from "next";
 
 // app/(root)/page.tsx o app/layout.tsx
-export const metadata = {
+export const metadata:Metadata = {
   title: "Los Mejores Urólogos en Lima | InSalud – Especialistas en Salud Sexual Masculina",
   description:
     "InSalud: urólogos en Lima expertos en disfunción eréctil, VPH y prostatitis crónica. Diagnóstico, prevención y tratamientos avanzados. ¡Reserva tu cita hoy!",
