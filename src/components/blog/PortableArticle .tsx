@@ -6,31 +6,79 @@ import type { PortableTextBlock } from "@portabletext/types";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity.client";
 
-type ImgVal = { assetRef?: string; asset?: { _ref: string }; alt?: string; caption?: string; lqip?: string };
+type ImgVal = {
+  assetRef?: string;
+  asset?: { _ref: string };
+  alt?: string;
+  caption?: string;
+  lqip?: string;
+};
 const refOf = (v: ImgVal) => v.assetRef || v.asset?._ref;
 
-type Props = { value: PortableTextBlock[]; variant?: "prose" | "plain" };
+type Props = {
+  value: PortableTextBlock[];
+  /** por si quieres un contenedor distinto */
+  className?: string;
+};
 
 const components: PortableTextComponents = {
   block: {
-    h1: ({ children }) => <h1 className="text-4xl text-in-blue-title font-in-nunito md:text-5xl font-semibold mt-10 mb-4">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-3xl text-in-blue-title font-in-nunito md:text-4xl font-semibold mt-8 mb-4">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-2xl text-in-blue-title font-in-nunito md:text-3xl font-semibold mt-6 mb-3">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-xl text-in-blue-title font-in-nunito md:text-2xl font-semibold mt-5 mb-2">{children}</h4>,
-    normal: ({ children }) => <p className=" font-in-poppins text-in-gray-base leading-7 my-4">{children}</p>,
-    blockquote: ({ children }) => <blockquote className="border-l-4 text-in-cyan pl-4 italic my-6">{children}</blockquote>,
+    h1: ({ children }) => (
+      <h1 className="text-in-blue-title font-in-nunito font-semibold text-4xl md:text-5xl mt-10 mb-4">
+        {children}
+      </h1>
+    ),
+    h2: ({ children }) => (
+      <h2 className="text-in-blue-title font-in-nunito font-semibold text-2xl md:text-4xl mt-8 mb-4">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="text-in-blue-title font-in-nunito font-semibold text-xl md:text-3xl mt-6 mb-3">
+        {children}
+      </h3>
+    ),
+    h4: ({ children }) => (
+      <h4 className="text-in-blue-title font-in-nunito font-semibold text-lg md:text-2xl mt-5 mb-2">
+        {children}
+      </h4>
+    ),
+    normal: ({ children }) => (
+      <p className="font-in-poppins text-in-gray-base leading-7 text-sm md:text-base my-4">
+        {children}
+      </p>
+    ),
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-in-cyan/60 pl-4 italic my-6 text-in-gray-base">
+        {children}
+      </blockquote>
+    ),
   },
+
   list: {
-    bullet: ({ children }) => <ul className="list-disc text-in-gray-base pl-6 my-4 space-y-1">{children}</ul>,
-    number: ({ children }) => <ol className="list-decimal text-in-gray-base pl-6 my-4 space-y-1">{children}</ol>,
+    bullet: ({ children }) => (
+      <ul className="pl-6 my-4 space-y-1 text-in-gray-base list-disc marker:text-in-gray-light">
+        {children}
+      </ul>
+    ),
+    number: ({ children }) => (
+      <ol className="pl-6 my-4 space-y-1 text-in-gray-base list-decimal marker:text-in-gray-light">
+        {children}
+      </ol>
+    ),
   },
+
   marks: {
     link: ({ children, value }) => {
       const href = (value as { href?: string })?.href ?? "#";
       const ext = /^https?:\/\//.test(href);
       return (
-        <a href={href} target={ext ? "_blank" : undefined} rel={ext ? "noopener noreferrer" : undefined}
-           className="text-in-cyan underline underline-offset-4 hover:no-underline">
+        <a
+          href={href}
+          target={ext ? "_blank" : undefined}
+          rel={ext ? "noopener noreferrer" : undefined}
+          className="text-in-cyan underline underline-offset-4 hover:no-underline"
+        >
           {children}
         </a>
       );
@@ -38,8 +86,11 @@ const components: PortableTextComponents = {
     strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
     em: ({ children }) => <em className="italic">{children}</em>,
     underline: ({ children }) => <span className="underline underline-offset-2">{children}</span>,
-    code: ({ children }) => <code className="px-1 py-0.5 text-in-gray-base rounded bg-black/10 text-sm">{children}</code>,
+    code: ({ children }) => (
+      <code className="px-1 py-0.5 rounded bg-black/10 text-in-gray-base text-sm">{children}</code>
+    ),
   },
+
   types: {
     image: ({ value }) => {
       const v = value as ImgVal;
@@ -48,9 +99,15 @@ const components: PortableTextComponents = {
       const src = urlFor(ref).width(1200).fit("max").auto("format").url();
       return (
         <figure className="my-8">
-          <Image src={src} alt={v.alt || ""} width={400} height={225}
-                 className="rounded-2xl w-auto h-auto object-contain"
-                 placeholder={v.lqip ? "blur" : "empty"} blurDataURL={v.lqip}/>
+          <Image
+            src={src}
+            alt={v.alt || ""}
+            width={400}
+            height={225}
+            className="rounded-2xl w-auto h-auto object-contain"
+            placeholder={v.lqip ? "blur" : "empty"}
+            blurDataURL={v.lqip}
+          />
           {v.caption && <figcaption className="text-sm text-gray-500 mt-2">{v.caption}</figcaption>}
         </figure>
       );
@@ -67,8 +124,12 @@ const components: PortableTextComponents = {
       if (!url) return null;
       return (
         <div className="my-8 aspect-video w-full overflow-hidden rounded-2xl">
-          <iframe src={url} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen className="h-full w-full"/>
+          <iframe
+            src={url}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="h-full w-full"
+          />
         </div>
       );
     },
@@ -84,14 +145,18 @@ const components: PortableTextComponents = {
   },
 };
 
-export function PortableArticle({ value, variant = "prose" }: Props) {
+export function PortableArticle({ value, className }: Props) {
   if (!value?.length) return null;
-  const container =
-    variant === "prose"
-      ? "prose prose-invert max-w-none prose-headings:font-semibold prose-a:text-in-cyan"
-      : "max-w-none";
+
+  // Contenedor base sin prose: controla el ritmo vertical global
+  const container = [
+    "max-w-none",
+    "text-in-gray-base",          // color base del texto
+    "space-y-12",                  // ritmo entre bloques hermanos *que no tengan su propio margin*
+  ].join(" ");
+
   return (
-    <article className={container}>
+    <article className={className ? `${container} ${className}` : container}>
       <PortableText value={value} components={components} />
     </article>
   );

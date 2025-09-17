@@ -22,8 +22,8 @@ export const Blog = async({currentPage = 1}:BlogProps) => {
 
   return (
     <section className="max-w-7xl container mx-auto px-4">
-      <div className="py-12">
-        <h2 className="font-in-nunito text-4xl font-semibold">Articulos</h2>
+      <div className="py-10 md:py-12">
+        <h2 className="font-in-nunito text-in-blue-title text-3xl md:text-4xl font-semibold text-center">Articulos</h2>
       </div>
       <GridBlog data={data} />
       <PaginationPage totalItems={data.total} sizePage={PAGE_SIZE} currentPage={currentPage} />

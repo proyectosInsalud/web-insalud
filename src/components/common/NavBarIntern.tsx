@@ -3,15 +3,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { HamburguerMenu } from "../home/HamburguerMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { eventRegisterGtm } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export const NavBarIntern = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBlog, setIsBlog] = useState(false);
+
+  const pathName = usePathname();
+
+  useEffect(() => {
+    if (pathName.includes("/blog/")) {
+      setIsBlog(true);
+    } else {
+      setIsBlog(false);
+    }
+  }, [pathName]);
 
   return (
     <header className="max-w-7xl mx-auto">
-      <div className="flex py-4 justify-between items-center md:from-transparent md:to-transparent bg-gradient-to-b from-black/40 to-black/0 px-4">
+      <div className={`flex py-4 justify-between items-center md:from-transparent md:to-transparent ${isBlog? "bg-in-blue-title md:bg-transparent" : "bg-gradient-to-b from-black/40 to-black/0"}  px-4`}>
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/svg/logo-insalud-color.svg"

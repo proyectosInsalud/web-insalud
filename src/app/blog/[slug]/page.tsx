@@ -32,7 +32,9 @@ export default async function BlogPost({params}: PageProps) {
 
   return (
     <>
-      <CintilloBarra />
+      <div className="hidden md:block">
+        <CintilloBarra />
+      </div>
       <NavBarIntern />
       <EntradaBlog data={data}/>
     </>

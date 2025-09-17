@@ -15,16 +15,16 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
     <section className="max-w-7xl container mx-auto px-4 py-12 space-y-8">
       {/* Titulo */}
       <div className="space-y-8">
-        <h1 className="font-in-nunito text-4xl font-semibold text-center">
+        <h1 className="font-in-nunito max-w-[1000px] mx-auto text-in-blue-title text-3xl md:text-4xl font-semibold text-center">
           {title}
         </h1>
         {/* Tags */}
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-2">
           {tags &&
             tags.map((tag, index) => (
               <span
                 key={index}
-                className="bg-in-cyan py-1 px-8 text-sm rounded-full text-white mr-2 font-semibold"
+                className="bg-in-cyan py-1 px-8 text-xs md:text-sm rounded-full text-center text-white font-semibold"
               >
                 {tag?.title.toUpperCase()}
               </span>
