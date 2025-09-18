@@ -35,7 +35,7 @@ export const AllAboutInsalud = () => {
                   </h3>
                   <p>Conoce el nuevo centro de Medicina Estética y Regenerativa. </p>
                 </div>
-                <Link href="https://prensa.insalud.pe/noticias/in-aesthetics-descubre-tu-belleza" className="text-in-cyan">Leer más</Link>
+                <Link href="/blog/in-aesthetics-descubre-tu-belleza-y-libera-tu-mejor-version" className="text-in-cyan">Leer más</Link>
               </article>
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
@@ -50,12 +50,12 @@ export const AllAboutInsalud = () => {
                 />
                 <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-in-blue-title">INSALUD - Centro Médico Especializado
+                  <h3 className="font-semibold text-lg text-in-blue-title line-clamp-2">INSALUD: Empresa Peruana del Año 2025 en Salud Especializada
 
                   </h3>
                   <p>Centro Médico Especializado con presencia en Perú y expansión en Latinoamérica. </p>
                 </div>
-                <Link href="https://prensa.insalud.pe/noticias/centro-medico-especializado" className="text-in-cyan">Leer más</Link>
+                <Link href="/blog/insalud-empresa-peruana-del-ano-2025-en-salud-especializada" className="text-in-cyan">Leer más</Link>
               </article>
 
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
@@ -71,11 +71,11 @@ export const AllAboutInsalud = () => {
                 />
                 <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
                 <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-in-blue-title">Hombres jóvenes en riesgo por VPH: campaña de detección
+                  <h3 className="font-semibold text-lg text-in-blue-title line-clamp-2">Hombres jóvenes en riesgo por VPH: campaña de detección
                   </h3>
                   <p>Insalud lanza campaña hasta el 15 de junio con pruebas. </p>
                 </div>
-                <Link href="https://prensa.insalud.pe/noticias/hombres-jovenes-riesgo-vph" className="text-in-cyan">Leer más</Link>
+                <Link href="/blog/hombres-jovenes-en-riesgo-por-vph" className="text-in-cyan">Leer más</Link>
               </article>
 
             </div>

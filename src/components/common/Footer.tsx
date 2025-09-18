@@ -68,7 +68,7 @@ export const Footer = () => {
             </p>
             <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
               <Link href="#nosostros">Nosotros</Link>
-              <Link href="#blog">Blog</Link>
+              <Link href="/blog">Blog</Link>
               <Link href="#">Trabaja con nosotros</Link>
             </div>
           </article>
