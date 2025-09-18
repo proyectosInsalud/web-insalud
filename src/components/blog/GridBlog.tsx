@@ -20,7 +20,7 @@ export const GridBlog = ({data}: GridBlogProps) => {
                         ))}
                     </div>
                     <div className="space-y-2">
-                        <h2 className="font-in-nunito text-2xl font-semibold">{post.title}</h2>
+                        <h2 className="font-in-nunito text-2xl line-clamp-2 font-semibold">{post.title}</h2>
                         <p className="line-clamp-3 text-sm" >{post.excerpt}</p>
                     </div>
                     <div className="flex items-center justify-between">

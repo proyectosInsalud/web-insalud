@@ -36,8 +36,8 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
         <Image
           src={cover.url || ""}
           alt={cover.alt || ""}
-          width={300}
-          height={150}
+          width={1200}
+          height={600}
           className="w-full  object-cover rounded-3xl"
         />
       </div>
