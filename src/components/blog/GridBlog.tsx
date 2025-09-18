@@ -15,7 +15,7 @@ export const GridBlog = ({data}: GridBlogProps) => {
                 <article className="space-y-4 hover:shadow-2xl p-4 rounded-2xl transition-all cursor-pointer duration-300" >
                     <Image src={post.cover.url || ""} alt={post.cover.alt || ""} width={300} height={200} className="w-full max-h-[200px] object-cover rounded-3xl" />
                     <div className="flex gap-2">
-                        {post.tagsExpanded.map((tag) => (
+                        {post.tagsExpanded?.map((tag) => (
                             <span className="text-in-cyan bg-in-cyan/10 px-4 py-1 rounded-full" key={tag._id}>{tag.title}</span>
                         ))}
                     </div>
