@@ -7,7 +7,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { useModalStore } from "@/schema/store/modalStore";
+import { useModalStore } from "../../store/modalStore";
 import Image from "next/image";
 import { cdn } from "@/utils/cdn";
 import {

@@ -49,11 +49,6 @@ const nextConfig: NextConfig = {
       },
       { source: "/diagnostico", destination: "/diagnosticos", permanent: true },
       { source: "/empleabilidad", destination: "/", permanent: true },
-      {
-        source: "/libro-de-reclamaciones",
-        destination: "/contacto",
-        permanent: true,
-      },
       { source: "/noisotros", destination: "/", permanent: true },
       { source: "/nosotros", destination: "/", permanent: true },
       { source: "/sedes", destination: "/contacto", permanent: true },

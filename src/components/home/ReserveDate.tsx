@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { problemasSalud } from "@/data/problemasSalud";
 import { sedesAccordion } from "@/data/sedesAccordion";
-import { useModalStore } from "@/schema/store/modalStore";
+import { useModalStore } from "../../store/modalStore";
 import { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { CalendarDays, CalendarIcon, ChevronDownIcon } from "lucide-react";

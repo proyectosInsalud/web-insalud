@@ -1,6 +1,6 @@
 "use client";
 import { eventRegisterGtm } from "@/lib/utils";
-import { useModalStore } from "@/schema/store/modalStore";
+import { useModalStore } from "../../store/modalStore";
 import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 import Link from "next/link";

@@ -179,3 +179,8 @@ select option:checked {
 * {
   scroll-behavior: smooth;
 }
+
+
+.input_form {
+    @apply border-in-cyan bg-white
+}

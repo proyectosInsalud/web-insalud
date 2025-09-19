@@ -1,5 +1,5 @@
 import { eventRegisterGtm } from "@/lib/utils";
-import { useModalStore } from "@/schema/store/modalStore";
+import { useModalStore } from "../store/modalStore";
 
 export const useOpenForm = () => {
     const openReservationModal = useModalStore(

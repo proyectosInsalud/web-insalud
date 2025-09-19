@@ -2,6 +2,7 @@
 import { formPreReservationSchema, formReservationSchema } from "@/schema";
 import { zPost, zPostList } from "@/schema/blog";
 import { zPostEntrada } from "@/schema/blogEntrada";
+import { libroSchema } from "@/schema/libro";
 import { DiagnosticoSchema, SEOSchema, TestimonialSchema } from "@/schema/servicio";
 import { PortableTextBlock } from "next-sanity";
 import { z } from "zod";
@@ -30,3 +31,6 @@ export type PostBaseType = z.infer<typeof zPostEntrada>;
 export type PostTypeEntry = PostBaseType & {
     body: PortableTextBlock[];
 };
+
+// Tipos para el libro de reclamaciones
+export type LibroReclamacionesType = z.infer<typeof libroSchema>;

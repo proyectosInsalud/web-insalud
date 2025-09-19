@@ -14,7 +14,7 @@ export const NavBarIntern = () => {
   const pathName = usePathname();
 
   useEffect(() => {
-    if (pathName.includes("/blog/")) {
+    if (pathName.includes("/blog/") || pathName.includes("/libro-de-reclamaciones")) {
       setIsBlog(true);
     } else {
       setIsBlog(false);

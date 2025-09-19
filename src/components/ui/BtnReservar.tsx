@@ -3,7 +3,7 @@
 import { cn, eventRegisterGtm } from '@/lib/utils'
 import { Button } from './button'
 import { CalendarIcon } from 'lucide-react'
-import { useModalStore } from '@/schema/store/modalStore';
+import { useModalStore } from '../../store/modalStore';
 
 export const BtnReservar = ({ className }: { className?: string }) => {
   const { openReservationModal } = useModalStore();
