@@ -14,6 +14,7 @@ export default function LibroDeReclamaciones() {
         <div className="hidden md:block">
             <CintilloBarra />
         </div>
+        {/* Coment */}
             <NavBarIntern />
             <FormContactLibro />
         </>
