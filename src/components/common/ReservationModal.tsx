@@ -79,13 +79,13 @@ export function ReservationModal() {
 
       await saveLead({
         id_lead_source: 15,
-        name: reservationDetails.nombres,
-        email: reservationDetails.correo,
-        phone: "51" + reservationDetails.telefono,
+        name: String(reservationDetails.nombres),
+        email: String(reservationDetails.correo),
+        phone: "51" + String(reservationDetails.telefono),
         url: `${window.location.origin}${pathname}`,
-        reason: reservationDetails.problemaSalud,
-        sede: reservationDetails.sede,
-        date: reservationDetails.fecha,
+        reason: String(reservationDetails.problemaSalud),
+        sede: String(reservationDetails.sede),
+        date: String(reservationDetails.fecha),
         id_announcement: "",
       });
 

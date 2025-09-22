@@ -15,7 +15,7 @@ export async function saveLead(data: LeadType) {
                 timeout: 10000,
             }
         )
-        console.log("Lead guardado exitosamente:", res.data);
+        console.log("Lead guardado exitosamente:", res);
     } catch (error) {
         console.error("Error al guardar el lead:", error);
         throw error;
