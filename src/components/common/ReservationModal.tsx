@@ -26,6 +26,9 @@ import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { useState } from "react";
 import { eventRegisterGtm } from "@/lib/utils";
+import { sendReservationEmail } from "@/services/SendEmail";
+import { saveLead } from "@/services/SaveLeads";
+import { usePathname } from "next/navigation";
 
 export function ReservationModal() {
   const {
@@ -35,6 +38,9 @@ export function ReservationModal() {
     resetReservationData,
   } = useModalStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+  const pathname = usePathname();
 
   const form = useForm<FormReservationType>({
     resolver: zodResolver(formReservationSchema),
@@ -49,46 +55,57 @@ export function ReservationModal() {
     },
   });
 
-  function onSubmit(data: FormReservationType) {
-    // Crear objeto completo con todos los datos
-    const datosCompletos = {
-      // Datos del formulario
-      nombres: data.nombres,
-      apellidos: data.apellidos,
-      correo: data.email,
-      telefono: data.telefono,
+  async function onSubmit(data: FormReservationType) {
+    try {
+      // Preparar los datos de la reserva
+      const reservationDetails = {
+        // Información personal del paciente
+        nombres: data.nombres,
+        apellidos: data.apellidos,
+        correo: data.email,
+        telefono: data.telefono,
 
-      // Datos de las selecciones del store
-      problemaSalud: reservationData.problemaSalud,
-      sede: reservationData.sede,
-      fecha: reservationData.fecha,
-      detalleConsulta: data.detalleConsulta,
-    };
+        // Detalles de la consulta médica
+        problemaSalud: reservationData.problemaSalud,
+        sede: reservationData.sede,
+        fecha: reservationData.fecha ? reservationData.fecha.toISOString().split('T')[0] : '',
+        detalleConsulta: data.detalleConsulta || 'Sin detalles adicionales',
+      };
 
-    setIsSubmitting(true);
+      setIsSubmitting(true);
 
-    // Enviar los datos al endpoint de correo
-    fetch("/api/mail", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(datosCompletos),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error al enviar el correo");
-        }
-        eventRegisterGtm("form_submission");
-        toast.success("Cita agendada correctamente");
-        setIsSubmitting(false);
-        form.reset();
-        resetReservationData();
-        closeReservationModal();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+      // Enviar confirmación por correo electrónico
+      await sendReservationEmail(reservationDetails);
+
+      await saveLead({
+        id_lead_source: 15,
+        name: reservationDetails.nombres,
+        email: reservationDetails.correo,
+        phone: "51" + reservationDetails.telefono,
+        url: `${window.location.origin}${pathname}`,
+        reason: reservationDetails.problemaSalud,
+        sede: reservationDetails.sede,
+        date: reservationDetails.fecha,
+        id_announcement: "",
       });
+
+      // Registro del evento en Google Tag Manager
+      eventRegisterGtm("form_submission");
+
+      // Mostrar mensaje de éxito al usuario
+      toast.success("Cita agendada correctamente");
+
+      // Limpiar el formulario y estado
+      form.reset();
+      resetReservationData();
+      closeReservationModal();
+
+    } catch (error) {
+      console.error("Error al procesar la reserva:", error);
+      toast.error("Error al agendar la cita. Por favor, intenta nuevamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
