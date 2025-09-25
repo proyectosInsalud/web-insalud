@@ -20,7 +20,7 @@ export const AllAboutInsalud = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
-                  src={"https://prensa.insalud.pe/images/noticias/noticia-5.png"} 
+                  src={"/images/blog/noticia-1.png"} 
                   alt="In-Aesthetics: Descubre tu belleza y libera tu mejor versión" 
                   width={100} 
                   height={100} 
@@ -39,7 +39,7 @@ export const AllAboutInsalud = () => {
               </article>
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
-                  src={"https://prensa.insalud.pe/images/noticias/noticia-4.png"} 
+                  src={"/images/blog/noticia-2.png"} 
                   alt="INSALUD - Centro Médico Especializado" 
                   width={100} 
                   height={100} 
@@ -60,7 +60,7 @@ export const AllAboutInsalud = () => {
 
               <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
                 <Image 
-                  src={"https://prensa.insalud.pe/images/noticias/noticia-1.png"} 
+                  src={"/images/blog/noticia-3.png"} 
                   alt="Hombres jóvenes en riesgo por VPH: campaña de detección" 
                   width={100} 
                   height={100} 
