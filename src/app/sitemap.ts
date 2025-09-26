@@ -30,6 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     },
     {
+      url: `${siteUrl}/sedes`,
+      lastModified: now,
+    },
+    {
       url: `${siteUrl}/blog/problemas-urologicos-en-jovenes-propensos-a-enfermedades-de-transmision-sexual`,
       lastModified: now,
     },
@@ -75,6 +79,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/blog/cuidados-urologicos-en-mujeres`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/prostatitis-cronica-causas-sintomas-y-tratamiento-en-peru`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/cancer-de-prostata-y-prostatitis-cronica-diferencias-y-senales-de-alerta`,
       lastModified: now,
     },
   ];
