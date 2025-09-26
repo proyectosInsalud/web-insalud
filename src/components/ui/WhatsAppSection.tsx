@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { FaWhatsapp } from "react-icons/fa"
+import { eventRegisterGtm } from "@/lib/utils";
 
 type WhatsAppSectionProps = {
     title:string,
@@ -21,7 +22,9 @@ export const WhatsAppSection = ({title, subtext}: WhatsAppSectionProps) => {
                 <h2 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl font-semibold text-in-blue-title">{title}</h2>
                 <p className="text-sm text-in-gray-base max-w-3xl mx-auto">{subtext}</p>
             </div>
-            <Link target="_blank" className="flex justify-center items-center  rounded-lg" href={whatsappLink}>
+            <Link
+                onClick={() => eventRegisterGtm("whatsapp_click")}
+            target="_blank" className="flex justify-center items-center  rounded-lg" href={whatsappLink}>
                 <div className="group bg-white flex items-center gap-2 py-4 transition hover:bg-in-cyan hover:text-white rounded-full px-8 shadow-lg">
                     <FaWhatsapp className="text-in-cyan group-hover:text-white" size={20} />
                     <p className="font-semibold text-in-cyan group-hover:text-white">Agendar</p>
