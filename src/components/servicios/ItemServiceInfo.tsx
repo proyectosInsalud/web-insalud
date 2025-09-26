@@ -19,9 +19,9 @@ export const ItemServiceInfo = ({ name, description, slug }: ItemServiceInfoProp
               {description}
             </p>
             <div className="flex gap-2">
-              <Link 
+              <Link
                 className="flex-1"
-                onClick={() => eventRegisterGtm("service_whatsapp_click")}
+                onClick={() => eventRegisterGtm("whatsapp_click")}
                 target="_blank" 
                 href={`https://wa.me/51957016010?text=${encodedMessage}`}>
                 <Button
