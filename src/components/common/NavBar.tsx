@@ -6,10 +6,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { HamburguerMenu } from "../home/HamburguerMenu";
 import { usePathname } from "next/navigation";
-import { eventRegisterGtm } from "@/lib/utils";
+import { cn, eventRegisterGtm } from "@/lib/utils";
 // import { usePathname } from "next/navigation";
 
-export const NavBar = () => {
+
+export const NavBar = ({ className }: { className?: string }) => {
 
   
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ export const NavBar = () => {
   
 
   return (
-    <div className="md:bg-white/10 text-black">
+    <div className={cn("md:bg-white/10 text-black", className)}>
       <section className="max-w-7xl mx-auto px-4 container py-4 font-in-nunito">
         <div className="flex justify-between items-center">
           <Link href="/">

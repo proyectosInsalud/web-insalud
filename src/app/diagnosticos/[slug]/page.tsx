@@ -47,9 +47,6 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
         pasos={tratamiento.pasosDiagnostico}
         duracion={tratamiento.duracion}
       /> */}
-      <section>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum iure expedita doloremque veritatis debitis, quos, quo tenetur, consequuntur quaerat deserunt voluptatibus nisi explicabo beatae quasi omnis aspernatur. Soluta, voluptates ullam!
-      </section>
     </>
   );
 }
