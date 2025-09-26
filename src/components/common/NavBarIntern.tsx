@@ -61,7 +61,7 @@ export const NavBarIntern = () => {
           </Link>
           <Link
             className="hover:text-in-cyan transition-all duration-150"
-            href="/https://insalud.pe/#sedes"
+            href="/sedes"
           >
             Sedes
           </Link>
