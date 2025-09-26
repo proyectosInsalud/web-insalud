@@ -10,6 +10,7 @@ import { AllAboutInsalud } from "@/components/home/AllAboutInsalud";
 import { ReservationModal } from "@/components/common/ReservationModal";
 import { testimonials } from "@/data/testimonials";
 import { Metadata } from "next";
+import { PopUp } from "@/components/ui/PopUp";
 
 // app/(root)/page.tsx o app/layout.tsx
 export const metadata:Metadata = {
@@ -93,6 +94,7 @@ export default function Home() {
         <AllAboutInsalud />
         <Testimonials testimonials={testimonials} />
       </main>
+      <PopUp />
 
       {/* Modal de reserva */}
       <ReservationModal />
