@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export const PopUp = () => {
-  const message = "¡Hola! me gustaría obtener más información sobre el programa internacional de salud digital y gestión de la innovación clínica."
-  const phoneNumber = "51969332494"
+  const message = "Hola, vi su web y me interesa la promoción del Día del Shopping"
+  const phoneNumber = "51957016010"
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const [isOpen, setIsOpen] = useState(false);
