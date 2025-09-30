@@ -1,0 +1,183 @@
+{
+  "title": "Cauterización Láser de Verrugas Genitales por VPH",
+  "slug": "cauterizacion-laser-vph",
+  "summary": "Tratamiento no invasivo y seguro con ondas de choque de baja intensidad para mejorar la función eréctil.",
+  "hero": {
+    "badge": "No invasivo",
+    "progressPct": 10,
+    "heading": "Cauterización Láser de Verrugas Genitales por  VPH",
+    "subheading": "Procedimiento rápido, seguro y mínimamente invasivo para tratar lesiones genitales por VPH.",
+    "cta": { "text": "Agendar Evaluación", "href": "/reservar" },
+    "image": {
+      "src": "/images/servicios/cauterizacion-laser-vph/hero.png",
+      "alt": "Pareja preocupada por la disfunción eréctil"
+    }
+  },
+  "proceso": {
+    "title": "Proceso del Tratamiento",
+    "items": [
+      "Consulta médica especializada.",
+      "Orden de penescopia y/o anuscopia según evaluación.",
+      "Procedimiento de cauterización láser indicado por el médico."
+    ],
+    "duration": "La cauterización láser suele tomar entre 20 y 50 minutos, según el caso clínico de cada paciente."
+  },
+
+
+
+  "impacto": {
+    "lead": "El Virus del Papiloma Humano",
+    "suffix": "es la infección de transmisión sexual más común del mundo.",
+    "leadContinue": "",
+    "description": "Una de sus manifestaciones más frecuentes son las verrugas genitales, que afectan la salud sexual, la autoestima y la calidad de vida. La cauterización con láser es un procedimiento de última generación que destruye las lesiones con alta precisión, minimiza el riesgo de recurrencia y permite una recuperación rápida y estética."
+  },
+
+
+  "benefitsGrid": [
+    {
+      "title": "Seguro y efectivo",
+      "description": "Procedimiento seguro en consultorio.",
+      "image": {
+        "src": "/images/servicios/icons-beneficios/beneficio-6.png",
+        "alt": "Beneficio seguro y efectivo"
+      }
+    },
+    {
+      "title": "Precisión milimétrica",
+      "description": "Afecta solo el tejido con lesión.",
+      "image": {
+        "src": "/images/servicios/icons-beneficios/beneficio-2.png",
+        "alt": "Beneficio resultados rápidos"
+      }
+    },
+    {
+      "title": "Menor dolor",
+      "description": "Comparado con crioterapia u otros métodos.",
+      "image": {
+        "src": "/images/servicios/icons-beneficios/beneficio-5.png",
+        "alt": "Beneficio prevención real"
+      }
+    },
+    {
+      "title": "Rápido retorno",
+      "description": "Recuperación estética y rápida.",
+      "image": {
+        "src": "/images/servicios/icons-beneficios/beneficio-7.png",
+        "alt": "Beneficio de confianza"
+      }
+    }
+  ],
+
+
+  "beneficiosDetalle": {
+    "title": "¿Por qué elegir cauterización láser para",
+    "titleHighlight": "verrugas por VPH?",
+    "bullets": [
+      "Mejora de la microvascularización y oxigenación del tejido eréctil.",
+      "Estimulación de factores de crecimiento y neoangiogénesis.",
+      "Puede usarse como alternativa o complemento a fármacos PDE5."
+    ]
+  },
+  "respaldoMedico": {
+    "title": "Respaldo",
+    "titleHighlight": "médico",
+    "note": "Tecnología avalada por la Sociedad Internacional de Medicina Sexual (ISSM). Estudios clínicos demuestran que la cauterización láser elimina las verrugas genitales con alta precisión, rápida recuperación y bajo riesgo de recurrencia. Insalud cuenta con el Dr. José Antonio Grandez, urólogo con más de 20 años de experiencia en salud sexual.",
+    "cta": { "text": "Reserva tu consulta inicial ahora", "href": "/reservar" },
+    "image": {
+      "src": "/images/servicios/chequeo-prostatico/medical-support.png",
+      "alt": "Equipo médico especializado en urología"
+    }
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Salvador Hilares",
+      "description": "Volví a tener erecciones firmes sin depender siempre de pastillas.",
+      "image": "/images/testimonios/walter.png",
+      "meta": "Paciente InSalud, 24 años"
+    },
+    {
+      "id": 2,
+      "name": "Salvador Hilares",
+      "description": "Volví a tener erecciones firmes sin depender siempre de pastillas.",
+      "image": "/images/testimonios/walter.png",
+      "meta": "Paciente InSalud, 24 años"
+    },
+    {
+      "id": 3,
+      "name": "Salvador Hilares",
+      "description": "Volví a tener erecciones firmes sin depender siempre de pastillas.",
+      "image": "/images/testimonios/walter.png",
+      "meta": "Paciente InSalud, 24 años"
+    }
+  ],
+  "faq": {
+    "image":"/images/servicios/chequeo-prostatico/faq-image-section.png",
+    "alt": "Doctor urologo - Insalud",
+    "faqs": [
+      {
+        "q": "¿Quitar verrugas por VPH con láser duele?",
+        "a": "No, solo genera molestia leve y pasajera."
+      },
+      {
+        "q": "¿Qué tan efectivo es el láser para VPH?",
+        "a": " El láser elimina las lesiones actuales; sin embargo, el VPH puede permanecer. Se recomienda vacunación y controles periódicos."
+      },
+      {
+        "q": "¿Cuánto tarda en cicatrizar un láser VPH?",
+        "a": "Normalmente, el paciente retoma actividades el mismo día."
+      }
+    ]
+  },
+
+  "equipo": {
+    "title": "Equipo de diagnóstico prostático",
+    "description": "Equipos láser avanzados para tratamiento de verrugas genitales. Médicos especialistas en urología, ginecología y salud sexual. Protocolos internacionales con enfoque integral de ITS y VPH.",
+    "image": {
+      "src": "/images/servicios/chequeo-prostatico/device-medic.png",
+      "alt": "Equipo de ondas de choque para disfunción eréctil"
+    },
+    "badges": ["Seguridad", "Certificación FDA del producto"]
+  },
+  "ctaFinal": {
+    "text": "Recupera tu vida sexual con cauterización láser para VPH",
+    "subtext": "Más de 5,000 pacientes tratados en Perú y Latinoamérica.",
+    "button": { "text": "Agenda tu cita hoy mismo", "href": "/reservar" }
+  },
+  "media": [
+    {
+      "src": "/images/servicios/disfuncion-erectil/ejemplo-1.png",
+      "alt": "Aplicación de ondas de choque"
+    }
+  ],
+  "highlights": [
+    { "label": "Pacientes atendidos", "value": "6,000+" },
+    { "label": "Especialistas", "value": "20+" }
+  ],
+  "seo": {
+    "title": "Cauterización láser VPH | InSalud",
+    "description": "Cauterización láser VPH: Elimina las verrugas genitales con alta precisión y rápida recuperación. Resultados en 2 horas. Prevención de cáncer y prostatitis en InSalud Perú.",
+    "canonical": "https://insalud.pe/servicios/chequeo-prostatico",
+    "keywords": [
+      "cauterización láser VPH",
+      "verrugas genitales",
+      "láser VPH",
+      "prevención cáncer de próstata",
+      "prostatitis crónica",
+      "urología Lima",
+      "urología Perú"
+    ],
+    "ogTitle": "Cauterización láser VPH | InSalud",
+    "ogDescription": "Cauterización láser VPH: Elimina las verrugas genitales con alta precisión y rápida recuperación. Resultados en 2 horas. Prevención de cáncer y prostatitis en InSalud Perú.",
+    "ogUrl": "https://insalud.pe/servicios/chequeo-prostatico",
+    "ogImage": "/og/chequeo-prostatico.png",
+    "ogType": "website",
+    "ogLocale": "es_PE",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "Cauterización láser VPH | InSalud",
+    "twitterDescription": "Cauterización láser VPH: Elimina las verrugas genitales con alta precisión y rápida recuperación. Resultados en 2 horas. Prevención de cáncer y prostatitis en InSalud Perú.",
+    "twitterImage": "/og/chequeo-prostatico.png",
+    "author": "InSalud Perú",
+    "robots": "index, follow"
+  }
+}
