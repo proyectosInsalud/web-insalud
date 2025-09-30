@@ -15,29 +15,19 @@ import { PopUpWhatsApp } from "@/components/ui/PopUpWhatsApp";
 
 // app/(root)/page.tsx o app/layout.tsx
 export const metadata:Metadata = {
-  title: "Los Mejores Urólogos en Lima | InSalud – Especialistas en Salud Sexual Masculina",
+  title: " InSalud - Clínica de Urología y Salud Sexual en Lima",
   description:
-    "InSalud: urólogos en Lima expertos en disfunción eréctil, VPH y prostatitis crónica. Diagnóstico, prevención y tratamientos avanzados. ¡Reserva tu cita hoy!",
+    "Clínica en Lima especializada en urología, salud sexual masculina y femenina, ginecología y medicina integral. Agenda tu cita con especialistas certificados en InSalud.",
   keywords: [
-    "urólogos en Lima",
-    "mejores urólogos Lima",
-    "disfunción eréctil",
-    "VPH tratamiento",
-    "prostatitis crónica",
-    "salud sexual masculina",
-    "clínica urológica Lima",
-    "tratamientos urológicos",
-    "reserva de citas",
-    "InSalud Perú",
-    "sedes en Lima y Latinoamérica"
+    "infecciones urinarias", "cistitis", "cistitis tratamiento", "salud sexual", "urologia en Lima", "sexualidad masculina", "sexualidad hombre", "infeccion de orina", "cistitis mujer", "chequeo prostático", "control hormonal", "mal de orin", "mal de orina", "ardor después de orinar", "infeccion de riñon", "infeccion urinaria fuerte"
   ],
   alternates: {
     canonical: "https://insalud.pe/"
   },
   openGraph: {
-    title: "Los Mejores Urólogos en Lima | InSalud",
+    title: "InSalud - Clínica de Urología y Salud Sexual en Lima",
     description:
-      "Especialistas en urología y salud sexual masculina: disfunción eréctil, VPH y prostatitis crónica. Tecnología avanzada y atención personalizada.",
+      "Clínica en Lima especializada en urología, salud sexual masculina y femenina, ginecología y medicina integral. Agenda tu cita con especialistas certificados en InSalud.",
     url: "https://insalud.pe/",
     siteName: "InSalud",
     locale: "es_PE",
@@ -54,9 +44,9 @@ export const metadata:Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Los Mejores Urólogos en Lima | InSalud",
+    title: "InSalud - Clínica de Urología y Salud Sexual en Lima",
     description:
-      "Urólogos expertos en Lima para disfunción eréctil, VPH y prostatitis crónica. Atención confiable y resultados reales.",
+      "Clínica en Lima especializada en urología, salud sexual masculina y femenina, ginecología y medicina integral. Agenda tu cita con especialistas certificados en InSalud.",
     // images: [
     //   "https://insalud.pe/og/insalud-home-1200x630.jpg"
     // ],

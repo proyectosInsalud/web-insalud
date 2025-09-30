@@ -14,7 +14,7 @@ export const HeroHome = () => {
             playsInline
             preload="metadata"
             className="hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10"
-            aria-label="Video banner de escritorio mostrando servicios médicos de InSalud"
+            aria-label="Video banner de escritorio mostrando tratamientos médicos de InSalud"
           />
           <video 
             src={"/video/video-banner-mobile.mp4"} 
@@ -24,7 +24,7 @@ export const HeroHome = () => {
             playsInline
             preload="metadata"
             className="block md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10"
-            aria-label="Video banner para móviles mostrando servicios médicos de InSalud"
+            aria-label="Video banner para móviles mostrando tratamientos médicos de InSalud"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black/40 -z-5"></div>
         <CintilloBarra />

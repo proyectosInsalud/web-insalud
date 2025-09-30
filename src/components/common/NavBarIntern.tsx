@@ -49,15 +49,15 @@ export const NavBarIntern = () => {
           </Link>
           <Link
             className="hover:text-in-cyan transition-all duration-150"
-            href="/diagnosticos"
+            href="/enfermedades"
           >
-            Diagnosticos
+            Enfermedades
           </Link>
           <Link
             className="hover:text-in-cyan transition-all duration-150"
-            href="/servicios"
+            href="/tratamientos"
           >
-            Servicios
+            Tratamientos
           </Link>
           <Link
             className="hover:text-in-cyan transition-all duration-150"

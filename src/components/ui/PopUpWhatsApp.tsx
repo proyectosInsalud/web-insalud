@@ -11,8 +11,8 @@ export const PopUpWhatsApp = () => {
 // Dropdown  al home
 
 // Circunsicion - Cambiar nombre
-// Rezum agregar a servicios.
+// Rezum agregar a tratamientos.
 
 // Video de entrevistas cortos a la web. (Evaluación)
 
-// Listar los servicios  y pedir video - 
+// Listar los tratamientos  y pedir video - 

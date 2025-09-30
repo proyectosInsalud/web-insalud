@@ -10,11 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     },
     {
-      url: `${siteUrl}/diagnosticos`,
+      url: `${siteUrl}/enfermedades`,
       lastModified: now,
     },
     {
-      url: `${siteUrl}/servicios`,
+      url: `${siteUrl}/tratamientos`,
       lastModified: now,
     },
     {
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     },
     {
-      url: `${siteUrl}/servicios/chequeo-prostatico`,
+      url: `${siteUrl}/tratamientos/chequeo-prostatico`,
       lastModified: now,
     },
     {

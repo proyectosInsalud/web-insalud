@@ -5,28 +5,19 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "Contacto y Citas | InSalud – Urólogo en Lima",
+  title: "Contacto y Citas Médicas | InSalud en Lima",
   description:
-    "Confirma tu cita en InSalud. Atención rápida y personalizada por urólogos certificados. Contáctanos por WhatsApp, teléfono o formulario y visita nuestras sedes en Lima.",
+    "Agenda tu cita. Saca tu cita médica por WhatsApp o formulario web. Tu clínica urológica de confianza. Horario de atención: Lunes a Sábado: 9 am a 7 pm.",
   keywords: [
-    "contacto",
-    "agenda tu cita",
-    "urólogo en Lima",
-    "InSalud",
-    "whatsapp insalud",
-    "teléfono insalud",
-    "clínicas de urología",
-    "sedes InSalud",
-    "formulario de contacto",
-    "urología"
+    "contacto InSalud", "citas médicas Lima", "agenda urólogo", "WhatsApp InSalud", "clínica urológica Lima", "agendar cita médica", "especialistas urología", "clinicas urologicas", "cita medica", "cita medico", "hora médica", "cita medica online", "sacar cita medica", "essalud cita", "cita medica essalud", "salud cita", "citasmedicas"
   ],
   alternates: {
     canonical: "/contacto"
   },
   openGraph: {
-    title: "Contacto y Citas | InSalud",
+    title: "Contacto y Citas Médicas | InSalud en Lima",
     description:
-      "Agenda tu consulta urológica en nuestras clínicas. Escríbenos o llama y recibe atención clara y personalizada.",
+      "Agenda tu cita. Saca tu cita médica por WhatsApp o formulario web. Tu clínica urológica de confianza. Horario de atención: Lunes a Sábado: 9 am a 7 pm.",
     url: "https://insalud.pe/contacto",
     siteName: "InSalud",
     locale: "es_PE",
@@ -43,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contacto y Citas | InSalud",
+    title: "Contacto y Citas Médicas | InSalud en Lima",
     description:
-      "Agenda tu cita con nuestros urólogos en Lima. Contáctanos por WhatsApp, teléfono o formulario.",
+      "Agenda tu cita. Saca tu cita médica por WhatsApp o formulario web. Tu clínica urológica de confianza. Horario de atención: Lunes a Sábado: 9 am a 7 pm.",
     // images: ["https://insalud.pe/og/contacto-1200x630.jpg"],
     creator: "@insalud_pe"
   },

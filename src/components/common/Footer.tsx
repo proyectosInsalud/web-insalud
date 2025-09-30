@@ -74,17 +74,17 @@ export const Footer = () => {
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-3">
             <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">
-              Diagnósticos
+              Enfermedades
             </p>
             <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-              <Link href="/diagnosticos">Prostatitis Crónica</Link>
-              <Link href="/diagnosticos">Eyaculación Precoz</Link>
-              <Link href="/diagnosticos">Micosis Genital</Link>
-              <Link href="/diagnosticos">Enfermedad de Transmisión Sexual</Link>
-              <Link href="/diagnosticos">Disfunción Eréctil</Link>
-              <Link href="/diagnosticos">Herpes Genital</Link>
-              <Link href="/diagnosticos">Infertilidad</Link>
-              <Link href="/diagnosticos">Chequeo Prostático</Link>
+              <Link href="/enfermedades">Prostatitis Crónica</Link>
+              <Link href="/enfermedades">Eyaculación Precoz</Link>
+              <Link href="/enfermedades">Micosis Genital</Link>
+              <Link href="/enfermedades">Enfermedad de Transmisión Sexual</Link>
+              <Link href="/enfermedades">Disfunción Eréctil</Link>
+              <Link href="/enfermedades">Herpes Genital</Link>
+              <Link href="/enfermedades">Infertilidad</Link>
+              <Link href="/enfermedades">Chequeo Prostático</Link>
             </div>
           </article>
           <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">

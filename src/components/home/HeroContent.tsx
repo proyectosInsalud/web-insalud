@@ -1,5 +1,5 @@
-import { CtaServicios } from "./CtaServicios"
 import { BtnReservar } from "@/components/ui/BtnReservar"
+import { CtaTratamientos } from "./CtaServicios"
 
 export const HeroContent = () => {
   return (
@@ -11,7 +11,7 @@ export const HeroContent = () => {
           </div>
         </div>
         <div className="hidden md:flex items-end justify-between absolute bottom-[42px] left-4 right-4 mx-auto max-w-7xl px-4">
-            <CtaServicios />
+            <CtaTratamientos />
             <BtnReservar />
         </div>
     </section>

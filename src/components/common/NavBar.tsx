@@ -56,8 +56,8 @@ export const NavBar = ({ className }: { className?: string }) => {
           </div>
           <nav className="hidden lg:flex items-center gap-6 text-white font-medium">
             <Link className={`${pathName === '/nosotros' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150` } href="https://insalud.pe/#nosotros">Nosotros</Link>
-            <Link className={`${pathName === '/diagnosticos' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/diagnosticos">Diagnósticos</Link>
-            <Link className={`${pathName === '/servicios' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/servicios">Servicios</Link>
+            <Link className={`${pathName === '/enfermedades' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/enfermedades">Enfermedades</Link>
+            <Link className={`${pathName === '/tratamientos' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/tratamientos">Tratamientos</Link>
             <Link className={`${pathName === '/sedes' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/sedes">Sedes</Link>
             <Link 
               className={`${pathName === '/blog' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} 

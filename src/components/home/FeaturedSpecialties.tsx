@@ -16,7 +16,7 @@ export const FeaturedSpecialties = () => {
 
   return (
     <div
-      id="servicios"
+      id="tratamientos"
       className="max-w-7xl mx-auto px-4 container pt-16 md:pt-24 md:space-y-6 lg:space-y-8"
     >
       <div>

@@ -95,18 +95,18 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                 Nosotros
               </Link>
               <Link
-                href="/diagnosticos"
+                href="/enfermedades"
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Diagnósticos
+                Enfermedades
               </Link>
               <Link
-                href="/servicios"
+                href="/tratamientos"
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Servicios
+                Tratamientos
               </Link>
               <Link
                 href="/sedes"

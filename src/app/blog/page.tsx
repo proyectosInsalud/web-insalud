@@ -5,28 +5,17 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 type RawSearch = { page?: string | string[] };
 
 export const metadata = {
-  title: "Blog InSalud · Salud sexual, urología y prevención",
+  title: "Salud Sexual, Noticias de urología y Prevención | Blog InSalud",
   description:
-    "Explora artículos especializados de InSalud sobre urología, salud sexual masculina y bienestar. Información práctica, prevención, diagnóstico avanzado y tratamientos confiables para tu salud integral en Lima y Latinoamérica.",
+    "Consejos médicos y artículos confiables sobre urología, salud sexual, próstata, prevención y bienestar masculino y femenino. Información médica en Lima.",
   keywords: [
-    "urología",
-    "salud sexual",
-    "disfunción eréctil",
-    "higiene íntima",
-    "prevención médica",
-    "clínica InSalud",
-    "bienestar masculino",
-    "salud prostática",
-    "diagnóstico médico",
-    "tratamientos Perú",
-    "centro urológico",
-    "InSalud Perú"
+    "articulos de medicina", "artículos médicos", "clínica insalud", "prostata sana", "salud intima", "prevención médica", "articulo medicina", "prevenir prostata", "salud prostática", "bienestar masculino", "tu salud intima", "articulos med", "cuidar la próstata", "prostata saludable", "salud de la prostata", "salud intima femenina", "una prostata sana", "blog salud sexual", "blog urología", "disfunción eréctil", "salud prostática", "prevención médica", "bienestar masculino", "clínica InSalud", "artículos médicos", "salud íntima"
   ],
   authors: [{ name: "InSalud", url: "https://insalud.pe" }],
   openGraph: {
-    title: "Blog InSalud · Salud sexual, urología y prevención",
+    title: "Salud Sexual, Noticias de urología y Prevención | Blog InSalud",
     description:
-      "Información confiable y respaldada por especialistas en salud sexual, urología y prevención. Mejora tu bienestar con los contenidos del blog de InSalud.",
+      "Consejos médicos y artículos confiables sobre urología, salud sexual, próstata, prevención y bienestar masculino y femenino. Información médica en Lima.",
     url: "https://insalud.pe/blog",
     siteName: "InSalud",
     images: [
@@ -42,9 +31,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog InSalud · Salud sexual, urología y prevención",
+    title: "Salud Sexual, Noticias de urología y Prevención | Blog InSalud",
     description:
-      "Consejos médicos sobre salud sexual y bienestar masculino. Entra al blog de InSalud y aprende a prevenir y mejorar tu calidad de vida.",
+      "Consejos médicos y artículos confiables sobre urología, salud sexual, próstata, prevención y bienestar masculino y femenino. Información médica en Lima.",
     // images: ["https://insalud.pe/assets/images/insalud-blog-og.jpg"], 
   },
   metadataBase: new URL("https://insalud.pe"),

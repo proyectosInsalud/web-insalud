@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      { source: "/diagnostico", destination: "/diagnosticos", permanent: true },
+      { source: "/diagnostico", destination: "/enfermedades", permanent: true },
       { source: "/empleabilidad", destination: "/", permanent: true },
       { source: "/noisotros", destination: "/", permanent: true },
       { source: "/nosotros", destination: "/", permanent: true },
@@ -59,12 +59,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/chequeo-prostatico-la-prevencion-es-el-primer-paso-hacia-una-vida-saludable",
-        destination: "/servicios/chequeo-prostatico",
+        destination: "/enfermedades/chequeo-prostatico",
         permanent: true,
       },
       {
         source: "/jesusmaria-chequeo-prostatico-2",
-        destination: "/servicios/chequeo-prostatico",
+        destination: "/enfermedades/chequeo-prostatico",
         permanent: true,
       },
       {
@@ -88,7 +88,7 @@ const nextConfig: NextConfig = {
       // pero NO atrapes raíz ni tus 4 rutas ni assets/sitemaps
       // {
       //   source:
-      //     "/:path((?!$|diagnosticos$|servicios$|contacto$|sitemap\\.xml$|robots\\.txt$|favicon\\.ico$|apple-touch-icon\\.png$|manifest\\.json$|_next/|static/|assets/).*)",
+      //     "/:path((?!$|diagnosticos$|tratamientos$|contacto$|sitemap\\.xml$|robots\\.txt$|favicon\\.ico$|apple-touch-icon\\.png$|manifest\\.json$|_next/|static/|assets/).*)",
       //   destination: "/",
       //   permanent: true,
       // },

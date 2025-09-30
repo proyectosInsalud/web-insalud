@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "InSalud - Centro Médico",
-    description: "Servicios médicos especializados",
+    description: "Tratamientos médicos especializados",
   },
 };
 

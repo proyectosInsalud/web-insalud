@@ -15,7 +15,7 @@ export const BreadCrumbInsa = ({ title }: BreadcrumbProps) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink className='text-black' href="/diagnosticos">Diagnósticos</BreadcrumbLink>
+              <BreadcrumbLink className='text-black' href="/enfermedades">Enfermedades</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
