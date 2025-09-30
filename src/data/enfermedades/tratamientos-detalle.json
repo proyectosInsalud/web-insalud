@@ -1,0 +1,209 @@
+[
+  {
+    "slug": "eyaculacion-precoz",
+    "titulo": "Eyaculación Precoz",
+    "categoria": "disfunciones-sexuales",
+    "imagen": "/images/enfermedades/eyaculacion-precoz-insalud.png",
+    "alt": "Pareja estilizada con reloj y dial para ilustrar eyaculación precoz, sin contenido explícito.",
+    "sintomas": [
+      "Eyaculación antes o poco después de iniciar la penetración",
+      "Dificultad para retrasar la eyaculación",
+      "Sensación de poco control sobre el momento de eyacular",
+      "Ansiedad, estrés o frustración por el desempeño"
+    ]
+  },
+  {
+    "slug": "eyaculacion-precoz",
+    "titulo": "Eyaculación Precoz",
+    "categoria": "mas-consultados",
+    "imagen": "/images/enfermedades/eyaculacion-precoz-insalud.png",
+    "alt": "Pareja estilizada con reloj y dial para ilustrar eyaculación precoz, sin contenido explícito.",
+    "sintomas": [
+      "Eyaculación antes o poco después de iniciar la penetración",
+      "Dificultad para retrasar la eyaculación",
+      "Sensación de poco control sobre el momento de eyacular",
+      "Ansiedad, estrés o frustración por el desempeño"
+    ]
+  },
+  {
+    "slug": "disfuncion-erectil",
+    "titulo": "Disfunción Eréctil",
+    "categoria": "disfunciones-sexuales",
+    "imagen": "/images/enfermedades/disfuncion-erectil-insalud.png",
+    "alt": "Silueta masculina con iconos de baja firmeza y estrés por disfunción eréctil.",
+    "sintomas": [
+      "Dificultad para lograr la erección",
+      "Dificultad para mantener la erección el tiempo deseado",
+      "Erecciones menos firmes que antes",
+      "Disminución del deseo sexual",
+      "Ansiedad o estrés relacionados con el rendimiento"
+    ]
+  },
+  {
+    "slug": "disfuncion-erectil",
+    "titulo": "Disfunción Eréctil",
+    "categoria": "mas-consultados",
+    "imagen": "/images/enfermedades/disfuncion-erectil-insalud.png",
+    "alt": "Silueta masculina con iconos de baja firmeza y estrés por disfunción eréctil.",
+    "sintomas": [
+      "Dificultad para lograr la erección",
+      "Dificultad para mantener la erección el tiempo deseado",
+      "Erecciones menos firmes que antes",
+      "Disminución del deseo sexual",
+      "Ansiedad o estrés relacionados con el rendimiento"
+    ]
+  },
+  {
+    "slug": "enfermedad-peyronie",
+    "titulo": "Enfermedad de Peyronie",
+    "categoria": "disfunciones-sexuales",
+    "imagen": "/images/enfermedades/enfermedad-de-peyronie-insalud.png",
+    "alt": "Curvatura peneana representada de forma abstracta con marcador de placa y dolor.",
+    "sintomas": [
+      "Curvatura del pene durante la erección",
+      "Dolor peneano con o sin erección",
+      "Placa o zona endurecida palpable en el cuerpo del pene",
+      "Erecciones menos firmes o acortamiento del pene",
+      "Dificultad para la penetración por la curvatura"
+    ]
+  },
+  {
+    "slug": "vph",
+    "titulo": "Virus del Papiloma Humano (VPH)",
+    "categoria": "infecciones-its",
+    "imagen": "/images/enfermedades/vph-verrugas-genitales-insalud.png",
+    "alt": "Verrugas por VPH con textura tipo coliflor e iconos de picazón y sangrado leve.",
+    "sintomas": [
+      "Verrugas o 'granitos' en genitales o zona anal",
+      "Lesiones con superficie rugosa o en 'coliflor'",
+      "Picazón o molestia local",
+      "Pequeños sangrados tras el roce o relaciones",
+      "A veces sin síntomas visibles (screening recomendado)"
+    ]
+  },
+  {
+    "slug": "vph-recurrente",
+    "titulo": "VPH Recurrente",
+    "categoria": "infecciones-its",
+    "imagen": "/images/enfermedades/vph-recurrente-insalud.png",
+    "alt": "VPH recurrente con flechas de reaparición y calendario de control.",
+    "sintomas": [
+      "Reaparición de verrugas tras tratamientos previos",
+      "Aumento en número o tamaño de las lesiones",
+      "Picazón o ardor persistente en la zona afectada",
+      "Lesiones que vuelven en el mismo sitio o zonas cercanas",
+      "Molestias durante el contacto o fricción"
+    ]
+  },
+  {
+    "slug": "herpes-genital",
+    "titulo": "Herpes Genital",
+    "categoria": "disfunciones-sexuales",
+    "imagen": "/images/enfermedades/herpes-genital-insalud.png",
+    "alt": "Vesículas típicas de herpes genital con iconos de hormigueo, fiebre leve y recurrencia.",
+    "sintomas": [
+      "Vesículas o ampollas dolorosas que pueden ulcerarse",
+      "Picazón, ardor u hormigueo previo a las lesiones",
+      "Dolor al orinar si las lesiones están cerca de la uretra",
+      "Síntomas tipo 'gripe' en los primeros brotes (febrícula, malestar)",
+      "Brotes recurrentes en la misma zona"
+    ]
+  },
+  {
+    "slug": "micosis-genital",
+    "titulo": "Micosis Genital (Candidiasis)",
+    "categoria": "enfermedades-inflamatorias",
+    "imagen": "/images/enfermedades/micosis-genital-candidiasis-insalud.png",
+    "alt": "Candidiasis genital con picazón, enrojecimiento y secreción característica.",
+    "sintomas": [
+      "Picazón intensa en la zona genital",
+      "Enrojecimiento e irritación local",
+      "Secreción blanquecina o grumosa (puede no tener olor fuerte)",
+      "Ardor al orinar o durante las relaciones sexuales",
+      "Sensación de humedad o molestia continua"
+    ]
+  },
+  {
+    "slug": "prostatitis-cronica",
+    "titulo": "Prostatitis Crónica",
+    "categoria": "disfuncion-erectil",
+    "imagen": "/images/enfermedades/prostatitis-cronica-insalud.png",
+    "alt": "Zona prostática resaltada con símbolos de ardor, urgencia nocturna y chorro débil.",
+    "sintomas": [
+      "Dolor pélvico o perineal persistente",
+      "Ardor o dolor al orinar",
+      "Micción frecuente o urgente (sobre todo nocturna)",
+      "Dolor durante o después de la eyaculación",
+      "Chorro urinario débil o sensación de vaciado incompleto"
+    ]
+  },
+  {
+    "slug": "prostatitis-cronica",
+    "titulo": "Prostatitis Crónica",
+    "categoria": "mas-consultados",
+    "imagen": "/images/enfermedades/prostatitis-cronica-insalud.png",
+    "alt": "Zona prostática resaltada con símbolos de ardor, urgencia nocturna y chorro débil.",
+    "sintomas": [
+      "Dolor pélvico o perineal persistente",
+      "Ardor o dolor al orinar",
+      "Micción frecuente o urgente (sobre todo nocturna)",
+      "Dolor durante o después de la eyaculación",
+      "Chorro urinario débil o sensación de vaciado incompleto"
+    ]
+  },
+  {
+    "slug": "cistitis-cronica",
+    "titulo": "Cistitis Crónica Intersticial",
+    "categoria": "enfermedades-inflamatorias",
+    "imagen": "/images/enfermedades/cistitis-cronica-intersticial-insalud.png",
+    "alt": "Vejiga resaltada con urgencia, frecuencia urinaria y dolor pélvico típico de cistitis intersticial.",
+    "sintomas": [
+      "Dolor pélvico o suprapúbico que mejora tras orinar",
+      "Urgencia y frecuencia urinaria marcadas",
+      "Sensación de vejiga llena con volúmenes pequeños",
+      "Dolor durante las relaciones sexuales",
+      "Síntomas persistentes sin evidencias de infección"
+    ]
+  },
+  {
+    "slug": "ulcera-genital",
+    "titulo": "Úlcera Genital",
+    "categoria": "infecciones-its",
+    "imagen": "/images/enfermedades/ulcera-genital-insalud.png",
+    "alt": "Úlcera genital estilizada con bordes definidos y ganglios inguinales aumentados.",
+    "sintomas": [
+      "Llaga o herida en genitales, dolorosa o indolora",
+      "Bordes definidos y fondo rojizo o amarillento",
+      "Aumento de ganglios en la ingle (dolorosos)",
+      "Secreción o mal olor si hay sobreinfección",
+      "Dolor al orinar o durante las relaciones"
+    ]
+  },
+  {
+    "slug": "infertilidad",
+    "titulo": "Evaluación de Fertilidad",
+    "categoria": "disfunciones-sexuales",
+    "imagen": "/images/enfermedades/evaluacion-de-fertilidad-masculina-insalud.png",
+    "alt": "Evaluación de fertilidad masculina con seminograma, bulto testicular y tiempo de búsqueda.",
+    "sintomas": [
+      "Dificultad para concebir tras 12 meses de relaciones sin protección",
+      "Disfunción sexual (erección o eyaculación) que dificulta la concepción",
+      "Dolor, bultos o hinchazón testicular",
+      "Antecedentes de varicocele, cirugías urogenitales o ETS"
+    ]
+  },
+  {
+    "slug": "its-general",
+    "titulo": "Enfermedades de Transmisión Sexual",
+    "categoria": "infecciones-its",
+    "imagen": "/images/enfermedades/its-sintomas-frecuentes-insalud.png",
+    "alt": "Cuatro signos frecuentes de ITS: secreción anormal, ardor al orinar, llagas y dolor pélvico/testicular.",
+    "sintomas": [
+      "Secreción anormal uretral o vaginal",
+      "Ardor o dolor al orinar",
+      "Llagas, verrugas o lesiones en genitales",
+      "Dolor pélvico o testicular",
+      "Picazón intensa en la zona genital"
+    ]
+  }
+]
