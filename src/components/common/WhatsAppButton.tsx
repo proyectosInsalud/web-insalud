@@ -39,8 +39,8 @@ export const WhatsAppButton = ({
       setError("El número de teléfono es obligatorio");
       return;
     }
-    if (phoneNumber.length !== 9 || !/^\d+$/.test(phoneNumber)) {
-      setError("El número debe tener exactamente 9 dígitos");
+    if (phoneNumber.length < 9 || phoneNumber.length > 11) {
+      setError("El número debe tener entre 9 y 11 dígitos");
       return;
     }
     setError("");
@@ -115,7 +115,7 @@ export const WhatsAppButton = ({
           <div className="flex flex-col gap-2 space-y-2">
             <div className="relative">
               <FaWhatsapp className="absolute left-2 top-1/2 -translate-y-1/2 text-xl text-in-cyan" />
-              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value); setError(""); }} type="tel" placeholder="Tu número" />
+              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={phoneNumber} onChange={(e) => { const value = e.target.value.replace(/\D/g, ''); setPhoneNumber(value); setError(""); }} type="tel" placeholder="Tu número" maxLength={11} />
             </div>
             {error && <p className="text-red-500 text-xs text-left">{error}</p>}
 
