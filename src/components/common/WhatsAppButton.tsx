@@ -16,9 +16,8 @@ interface WhatsAppButtonProps {
 }
 
 export const WhatsAppButton = ({
-
-  // phoneNumber,
-  // message = "¡Hola! vi su pagina web Insalud y me gustaría agendar una cita",
+  phoneNumber,
+  message = "¡Hola! vi su pagina web Insalud y me gustaría agendar una cita",
 }: WhatsAppButtonProps) => {
   // Eliminar cualquier caracter que no sea número
   // const cleanNumber = phoneNumber.replace(/\D/g, "");
@@ -27,19 +26,19 @@ export const WhatsAppButton = ({
   // const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
   //   message
   // )}`;
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [userPhone, setUserPhone] = useState("");
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   const pathname = usePathname();
 
-  const handleSaveLead = async (phoneNumber: string) => {
-    if (!phoneNumber.trim()) {
+  const handleSaveLead = async (userPhone: string) => {
+    if (!userPhone.trim()) {
       setError("El número de teléfono es obligatorio");
       return;
     }
-    if (phoneNumber.length < 9 || phoneNumber.length > 11) {
+    if (userPhone.length < 9 || userPhone.length > 11) {
       setError("El número debe tener entre 9 y 11 dígitos");
       return;
     }
@@ -47,7 +46,7 @@ export const WhatsAppButton = ({
     setIsLoading(true);
     try {
       await saveLead({
-        phone: `51${phoneNumber}`,
+        phone: `51${userPhone}`,
         id_lead_source: 1,
         name: "",
         email: "",
@@ -57,9 +56,12 @@ export const WhatsAppButton = ({
         date: "",
         id_announcement: "web",
       });
-      setOpen(false); // Close dialog after successful save
+      // Open WhatsApp after saving
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      setOpen(false); // Close dialog
       eventRegisterGtm("whatsapp_floating_click");
-      setPhoneNumber("");
+      setUserPhone("");
       console.log("Lead saved successfully");
     } catch (error) {
       console.error("Error saving lead:", error);
@@ -115,13 +117,13 @@ export const WhatsAppButton = ({
           <div className="flex flex-col gap-2 space-y-2">
             <div className="relative">
               <FaWhatsapp className="absolute left-2 top-1/2 -translate-y-1/2 text-xl text-in-cyan" />
-              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={phoneNumber} onChange={(e) => { const value = e.target.value.replace(/\D/g, ''); setPhoneNumber(value); setError(""); }} type="tel" placeholder="Tu número" maxLength={11} />
+              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={userPhone} onChange={(e) => { const value = e.target.value.replace(/\D/g, ''); setUserPhone(value); setError(""); }} type="tel" placeholder="Tu número" maxLength={11} />
             </div>
             {error && <p className="text-red-500 text-xs text-left">{error}</p>}
 
             <AlertDialogFooter>
               <button
-                onClick={() => handleSaveLead(phoneNumber)}
+                onClick={() => handleSaveLead(userPhone)}
                 disabled={isLoading}
                 className="cursor-pointer bg-in-cyan h-full text-white hover:bg-in-blue font-in-nunito px-4 py-2 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed w-full"
               >
