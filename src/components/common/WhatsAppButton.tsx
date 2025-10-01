@@ -55,7 +55,7 @@ export const WhatsAppButton = ({
         reason: "",
         sede: "",
         date: "",
-        id_announcement: "",
+        id_announcement: "web",
       });
       setOpen(false); // Close dialog after successful save
       eventRegisterGtm("whatsapp_floating_click");
