@@ -8,6 +8,7 @@ import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFoo
 import { Input } from "../ui/input";
 import { saveLead } from "@/services/SaveLeads";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -31,6 +32,8 @@ export const WhatsAppButton = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const pathname = usePathname();
+
   const handleSaveLead = async (phoneNumber: string) => {
     if (!phoneNumber.trim()) {
       setError("El número de teléfono es obligatorio");
@@ -48,7 +51,7 @@ export const WhatsAppButton = ({
         id_lead_source: 1,
         name: "",
         email: "",
-        url: "",
+        url: `https://insalud.pe${pathname}`,
         reason: "",
         sede: "",
         date: "",
