@@ -112,9 +112,9 @@ export const WhatsAppButton = ({
           </AlertDialogDescription> */}
 
           <div className="flex flex-col gap-2 space-y-2">
-            <div>
-              
-              <Input className="placeholder:font-in-nunito m-0 py-2 h-full" value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value); setError(""); }} type="" placeholder="Tu número" />
+            <div className="relative">
+              <FaWhatsapp className="absolute left-2 top-1/2 -translate-y-1/2 text-xl text-in-cyan" />
+              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value); setError(""); }} type="" placeholder="Tu número" />
             </div>
             {error && <p className="text-red-500 text-xs text-left">{error}</p>}
 
