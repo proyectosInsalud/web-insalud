@@ -44,7 +44,7 @@ export const WhatsAppButton = ({
     setIsLoading(true);
     try {
       await saveLead({
-        phone: phoneNumber,
+        phone: `51${phoneNumber}`,
         id_lead_source: 1,
         name: "",
         email: "",
@@ -57,6 +57,7 @@ export const WhatsAppButton = ({
       setOpen(false); // Close dialog after successful save
       eventRegisterGtm("whatsapp_floating_click");
       setPhoneNumber("");
+      console.log("Lead saved successfully");
     } catch (error) {
       console.error("Error saving lead:", error);
       setError("Error al guardar el lead. Inténtalo de nuevo.");
@@ -111,7 +112,7 @@ export const WhatsAppButton = ({
           <div className="flex flex-col gap-2 space-y-2">
             <div className="relative">
               <FaWhatsapp className="absolute left-2 top-1/2 -translate-y-1/2 text-xl text-in-cyan" />
-              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value); setError(""); }} type="" placeholder="Tu número" />
+              <Input className="placeholder:font-in-nunito m-0 py-2 pl-9 h-full w-full" value={phoneNumber} onChange={(e) => { setPhoneNumber(e.target.value); setError(""); }} type="tel" placeholder="Tu número" />
             </div>
             {error && <p className="text-red-500 text-xs text-left">{error}</p>}
 
