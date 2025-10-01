@@ -95,6 +95,13 @@ export default function RootLayout({
       `}
         </Script>
 
+        {/* Metricool */}
+        <Script id="metricool" strategy="afterInteractive">
+          {`
+            function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"783f01c798a80046537beee829751fd8"})});
+          `}
+        </Script>
+
         <Script id="gtm" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
