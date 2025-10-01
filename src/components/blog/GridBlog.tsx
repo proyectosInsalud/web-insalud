@@ -24,20 +24,29 @@ export const GridBlog = ({data}: GridBlogProps) => {
                         <p className="line-clamp-3 text-sm" >{post.excerpt}</p>
                     </div>
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                            {
-                                post.author.image.url ? (
-                                    <Image src={post.author.image.url} alt={post.author.name} width={32} height={32} className="w-8 h-8 rounded-full" />
-                                ) : (
-                                    <div className="w-8 h-8 rounded-full bg-in-cyan flex items-center justify-center">
-                                        <p className="text-in-blue font-semibold">{post.author.name.charAt(0)}</p>
-                                    </div>
-                                )
-                            }
-                            <p className="font-semibold">
-                                {post.author.name}
-                            </p>
-                        </div>  
+                        {post.author ? (
+                            <div className="flex items-center gap-2">
+                                {
+                                    post.author.image && post.author.image.url ? (
+                                        <Image src={post.author.image.url} alt={post.author.name} width={32} height={32} className="w-8 h-8 rounded-full" />
+                                    ) : (
+                                        <div className="w-8 h-8 rounded-full bg-in-cyan flex items-center justify-center">
+                                            <p className="text-in-blue font-semibold">{post.author.name.charAt(0)}</p>
+                                        </div>
+                                    )
+                                }
+                                <p className="font-semibold">
+                                    {post.author.name}
+                                </p>
+                            </div>
+                        ) : (
+                            <div className="flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-full bg-in-cyan flex items-center justify-center">
+                                    <p className="text-in-blue font-semibold">?</p>
+                                </div>
+                                <p className="font-semibold">Autor Desconocido</p>
+                            </div>
+                        )}
                         <p className="text-sm">
                             {formatMesDiaAnio(post.publishedAt)}
                         </p>

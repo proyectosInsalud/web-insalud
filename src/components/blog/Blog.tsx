@@ -4,7 +4,7 @@ import { POSTS_PAGINATED } from "@/lib/queries";
 import { PaginationPage } from "./PaginationPage";
 import { PostListType } from "@/types";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 9;
 
 type BlogProps = {
     currentPage: number;
