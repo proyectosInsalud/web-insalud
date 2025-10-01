@@ -4,7 +4,7 @@ import { eventRegisterGtm } from "@/lib/utils";
 // import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoIosClose } from "react-icons/io";
-import { AlertDialog, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog-wsp";
+import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog-wsp";
 import { Input } from "../ui/input";
 import { saveLead } from "@/services/SaveLeads";
 import { useState } from "react";
@@ -98,7 +98,7 @@ export const WhatsAppButton = ({
           </Link> */}
         </AlertDialogTrigger>
       </div>
-      <AlertDialogContent className="py-4">
+      <AlertDialogContent className="py-4 w-[380px] shadow-none">
         <AlertDialogHeader className="space-y-1">
           <div className="flex justify-between items-start">
             <AlertDialogTitle className="text-base font-in-nunito">Brindanos tu telefono para continuar</AlertDialogTitle>
@@ -106,10 +106,7 @@ export const WhatsAppButton = ({
               <IoIosClose size={28} />
             </div>
           </div>
-          {/* <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </AlertDialogDescription> */}
+          <AlertDialogDescription></AlertDialogDescription>
 
           <div className="flex flex-col gap-2 space-y-2">
             <div className="relative">
