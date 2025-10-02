@@ -107,7 +107,7 @@ export const WhatsAppButton = ({
       <AlertDialogContent className="py-4 w-[380px] shadow-none">
         <AlertDialogHeader className="space-y-1">
           <div className="flex justify-between items-start">
-            <AlertDialogTitle className="text-base font-in-nunito">Brindanos tu telefono para continuar</AlertDialogTitle>
+            <AlertDialogTitle className="text-base font-in-nunito">Brindanos tu teléfono <span className="hidden md:inline-block"> para continuar</span></AlertDialogTitle>
             <div className="cursor-pointer" onClick={() => setOpen(false)}>
               <IoIosClose size={28} />
             </div>
