@@ -144,12 +144,6 @@
     "subtext": "Más de 6,000 pacientes atendidos en prevención urológica en Perú y Latinoamérica. Detectar la prostatitis crónica y el cáncer de próstata a tiempo puede salvar tu vida.",
     "button": { "text": "Agenda tu cita hoy mismo", "href": "/reservar" }
   },
-  "media": [
-    {
-      "src": "/images/tratamientos/disfuncion-erectil/ejemplo-1.png",
-      "alt": "Aplicación de ondas de choque"
-    }
-  ],
   "highlights": [
     { "label": "Pacientes atendidos", "value": "6,000+" },
     { "label": "Especialistas", "value": "20+" }

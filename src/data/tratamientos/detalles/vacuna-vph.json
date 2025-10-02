@@ -39,7 +39,7 @@
       "title": "Seguro y efectivo",
       "description": "Reduce contagio y transmisión del VPH.",
       "image": {
-        "src": "/images/servicios/icons-beneficios/beneficio-6.png",
+        "src": "/images/tratamientos/icons-beneficios/beneficio-6.png",
         "alt": "Beneficio seguro y efectivo"
       }
     },
@@ -47,7 +47,7 @@
       "title": "Resultados visibles",
       "description": "Bloquea hasta el 90% de los tipos de virus de alto riesgo.",
       "image": {
-        "src": "/images/servicios/icons-beneficios/beneficio-2.png",
+        "src": "/images/tratamientos/icons-beneficios/beneficio-2.png",
         "alt": "Beneficio resultados rápidos"
       }
     },
@@ -55,7 +55,7 @@
       "title": "Prevención",
       "description": "Disminuye hasta en un 90% el riesgo de cáncer asociado al VPH",
       "image": {
-        "src": "/images/servicios/icons-beneficios/beneficio-5.png",
+        "src": "/images/tratamientos/icons-beneficios/beneficio-5.png",
         "alt": "Beneficio prevención real"
       }
     },
@@ -63,7 +63,7 @@
       "title": "Defensa duradera",
       "description": "Protección con el esquema completo de vacunas.",
       "image": {
-        "src": "/images/servicios/icons-beneficios/beneficio-7.png",
+        "src": "/images/tratamientos/icons-beneficios/beneficio-7.png",
         "alt": "Defensa duradera"
       }
     }
@@ -85,7 +85,7 @@
     "note": "Tecnología avalada por la Sociedad Internacional de Medicina Sexual (ISSM). Estudios clínicos demuestran que Gardasil 9 reduce hasta en un 90% el riesgo de cáncer cervicouterino y lesiones asociadas al VPH. Insalud cuenta con el Dr. José Antonio Grandez, urólogo con más de 20 años de experiencia en salud sexual.",
     "cta": { "text": "Reserva tu consulta inicial ahora", "href": "/reservar" },
     "image": {
-      "src": "/images/servicios/chequeo-prostatico/medical-support.png",
+      "src": "/images/tratamientos/chequeo-prostatico/medical-support.png",
       "alt": "Equipo médico especializado en urología"
     }
   },
@@ -113,7 +113,7 @@
     }
   ],
   "faq": {
-    "image":"/images/servicios/chequeo-prostatico/faq-image-section.png",
+    "image":"/images/tratamientos/chequeo-prostatico/faq-image-section.png",
     "alt": "Doctor urologo - Insalud",
     "faqs": [
       {
@@ -135,7 +135,7 @@
     "title": "Equipo médico y tecnología",
     "description": "Vacunación supervisada por especialistas en ginecología, urología y medicina preventiva. Protocolos de bioseguridad internacional para tu tranquilidad.",
     "image": {
-      "src": "/images/servicios/chequeo-prostatico/device-medic.png",
+      "src": "/images/tratamientos/chequeo-prostatico/device-medic.png",
       "alt": "Equipo de ondas de choque para disfunción eréctil"
     },
     "badges": ["Seguridad", "Certificación FDA del producto"]
@@ -145,12 +145,6 @@
     "subtext": "Protege tu salud y la de quienes más quieres con la vacuna Gardasil 9.",
     "button": { "text": "Agenda tu cita hoy mismo", "href": "/reservar" }
   },
-  "media": [
-    {
-      "src": "/images/servicios/disfuncion-erectil/ejemplo-1.png",
-      "alt": "Aplicación de ondas de choque"
-    }
-  ],
   "highlights": [
     { "label": "Pacientes atendidos", "value": "6,000+" },
     { "label": "Especialistas", "value": "20+" }

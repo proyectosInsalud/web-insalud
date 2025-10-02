@@ -26,6 +26,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     },
     {
+      url: `${siteUrl}/tratamientos/cauterizacion-laser-vph`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/tratamientos/ondas-de-choque-disfuncion`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/tratamientos/ondas-de-choque-prostatitis`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/tratamientos/vacuna-vph`,
+      lastModified: now,
+    },
+    {
       url: `${siteUrl}/blog`,
       lastModified: now,
     },
