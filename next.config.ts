@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "cdn.sanity.io" },
       { protocol: "https", hostname: "swiperjs.com" },
+      { protocol: "https", hostname: "via.placeholder.com" },
     ],
   },
 
@@ -54,7 +55,6 @@ const nextConfig: NextConfig = {
       { source: "/diagnostico", destination: "/enfermedades", permanent: true },
       { source: "/empleabilidad", destination: "/", permanent: true },
       { source: "/noisotros", destination: "/", permanent: true },
-      { source: "/nosotros", destination: "/", permanent: true },
       {
         source: "/jesusmaria-chequeo-prostatico-2/",
         destination: "/contacto",
