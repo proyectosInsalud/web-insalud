@@ -184,3 +184,7 @@ select option:checked {
 .input_form {
     @apply border-in-cyan bg-white
 }
+
+.gradient-us {
+  background: linear-gradient(180deg, #012436 0%, #070910 100%);
+}
