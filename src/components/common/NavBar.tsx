@@ -41,7 +41,7 @@ export const NavBar = ({ className }: { className?: string }) => {
                 rel="noopener noreferrer"
               >
                 <Button 
-                  className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-6 py-3 rounded-full"
+                  className="hidden md:block bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-6 py-3 rounded-full"
                   onClick={() => eventRegisterGtm("btn-intranet")}
                 >
                   <p className="font-semibold">Intranet</p>
