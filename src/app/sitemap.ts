@@ -105,5 +105,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/blog/cancer-de-prostata-y-prostatitis-cronica-diferencias-y-senales-de-alerta`,
       lastModified: now,
     },
+    {
+      url: `${siteUrl}/blog/tratamiento-del-vph-desde-laser-hasta-cauterizacion`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/vph-en-hombres-senales-que-debes-conocer-y-como-protegerte`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/vacuna-contra-el-vph-en-peru-eficacia-precio-y-donde-aplicarla`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/vph-en-boca-lengua-y-piel-riesgos-que-pocos-conocen`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/tipos-de-vph-y-como-detectarlos`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/papilomas-y-verrugas-genitales-como-saber-si-es-vph-o-no`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/virus-del-papiloma-humano-vph-en-peru-sintomas-tratamiento`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/vph-en-mujeres-sintomas-riesgos-y-prevencion`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/el-vph-tiene-cura-mitos-y-verdades`,
+      lastModified: now,
+    },
+    {
+      url: `${siteUrl}/blog/vasectomia-en-peru-procedimiento-recuperacion-y-precio`,
+      lastModified: now,
+    },
+
   ];
 }
