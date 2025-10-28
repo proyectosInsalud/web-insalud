@@ -55,15 +55,15 @@ export const NavBar = ({ className }: { className?: string }) => {
             </div>
           </div>
           <nav className="hidden lg:flex items-center gap-6 text-white font-medium">
-            <Link className={`${pathName === '/nosotros' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150` } href="https://insalud.pe/#nosotros">Nosotros</Link>
-            <Link className={`${pathName === '/enfermedades' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/enfermedades">Enfermedades</Link>
-            <Link className={`${pathName === '/tratamientos' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/tratamientos">Tratamientos</Link>
-            <Link className={`${pathName === '/sedes' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} href="/sedes">Sedes</Link>
-            <Link 
-              className={`${pathName === '/blog' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`} 
+            <Link className={`${pathName === '/nosotros' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150` } href="https://insalud.pe/#nosotros">Nosotros</Link>
+            <Link className={`${pathName === '/enfermedades' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/enfermedades">Enfermedades</Link>
+            <Link className={`${pathName === '/tratamientos' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/tratamientos">Tratamientos</Link>
+            <Link className={`${pathName === '/sedes' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/sedes">Sedes</Link>
+            <Link
+              className={`${pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title': ''} hover:text-in-cyan transition-all duration-150`}
               href="/blog"
               >Blog</Link>
-            <Link className={`${pathName === '/contacto' ? 'text-in-cyan': ''} hover:text-in-cyan transition-all duration-150`}  href="/contacto">Contacto</Link>
+            <Link className={`${pathName === '/contacto' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`}  href="/contacto">Contacto</Link>
           </nav>
           <div className="hidden md:block relative font-in-poppins">
             <Link

@@ -64,3 +64,22 @@ export const zPostList = z.object({
   items: z.array(zPost),
   total: z.number(),
 });
+
+// Schema para LatestPosts
+export const zLatestPostItem = z.object({
+  title: z.string(),
+  excerpt: z.string(),
+  publishedAt: z.string().datetime(),
+  image: zImageUrl,
+  author: z.object({
+    name: z.string(),
+    image: zImageUrl.pick({ url: true }).default({ url: null }),
+  }),
+  category: z.object({
+    title: z.string(),
+  }),
+});
+
+export const zLatestPosts = z.object({
+  items: z.array(zLatestPostItem),
+});

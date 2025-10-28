@@ -33,3 +33,17 @@ export function formatMesDiaAnio(iso: string, tz = 'America/Lima') {
   const capMonth = month.charAt(0).toUpperCase() + month.slice(1);
   return `${capMonth} ${day}, ${year}`;
 }
+
+export function formatDiaMesAnio(iso: string, tz = 'America/Lima') {
+  const d = new Date(iso);
+  const f = (opts: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat('es-PE', { timeZone: tz, ...opts }).format(d);
+
+  const weekday = f({ weekday: 'long' });
+  const day = f({ day: 'numeric' });
+  const month = f({ month: 'long' });
+  const year = f({ year: 'numeric' });
+
+  const capWeekday = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+  const capMonth = month.charAt(0).toUpperCase() + month.slice(1);
+  return `${capWeekday}, ${day} de ${capMonth} de ${year}`;
+}

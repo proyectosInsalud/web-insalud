@@ -65,3 +65,21 @@ export const POST_BY_SLUG = /* groq */ `
   }
 }
 `;
+
+
+export const LATEST_POSTS = /* groq */ `
+{
+  "items": *[
+    _type == "post" &&
+    (!draft && defined(publishedAt) && publishedAt <= now())
+  ]
+  | order(publishedAt desc)[0...3]{
+    title,
+    excerpt,
+    publishedAt,
+    "image": { "url": cover.asset->url, "alt": cover.alt },
+    author->{ name, "image": { "url": image.asset->url } },
+    category->{ title },
+  }
+}
+`;

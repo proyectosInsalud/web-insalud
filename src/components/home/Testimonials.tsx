@@ -3,6 +3,7 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/componen
 import { TestimonialSchemaType } from "@/types"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { Button } from "../ui/button"
 
 type TestimonialsProps = {
     testimonials: TestimonialSchemaType[]
@@ -60,23 +61,23 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                                 ))}
                             </CarouselContent>
                             <div className="flex items-center justify-center md:justify-start gap-4 relative pt-4 pl-4  ">
-                                <button 
+                                <Button 
                                     className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"
                                     onClick={() => api?.scrollPrev()}
                                     disabled={current === 1}
                                 >
                                     <Image src="/svg/arrow-left.svg" alt="arrow-left" width={24} height={24} />
-                                </button>
+                                </Button>
                                 <span className="text-in-gray-base font-medium">
                                     {current} de {count}
                                 </span>
-                                <button 
+                                <Button 
                                     className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"
                                     onClick={() => api?.scrollNext()}
                                     disabled={current === count}
                                 >
                                     <Image src="/svg/arrow-right.svg" alt="arrow-left" width={24} height={24} />
-                                </button>
+                                </Button>
                             </div>
                         </Carousel>
                     </div>

@@ -14,6 +14,7 @@ import {
 } from "../ui/dialog";
 import { CarouselGallery } from "./CarouselGallery";
 import { eventRegisterGtm } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 export const CarouselSedes = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -106,7 +107,7 @@ export const CarouselSedes = () => {
         </CarouselContent>
         <div className="flex justify-center mt-8">
           {Array.from({ length: count }, (_, i) => (
-            <button
+            <Button
               key={i}
               className={`w-4 h-4 cursor-pointer rounded-full mx-1 ${i + 1 === current ? 'bg-blue-500' : 'bg-gray-300'}`}
               onClick={() => api?.scrollTo(i)}
