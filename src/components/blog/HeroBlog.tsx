@@ -1,17 +1,14 @@
-'use client'
-import { client } from "@/lib/sanity.client"
+import { serverClient } from "@/lib/sanity.client"
 import { LATEST_POSTS } from "@/lib/queries"
 import type { LatestPostItemType, LatestPostsType } from "@/types/blog"
 import Image from "next/image"
 import { formatFechaPeru } from "@/helpers/formatFechaPeru"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
-import { useEffect, useState } from 'react';
-import { Skeleton } from "@/components/ui/skeleton";
+import { NavBarIntern } from "../common/NavBarIntern"
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { NavBarIntern } from "../common/NavBarIntern"
 
 // Estilos personalizados para los dots
 const swiperStyles = `
@@ -38,31 +35,15 @@ const swiperStyles = `
   }
 `;
 
-export const HeroBlog = () => {
-  // Inyectar estilos personalizados
-  useEffect(() => {
-    const styleSheet = document.createElement("style");
-    styleSheet.innerText = swiperStyles;
-    document.head.appendChild(styleSheet);
+// Inyectar estilos personalizados
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement("style");
+  styleSheet.innerText = swiperStyles;
+  document.head.appendChild(styleSheet);
+}
 
-    return () => {
-      document.head.removeChild(styleSheet);
-    };
-  }, []);
-  const [data, setData] = useState<LatestPostsType | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result: LatestPostsType = await client.fetch(LATEST_POSTS);
-        setData(result);
-      } catch (error) {
-        console.error('Error fetching latest posts:', error);
-        setData({ items: [] });
-      }
-    };
-    fetchData();
-  }, []);
+export const HeroBlog = async () => {
+  const data: LatestPostsType = await serverClient.fetch(LATEST_POSTS);
 
   if (!data || data.items.length === 0) return (
     <div className="relative bg-[#F7FAFA] text-in-blue-title pb-12">
@@ -73,23 +54,16 @@ export const HeroBlog = () => {
         <h1 className="font-in-nunito text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold leading-8">Tu espacio para aprender y prevenir</h1>
         <p className="font-in-poppins text-[13px] md:text-base">Descubre cómo mejorar tu salud con información práctica y respaldada por expertos.</p>
       </div>
-      <section className="max-w-7xl mx-auto md:p-8 rounded-3xl bg-white">
-        <div className="grid grid-cols-1 gap-6">
-          <div className="bg-[#F7FAFA] rounded-2xl p-6 flex flex-col">
+      <div className="max-w-7xl mx-auto px-4">
+        <section className="p-4 md:p-8 rounded-3xl bg-white mb-8">
+          <div className="bg-[#F7FAFA] rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
             <div className="space-y-4">
-              <Skeleton className="h-6 w-32" />
-              <Skeleton className="h-8 w-full" />
-            </div>
-            <div className="flex justify-between items-center mt-auto">
-              <div className="flex items-center space-x-2">
-                <Skeleton className="h-8 w-8 rounded-full" />
-                <Skeleton className="h-4 w-24" />
-              </div>
-              <Skeleton className="h-4 w-20" />
+              <div className="bg-in-cyan text-white inline-block text-sm px-4 rounded-full">Cargando...</div>
+              <h3 className="font-in-nunito text-lg md:text-xl">No hay posts disponibles</h3>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 
