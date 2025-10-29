@@ -53,13 +53,18 @@ export const HeroBlog = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result: LatestPostsType = await client.fetch(LATEST_POSTS);
-      setData(result);
+      try {
+        const result: LatestPostsType = await client.fetch(LATEST_POSTS);
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching latest posts:', error);
+        setData({ items: [] });
+      }
     };
     fetchData();
   }, []);
 
-  if (!data) return (
+  if (!data || data.items.length === 0) return (
     <div className="relative bg-[#F7FAFA] text-in-blue-title pb-12">
       <div className="md:bg-transparent bg-in-blue-dark">
         <NavBarIntern/>
