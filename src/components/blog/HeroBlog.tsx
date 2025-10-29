@@ -1,10 +1,13 @@
-import { serverClient } from "@/lib/sanity.client"
+'use client'
+
+import { client } from "@/lib/sanity.client"
 import { LATEST_POSTS } from "@/lib/queries"
 import type { LatestPostItemType, LatestPostsType } from "@/types/blog"
 import Image from "next/image"
 import { formatFechaPeru } from "@/helpers/formatFechaPeru"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
+import { useEffect, useState } from 'react';
 import { NavBarIntern } from "../common/NavBarIntern"
 
 import 'swiper/css';
@@ -35,15 +38,32 @@ const swiperStyles = `
   }
 `;
 
-// Inyectar estilos personalizados
-if (typeof document !== 'undefined') {
-  const styleSheet = document.createElement("style");
-  styleSheet.innerText = swiperStyles;
-  document.head.appendChild(styleSheet);
-}
+export const HeroBlog = () => {
+  // Inyectar estilos personalizados
+  useEffect(() => {
+    const styleSheet = document.createElement("style");
+    styleSheet.innerText = swiperStyles;
+    document.head.appendChild(styleSheet);
 
-export const HeroBlog = async () => {
-  const data: LatestPostsType = await serverClient.fetch(LATEST_POSTS);
+    return () => {
+      document.head.removeChild(styleSheet);
+    };
+  }, []);
+
+  const [data, setData] = useState<LatestPostsType | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result: LatestPostsType = await client.fetch(LATEST_POSTS);
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching latest posts:', error);
+        setData({ items: [] });
+      }
+    };
+    fetchData();
+  }, []);
 
   if (!data || data.items.length === 0) return (
     <div className="relative bg-[#F7FAFA] text-in-blue-title pb-12">
@@ -131,4 +151,4 @@ export const HeroBlog = async () => {
             </div>
         </div>
   )
-}
+};
