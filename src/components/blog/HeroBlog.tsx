@@ -1,7 +1,5 @@
 'use client'
 
-import { client } from "@/lib/sanity.client"
-import { LATEST_POSTS } from "@/lib/queries"
 import type { LatestPostItemType, LatestPostsType } from "@/types/blog"
 import Image from "next/image"
 import { formatFechaPeru } from "@/helpers/formatFechaPeru"
@@ -55,7 +53,11 @@ export const HeroBlog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result: LatestPostsType = await client.fetch(LATEST_POSTS);
+        const response = await fetch('/api/latest-posts');
+        if (!response.ok) {
+          throw new Error('Failed to fetch latest posts');
+        }
+        const result: LatestPostsType = await response.json();
         setData(result);
       } catch (error) {
         console.error('Error fetching latest posts:', error);
