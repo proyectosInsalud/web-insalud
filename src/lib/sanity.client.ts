@@ -14,7 +14,7 @@ export const client = createClient({
   projectId: "wma19ek2",
   dataset: "production",
   apiVersion: '2025-09-11',
-  useCdn: true,
+  useCdn: false,
 });
 
 const builder = imageUrlBuilder(serverClient);
