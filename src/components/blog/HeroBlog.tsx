@@ -6,10 +6,12 @@ import { formatFechaPeru } from "@/helpers/formatFechaPeru"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import { useEffect, useState } from 'react';
+import { CiShare2 } from "react-icons/ci";
 import { NavBarIntern } from "../common/NavBarIntern"
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger } from "../ui/menubar";
 
 // Estilos personalizados para los dots
 const swiperStyles = `
@@ -47,6 +49,32 @@ export const HeroBlog = () => {
       document.head.removeChild(styleSheet);
     };
   }, []);
+
+  const handleShare = (platform: string, item: LatestPostItemType) => {
+    const url = `${window.location.origin}/blog/${item.title.toLowerCase().replace(/\s+/g, '-')}`;
+    const text = `Mira este artículo: ${item.title}`;
+
+    let shareUrl = '';
+    switch (platform) {
+      case 'x':
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        break;
+      case 'whatsapp':
+        shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+        break;
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        break;
+      case 'instagram':
+        // Instagram no permite compartir URLs directamente desde web, así que abrimos la app
+        shareUrl = `https://www.instagram.com/`;
+        break;
+      default:
+        return;
+    }
+
+    window.open(shareUrl, '_blank');
+  };
 
   const [data, setData] = useState<LatestPostsType | null>(null);
 
@@ -116,8 +144,20 @@ export const HeroBlog = () => {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:space-x-6 h-auto md:h-[280px]">
                       <div className="col-span-1 md:col-span-6 bg-[#F7FAFA] rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
                         <div className="space-y-4">
-                          <div>
-                           <p className="bg-in-cyan text-white inline-block text-sm px-4 rounded-full">{item.category?.title || 'Sin categoría'}</p>
+                          <div className="flex items-center justify-between">
+                            <p className="bg-in-cyan text-white inline-block text-sm px-4 rounded-full">{item.category?.title || 'Sin categoría'}</p>
+                            <Menubar>
+                              <MenubarMenu>
+                                <MenubarTrigger>
+                                  <CiShare2 className="text-xl mr-1.5" /> Compartir </MenubarTrigger>
+                                <MenubarContent>
+                                  <MenubarItem onSelect={() => handleShare('x', item)}>X (Twitter)</MenubarItem>
+                                  <MenubarItem onSelect={() => handleShare('whatsapp', item)}>WhatsApp</MenubarItem>
+                                  <MenubarItem onSelect={() => handleShare('facebook', item)}>Facebook</MenubarItem>
+                                  <MenubarItem onSelect={() => handleShare('instagram', item)}>Instagram</MenubarItem>
+                                </MenubarContent>
+                              </MenubarMenu>
+                            </Menubar>
                           </div>
                           <h3 className="font-in-nunito text-lg md:text-xl line-clamp-2 md:pr-8">{item.title}</h3>
                         </div>
