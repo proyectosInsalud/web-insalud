@@ -51,7 +51,7 @@ export const HeroBlog = () => {
   }, []);
 
   const handleShare = (platform: string, item: LatestPostItemType) => {
-    const url = `${window.location.origin}/blog/${item.title.toLowerCase().replace(/\s+/g, '-')}`;
+    const url = `${window.location.origin}/blog/${item.slug}`;
     const text = `Mira este artículo: ${item.title}`;
 
     let shareUrl = '';
@@ -64,10 +64,6 @@ export const HeroBlog = () => {
         break;
       case 'facebook':
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-        break;
-      case 'instagram':
-        // Instagram no permite compartir URLs directamente desde web, así que abrimos la app
-        shareUrl = `https://www.instagram.com/`;
         break;
       default:
         return;
@@ -144,17 +140,16 @@ export const HeroBlog = () => {
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:space-x-6 h-auto md:h-[280px]">
                       <div className="col-span-1 md:col-span-6 bg-[#F7FAFA] rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
                         <div className="space-y-4">
-                          <div className="flex items-center justify-between">
-                            <p className="bg-in-cyan text-white inline-block text-sm px-4 rounded-full">{item.category?.title || 'Sin categoría'}</p>
-                            <Menubar>
-                              <MenubarMenu>
-                                <MenubarTrigger>
+                          <div className="flex flex-col md:flex-row items-center justify-between">
+                            <p className="bg-in-cyan order-2 md:order-1 text-white inline-block text-sm px-4 rounded-full">{item.category?.title || 'Sin categoría'}</p>
+                            <Menubar className="bg-transparent order-1 md:order-2 border-none shadow-none">
+                              <MenubarMenu >
+                                <MenubarTrigger className="bg-transparent border-none cursor-pointer">
                                   <CiShare2 className="text-xl mr-1.5" /> Compartir </MenubarTrigger>
                                 <MenubarContent>
                                   <MenubarItem onSelect={() => handleShare('x', item)}>X (Twitter)</MenubarItem>
                                   <MenubarItem onSelect={() => handleShare('whatsapp', item)}>WhatsApp</MenubarItem>
                                   <MenubarItem onSelect={() => handleShare('facebook', item)}>Facebook</MenubarItem>
-                                  <MenubarItem onSelect={() => handleShare('instagram', item)}>Instagram</MenubarItem>
                                 </MenubarContent>
                               </MenubarMenu>
                             </Menubar>

@@ -79,6 +79,7 @@ export const zLatestPostItem = z.object({
   category: z.object({
     title: z.string(),
   }),
+  slug: z.string(),
 });
 
 export const zLatestPosts = z.object({

@@ -80,6 +80,7 @@ export const LATEST_POSTS = /* groq */ `
     "image": { "url": cover.asset->url, "alt": cover.alt },
     author->{ name, "image": { "url": image.asset->url } },
     category->{ title },
+    "slug": slug.current
   }
 }
 `;
