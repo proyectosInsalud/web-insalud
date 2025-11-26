@@ -66,6 +66,17 @@ export const NavBarIntern = () => {
             Sedes
           </Link>
           <Link
+            className="relative hover:text-in-cyan transition-all duration-150 text-in-orange font-semibold inline-flex items-center gap-1"
+            href="https://tienda.insalud.pe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tienda
+            <span className="bg-in-orange text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full animate-pulse whitespace-nowrap">
+              ¡Nuevo!
+            </span>
+          </Link>
+          <Link
             className="hover:text-in-cyan transition-all duration-150"
             href="/blog"
           >

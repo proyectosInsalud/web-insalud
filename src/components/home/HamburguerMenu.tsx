@@ -116,6 +116,18 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                 Sedes
               </Link>
               <Link
+                href="https://tienda.insalud.pe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative text-in-orange font-semibold hover:text-in-orange/80 transition-colors inline-flex items-center gap-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Tienda
+                <span className="bg-in-orange text-white text-xs font-bold px-2 py-0.5 rounded-full animate-pulse whitespace-nowrap">
+                  ¡Nuevo!
+                </span>
+              </Link>
+              <Link
                 href="/blog"
                 className="text-white hover:text-in-orange transition-colors"
                 onClick={() => setIsOpen(false)}

@@ -59,6 +59,17 @@ export const NavBar = ({ className }: { className?: string }) => {
             <Link className={`${pathName === '/enfermedades' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/enfermedades">Enfermedades</Link>
             <Link className={`${pathName === '/tratamientos' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/tratamientos">Tratamientos</Link>
             <Link className={`${pathName === '/sedes' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/sedes">Sedes</Link>
+            <Link 
+              className="relative hover:text-in-cyan transition-all duration-150 text-in-orange font-semibold inline-flex items-center gap-1" 
+              href="https://tienda.insalud.pe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tienda
+              <span className="bg-in-orange text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full animate-pulse whitespace-nowrap">
+                ¡Nuevo!
+              </span>
+            </Link>
             <Link
               className={`${pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title': ''} hover:text-in-cyan transition-all duration-150`}
               href="/blog"

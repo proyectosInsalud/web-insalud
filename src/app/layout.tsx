@@ -5,6 +5,7 @@ import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
+import { PopUpTienda } from "@/components/ui/PopUpTienda";
 import Script from "next/script";
 
 const geistSans = Geist({
@@ -155,6 +156,9 @@ export default function RootLayout({
         {children}
 
         <Footer />
+
+        {/* Popup de tienda virtual */}
+        <PopUpTienda />
 
         {/* Botón de WhatsApp flotante */}
         <WhatsAppButton
