@@ -1,8 +1,9 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
+import { LeadType } from "@/types/leads";
 
 // Función para guardar en Google Sheets
-async function saveToGoogleSheets(data: any) {
+async function saveToGoogleSheets(data: LeadType) {
   const googleSheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
   
   if (!googleSheetsWebhookUrl) {
@@ -67,11 +68,12 @@ export async function POST(request: NextRequest) {
         throw new Error("No se pudo guardar el lead ni en CallHub ni en Google Sheets");
       }
     }
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error saving lead:", error);
+    const errorMessage = error instanceof Error ? error.message : "Error desconocido";
     return NextResponse.json({ 
       error: "Error saving lead", 
-      message: error.message 
+      message: errorMessage 
     }, { status: 500 });
   }
 }
