@@ -60,6 +60,8 @@ export const Footer = () => {
               <Link href="#">¿Cómo me atiendo?</Link>
               <Link href="#">Deberes y Derechos del paciente</Link>
               <Link href="#">Términos y Condiciones</Link>
+              <Link target="_blank" href="docs/politica-de-privacidad.pdf">Política de privacidad CRM</Link>
+              <Link href="/libro-de-reclamaciones">Libro de reclamaciones</Link>
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
