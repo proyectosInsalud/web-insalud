@@ -2,6 +2,7 @@
 
 import type { LatestPostItemType, LatestPostsType } from "@/types/blog"
 import Image from "next/image"
+import Link from "next/link"
 import { formatFechaPeru } from "@/helpers/formatFechaPeru"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
@@ -50,7 +51,7 @@ export const HeroBlog = () => {
     };
   }, []);
 
-  const handleShare = (platform: string, item: LatestPostItemType) => {
+  const handleShare = (platform: string, item: { slug: string; title: string }) => {
     const url = `${window.location.origin}/blog/${item.slug}`;
     const text = `Mira este artículo: ${item.title}`;
 
@@ -73,6 +74,37 @@ export const HeroBlog = () => {
   };
 
   const [data, setData] = useState<LatestPostsType | null>(null);
+
+  // Datos estáticos de los slides del hero (compartir usa slug y title)
+  const staticHeroItems = [
+    {
+      slug: 'enfermeros-con-consultorio-propio',
+      title: 'Enfermeros con consultorio propio: ¿avance en salud o nuevo desafío para el sistema?',
+      category: 'Nota de prensa',
+      author: 'Insalud',
+      date: 'martes, 03 de febrero de 2026',
+      authorImage: '/images/blog/static-carousel/logo-1.webp',
+      mainImage: '/images/blog/static-carousel/carousel-1.webp',
+    },
+    {
+      slug: 'insalud-abre-sede-en-costa-rica-y-traza-su-expansion-en-latinoamerica-para-2026-a-donde-apunta',
+      title: 'Insalud abre sede en Costa Rica y traza su expansión en Latinoamérica para 2026: ¿a dónde apunta?',
+      category: 'Nota de prensa',
+      author: 'Gestión',
+      date: 'sábado, 27 de diciembre de 2025',
+      authorImage: '/images/blog/static-carousel/logo-2.webp',
+      mainImage: '/images/blog/static-carousel/carousel-2.webp',
+    },
+    {
+      slug: 'peruana-insalud-llegara-a-mexico-y-tres-paises-mas-en-2025',
+      title: 'Peruana Insalud llegará a México y tres países más en 2025: ¿lo hará bajo franquicia?',
+      category: 'Nota de prensa',
+      author: 'Gestión',
+      date: 'viernes, 15 de noviembre de 2024',
+      authorImage: '/images/blog/static-carousel/logo-2.webp',
+      mainImage: '/images/blog/static-carousel/carousel-3.webp',
+    },
+  ];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -135,7 +167,7 @@ export const HeroBlog = () => {
                   slidesPerView={1}
                   style={{ height: 'auto' }}
                 >
-                {data.items.map((item: LatestPostItemType) => (
+                {/* {data.items.map((item: LatestPostItemType) => (
                   <SwiperSlide key={item.title}>
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:space-x-6 h-auto md:h-[280px]">
                       <div className="col-span-1 md:col-span-6 bg-[#F7FAFA] rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
@@ -180,6 +212,57 @@ export const HeroBlog = () => {
                         />
                       </div>
                     </div>
+                  </SwiperSlide>
+                ))} */}
+{staticHeroItems.map((item, index) => (
+                  <SwiperSlide key={item.slug}>
+                    <Link href={`/blog/${item.slug}`} className="block cursor-pointer">
+                      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:space-x-6 h-auto md:h-[280px]">
+                        <div className="col-span-1 md:col-span-6 bg-[#F7FAFA] rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
+                          <div className="space-y-4">
+                            <div className="flex flex-col md:flex-row items-center justify-between">
+                              <p className="bg-in-cyan order-2 md:order-1 text-white inline-block text-sm px-4 rounded-full">{item.category}</p>
+                              <div onClick={(e) => { e.preventDefault(); e.stopPropagation(); }} className="order-1 md:order-2">
+                                <Menubar className="bg-transparent border-none shadow-none">
+                                  <MenubarMenu >
+                                    <MenubarTrigger className="bg-transparent border-none cursor-pointer" onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
+                                      <CiShare2 className="text-xl mr-1.5" /> Compartir </MenubarTrigger>
+                                    <MenubarContent>
+                                        <MenubarItem onSelect={() => handleShare('x', item)}>X (Twitter)</MenubarItem>
+                                        <MenubarItem onSelect={() => handleShare('whatsapp', item)}>WhatsApp</MenubarItem>
+                                        <MenubarItem onSelect={() => handleShare('facebook', item)}>Facebook</MenubarItem>
+                                    </MenubarContent>
+                                  </MenubarMenu>
+                                </Menubar>
+                              </div>
+                            </div>
+                            <h3 className="font-in-nunito text-lg md:text-xl line-clamp-2 md:pr-8">{item.title}</h3>
+                          </div>
+                          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-auto space-y-2 md:space-y-0">
+                              <div className="flex items-center">
+                                <Image
+                                  src={item.authorImage}
+                                  alt={item.author}
+                                  width={32}
+                                  height={32}
+                                  className="rounded-full"
+                                />
+                                <p className="font-semibold ml-2">{item.author}</p>
+                              </div>
+                              <p className="text-sm">{item.date}</p>
+                            </div>
+                        </div>
+                        <div className="hidden md:block md:col-span-6 h-full">
+                          <Image
+                            src={item.mainImage}
+                            alt={item.title}
+                            width={500}
+                            height={500}
+                            className={`rounded-2xl w-full ${index === 2 ? 'h-[280px] object-cover' : 'h-full object-cover'}`}
+                          />
+                        </div>
+                      </div>
+                    </Link>
                   </SwiperSlide>
                 ))}
                 </Swiper>
