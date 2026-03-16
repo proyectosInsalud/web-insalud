@@ -38,6 +38,9 @@ export const metadata = {
       "Consejos médicos y artículos confiables sobre urología, salud sexual, próstata, prevención y bienestar masculino y femenino. Información médica en Lima.",
     // images: ["https://insalud.pe/assets/images/insalud-blog-og.jpg"], 
   },
+  alternates: {
+    canonical: "/blog",
+  },
   metadataBase: new URL("https://insalud.pe"),
 };
 

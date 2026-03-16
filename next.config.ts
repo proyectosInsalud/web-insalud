@@ -80,6 +80,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/tratamientos/ondas-de-choque",
+        destination: "/tratamientos/ondas-de-choque-disfuncion", // Redirigimos a la más común o genérica
+        permanent: true,
+      },
       // Media heredada de WordPress (evita imágenes rotas de enlaces antiguos)
       {
         source: "/wp-content/uploads/:path*",
