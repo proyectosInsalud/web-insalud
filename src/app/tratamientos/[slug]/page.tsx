@@ -38,6 +38,21 @@ async function getServicioDetalle(
   }
 }
 
+export async function generateStaticParams() {
+  try {
+    const treatmentsDir = path.join(process.cwd(), "src/data/tratamientos/detalles");
+    const files = await fs.readdir(treatmentsDir);
+    return files
+      .filter(file => file.endsWith(".json"))
+      .map(file => ({
+        slug: file.replace(".json", ""),
+      }));
+  } catch (error) {
+    console.error("Error generating treatments static params:", error);
+    return [];
+  }
+}
+
 export async function generateMetadata(
   {params }: PageProps,
 ): Promise<Metadata> {
