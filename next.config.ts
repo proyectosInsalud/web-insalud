@@ -42,6 +42,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
+      // PDF de política de privacidad (estaba dando 404 en la ruta con /tratamientos/)
+      {
+        source: "/tratamientos/docs/politica-de-privacidad.pdf",
+        destination: "/docs/politica-de-privacidad.pdf",
+        permanent: true,
+      },
+      {
+        source: "/blog/docs/politica-de-privacidad.pdf",
+        destination: "/docs/politica-de-privacidad.pdf",
+        permanent: true,
+      },
+
       // Viejas URLs del WP -> tus 4 vistas reales
       { source: "/como-me-atiendo", destination: "/contacto", permanent: true },
       {
