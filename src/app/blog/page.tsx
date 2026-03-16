@@ -1,6 +1,8 @@
 import { Blog } from "@/components/blog/Blog";
 import { HeroBlog } from "@/components/blog/HeroBlog";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
+import { serverClient } from "@/lib/sanity.client";
+import { LATEST_POSTS } from "@/lib/queries";
 
 type RawSearch = { page?: string | string[] };
 
@@ -39,12 +41,17 @@ export const metadata = {
   metadataBase: new URL("https://insalud.pe"),
 };
 
+async function getLatestPosts() {
+  return await serverClient.fetch(LATEST_POSTS);
+}
+
 export default async function BlogPage({
   searchParams,
 }: {
   searchParams: Promise<RawSearch>;
 }) {
   const { page } = await searchParams;
+  const latestPostsData = await getLatestPosts();
 
   // Normaliza string | string[]
   const pageStr = Array.isArray(page) ? page?.[0] : page;
@@ -56,7 +63,7 @@ export default async function BlogPage({
   return (
     <div>
       <CintilloBarra />
-      <HeroBlog />
+      <HeroBlog latestPosts={latestPostsData} />
       <Blog currentPage={validPage} />
     </div>
   );

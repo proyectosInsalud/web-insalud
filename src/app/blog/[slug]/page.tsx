@@ -11,17 +11,51 @@ type PageProps = {
 
 async function getData(slug: string) {
     const data = await serverClient.fetch(POST_BY_SLUG, { slug });
-    return data;
+    return data[0];
+}
+
+export async function generateStaticParams() {
+    const posts = await serverClient.fetch(`*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current }`);
+    return posts.map((post: any) => ({
+        slug: post.slug,
+    }));
 }
 
 export async function generateMetadata(
-    {params }: PageProps,
+    { params }: PageProps,
 ): Promise<Metadata> {
-    const {slug} = await params;
+    const { slug } = await params;
     const data = await getData(slug);
+    
+    if (!data) return { title: 'Post no encontrado' };
+
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://insalud.pe";
+
     return {
-        title: data[0].title,
-        description: data[0].excerpt,
+        title: data.seo?.metaTitle || data.title,
+        description: data.seo?.metaDescription || data.excerpt,
+        alternates: {
+            canonical: `${siteUrl}/blog/${slug}`,
+        },
+        openGraph: {
+            title: data.seo?.metaTitle || data.title,
+            description: data.seo?.metaDescription || data.excerpt,
+            url: `${siteUrl}/blog/${slug}`,
+            type: 'article',
+            publishedTime: data.publishedAt,
+            images: [
+                {
+                    url: data.cover?.url || "",
+                    alt: data.cover?.alt || data.title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: data.seo?.metaTitle || data.title,
+            description: data.seo?.metaDescription || data.excerpt,
+            images: [data.cover?.url || ""],
+        },
     }
 }
 
@@ -30,13 +64,15 @@ export default async function BlogPost({params}: PageProps) {
 
   const data = await getData(slug);
 
+  if (!data) return <div>No se encontró el artículo.</div>;
+
   return (
     <>
       <div className="hidden md:block">
         <CintilloBarra />
       </div>
       <NavBarIntern />
-      <EntradaBlog data={data}/>
+      <EntradaBlog data={[data]}/>
     </>
   );
 }
