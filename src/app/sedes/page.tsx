@@ -5,10 +5,12 @@ import { HeroSedes } from "@/components/sedes/HeroSedes";
 import { WhatsAppSection } from "@/components/ui/WhatsAppSection";
 import { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
-  title: "Sedes de InSalud en Perú y Latinoamérica | Ubicaciones y Citas Médicas",
+  title: "Sedes de InSalud en Perú y Latam | Ubicaciones y Citas",
   description:
-    "Encuentra la sede de InSalud más cercana en Lima, Guayaquil o Panamá. Agenda tu cita online y accede a atención médica especializada con tecnología de vanguardia.",
+    "Encuentra tu sede InSalud en Lima, Guayaquil o Panamá. Agenda tu cita online y accede a atención médica especializada con tecnología de vanguardia.",
   keywords: [
     "sedes InSalud",
     "ubicaciones InSalud",

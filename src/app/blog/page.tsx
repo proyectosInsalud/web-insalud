@@ -6,10 +6,12 @@ import { LATEST_POSTS } from "@/lib/queries";
 
 type RawSearch = { page?: string | string[] };
 
+export const revalidate = 3600;
+
 export const metadata = {
   title: "Salud Sexual, Noticias de urología y Prevención | Blog InSalud",
   description:
-    "Consejos médicos y artículos confiables sobre urología, salud sexual, próstata, prevención y bienestar masculino y femenino. Información médica en Lima.",
+    "Artículos sobre urología, salud sexual, próstata y bienestar masculino y femenino. Información médica confiable en Lima para tu salud integral.",
   keywords: [
     "articulos de medicina", "artículos médicos", "clínica insalud", "prostata sana", "salud intima", "prevención médica", "articulo medicina", "prevenir prostata", "salud prostática", "bienestar masculino", "tu salud intima", "articulos med", "cuidar la próstata", "prostata saludable", "salud de la prostata", "salud intima femenina", "una prostata sana", "blog salud sexual", "blog urología", "disfunción eréctil", "salud prostática", "prevención médica", "bienestar masculino", "clínica InSalud", "artículos médicos", "salud íntima"
   ],

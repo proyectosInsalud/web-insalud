@@ -5,6 +5,8 @@ import { POST_BY_SLUG } from "@/lib/queries";
 import { serverClient } from "@/lib/sanity.client";
 import { Metadata } from "next";
 
+export const revalidate = 3600;
+
 type PageProps = {
   params: Promise<{ slug: string }>;
 };

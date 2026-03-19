@@ -12,11 +12,13 @@ import { testimonials } from "@/data/testimonials";
 import { Metadata } from "next";
 // import { PopUp } from "@/components/ui/PopUp";
 
+export const revalidate = 3600;
+
 // app/(root)/page.tsx o app/layout.tsx
 export const metadata:Metadata = {
   title: " InSalud - Clínica de Urología y Salud Sexual en Lima",
   description:
-    "Clínica en Lima especializada en urología, salud sexual masculina y femenina, ginecología y medicina integral. Agenda tu cita con especialistas certificados en InSalud.",
+    "Especialistas en urología, salud sexual masculina y femenina, ginecología y medicina integral en Lima. Agenda tu cita con expertos certificados en InSalud.",
   keywords: [
     "infecciones urinarias", "cistitis", "cistitis tratamiento", "salud sexual", "urologia en Lima", "sexualidad masculina", "sexualidad hombre", "infeccion de orina", "cistitis mujer", "chequeo prostático", "control hormonal", "mal de orin", "mal de orina", "ardor después de orinar", "infeccion de riñon", "infeccion urinaria fuerte"
   ],

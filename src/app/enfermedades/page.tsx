@@ -6,6 +6,8 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 // app/enfermedades/page.tsx
 import type { Metadata } from "next";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Enfermedades Urológicas y de Salud Sexual | InSalud",
   description:

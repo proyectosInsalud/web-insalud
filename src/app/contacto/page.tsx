@@ -4,6 +4,8 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { Metadata } from "next";
 
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Contacto y Citas Médicas | InSalud en Lima",
   description:
