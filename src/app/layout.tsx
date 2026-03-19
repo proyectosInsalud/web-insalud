@@ -8,20 +8,6 @@ import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { PopUpTienda } from "@/components/ui/PopUpTienda";
 import Script from "next/script";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
-
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
@@ -107,7 +93,7 @@ export default function RootLayout({
           `}
         </Script>
 
-        <Script id="gtm" strategy="afterInteractive">
+        <Script id="gtm" strategy="lazyOnload">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -133,7 +119,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
+        className={`${nunito.variable} ${poppins.variable} antialiased`}
       >
         <noscript>
           <iframe

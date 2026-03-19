@@ -8,17 +8,19 @@ const PAGE_SIZE = 9;
 
 type BlogProps = {
     currentPage: number;
+    initialData?: PostListType;
 }
 
 async function getData(page: number) {
+  const PAGE_SIZE = 9;
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
   return await serverClient.fetch(POSTS_PAGINATED, { start, end }, {next: {revalidate: 3600}});
 }
 
-export const Blog = async({currentPage = 1}:BlogProps) => {
-  const data:PostListType = await getData(currentPage);
+export const Blog = async({currentPage = 1, initialData}:BlogProps) => {
+  const data:PostListType = initialData || await getData(currentPage);
 
   return (
     <section className="max-w-7xl container mx-auto px-4">

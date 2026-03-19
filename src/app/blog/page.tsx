@@ -2,7 +2,7 @@ import { Blog } from "@/components/blog/Blog";
 import { HeroBlog } from "@/components/blog/HeroBlog";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { serverClient } from "@/lib/sanity.client";
-import { LATEST_POSTS } from "@/lib/queries";
+import { LATEST_POSTS, POSTS_PAGINATED } from "@/lib/queries";
 
 type RawSearch = { page?: string | string[] };
 
@@ -46,30 +46,34 @@ export const metadata = {
   metadataBase: new URL("https://insalud.pe"),
 };
 
-async function getLatestPosts() {
-  return await serverClient.fetch(LATEST_POSTS, {}, { next: { revalidate: 3600 } });
-}
-
 export default async function BlogPage({
   searchParams,
 }: {
   searchParams: Promise<RawSearch>;
 }) {
   const { page } = await searchParams;
-  const latestPostsData = await getLatestPosts();
-
+  
   // Normaliza string | string[]
   const pageStr = Array.isArray(page) ? page?.[0] : page;
-
-  // Convierte a número seguro
   const currentPage = Number(pageStr) || 1;
   const validPage = currentPage > 0 ? currentPage : 1;
+
+  // Lógica de paginación para el fetch paralelo
+  const PAGE_SIZE = 9;
+  const start = (validPage - 1) * PAGE_SIZE;
+  const end = start + PAGE_SIZE;
+
+  // FETCH PARALELO: Evita el waterfall de datos en el servidor
+  const [latestPostsData, blogData] = await Promise.all([
+    serverClient.fetch(LATEST_POSTS, {}, { next: { revalidate: 3600 } }),
+    serverClient.fetch(POSTS_PAGINATED, { start, end }, { next: { revalidate: 3600 } })
+  ]);
 
   return (
     <div>
       <CintilloBarra />
       <HeroBlog latestPosts={latestPostsData} />
-      <Blog currentPage={validPage} />
+      <Blog currentPage={validPage} initialData={blogData} />
     </div>
   );
 }
