@@ -18,4 +18,4 @@ export const client = createClient({
 });
 
 const builder = imageUrlBuilder(serverClient);
-export const urlFor = (ref: string) => builder.image(ref);
+export const urlFor = (ref: any) => builder.image(ref).auto('format').quality(90);

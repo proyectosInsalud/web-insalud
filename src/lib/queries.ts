@@ -10,11 +10,11 @@ export const POSTS_PAGINATED = /* groq */ `
     title,
     "slug": slug.current,
     publishedAt,
-    "cover": { "url": cover.asset->url, "alt": cover.alt },
+    "cover": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
     category->{ _id, title, "slug": slug.current },
     diagnostico->{ _id, title, "slug": slug.current, icon },
     "tagsExpanded": tags[]->{ _id, title, "slug": slug.current },
-    author->{ _id, name, "slug": slug.current, "image": { "url": image.asset->url } },
+    author->{ _id, name, "slug": slug.current, "image": { "url": image.asset->url + "?auto=format" } },
   },
   "total": count(*[
     _type == "post" &&
@@ -33,7 +33,7 @@ export const POST_BY_SLUG = /* groq */ `
   "slug": slug.current,
   publishedAt,
 
-  "cover": { "url": cover.asset->url, "alt": cover.alt },
+  "cover": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
 
   category->{ _id, title },
   diagnostico->{ _id, title },
@@ -43,7 +43,7 @@ export const POST_BY_SLUG = /* groq */ `
     _id,
     name,
     "image": {
-      "url": image.asset->url,
+      "url": image.asset->url + "?auto=format",
       "alt": image.alt
     }
   },
@@ -77,8 +77,8 @@ export const LATEST_POSTS = /* groq */ `
     title,
     excerpt,
     publishedAt,
-    "image": { "url": cover.asset->url, "alt": cover.alt },
-    author->{ name, "image": { "url": image.asset->url } },
+    "image": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
+    author->{ name, "image": { "url": image.asset->url + "?auto=format" } },
     category->{ title },
     "slug": slug.current
   }
