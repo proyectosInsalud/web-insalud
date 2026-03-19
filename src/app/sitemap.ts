@@ -56,6 +56,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/sedes`,
       lastModified: now,
     },
+    {
+      url: `${siteUrl}/libro-de-reclamaciones`,
+      lastModified: now,
+    },
   ];
 
   return [...staticEntries, ...treatmentEntries, ...blogEntries];
