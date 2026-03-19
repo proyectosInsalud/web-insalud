@@ -54,7 +54,6 @@ export const PopUpTienda = () => {
             height={600}
             quality={95}
             className="w-full h-auto rounded-lg"
-            priority
           />
         </Link>
       </div>

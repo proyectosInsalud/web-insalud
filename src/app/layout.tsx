@@ -27,7 +27,7 @@ const nunito = Nunito({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
-  preload: false,
+  preload: true,
 });
 
 const poppins = Poppins({
@@ -35,7 +35,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 export const viewport: Viewport = {

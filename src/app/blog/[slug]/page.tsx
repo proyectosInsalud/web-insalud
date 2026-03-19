@@ -33,16 +33,18 @@ export async function generateMetadata(
     if (!data) return { title: 'Post no encontrado' };
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://insalud.pe";
+    const metaTitle = (data.seo?.metaTitle || data.title).slice(0, 60);
+    const metaDescription = (data.seo?.metaDescription || data.excerpt || "").slice(0, 160);
 
     return {
-        title: data.seo?.metaTitle || data.title,
-        description: data.seo?.metaDescription || data.excerpt,
+        title: metaTitle,
+        description: metaDescription,
         alternates: {
             canonical: `${siteUrl}/blog/${slug}`,
         },
         openGraph: {
-            title: data.seo?.metaTitle || data.title,
-            description: data.seo?.metaDescription || data.excerpt,
+            title: metaTitle,
+            description: metaDescription,
             url: `${siteUrl}/blog/${slug}`,
             type: 'article',
             publishedTime: data.publishedAt,
@@ -55,8 +57,8 @@ export async function generateMetadata(
         },
         twitter: {
             card: 'summary_large_image',
-            title: data.seo?.metaTitle || data.title,
-            description: data.seo?.metaDescription || data.excerpt,
+            title: metaTitle,
+            description: metaDescription,
             images: [data.cover?.url || ""],
         },
     }
