@@ -68,8 +68,10 @@ export default function RootLayout({
         {/* Preconnect hints para mejorar la carga de recursos del CDN */}
         <link rel="preconnect" href="https://cdn.insalud.pe" />
         <link rel="preconnect" href="https://prensa.insalud.pe" />
+        <link rel="preconnect" href="https://cdn.sanity.io" />
         <link rel="dns-prefetch" href="https://cdn.insalud.pe" />
         <link rel="dns-prefetch" href="https://prensa.insalud.pe" />
+        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
 
         {/* Meta Pixel */}
         <Script id="facebook-pixel" strategy="lazyOnload">

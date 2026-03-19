@@ -6,6 +6,7 @@ import { WhatsAppSection } from "@/components/ui/WhatsAppSection";
 import { Metadata } from "next";
 
 export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: "Sedes de InSalud en Perú y Latam | Ubicaciones y Citas",

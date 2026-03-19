@@ -3,6 +3,7 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { ListServices } from "@/components/tratamientos/ListServices";
 import type { Metadata } from "next";
 export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: "Tratamientos Urológicos y de Salud Sexual | InSalud",

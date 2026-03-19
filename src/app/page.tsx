@@ -13,6 +13,7 @@ import { Metadata } from "next";
 // import { PopUp } from "@/components/ui/PopUp";
 
 export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 // app/(root)/page.tsx o app/layout.tsx
 export const metadata:Metadata = {

@@ -3,6 +3,7 @@ import { CintilloBarra } from "@/components/home/CintilloBarra"
 import { FormContactLibro } from "@/components/libro/FormContactLibro";
 
 export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 
 export const metadata = {

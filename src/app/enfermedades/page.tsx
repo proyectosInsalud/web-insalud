@@ -7,6 +7,7 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 import type { Metadata } from "next";
 
 export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
   title: "Enfermedades Urológicas y de Salud Sexual | InSalud",

@@ -8,6 +8,7 @@ import { CompanyTimeline } from "@/components/nosotros/CompanyTimeline";
 import { Metadata } from "next";
 
 export const revalidate = 86400;
+export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
     title: "Nosotros | InSalud Centro Médico Especializado",
