@@ -2,7 +2,7 @@ import { NavBarIntern } from "@/components/common/NavBarIntern"
 import { CintilloBarra } from "@/components/home/CintilloBarra"
 import { FormContactLibro } from "@/components/libro/FormContactLibro";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 
 export const metadata = {

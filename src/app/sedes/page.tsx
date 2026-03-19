@@ -5,7 +5,7 @@ import { HeroSedes } from "@/components/sedes/HeroSedes";
 import { WhatsAppSection } from "@/components/ui/WhatsAppSection";
 import { Metadata } from "next";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title: "Sedes de InSalud en Perú y Latam | Ubicaciones y Citas",

@@ -12,7 +12,7 @@ import { testimonials } from "@/data/testimonials";
 import { Metadata } from "next";
 // import { PopUp } from "@/components/ui/PopUp";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 // app/(root)/page.tsx o app/layout.tsx
 export const metadata:Metadata = {

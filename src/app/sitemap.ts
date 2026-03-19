@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await serverClient.fetch(
     `*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current, _updatedAt }`,
     {},
-    { next: { revalidate: 3600 } }
+    { next: { revalidate: 86400 } }
   );
 
   const blogEntries = posts.map((post: any) => ({

@@ -6,7 +6,7 @@ import { LATEST_POSTS, POSTS_PAGINATED } from "@/lib/queries";
 
 type RawSearch = { page?: string | string[] };
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export const metadata = {
   title: "Salud Sexual, Noticias de urología y Prevención | Blog InSalud",

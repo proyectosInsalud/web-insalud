@@ -18,7 +18,7 @@ import { ReservationModal } from "@/components/common/ReservationModal";
 import { Metadata  } from "next";
 import { cache } from "react";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 type PageProps = {
   params: Promise<{ slug: string }>;

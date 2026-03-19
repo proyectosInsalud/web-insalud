@@ -7,7 +7,7 @@ import { CoreValuesSection } from "@/components/nosotros/CoreValuesSection";
 import { CompanyTimeline } from "@/components/nosotros/CompanyTimeline";
 import { Metadata } from "next";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export const metadata: Metadata = {
     title: "Nosotros | InSalud Centro Médico Especializado",
