@@ -20,6 +20,7 @@ export const GridBlog = ({data}: GridBlogProps) => {
                             src="/images/blog/aside/doctor-antonio-grandez-doctoralia.png" 
                             width={300}
                             height={200}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         alt="Doctor Antonio Grandez Doctoralia"
                         className="w-full max-h-[380px] object-cover rounded-3xl"
                         />
@@ -30,7 +31,14 @@ export const GridBlog = ({data}: GridBlogProps) => {
             return (
                 <Link key={post._id} href={`/blog/${post.slug}`}>
                     <article className="space-y-4 hover:shadow-2xl p-4 rounded-2xl transition-all cursor-pointer duration-300" >
-                        <Image src={post.cover.url || ""} alt={post.cover.alt || ""} width={300} height={200} className="w-full max-h-[200px] object-cover rounded-3xl" />
+                        <Image 
+                          src={post.cover.url || ""} 
+                          alt={post.cover.alt || ""} 
+                          width={300} 
+                          height={200} 
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="w-full max-h-[200px] object-cover rounded-3xl" 
+                        />
                         <div className="flex gap-2">
                             {post.tagsExpanded?.map((tag) => (
                                 <span className="text-in-cyan bg-in-cyan/10 px-4 py-1 rounded-full" key={tag._id}>{tag.title}</span>
