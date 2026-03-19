@@ -4,8 +4,11 @@ import { FormContactLibro } from "@/components/libro/FormContactLibro";
 
 
 export const metadata = {
-    title: "Libro de Reclamaciones",
-    description: "Libro de Reclamaciones",
+    title: "Libro de Reclamaciones | InSalud",
+    description: "Libro de Reclamaciones de InSalud. Registra tu queja o reclamo de manera virtual.",
+    alternates: {
+        canonical: "/libro-de-reclamaciones"
+    }
 }   
 
 export default function LibroDeReclamaciones() {
