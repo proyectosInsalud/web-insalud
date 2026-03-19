@@ -16,15 +16,18 @@ import { EquipoMedicoSection } from "@/components/tratamientos/item/EquipoMedico
 import { HighlightCTASection } from "@/components/tratamientos/item/HighlightCTASection";
 import { ReservationModal } from "@/components/common/ReservationModal";
 import { Metadata  } from "next";
+import { cache } from "react";
+
+export const revalidate = 3600;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 // Función para obtener datos (reutilizable)
-async function getServicioDetalle(
+const getServicioDetalle = cache(async (
   slug: string
-): Promise<TypeDiagnostico | null> {
+): Promise<TypeDiagnostico | null> => {
   try {
     const detailFilePath = path.join(
       process.cwd(),
@@ -36,7 +39,7 @@ async function getServicioDetalle(
     console.error(`Error loading tratamiento ${slug}:`, error);
     return null;
   }
-}
+});
 
 export async function generateStaticParams() {
   try {
@@ -62,16 +65,21 @@ export async function generateMetadata(
   const post = await getServicioDetalle(slug);
   const twitterImage = post?.seo.twitterImage;
 
+  const rawTitle = post?.seo.title || "";
+  const rawDescription = post?.seo.description || "";
+  const metaTitle = rawTitle.length > 60 ? rawTitle.slice(0, 57) + "..." : rawTitle;
+  const metaDescription = rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription;
+
   return {
-    title: post?.seo.title,
-    description: post?.seo.description,
+    title: metaTitle,
+    description: metaDescription,
     keywords: post?.seo.keywords,
     alternates: {
       canonical: post?.seo.canonical,
     },
     openGraph: {
-      title: post?.seo.ogTitle,
-      description: post?.seo.ogDescription,
+      title: (post?.seo.ogTitle || "").length > 60 ? (post?.seo.ogTitle || "").slice(0, 57) + "..." : (post?.seo.ogTitle || ""),
+      description: (post?.seo.ogDescription || "").length > 160 ? (post?.seo.ogDescription || "").slice(0, 157) + "..." : (post?.seo.ogDescription || ""),
       url: post?.seo.ogUrl,
       siteName: "InSalud",
       locale: post?.seo.ogLocale,
@@ -79,8 +87,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: post?.seo.twitterCard || "summary_large_image",  
-      title: post?.seo.twitterTitle,
-      description: post?.seo.twitterDescription,
+      title: (post?.seo.twitterTitle || "").length > 60 ? (post?.seo.twitterTitle || "").slice(0, 57) + "..." : (post?.seo.twitterTitle || ""),
+      description: (post?.seo.twitterDescription || "").length > 160 ? (post?.seo.twitterDescription || "").slice(0, 157) + "..." : (post?.seo.twitterDescription || ""),
       images: twitterImage ? [twitterImage] : undefined,
       creator: "@insalud_pe"
     },

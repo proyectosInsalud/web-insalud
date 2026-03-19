@@ -30,6 +30,7 @@ export const NavBarIntern = () => {
             alt="Logo Insalud"
             width={160}
             height={24}
+            priority
             className="hidden md:block"
           />
           <Image
@@ -37,6 +38,7 @@ export const NavBarIntern = () => {
             alt="Logo Insalud"
             width={107}
             height={19}
+            priority
             className="md:hidden"
           />
         </Link>

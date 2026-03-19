@@ -27,6 +27,7 @@ export const NavBar = ({ className }: { className?: string }) => {
               alt="logo insalud"
               width={150}
               height={28}
+              priority
               className="w-full h-full"
             />
           </Link>

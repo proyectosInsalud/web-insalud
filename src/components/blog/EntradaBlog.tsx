@@ -39,6 +39,7 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
           width={1200}
           height={600}
           priority
+          sizes="(max-width: 1280px) 100vw, 1280px"
           className="w-full  object-cover rounded-3xl"
         />
       </div>

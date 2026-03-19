@@ -23,6 +23,7 @@ export const HeroService = ({ tratamiento }: HeroDiagnosticoProps) => {
           width={500}
           height={300}
           priority
+          sizes="(max-width: 768px) 100vw, 40vw"
           className="hidden md:block w-full h-full object-cover md:rounded-2xl md:col-span-5"
         />
         <div className="space-y-6 md:space-y-4 flex flex-col py-2 md:col-span-7">

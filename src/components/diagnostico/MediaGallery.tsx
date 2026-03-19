@@ -15,6 +15,7 @@ export const MediaGallery = ({ images }: MediaGalleryProps) => {
         alt={images[0].alt}
         width={500}
         height={300}
+        sizes="(max-width: 768px) 100vw, 33vw"
         className='rounded-lg'
       />
     </>

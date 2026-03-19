@@ -168,6 +168,7 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                             width={500}
                             height={500}
                             priority={index < 2}
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             className={`rounded-2xl w-full h-full object-cover`}
                           />
                         </div>

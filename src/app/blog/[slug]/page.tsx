@@ -33,8 +33,11 @@ export async function generateMetadata(
     if (!data) return { title: 'Post no encontrado' };
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://insalud.pe";
-    const metaTitle = (data.seo?.metaTitle || data.title).slice(0, 60);
-    const metaDescription = (data.seo?.metaDescription || data.excerpt || "").slice(0, 160);
+    const rawTitle = data.seo?.metaTitle || data.title || "";
+    const rawDescription = data.seo?.metaDescription || data.excerpt || "";
+    
+    const metaTitle = rawTitle.length > 60 ? rawTitle.slice(0, 57) + "..." : rawTitle;
+    const metaDescription = rawDescription.length > 160 ? rawDescription.slice(0, 157) + "..." : rawDescription;
 
     return {
         title: metaTitle,

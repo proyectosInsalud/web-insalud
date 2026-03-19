@@ -13,6 +13,7 @@ export const HeroHome = () => {
             loop 
             playsInline
             preload="metadata"
+            poster="/images/banner-servicios.png"
             className="hidden md:block absolute top-0 left-0 w-full h-full object-cover -z-10"
             aria-label="Video banner de escritorio mostrando tratamientos médicos de InSalud"
           />
@@ -23,6 +24,7 @@ export const HeroHome = () => {
             loop 
             playsInline
             preload="metadata"
+            poster="/images/banner-enfermedades.png"
             className="block md:hidden absolute top-0 left-0 w-full h-full object-cover -z-10"
             aria-label="Video banner para móviles mostrando tratamientos médicos de InSalud"
           />

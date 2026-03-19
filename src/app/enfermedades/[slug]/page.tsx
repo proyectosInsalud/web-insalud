@@ -5,16 +5,21 @@ import { TypeDiagnostico } from "@/types";
 import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { NavBarIntern } from "@/components/common/NavBarIntern";
 import { BreadCrumbInsa } from "@/components/common/BreadCrumbInsa";
-// import { DiagnosticPDPHero } from "@/components/diagnostico/DiagnosticPDPHero";
+import { DiagnosticPDPHero } from "@/components/diagnostico/DiagnosticPDPHero";
+
+import { Metadata } from "next";
+import { cache } from "react";
+
+export const revalidate = 3600;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 // Función para obtener datos
-async function getTratamientoDetalle(
+const getTratamientoDetalle = cache(async (
   slug: string
-): Promise<TypeDiagnostico | null> {
+): Promise<TypeDiagnostico | null> => {
   try {
     const detailFilePath = path.join(
       process.cwd(),
@@ -26,6 +31,26 @@ async function getTratamientoDetalle(
     console.error(`Error loading tratamiento ${slug}:`, error);
     return null;
   }
+});
+
+export async function generateMetadata(
+    { params }: PageProps,
+): Promise<Metadata> {
+    const { slug } = await params;
+    const data = await getTratamientoDetalle(slug);
+
+    if (!data) return { title: 'Enfermedad no encontrada' };
+
+    const title = data.title || "";
+    const description = (data as any).parrafo || "";
+
+    return {
+        title: title.length > 60 ? title.slice(0, 57) + "..." : title,
+        description: description.length > 160 ? description.slice(0, 157) + "..." : description,
+        alternates: {
+            canonical: `/enfermedades/${slug}`,
+        },
+    }
 }
 
 export default async function TratamientoDetallePage({ params }: PageProps) {
@@ -41,12 +66,12 @@ export default async function TratamientoDetallePage({ params }: PageProps) {
       <CintilloBarra/>
       <NavBarIntern />
       <BreadCrumbInsa title={tratamiento.title}/>
-      {/* <DiagnosticPDPHero
-        images={tratamiento.images}
+      <DiagnosticPDPHero
+        images={(tratamiento as any).images}
         title={tratamiento.title}
-        pasos={tratamiento.pasosDiagnostico}
-        duracion={tratamiento.duracion}
-      /> */}
+        pasos={(tratamiento as any).pasosDiagnostico}
+        duracion={(tratamiento as any).duracion}
+      />
     </>
   );
 }

@@ -5,6 +5,17 @@ import { OurTeam } from "@/components/nosotros/OurTeam";
 import { ReservationModal } from "@/components/common/ReservationModal";
 import { CoreValuesSection } from "@/components/nosotros/CoreValuesSection";
 import { CompanyTimeline } from "@/components/nosotros/CompanyTimeline";
+import { Metadata } from "next";
+
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+    title: "Nosotros | InSalud Centro Médico Especializado",
+    description: "Conoce más sobre InSalud, nuestro equipo de especialistas y nuestro compromiso con tu salud integral.",
+    alternates: {
+        canonical: "/nosotros"
+    }
+}
 
 export default function Nosotros() {
     return (
