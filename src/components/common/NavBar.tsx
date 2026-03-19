@@ -28,7 +28,7 @@ export const NavBar = ({ className }: { className?: string }) => {
               width={150}
               height={28}
               priority
-              className="w-full h-full"
+              className="h-auto w-auto"
             />
           </Link>
           <div

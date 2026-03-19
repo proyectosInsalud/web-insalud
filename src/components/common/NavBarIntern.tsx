@@ -31,6 +31,7 @@ export const NavBarIntern = () => {
             width={160}
             height={24}
             priority
+            style={{ width: '160px', height: 'auto' }}
             className="hidden md:block"
           />
           <Image
@@ -39,6 +40,7 @@ export const NavBarIntern = () => {
             width={107}
             height={19}
             priority
+            style={{ width: '107px', height: 'auto' }}
             className="md:hidden"
           />
         </Link>

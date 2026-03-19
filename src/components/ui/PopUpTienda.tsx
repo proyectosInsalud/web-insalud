@@ -11,10 +11,11 @@ export const PopUpTienda = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Mostrar el popup después de un pequeño delay al cargar la página
-    setTimeout(() => {
+    // Mostrar el popup después de un delay (8 segundos) para priorizar el LCP de la página
+    const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 500);
+    }, 8000);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = (e: React.MouseEvent) => {
@@ -53,7 +54,8 @@ export const PopUpTienda = () => {
             width={480}
             height={600}
             quality={95}
-            className="w-full h-auto rounded-lg"
+            style={{ width: '100%', height: 'auto' }}
+            className="rounded-lg"
           />
         </Link>
       </div>
