@@ -11,16 +11,23 @@ export const PopUpTienda = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Mostrar el popup después de un delay (8 segundos) para priorizar el LCP de la página
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 8000);
-    return () => clearTimeout(timer);
+    // Verifica si el usuario ya vio el popup en esta sesión
+    const hasSeenPopup = sessionStorage.getItem("popup-tienda-visto");
+    
+    if (!hasSeenPopup) {
+      // Mostrar el popup "altoque" (500ms) por petición del usuario
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleClose = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsOpen(false);
+    // Marcar como visto para no volver a mostrar en esta sesión
+    sessionStorage.setItem("popup-tienda-visto", "true");
   };
 
   return (

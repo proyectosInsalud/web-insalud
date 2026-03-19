@@ -13,12 +13,16 @@ type PageProps = {
 };
 
 const getData = cache(async (slug: string) => {
-    const data = await serverClient.fetch(POST_BY_SLUG, { slug });
+    const data = await serverClient.fetch(POST_BY_SLUG, { slug }, { next: { revalidate: 3600 } });
     return data[0];
 });
 
 export async function generateStaticParams() {
-    const posts = await serverClient.fetch(`*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current }`);
+    const posts = await serverClient.fetch(
+        `*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current }`,
+        {},
+        { next: { revalidate: 3600 } }
+    );
     return posts.map((post: any) => ({
         slug: post.slug,
     }));

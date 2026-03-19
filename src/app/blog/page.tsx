@@ -47,7 +47,7 @@ export const metadata = {
 };
 
 async function getLatestPosts() {
-  return await serverClient.fetch(LATEST_POSTS);
+  return await serverClient.fetch(LATEST_POSTS, {}, { next: { revalidate: 3600 } });
 }
 
 export default async function BlogPage({

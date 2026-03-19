@@ -8,7 +8,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date().toISOString();
 
   // 1. Fetch all blog posts slugs from Sanity
-  const posts = await serverClient.fetch(`*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current, _updatedAt }`);
+  const posts = await serverClient.fetch(
+    `*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current, _updatedAt }`,
+    {},
+    { next: { revalidate: 3600 } }
+  );
 
   const blogEntries = posts.map((post: any) => ({
     url: `${siteUrl}/blog/${post.slug}`,

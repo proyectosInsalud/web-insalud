@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const data = await serverClient.fetch(LATEST_POSTS);
+    const data = await serverClient.fetch(LATEST_POSTS, {}, { next: { revalidate: 3600 } });
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error fetching latest posts:", error);
