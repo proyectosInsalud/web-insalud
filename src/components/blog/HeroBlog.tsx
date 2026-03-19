@@ -167,6 +167,7 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                             alt={item.image?.alt || ""}
                             width={500}
                             height={500}
+                            priority={index < 2}
                             className={`rounded-2xl w-full h-full object-cover`}
                           />
                         </div>

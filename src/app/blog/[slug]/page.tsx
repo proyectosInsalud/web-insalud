@@ -4,6 +4,7 @@ import { CintilloBarra } from "@/components/home/CintilloBarra";
 import { POST_BY_SLUG } from "@/lib/queries";
 import { serverClient } from "@/lib/sanity.client";
 import { Metadata } from "next";
+import { cache } from "react";
 
 export const revalidate = 3600;
 
@@ -11,10 +12,10 @@ type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
-async function getData(slug: string) {
+const getData = cache(async (slug: string) => {
     const data = await serverClient.fetch(POST_BY_SLUG, { slug });
     return data[0];
-}
+});
 
 export async function generateStaticParams() {
     const posts = await serverClient.fetch(`*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current }`);

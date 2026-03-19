@@ -38,6 +38,7 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
           alt={cover.alt || ""}
           width={1200}
           height={600}
+          priority
           className="w-full  object-cover rounded-3xl"
         />
       </div>

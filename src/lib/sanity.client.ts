@@ -6,7 +6,7 @@ export const serverClient = createClient({
   dataset: "production",
   apiVersion: '2025-09-11',
   token: process.env.SANITY_API_TOKEN,
-  useCdn: false,
+  useCdn: true,
   perspective: 'published',
 });
 
@@ -14,7 +14,7 @@ export const client = createClient({
   projectId: "wma19ek2",
   dataset: "production",
   apiVersion: '2025-09-11',
-  useCdn: false,
+  useCdn: true,
 });
 
 const builder = imageUrlBuilder(serverClient);

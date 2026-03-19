@@ -1,5 +1,4 @@
 // components/blog/PortableArticle.tsx
-"use client";
 
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import type { PortableTextBlock } from "@portabletext/types";
