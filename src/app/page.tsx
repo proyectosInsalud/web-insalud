@@ -3,6 +3,7 @@ import { FeaturedSpecialties } from "@/components/home/FeaturedSpecialties";
 import { WhyChooseInSalud } from "@/components/home/WhyChooseInSalud";
 import { ReserveDate } from "@/components/home/ReserveDate";
 import { CountClients } from "@/components/home/CountClients";
+import { OurClients } from "@/components/home/OurClients";
 import { Testimonials } from "@/components/home/Testimonials";
 import { MedicTeam } from "@/components/home/MedicTeam";
 import { PlacesMedic } from "@/components/home/PlacesMedic";
@@ -16,7 +17,7 @@ export const revalidate = 86400;
 export const dynamic = 'force-static';
 
 // app/(root)/page.tsx o app/layout.tsx
-export const metadata:Metadata = {
+export const metadata: Metadata = {
   title: " InSalud - Clínica de Urología y Salud Sexual en Lima",
   description:
     "Especialistas en urología, salud sexual masculina y femenina, ginecología y medicina integral en Lima. Agenda tu cita con expertos certificados en InSalud.",
@@ -78,11 +79,12 @@ export default function Home() {
       </header>
 
       <main>
-        <ReserveDate/>
-        <FeaturedSpecialties/>
+        <ReserveDate />
+        <FeaturedSpecialties />
         <CountClients />
         <WhyChooseInSalud />
         <MedicTeam />
+        <OurClients />
         <PlacesMedic />
         <AllAboutInsalud />
         <Testimonials testimonials={testimonials} />
@@ -94,4 +96,3 @@ export default function Home() {
     </div>
   );
 }
-  
