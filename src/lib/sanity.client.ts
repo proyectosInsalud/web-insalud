@@ -6,7 +6,7 @@ export const serverClient = createClient({
   projectId: "wma19ek2",
   dataset: "production",
   apiVersion: '2025-09-11',
-  useCdn: true,
+  useCdn: false,
   perspective: 'published',
 });
 
