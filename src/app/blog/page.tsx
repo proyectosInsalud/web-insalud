@@ -65,8 +65,8 @@ export default async function BlogPage({
 
   // FETCH PARALELO: Evita el waterfall de datos en el servidor
   const [latestPostsData, blogData] = await Promise.all([
-    serverClient.fetch(LATEST_POSTS, {}, { next: { revalidate: 86400, tags: ["posts"] } }),
-    serverClient.fetch(POSTS_PAGINATED, { start, end }, { next: { revalidate: 86400, tags: ["posts"] } })
+    serverClient.fetch(LATEST_POSTS, {}, { next: { revalidate: 86400 } }),
+    serverClient.fetch(POSTS_PAGINATED, { start, end }, { next: { revalidate: 86400 } })
   ]);
 
   return (
