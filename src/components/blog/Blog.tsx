@@ -3,6 +3,7 @@ import { GridBlog } from "./GridBlog";
 import { POSTS_PAGINATED } from "@/lib/queries";
 import { PaginationPage } from "./PaginationPage";
 import { PostListType } from "@/types";
+import { Suspense } from "react";
 
 const PAGE_SIZE = 9;
 
@@ -28,7 +29,9 @@ export const Blog = async({currentPage = 1, initialData}:BlogProps) => {
         <h2 className="font-in-nunito text-in-blue-title text-3xl md:text-4xl font-semibold text-center">Articulos</h2>
       </div>
       <GridBlog data={data} />
-      <PaginationPage totalItems={data.total} sizePage={PAGE_SIZE} currentPage={currentPage} />
+      <Suspense>
+        <PaginationPage totalItems={data.total} sizePage={PAGE_SIZE} currentPage={currentPage} />
+      </Suspense>
       {/* {JSON.stringify(data)} */}
     </section>
   )

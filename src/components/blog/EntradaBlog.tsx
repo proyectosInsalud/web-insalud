@@ -2,7 +2,7 @@ import { formatFechaPeru } from "@/helpers/formatFechaPeru";
 import { PostTypeEntry } from "@/types";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { PortableArticle } from "./PortableArticle ";
+import { PortableArticle } from "./PortableArticle";
 
 type EntradaBlogProps = {
   data: PostTypeEntry[];
