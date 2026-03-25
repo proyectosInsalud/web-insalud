@@ -17,7 +17,7 @@ async function getData(page: number) {
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
-  return await serverClient.fetch(POSTS_PAGINATED, { start, end }, {next: {revalidate: 86400}});
+  return await serverClient.fetch(POSTS_PAGINATED, { start, end }, { next: { revalidate: 86400, tags: ["posts"] } });
 }
 
 export const Blog = async({currentPage = 1, initialData}:BlogProps) => {

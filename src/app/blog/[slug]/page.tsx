@@ -13,7 +13,7 @@ type PageProps = {
 };
 
 const getData = cache(async (slug: string) => {
-    const data = await serverClient.fetch(POST_BY_SLUG, { slug }, { next: { revalidate: 86400 } });
+    const data = await serverClient.fetch(POST_BY_SLUG, { slug }, { next: { revalidate: 86400, tags: ["posts"] } });
     return data[0];
 });
 
