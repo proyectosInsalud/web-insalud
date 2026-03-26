@@ -29,26 +29,30 @@ export const GridBlog = ({data}: GridBlogProps) => {
             }
 
             return (
-                <Link key={post._id} href={`/blog/${post.slug}`}>
-                    <article className="space-y-4 hover:shadow-2xl p-4 rounded-2xl transition-all cursor-pointer duration-300" >
-                        <Image 
-                          src={post.cover.url || ""} 
-                          alt={post.cover.alt || ""} 
-                          width={300} 
-                          height={200} 
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="w-full max-h-[200px] object-cover rounded-3xl" 
-                        />
-                        <div className="flex gap-2">
-                            {post.tagsExpanded?.filter((tag) => tag !== null).map((tag) => (
-                                <span className="text-in-cyan bg-in-cyan/10 px-4 py-1 rounded-full" key={tag._id}>{tag.title}</span>
-                            ))}
+                <Link key={post._id} href={`/blog/${post.slug}`} className="h-full">
+                    <article className="h-full flex flex-col space-y-4 hover:shadow-2xl p-4 rounded-2xl transition-all cursor-pointer duration-300" >
+                        <div className="w-full h-[200px] overflow-hidden rounded-3xl bg-gray-100 flex items-center justify-center">
+                            <Image 
+                              src={post.cover.url || ""} 
+                              alt={post.cover.alt || ""} 
+                              width={300} 
+                              height={200} 
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              className="w-full h-full object-cover" 
+                            />
                         </div>
+                        {post.tagsExpanded && post.tagsExpanded.filter(tag => tag !== null).length > 0 && (
+                            <div className="flex gap-2">
+                                {post.tagsExpanded.filter((tag) => tag !== null).map((tag) => (
+                                    <span className="text-in-cyan bg-in-cyan/10 px-4 py-1 rounded-full" key={tag?._id}>{tag?.title}</span>
+                                ))}
+                            </div>
+                        )}
                         <div className="space-y-2">
                             <h2 className="font-in-nunito text-2xl line-clamp-2 font-semibold">{post.title}</h2>
                             <p className="line-clamp-3 text-sm" >{post.excerpt}</p>
                         </div>
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between mt-auto pt-4">
                             {post.author ? (
                                 <div className="flex items-center gap-2">
                                     {
