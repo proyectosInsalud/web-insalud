@@ -40,7 +40,7 @@ export const GridBlog = ({data}: GridBlogProps) => {
                           className="w-full max-h-[200px] object-cover rounded-3xl" 
                         />
                         <div className="flex gap-2">
-                            {post.tagsExpanded?.map((tag) => (
+                            {post.tagsExpanded?.filter((tag) => tag !== null).map((tag) => (
                                 <span className="text-in-cyan bg-in-cyan/10 px-4 py-1 rounded-full" key={tag._id}>{tag.title}</span>
                             ))}
                         </div>

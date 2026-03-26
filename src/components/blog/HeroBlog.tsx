@@ -147,19 +147,26 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                             </div>
                             <h3 className="font-in-nunito text-lg md:text-xl line-clamp-2 md:pr-8">{item.title}</h3>
                           </div>
-                          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-auto space-y-2 md:space-y-0">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-auto space-y-2 md:space-y-0">
                               <div className="flex items-center">
-                                <Image
-                                  src={item.author.image?.url || ""}
-                                  alt={item.author.name || ""}
-                                  width={32}
-                                  height={32}
-                                  className="rounded-full"
-                                />
-                                <p className="font-semibold ml-2">{item.author.name}</p>
+                                {item.author?.image?.url ? (
+                                  <Image
+                                    src={item.author.image.url}
+                                    alt={item.author.name || "Autor"}
+                                    width={32}
+                                    height={32}
+                                    className="rounded-full"
+                                  />
+                                ) : (
+                                  <div className="w-8 h-8 rounded-full bg-in-cyan flex items-center justify-center">
+                                    <p className="text-in-blue font-semibold">{item.author?.name?.charAt(0) || "?"}</p>
+                                  </div>
+                                )}
+                                <p className="font-semibold ml-2">{item.author?.name || "Autor Desconocido"}</p>
                               </div>
                               <p className="text-sm">{formatFechaPeru(item.publishedAt)}</p>
                             </div>
+
                         </div>
                         <div className="hidden md:block md:col-span-6 h-full">
                           <Image

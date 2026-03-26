@@ -21,7 +21,7 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
         {/* Tags */}
         <div className="flex justify-center gap-2">
           {tags &&
-            tags.map((tag, index) => (
+            tags.filter(tag => tag !== null).map((tag, index) => (
               <span
                 key={index}
                 className="bg-in-cyan py-1 px-8 text-xs md:text-sm rounded-full text-center text-white font-semibold"
@@ -34,8 +34,8 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
       {/* Imagen */}
       <div>
         <Image
-          src={cover.url || ""}
-          alt={cover.alt || ""}
+          src={cover?.url || ""}
+          alt={cover?.alt || "Portada del blog"}
           width={1200}
           height={600}
           priority
@@ -51,18 +51,20 @@ export const EntradaBlog = async ({ data }: EntradaBlogProps) => {
         </p>
         <div className="flex justify-center items-center gap-4">
           <Avatar>
-            <AvatarImage
-              src={author.image.url || ""}
-              alt={author.image.alt || ""}
-            />
+            {author?.image?.url ? (
+              <AvatarImage
+                src={author.image.url}
+                alt={author.image.alt || author.name || "Autor"}
+              />
+            ) : null}
             <AvatarFallback>
               <p className="text-in-blue font-semibold">
-                {author.name.charAt(0)}
+                {author?.name ? author.name.charAt(0) : "?"}
               </p>
             </AvatarFallback>
           </Avatar>
           <p className="text-in-gray-base text-center text-sm font-in-poppins">
-            Autor: {author.name}
+            Autor: {author?.name || "Autor Desconocido"}
           </p>
         </div>
       </div>
