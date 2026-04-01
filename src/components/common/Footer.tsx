@@ -50,6 +50,9 @@ export const Footer = () => {
               <Link target="_blank" href="https://insalud.pa">
                 Panamá
               </Link>
+              <Link target="_blank" href="https://insalud.cr">
+                Costa Rica
+              </Link>
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
