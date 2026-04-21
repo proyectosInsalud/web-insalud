@@ -35,4 +35,10 @@ export const sedesAccordion = [
         description: "Consultorio 1000 - Torre A - PANAMÁ - CLINIC",
         link: "https://maps.app.goo.gl/1234567890"
     },
+    {
+        id: 7,
+        name: "Costa Rica",
+        description: "CENTRO MÉDICO MOMENTUM ESCAZÚ - LOCAL CM-26-E, PISO 3, San José - Costa Rica",
+        link: "https://maps.app.goo.gl/oDzNMchUCLEmq9DT6?g_st=ipc"
+    },
 ]
