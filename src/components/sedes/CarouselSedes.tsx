@@ -50,7 +50,7 @@ export const CarouselSedes = () => {
                 {/* ml-4 en primer slide, mr-4 en último para espacio desde bordes */}
                 <article className="relative">
                   <Image
-                    src={cdn(`web/home/main/sede-accordion-${sede.id}.png`)}
+                    src={sede.image || cdn(`web/home/main/sede-accordion-${sede.id}.png`)}
                     alt={`Sede ${sede.name} de InSalud`}
                     width={500}
                     height={300}

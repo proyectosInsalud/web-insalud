@@ -83,7 +83,7 @@ export const PlacesMedic = () => {
                   <>
                                   {selectedSedeInfo ? (
                 <Image 
-                  src={cdn(`web/home/main/sede-accordion-${selectedSedeInfo.id}.png`)}
+                  src={selectedSedeInfo.image || cdn(`web/home/main/sede-accordion-${selectedSedeInfo.id}.png`)}
                   alt={`Sede ${selectedSedeInfo.name} de InSalud`} 
                   width={500} 
                   height={500}

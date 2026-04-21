@@ -39,6 +39,7 @@ export const sedesAccordion = [
         id: 7,
         name: "Costa Rica",
         description: "CENTRO MÉDICO MOMENTUM ESCAZÚ - LOCAL CM-26-E, PISO 3, San José - Costa Rica",
-        link: "https://maps.app.goo.gl/oDzNMchUCLEmq9DT6?g_st=ipc"
+        link: "https://maps.app.goo.gl/oDzNMchUCLEmq9DT6?g_st=ipc",
+        image: "/images/sede_costa_rica.jpeg"
     },
 ]
