@@ -1,15 +1,29 @@
 // app/robots.ts
 import type { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
 
-function getSiteUrl() {
-  const envUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '')
-  return envUrl || 'http://localhost:3000'
-}
+const CANONICAL_HOST = 'insalud.pe'
 
-export default function robots(): MetadataRoute.Robots {
-  const siteUrl = getSiteUrl()
+const NON_CANONICAL_HOSTS = new Set([
+  'insalud-latam.com',
+  'www.insalud-latam.com',
+  'sistemagolf.insalud-latam.com',
+  'sistemajm.insalud-latam.com',
+  'sistema.insalud-latam.com',
+])
+
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const headersList = await headers()
+  const host = headersList.get('host') ?? ''
+  const hostname = host.split(':')[0]
+
+  const isNonCanonical = NON_CANONICAL_HOSTS.has(hostname)
+
+  if (isNonCanonical) {
+    return {
+      rules: [{ userAgent: '*', disallow: '/' }],
+    }
+  }
 
   return {
     rules: [
@@ -27,7 +41,7 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
+    sitemap: `https://${CANONICAL_HOST}/sitemap.xml`,
+    host: `https://${CANONICAL_HOST}`,
   }
 }

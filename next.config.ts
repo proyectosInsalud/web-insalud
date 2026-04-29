@@ -32,17 +32,23 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Noindex global para el host del CDN
-      {
+      // Noindex para dominios no canónicos (Vercel aliases y CDN)
+      ...[
+        "insalud-latam.com",
+        "www.insalud-latam.com",
+        "sistemagolf.insalud-latam.com",
+        "sistemajm.insalud-latam.com",
+        "sistema.insalud-latam.com",
+      ].map((host) => ({
         source: "/:path*",
-        has: [{ type: "host", value: "cdn.insalud.pe" }],
+        has: [{ type: "host" as const, value: host }],
         headers: [
           {
             key: "X-Robots-Tag",
             value: "noindex, nofollow, noarchive, nosnippet",
           },
         ],
-      },
+      })),
     ];
   },
 

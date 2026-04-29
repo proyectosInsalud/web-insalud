@@ -42,12 +42,12 @@ export const ReserveDate = () => {
   });
 
 
-  
+
 
   return (
     <div className="px-4 pt-24 space-y-8">
       <h2 className="text-center hidden md:block text-in-blue-dark font-in-nunito md:text-3xl lg:text-4xl xl:text-5xl font-bold">
-        Encuentra tu tratamiento en InSalud
+        Agenda tu tratamiento en InSalud
       </h2>
 
       <section>
