@@ -6,14 +6,14 @@ import { serverClient } from "@/lib/sanity.client";
 import { Metadata } from "next";
 import { cache } from "react";
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 const getData = cache(async (slug: string) => {
-    const data = await serverClient.fetch(POST_BY_SLUG, { slug }, { next: { revalidate: 60 } });
+    const data = await serverClient.fetch(POST_BY_SLUG, { slug }, { next: { revalidate: 3600 } });
     return data[0];
 });
 
