@@ -19,7 +19,7 @@ const getData = cache(async (slug: string) => {
 
 export async function generateStaticParams() {
     const posts = await serverClient.fetch(
-        `*[_type == "post" && !draft && defined(publishedAt)]{ "slug": slug.current }`,
+        `*[_type == "post" && defined(publishedAt)]{ "slug": slug.current }`,
         {},
         { next: { revalidate: 3600 } }
     );

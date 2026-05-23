@@ -2,7 +2,7 @@ export const POSTS_PAGINATED = /* groq */ `
 {
   "items": *[
     _type == "post" &&
-    (!draft && defined(publishedAt) && publishedAt <= now())
+    (defined(publishedAt) && publishedAt <= now())
   ]
   | order(publishedAt desc)[$start...$end]{
     _id,
@@ -18,7 +18,7 @@ export const POSTS_PAGINATED = /* groq */ `
   },
   "total": count(*[
     _type == "post" &&
-    (!draft && defined(publishedAt) && publishedAt <= now())
+    (defined(publishedAt) && publishedAt <= now())
   ])
 }
 `;
@@ -71,7 +71,7 @@ export const LATEST_POSTS = /* groq */ `
 {
   "items": *[
     _type == "post" &&
-    (!draft && defined(publishedAt) && publishedAt <= now())
+    (defined(publishedAt) && publishedAt <= now())
   ]
   | order(publishedAt desc)[0...3]{
     title,

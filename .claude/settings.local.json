@@ -5,7 +5,9 @@
       "Bash(Get-ChildItem -Recurse -Force)",
       "Bash(Select-Object -First 50)",
       "Bash(Format-Table FullName)",
-      "Bash(xargs grep -l \"cron\\\\|schedule\\\\|publish\\\\|blog.*auto\")"
+      "Bash(xargs grep -l \"cron\\\\|schedule\\\\|publish\\\\|blog.*auto\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:wma19ek2.api.sanity.io)"
     ]
   }
 }
