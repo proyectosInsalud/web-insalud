@@ -7,7 +7,10 @@
       "Bash(Format-Table FullName)",
       "Bash(xargs grep -l \"cron\\\\|schedule\\\\|publish\\\\|blog.*auto\")",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "WebFetch(domain:wma19ek2.api.sanity.io)"
+      "WebFetch(domain:wma19ek2.api.sanity.io)",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer"
     ]
   }
 }
