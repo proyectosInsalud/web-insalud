@@ -1,8 +1,12 @@
+// Filtro reutilizable:
+// - Si tiene scheduledFor → usa esa fecha para controlar visibilidad
+// - Si no tiene scheduledFor → usa publishedAt como antes (retrocompatible)
+const VISIBILITY_FILTER = `_type == "post" && coalesce(scheduledFor, publishedAt) <= now()`;
+
 export const POSTS_PAGINATED = /* groq */ `
 {
   "items": *[
-    _type == "post" &&
-    (defined(publishedAt) && publishedAt <= now())
+    ${VISIBILITY_FILTER}
   ]
   | order(publishedAt desc)[$start...$end]{
     _id,
@@ -10,6 +14,7 @@ export const POSTS_PAGINATED = /* groq */ `
     title,
     "slug": slug.current,
     publishedAt,
+    scheduledFor,
     "cover": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
     category->{ _id, title, "slug": slug.current },
     diagnostico->{ _id, title, "slug": slug.current, icon },
@@ -17,8 +22,7 @@ export const POSTS_PAGINATED = /* groq */ `
     author->{ _id, name, "slug": slug.current, "image": { "url": image.asset->url + "?auto=format" } },
   },
   "total": count(*[
-    _type == "post" &&
-    (defined(publishedAt) && publishedAt <= now())
+    ${VISIBILITY_FILTER}
   ])
 }
 `;
@@ -70,13 +74,13 @@ export const POST_BY_SLUG = /* groq */ `
 export const LATEST_POSTS = /* groq */ `
 {
   "items": *[
-    _type == "post" &&
-    (defined(publishedAt) && publishedAt <= now())
+    ${VISIBILITY_FILTER}
   ]
   | order(publishedAt desc)[0...3]{
     title,
     excerpt,
     publishedAt,
+    scheduledFor,
     "image": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
     author->{ name, "image": { "url": image.asset->url + "?auto=format" } },
     category->{ title },

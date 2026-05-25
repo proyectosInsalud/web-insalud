@@ -55,6 +55,7 @@ export const zPost = z.object({
     title: z.string(),
   }).nullable().optional(),
   publishedAt: z.string().datetime(),
+  scheduledFor: z.string().datetime().nullable().optional(), // fecha programada de visibilidad
   slug: z.string(),
   tagsExpanded: z.array(zTag),
   title: z.string(),
@@ -71,6 +72,7 @@ export const zLatestPostItem = z.object({
   title: z.string(),
   excerpt: z.string(),
   publishedAt: z.string().datetime(),
+  scheduledFor: z.string().datetime().nullable().optional(),
   image: zImageUrl,
   author: z.object({
     name: z.string(),
