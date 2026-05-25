@@ -8,8 +8,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "Invalid secret" }, { status: 401 });
   }
 
+  // Sanity envía el documento afectado en el body del webhook
+  let slug: string | undefined;
+  try {
+    const body = await req.json();
+    slug = body?.slug?.current ?? body?._id;
+  } catch {
+    // Body vacío o inválido — igual revalidamos todo el blog
+  }
+
   revalidatePath("/blog", "page");
   revalidatePath("/blog/[slug]", "page");
 
-  return NextResponse.json({ revalidated: true });
+  // Revalida el post específico si Sanity envió el slug
+  if (slug) {
+    revalidatePath(`/blog/${slug}`, "page");
+  }
+
+  return NextResponse.json({ revalidated: true, slug: slug ?? null });
 }
