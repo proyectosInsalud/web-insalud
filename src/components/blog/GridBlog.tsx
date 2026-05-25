@@ -7,29 +7,34 @@ type GridBlogProps = {
     data: PostListType;
 }
 
+const AD_SLOT = (
+    <Link key="ad-doctoralia" target="_blank" href="https://www.doctoralia.pe/j-antonio-grandez-urbina/urologo/jesus-maria">
+        <Image
+            src="/images/blog/aside/doctor-antonio-grandez-doctoralia.png"
+            width={300}
+            height={200}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            alt="Doctor Antonio Grandez Doctoralia"
+            className="w-full max-h-[380px] object-cover rounded-3xl"
+        />
+    </Link>
+);
+
 export const GridBlog = ({data}: GridBlogProps) => {
+  // Insertamos el ad en la posición 3 sin reemplazar ningún post
+  const itemsWithAd = [
+    ...data.items.slice(0, 3),
+    null, // placeholder para el ad
+    ...data.items.slice(3),
+  ];
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-4">
-        {data.items.map((post:PostType, index: number) => {
-            if (index === 3) {
-                // Contenido personalizado en la 4ta posición (índice 3), como un item más del grid
-                return (
-                    <Link key={`custom-${index}`} target="_blank" href="https://www.doctoralia.pe/j-antonio-grandez-urbina/urologo/jesus-maria">
-                        <Image 
-                            key={`custom-${index}`} 
-                            src="/images/blog/aside/doctor-antonio-grandez-doctoralia.png" 
-                            width={300}
-                            height={200}
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        alt="Doctor Antonio Grandez Doctoralia"
-                        className="w-full max-h-[380px] object-cover rounded-3xl"
-                        />
-                    </Link>
-                );
-            }
+        {itemsWithAd.map((post) => {
+            if (post === null) return AD_SLOT;
 
             return (
-                <Link key={post._id} href={`/blog/${post.slug}`} className="h-full">
+                <Link key={(post as PostType)._id} href={`/blog/${(post as PostType).slug}`} className="h-full">
                     <article className="h-full flex flex-col space-y-4 hover:shadow-2xl p-4 rounded-2xl transition-all cursor-pointer duration-300" >
                         <div className="w-full h-[200px] overflow-hidden rounded-3xl bg-gray-100 flex items-center justify-center">
                             <Image 

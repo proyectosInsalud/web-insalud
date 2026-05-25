@@ -10,7 +10,8 @@
       "WebFetch(domain:wma19ek2.api.sanity.io)",
       "mcp__Claude_in_Chrome__browser_batch",
       "mcp__Claude_in_Chrome__navigate",
-      "mcp__Claude_in_Chrome__computer"
+      "mcp__Claude_in_Chrome__computer",
+      "Bash(curl -s \"https://wma19ek2.api.sanity.io/v2025-09-11/data/query/production?query=*%5B_type%3D%3D%22post%22%26%26defined\\(publishedAt\\)%26%26publishedAt%3E%3D%222026-04-20%22%26%26publishedAt%3C%3D%222026-04-30%22%5D%7B_id%2Ctitle%2CpublishedAt%2C%22slug%22%3Aslug.current%7D\" -H \"Authorization: Bearer skFZhxzYP34cD7UQ4jgfixwtZVmclHbYm6sQlnMzorWE3kOeAdC4Zk12HDRcXqA2i3rjbWpTVGvkX9cwTWVwFUx5PAYuYO35usqPP5PHC4tYtNFbgA1l8hvxhbzJ5FcVn8koq7IVFYxhnxGKBt0wmW4v6dPdbwHiD1dGRlF9MditfTNYatNX\")"
     ]
   }
 }
