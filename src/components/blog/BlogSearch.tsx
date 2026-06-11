@@ -83,7 +83,8 @@ export const BlogSearch = ({ onSearchChange }: BlogSearchProps) => {
           placeholder="Buscar por título, tema o etiqueta..."
           className="w-full pl-12 pr-10 py-3 rounded-full border border-gray-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-in-cyan/50 focus:border-in-cyan text-sm transition-all"
         />
-        {loading && (
+        {/* Spinner solo cuando ya hay resultados y se está refinando */}
+        {loading && results.length > 0 && (
           <span className="absolute right-4 top-1/2 -translate-y-1/2">
             <svg className="animate-spin w-4 h-4 text-in-cyan" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
@@ -96,13 +97,41 @@ export const BlogSearch = ({ onSearchChange }: BlogSearchProps) => {
       {/* Resultados */}
       {showResults && (
         <div>
-          {searched && !loading && results.length === 0 && (
+          {/* Skeleton mientras carga */}
+          {loading && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="flex flex-col space-y-4 p-4 rounded-2xl border border-gray-100">
+                  <div className="w-full h-[200px] rounded-3xl bg-gray-200 animate-pulse" />
+                  <div className="flex gap-2">
+                    <div className="h-6 w-20 rounded-full bg-gray-200 animate-pulse" />
+                    <div className="h-6 w-16 rounded-full bg-gray-200 animate-pulse" />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-5 w-4/5 rounded bg-gray-200 animate-pulse" />
+                    <div className="h-5 w-3/5 rounded bg-gray-200 animate-pulse" />
+                    <div className="h-4 w-full rounded bg-gray-100 animate-pulse mt-2" />
+                    <div className="h-4 w-5/6 rounded bg-gray-100 animate-pulse" />
+                  </div>
+                  <div className="flex items-center justify-between pt-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-gray-200 animate-pulse" />
+                      <div className="h-4 w-24 rounded bg-gray-200 animate-pulse" />
+                    </div>
+                    <div className="h-4 w-20 rounded bg-gray-100 animate-pulse" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {!loading && searched && results.length === 0 && (
             <p className="text-center text-gray-500 py-12">
               No se encontraron artículos para &ldquo;{query}&rdquo;.
             </p>
           )}
 
-          {results.length > 0 && (
+          {!loading && results.length > 0 && (
             <>
               <p className="text-sm text-gray-500 mb-6 text-center">
                 {results.length} resultado{results.length !== 1 ? "s" : ""} para &ldquo;{query}&rdquo;
