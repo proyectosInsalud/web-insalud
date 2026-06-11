@@ -1,9 +1,8 @@
 import { serverClient } from "@/lib/sanity.client";
-import { GridBlog } from "./GridBlog";
 import { POSTS_PAGINATED } from "@/lib/queries";
-import { PaginationPage } from "./PaginationPage";
 import { PostListType } from "@/types";
 import { Suspense } from "react";
+import { BlogWithSearch } from "./BlogWithSearch";
 
 const PAGE_SIZE = 9;
 
@@ -13,7 +12,6 @@ type BlogProps = {
 }
 
 async function getData(page: number) {
-  const PAGE_SIZE = 9;
   const start = (page - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 
@@ -28,11 +26,9 @@ export const Blog = async({currentPage = 1, initialData}:BlogProps) => {
       <div className="py-10 md:py-12">
         <h2 className="font-in-nunito text-in-blue-title text-3xl md:text-4xl font-semibold text-center">Articulos</h2>
       </div>
-      <GridBlog data={data} />
       <Suspense>
-        <PaginationPage totalItems={data.total} sizePage={PAGE_SIZE} currentPage={currentPage} />
+        <BlogWithSearch currentPage={currentPage} data={data} />
       </Suspense>
-      {/* {JSON.stringify(data)} */}
     </section>
   )
 }

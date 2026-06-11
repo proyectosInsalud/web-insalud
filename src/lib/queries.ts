@@ -71,6 +71,28 @@ export const POST_BY_SLUG = /* groq */ `
 `;
 
 
+export const POSTS_SEARCH = /* groq */ `
+*[
+  ${VISIBILITY_FILTER} &&
+  (
+    title match $query ||
+    excerpt match $query ||
+    tags[]->title match $query ||
+    category->title match $query ||
+    diagnostico->title match $query
+  )
+] | order(publishedAt desc)[0...18] {
+  _id,
+  excerpt,
+  title,
+  "slug": slug.current,
+  publishedAt,
+  "cover": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
+  "tagsExpanded": tags[]->{ _id, title },
+  author->{ _id, name, "image": { "url": image.asset->url + "?auto=format" } },
+}
+`;
+
 export const LATEST_POSTS = /* groq */ `
 {
   "items": *[
