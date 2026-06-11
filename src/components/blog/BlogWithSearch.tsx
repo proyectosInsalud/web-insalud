@@ -6,7 +6,7 @@ import { GridBlog } from "./GridBlog";
 import { PaginationPage } from "./PaginationPage";
 import { PostListType } from "@/types";
 
-const PAGE_SIZE = 9;
+const PAGE_SIZE = 8;
 
 type BlogWithSearchProps = {
   currentPage: number;

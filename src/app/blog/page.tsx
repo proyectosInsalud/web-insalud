@@ -59,7 +59,7 @@ export default async function BlogPage({
   const validPage = currentPage > 0 ? currentPage : 1;
 
   // Lógica de paginación para el fetch paralelo
-  const PAGE_SIZE = 9;
+  const PAGE_SIZE = 8;
   const start = (validPage - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
 

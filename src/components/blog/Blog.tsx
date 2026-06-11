@@ -4,7 +4,7 @@ import { PostListType } from "@/types";
 import { Suspense } from "react";
 import { BlogWithSearch } from "./BlogWithSearch";
 
-const PAGE_SIZE = 9;
+const PAGE_SIZE = 8;
 
 type BlogProps = {
     currentPage: number;
