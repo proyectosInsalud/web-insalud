@@ -37,7 +37,7 @@ export const NavBar = ({ className }: { className?: string }) => {
           >
             <div className="flex items-center gap-3">
               <Link
-                href="https://experience.insalud.pe/auth"
+                href="https://portal.qa.insalud.pe/auth/login"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -79,7 +79,7 @@ export const NavBar = ({ className }: { className?: string }) => {
           </nav>
           <div className="hidden md:block relative font-in-poppins">
             <Link
-              href="https://experience.insalud.pe/auth"
+              href="https://portal.qa.insalud.pe/auth/login"
               target="_blank"
               rel="noopener noreferrer"
             >

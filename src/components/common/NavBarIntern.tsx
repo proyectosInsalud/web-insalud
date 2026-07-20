@@ -96,7 +96,7 @@ export const NavBarIntern = () => {
         <div className="flex items-center gap-2">
           <Link
             className="cursor-pointer"
-            href={"https://experience.insalud.pe/auth"}
+            href={"https://portal.qa.insalud.pe/auth/login"}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => eventRegisterGtm("btn-intranet")}
