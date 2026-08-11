@@ -3,13 +3,14 @@
 import { Button } from "@/components/ui/button";
 import { eventRegisterGtm } from "@/lib/utils";
 import { useModalStore } from "../../store/modalStore";
+import { STATS_LABEL } from "@/data/stats";
 import Image from "next/image";
 
 export const MedicTeam = () => {
   const { openReservationModal } = useModalStore()
 
     const handleOpenReservationModal = () => {
-      eventRegisterGtm("booking_start")
+      eventRegisterGtm("booking_start", { cta_source: "home_medico" })
       openReservationModal()
     }
 
@@ -19,7 +20,7 @@ export const MedicTeam = () => {
         <div>
             <div className="space-y-4 md:space-y-6 flex flex-col items-center md:items-start">
                 <h2 className="font-in-nunito font-bold leading-8 text-[28px] md:text-4xl lg:text-5xl text-in-blue-dark text-center md:text-left md:leading-12">Médicos expertos en <span className="text-in-cyan block md:inline"> salud sexual</span> </h2>
-                <p className="text-in-blue-title text-[13px] md:text-base text-center md:text-left">Atiéndete con uno de nuestros +50 especialistas.</p>
+                <p className="text-in-blue-title text-[13px] md:text-base text-center md:text-left">Atiéndete con uno de nuestros {STATS_LABEL.especialistas} especialistas.</p>
                 <Button onClick={handleOpenReservationModal} className="bg-in-blue cursor-pointer hover:bg-in-blue-dark transition-all duration-300 rounded-full py-6 px-8 text-white">
                     Reservar cita
                 </Button>

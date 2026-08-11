@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const CLIENTS = [
-    "/images/convenios/logo_convenio_1.png",
-    "/images/convenios/logo_convenio_2.png",
-    "/images/convenios/logo_convenio_3.png",
-    "/images/convenios/logo_convenio_4.png",
-    "/images/convenios/logo_convenio_5.png",
-    "/images/convenios/logo_convenio_6.png",
+    { src: "/images/convenios/logo_convenio_1.png", name: "Colegio de Abogados de Lima" },
+    { src: "/images/convenios/logo_convenio_2.png", name: "Bonda" },
+    { src: "/images/convenios/logo_convenio_3.png", name: "GOintegro by Edenred" },
+    { src: "/images/convenios/logo_convenio_4.png", name: "Colegio Regional de Licenciados en Administración" },
+    { src: "/images/convenios/logo_convenio_5.png", name: "IDAT" },
+    { src: "/images/convenios/logo_convenio_6.png", name: "Zegel" },
 ];
 
 export const OurClients = () => {
@@ -17,23 +17,23 @@ export const OurClients = () => {
                     Nuestros <span className="text-in-cyan">Convenios</span>
                 </h2>
                 <p className="text-in-gray mt-4 max-w-2xl mx-auto text-[15px] md:text-base">
-                    Trabajamos con las principales empresas para brindarte la mejor atención de salud.
+                    Si perteneces a alguna de estas instituciones o empresas, accedes a
+                    tarifas preferenciales en tus consultas y tratamientos.
                 </p>
             </div>
 
             <div className="relative w-full overflow-hidden bg-gray-50/50 py-10 flex border-y border-gray-100">
-                <div
-                    className="flex w-max hover:[animation-play-state:paused]"
-                    style={{ animation: 'marquee 30s linear infinite' }}
-                >
-                    {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((src, idx) => (
-                        <div key={idx} className="w-64 md:w-80 h-28 md:h-36 mx-4 md:mx-8 flex-shrink-0 flex items-center justify-center">
+                <div className="marquee-track flex w-max hover:[animation-play-state:paused]">
+                    {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((client, idx) => (
+                        <div key={`${client.name}-${idx}`} className="w-56 md:w-80 h-28 md:h-36 mx-4 md:mx-8 flex-shrink-0 flex items-center justify-center">
                             <Image
-                                src={src}
-                                alt={`Convenio ${idx + 1}`}
+                                src={client.src}
+                                alt={`Convenio de InSalud con ${client.name}`}
                                 width={320}
                                 height={160}
-                                className="object-contain w-full h-full px-2 filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer hover:scale-105"
+                                /* El grayscale solo aplica desde md: en mobile no existe hover,
+                                   así que los logos quedaban apagados de forma permanente. */
+                                className="object-contain w-full h-full px-2 md:grayscale md:opacity-60 md:hover:grayscale-0 md:hover:opacity-100 transition-all duration-300 md:hover:scale-105"
                             />
                         </div>
                     ))}
@@ -45,6 +45,10 @@ export const OurClients = () => {
                 @keyframes marquee {
                     0% { transform: translateX(0); }
                     100% { transform: translateX(-25%); }
+                }
+                .marquee-track { animation: marquee 20s linear infinite; }
+                @media (prefers-reduced-motion: reduce) {
+                    .marquee-track { animation: none; }
                 }
             `}} />
         </section>

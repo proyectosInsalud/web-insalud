@@ -60,7 +60,9 @@ export const WhatsAppButton = ({
       const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
       setOpen(false); // Close dialog
-      eventRegisterGtm("whatsapp_floating_click");
+      // Evento distinto al de apertura: antes ambos disparaban
+      // "whatsapp_floating_click" e inflaban la métrica al doble.
+      eventRegisterGtm("whatsapp_lead_submit", { source: "floating_button" });
       setUserPhone("");
       console.log("Lead saved successfully");
     } catch (error) {
@@ -73,7 +75,7 @@ export const WhatsAppButton = ({
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
-      <div className="fixed bottom-6 right-6 z-50">
+      <div id="whatsapp-fab" className="fixed bottom-6 right-6 z-50">
         <AlertDialogTrigger className="cursor-pointer">
           <div
             onClick={() => eventRegisterGtm("whatsapp_floating_click")}

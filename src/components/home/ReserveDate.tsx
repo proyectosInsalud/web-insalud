@@ -54,8 +54,19 @@ export const ReserveDate = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleTrackReservation)}
-            className="grid max-w-5xl container mx-auto shadow-[0_4px_24px_rgba(0,180,216,0.20)] grid-cols-1 gap-y-8 lg:gap-y-0 lg:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
+            className="grid max-w-5xl container mx-auto shadow-[0_4px_24px_rgba(0,180,216,0.20)] grid-cols-1 gap-y-6 lg:gap-y-0 lg:grid-cols-12 items-start gap-x-8 rounded-4xl py-6 px-[18px] md:py-6 md:px-8 bg-white -mt-[134px] md:mt-0"
           >
+            {/* El h2 de arriba está oculto en mobile porque la tarjeta sube sobre
+                el hero. Sin esto el usuario ve un formulario sin contexto. */}
+            <div className="md:hidden col-span-full">
+              <h2 className="font-in-nunito text-in-blue-dark text-xl font-bold leading-6">
+                Agenda tu tratamiento en InSalud
+              </h2>
+              <p className="font-in-poppins text-in-gray text-xs mt-1.5">
+                Elige tu consulta, sede y fecha. Te confirmamos por WhatsApp.
+              </p>
+            </div>
+
             <div className="grid gap-y-4 grid-cols-1 col-span-1 lg:gap-y-0 lg:grid-cols-3 lg:col-span-9 gap-x-2">
               <FormField
                 control={form.control}

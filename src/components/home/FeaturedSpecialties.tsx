@@ -10,7 +10,7 @@ export const FeaturedSpecialties = () => {
   const { openReservationModal } = useModalStore();
 
   const handleOpenReservationModal = () => {
-    eventRegisterGtm("booking_start")
+    eventRegisterGtm("booking_start", { cta_source: "home_tratamientos" })
     openReservationModal()
   }
 

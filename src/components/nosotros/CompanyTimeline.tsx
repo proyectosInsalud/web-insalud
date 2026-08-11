@@ -7,7 +7,7 @@ export const CompanyTimeline = () => {
   const { openReservationModal } = useModalStore();
 
   const handleOpenReservationModal = () => {
-    eventRegisterGtm("booking_start");
+    eventRegisterGtm("booking_start", { cta_source: "nosotros_timeline" });
     openReservationModal();
   };
 

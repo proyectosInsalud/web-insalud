@@ -2,9 +2,10 @@
 import { eventRegisterGtm } from "@/lib/utils";
 import { useModalStore } from "../../store/modalStore";
 import { cdn } from "@/utils/cdn";
+import { STATS_LABEL } from "@/data/stats";
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io";
 
@@ -14,7 +15,7 @@ export const Footer = () => {
   );
 
   const handleOpenReservationModal = () => {
-    eventRegisterGtm("booking_start");
+    eventRegisterGtm("booking_start", { cta_source: "footer" });
     openReservationModal();
   };
 
@@ -37,13 +38,15 @@ export const Footer = () => {
         </div>
         <div className="grid order-3 md:order-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-12 xl:gap-x-6 gap-y-12 gap-x-4 mb-16">
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
-            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">
+            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
               Nuestras Sedes
             </p>
-            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-              <Link href="#">El Golf</Link>
-              <Link href="#">Sur</Link>
-              <Link href="#">Jesus Maria</Link>
+            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
+              {/* Sedes de Lima: no tienen dominio propio (a diferencia de Guayaquil/
+                  Panamá/Costa Rica), así que van a la sección de sedes de insalud.pe. */}
+              <Link href="/#sedes">El Golf</Link>
+              <Link href="/#sedes">Sur</Link>
+              <Link href="/#sedes">Jesus Maria</Link>
               <Link target="_blank" href="https://insalud.ec">
                 Guayaquil
               </Link>
@@ -56,32 +59,30 @@ export const Footer = () => {
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
-            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">
+            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
               Pacientes
             </p>
-            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-              <Link href="#">¿Cómo me atiendo?</Link>
-              <Link href="#">Deberes y Derechos del paciente</Link>
+            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
               <Link href="#">Términos y Condiciones</Link>
               <Link target="_blank" href="/docs/politica-de-privacidad.pdf">Política de privacidad CRM</Link>
               <Link href="/libro-de-reclamaciones">Libro de reclamaciones</Link>
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
-            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">
+            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
               Sobre INSALUD
             </p>
-            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
-              <Link href="#nosostros">Nosotros</Link>
+            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
+              <Link href="#nosotros">Nosotros</Link>
               <Link href="/blog">Blog</Link>
               <Link href="#">Trabaja con nosotros</Link>
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-3">
-            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-light">
+            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
               Enfermedades
             </p>
-            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins">
+            <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
               <Link href="/enfermedades">Prostatitis Crónica</Link>
               <Link href="/enfermedades">Eyaculación Precoz</Link>
               <Link href="/enfermedades">Micosis Genital</Link>
@@ -112,6 +113,15 @@ export const Footer = () => {
         </div>
         <div className="flex order-2 md:order-3 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 mb-16">
           <nav className="flex gap-4">
+            <Link
+              href="https://www.facebook.com/insalud.medicinaespecializada?locale=es_LA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Síguenos en Facebook"
+              className="hover:text-in-cyan transition-colors"
+            >
+              <FaFacebook size={24} />
+            </Link>
             <Link
               href="https://www.instagram.com/insalud.oficial/?hl=es-la"
               target="_blank"
@@ -166,13 +176,13 @@ export const Footer = () => {
               01 7431363
             </a>
             <p className="text-lg font-in-poppins">
-              +50 especialistas disponibles en Lima, Perú y Latam.
+              {STATS_LABEL.especialistas} especialistas disponibles en Lima, Perú y Latam.
             </p>
           </div>
         </div>
         <div className="flex order-4 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 font-in-poppins">
-          <p className="text-in-gray-light text-sm">© 2025 IN-SALUD CORP</p>
-          <div className="flex flex-col md:flex-row gap-4 text-sm text-in-gray-light">
+          <p className="text-in-gray-base text-sm">© {new Date().getFullYear()} IN-SALUD CORP</p>
+          <div className="flex flex-col md:flex-row gap-4 text-sm text-in-gray-base [&_a]:hover:text-in-cyan [&_a]:transition-colors">
             <Link href="/">Terminos y condiciones</Link>
             <Link href="/">Politica y privacidad</Link>
             <Link href="/">Cookie settings</Link>

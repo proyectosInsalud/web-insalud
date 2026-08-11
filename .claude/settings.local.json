@@ -13,7 +13,28 @@
       "mcp__Claude_in_Chrome__computer",
       "Bash(curl -s \"https://wma19ek2.api.sanity.io/v2025-09-11/data/query/production?query=*%5B_type%3D%3D%22post%22%26%26defined\\(publishedAt\\)%26%26publishedAt%3E%3D%222026-04-20%22%26%26publishedAt%3C%3D%222026-04-30%22%5D%7B_id%2Ctitle%2CpublishedAt%2C%22slug%22%3Aslug.current%7D\" -H \"Authorization: Bearer skFZhxzYP34cD7UQ4jgfixwtZVmclHbYm6sQlnMzorWE3kOeAdC4Zk12HDRcXqA2i3rjbWpTVGvkX9cwTWVwFUx5PAYuYO35usqPP5PHC4tYtNFbgA1l8hvxhbzJ5FcVn8koq7IVFYxhnxGKBt0wmW4v6dPdbwHiD1dGRlF9MditfTNYatNX\")",
       "Bash(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\src\\\\app\\\\api\\\\blog\\\\search\")",
-      "Bash(Out-Null)"
+      "Bash(Out-Null)",
+      "Bash(sed -i 's/eventRegisterGtm\\(\"booking_start\"\\)/eventRegisterGtm\\(\"booking_start\", { cta_source: \"nosotros_valores\" }\\)/' CoreValuesSection.tsx)",
+      "Bash(sed -i 's/eventRegisterGtm\\(\"booking_start\"\\)/eventRegisterGtm\\(\"booking_start\", { cta_source: \"nosotros_salud_sexual\" }\\)/' SexualHealthFeatures.tsx)",
+      "Bash(sed -i 's/eventRegisterGtm\\(\"booking_start\"\\)/eventRegisterGtm\\(\"booking_start\", { cta_source: \"nosotros_timeline\" }\\)/' CompanyTimeline.tsx)",
+      "Bash(npx next *)",
+      "Bash(npx eslint *)",
+      "Bash(powershell -Command \"Get-Process -Id 34772 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,Path,StartTime\")",
+      "Bash(powershell -Command \"Stop-Process -Id 34772 -Force\")",
+      "Bash(powershell -Command \"Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 34772 -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -NoProfile -Command \"Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 36240 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,Path,StartTime\")",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 36240 -Force\")",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 36240 -ErrorAction SilentlyContinue\")",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 10404 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime\")",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 10404 -Force\")",
+      "Bash(powershell -NoProfile -Command \"Get-Process -Id 31152 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime\")",
+      "Bash(powershell -NoProfile -Command \"Stop-Process -Id 31152 -Force\")",
+      "PowerShell(Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -ge 3000 -and $_.LocalPort -le 60000 } | Select-Object LocalPort,OwningProcess | Sort-Object LocalPort)",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\")",
+      "PowerShell(Stop-Process -Id 9600,19836,21656 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 1; Remove-Item \"C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\.next\\\\dev\\\\lock\" -Force -ErrorAction SilentlyContinue; Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -eq 3000 })",
+      "PowerShell(Stop-Process -Id 33452,21984,30104 -Force -ErrorAction SilentlyContinue)"
     ]
   }
 }

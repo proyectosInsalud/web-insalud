@@ -1,8 +1,9 @@
 "use client"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { TestimonialSchemaType } from "@/types"
+import Autoplay from "embla-carousel-autoplay"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Button } from "../ui/button"
 
 type TestimonialsProps = {
@@ -14,8 +15,14 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
     const [current, setCurrent] = useState(0)
     const [count, setCount] = useState(0)
 
+    // Sin autoplay el usuario que no toca nada ve un solo testimonio y sigue de largo.
+    const autoplay = useMemo(
+        () => Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true }),
+        []
+    )
+
     useEffect(() => {
-        if(!api) return 
+        if(!api) return
 
         // Obtener informacion inicial
         setCount(api.scrollSnapList().length)
@@ -26,6 +33,13 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
             setCurrent(api.selectedScrollSnap() + 1)
         })
     }, [api])
+
+    useEffect(() => {
+        if (typeof window === "undefined") return
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            autoplay.stop()
+        }
+    }, [autoplay])
 
     return (
         <section className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
@@ -41,7 +55,12 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                 </div>
                 <div>
                     <div className="overflow-hidden">
-                        <Carousel className="relative" setApi={setApi}>
+                        <Carousel
+                            className="relative"
+                            setApi={setApi}
+                            opts={{ loop: true }}
+                            plugins={[autoplay]}
+                        >
                             <CarouselContent className="font-in-poppins -ml-4">
                                 {testimonials.map((testimonial) => (
                                     <CarouselItem key={testimonial.id} className="pl-4 md:basis-[95%]">
@@ -61,22 +80,24 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                                 ))}
                             </CarouselContent>
                             <div className="flex items-center justify-center md:justify-start gap-4 relative pt-4 pl-4  ">
-                                <Button 
-                                    className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                                {/* Con loop:true el carrusel es circular, así que las flechas
+                                    ya no se deshabilitan en los extremos. */}
+                                <Button
+                                    className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90"
                                     onClick={() => api?.scrollPrev()}
-                                    disabled={current === 1}
+                                    aria-label="Testimonio anterior"
                                 >
-                                    <Image src="/svg/arrow-left.svg" alt="arrow-left" width={24} height={24} />
+                                    <Image src="/svg/arrow-left.svg" alt="" width={24} height={24} />
                                 </Button>
                                 <span className="text-in-gray-base font-medium">
                                     {current} de {count}
                                 </span>
-                                <Button 
-                                    className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                                <Button
+                                    className="bg-in-blue w-10 h-10 flex items-center justify-center rounded-full cursor-pointer hover:bg-in-blue/90"
                                     onClick={() => api?.scrollNext()}
-                                    disabled={current === count}
+                                    aria-label="Testimonio siguiente"
                                 >
-                                    <Image src="/svg/arrow-right.svg" alt="arrow-left" width={24} height={24} />
+                                    <Image src="/svg/arrow-right.svg" alt="" width={24} height={24} />
                                 </Button>
                             </div>
                         </Carousel>

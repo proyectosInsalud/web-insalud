@@ -1,6 +1,18 @@
 import { cdn } from "@/utils/cdn"
 import Image from "next/image"
 
+/**
+ * Solo diferenciales cualitativos: las cifras (+procedimientos, especialistas,
+ * sedes) viven en <CountClients /> para no repetir el mismo dato dos veces
+ * en dos formatos distintos.
+ */
+const RAZONES = [
+    "Especialistas certificados en urología y salud sexual masculina",
+    "Certificaciones internacionales en calidad médica",
+    "Atención especializada en disfunción eréctil y salud prostática",
+    "Líderes en tratamientos contra el Virus del Papiloma Humano (VPH)",
+]
+
 export const WhyChooseInSalud = () => {
     return (
         <section id="nosotros" className="max-w-7xl mx-auto px-4 container pt-16 md:pt-24">
@@ -11,28 +23,13 @@ export const WhyChooseInSalud = () => {
                     <span className="text-in-cyan">InSalud?</span>
                     </h2>
                     <div className="space-y-6">
-                        <p className="md:hidden text-[13px]">Con más de 105,000 procedimientos realizados y un equipo de más de 20 especialistas disponibles en Lima, Perú y toda Latinoamérica, somos líderes en salud masculina. Contamos con certificaciones internacionales en calidad médica y ofrecemos atención especializada en disfunción eréctil, salud prostática y tratamientos avanzados contra el Virus del Papiloma Humano (VPH). Nuestro compromiso con la excelencia médica nos posiciona como referentes en urología y medicina sexual en la región.</p>
-                        <ul className="hidden md:block space-y-2 mt-6">
-                            <li className="flex items-start">
-                                <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">Más de 105,000 casos de éxito en tratamientos</span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">+50 especialistas certificados en urología y salud sexual masculina</span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">Certificaciones internacionales en calidad médica.</span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">Atención especializada en disfunción eréctil y salud prostática.</span>
-                            </li>
-                            <li className="flex items-start">
-                                <span className="text-in-blue-dark mr-3">•</span>
-                                <span className="text-in-gray">Líderes en tratamientos contra el Virus del Papiloma Humano (VPH).</span>
-                            </li>
+                        <ul className="space-y-2 mt-6">
+                            {RAZONES.map((razon) => (
+                                <li key={razon} className="flex items-start">
+                                    <span className="text-in-blue-dark mr-3">•</span>
+                                    <span className="text-in-gray text-[13px] md:text-base">{razon}</span>
+                                </li>
+                            ))}
                         </ul>
                         <div className="flex items-center gap-4">
                             <Image 

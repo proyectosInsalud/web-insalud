@@ -8,10 +8,11 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { MedicTeam } from "@/components/home/MedicTeam";
 import { PlacesMedic } from "@/components/home/PlacesMedic";
 import { AllAboutInsalud } from "@/components/home/AllAboutInsalud";
+import { FinalCta } from "@/components/home/FinalCta";
 import { ReservationModal } from "@/components/common/ReservationModal";
+import { StickyCta } from "@/components/common/StickyCta";
 import { testimonials } from "@/data/testimonials";
 import { Metadata } from "next";
-// import { PopUp } from "@/components/ui/PopUp";
 
 export const revalidate = 86400;
 export const dynamic = 'force-static';
@@ -78,21 +79,36 @@ export default function Home() {
         <HeroHome />
       </header>
 
+      {/*
+        Orden pensado para conversión mobile:
+        qué solucionamos -> quién te atiende -> por qué confiar -> testimonios
+        -> convenios -> sedes -> cierre. El blog va al final porque es un bloque
+        de salida (saca al usuario de la home).
+      */}
       <main>
         <ReserveDate />
         <FeaturedSpecialties />
-        <CountClients />
-        <WhyChooseInSalud />
         <MedicTeam />
+
+        {/* Banda de prueba: cifras + diferenciales, con fondo propio para
+            cortar el scroll continuo de bloques blancos. */}
+        <div className="bg-slate-50/70 pb-16 md:pb-24">
+          <CountClients />
+          <WhyChooseInSalud />
+        </div>
+
+        <Testimonials testimonials={testimonials} />
         <OurClients />
         <PlacesMedic />
+        <FinalCta />
         <AllAboutInsalud />
-        <Testimonials testimonials={testimonials} />
       </main>
-      {/* <PopUp /> */}
 
       {/* Modal de reserva */}
       <ReservationModal />
+
+      {/* Barra de conversión fija en mobile */}
+      <StickyCta />
     </div>
   );
 }

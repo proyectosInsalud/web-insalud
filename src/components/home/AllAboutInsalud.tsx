@@ -1,8 +1,36 @@
-import { Tabs, TabsContent } from "@/components/ui/tabs"
+import { serverClient } from "@/lib/sanity.client"
+import { LATEST_POSTS } from "@/lib/queries"
 import Image from "next/image"
 import Link from "next/link"
 
-export const AllAboutInsalud = () => {
+type LatestPost = {
+  title: string
+  excerpt?: string
+  slug: string
+  image?: { url?: string; alt?: string }
+  category?: { title?: string }
+}
+
+const getLatestPosts = async (): Promise<LatestPost[]> => {
+  try {
+    const data = await serverClient.fetch<{ items?: LatestPost[] }>(
+      LATEST_POSTS,
+      {},
+      { next: { revalidate: 86400 } }
+    )
+    return data?.items ?? []
+  } catch (error) {
+    // Si Sanity falla no tumbamos la home: simplemente ocultamos el bloque.
+    console.error("[AllAboutInsalud] no se pudieron cargar los posts:", error)
+    return []
+  }
+}
+
+export const AllAboutInsalud = async () => {
+  const posts = await getLatestPosts()
+
+  if (posts.length === 0) return null
+
   return (
     <div id="blog" className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
       <section>
@@ -11,104 +39,45 @@ export const AllAboutInsalud = () => {
           <p className="font-in-poppins text-[13px] md:text-base text-in-blue-dark">Consejos y prevención en salud sexual y urología</p>
         </div>
 
-        <Tabs className="font-in-poppins space-y-4" defaultValue="all">
-          {/* <TabsList className="bg-white mx-auto space-x-4">
-            <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="all">Blog</TabsTrigger>
-            <TabsTrigger className='data-[state=active]:bg-in-cyan cursor-pointer data-[state=active]:text-white py-5 px-4 rounded-full border border-in-cyan text-in-blue' value="prensa">Notas de prensa</TabsTrigger>
-          </TabsList> */}
-          <TabsContent value="all">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
-                <Image 
-                  src={"/images/blog/noticia-1.png"} 
-                  alt="In-Aesthetics: Descubre tu belleza y libera tu mejor versión" 
-                  width={100} 
-                  height={100} 
+        <div className="font-in-poppins grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {posts.map((post) => (
+            <article key={post.slug} className="space-y-4 bg-white border shadow-lg hover:shadow-xl transition-shadow duration-300 p-8 rounded-2xl flex flex-col">
+              {post.image?.url && (
+                <Image
+                  src={post.image.url}
+                  alt={post.image.alt || post.title}
+                  width={400}
+                  height={200}
                   className="w-full h-[200px] object-cover rounded-[10px]"
                   loading="lazy"
                   quality={85}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Lifestyle</p>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-in-blue-title">In-Aesthetics: Descubre tu belleza y libera tu mejor versión
-                  </h3>
-                  <p>Conoce el nuevo centro de Medicina Estética y Regenerativa. </p>
-                </div>
-                <Link href="/blog/in-aesthetics-descubre-tu-belleza-y-libera-tu-mejor-version" className="text-in-cyan">Leer más</Link>
-              </article>
-              <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
-                <Image 
-                  src={"/images/blog/noticia-2.png"} 
-                  alt="INSALUD - Centro Médico Especializado" 
-                  width={100} 
-                  height={100} 
-                  className="w-full h-[200px] object-cover rounded-[10px]"
-                  loading="lazy"
-                  quality={85}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-in-blue-title line-clamp-2">INSALUD: Empresa Peruana del Año 2025 en Salud Especializada
+              )}
+              {post.category?.title && (
+                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block self-start">
+                  {post.category.title}
+                </p>
+              )}
+              <div className="space-y-1 flex-1">
+                <h3 className="font-semibold text-lg text-in-blue-title line-clamp-2">{post.title}</h3>
+                {post.excerpt && <p className="line-clamp-2">{post.excerpt}</p>}
+              </div>
+              <Link href={`/blog/${post.slug}`} className="text-in-cyan">
+                Leer más
+              </Link>
+            </article>
+          ))}
+        </div>
 
-                  </h3>
-                  <p>Centro Médico Especializado con presencia en Perú y expansión en Latinoamérica. </p>
-                </div>
-                <Link href="/blog/insalud-empresa-peruana-del-ano-2025-en-salud-especializada" className="text-in-cyan">Leer más</Link>
-              </article>
-
-              <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
-                <Image 
-                  src={"/images/blog/noticia-3.png"} 
-                  alt="Hombres jóvenes en riesgo por VPH: campaña de detección" 
-                  width={100} 
-                  height={100} 
-                  className="w-full h-[200px] object-cover rounded-[10px]"
-                  loading="lazy"
-                  quality={85}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
-                <div className="space-y-1">
-                  <h3 className="font-semibold text-lg text-in-blue-title line-clamp-2">Hombres jóvenes en riesgo por VPH: campaña de detección
-                  </h3>
-                  <p>Insalud lanza campaña hasta el 15 de junio con pruebas. </p>
-                </div>
-                <Link href="/blog/hombres-jovenes-en-riesgo-por-vph" className="text-in-cyan">Leer más</Link>
-              </article>
-
-            </div>
-          </TabsContent>
-          <TabsContent value="prensa">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
-                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Salud</p>
-                <div className="space-y-1">
-                  <h3>¿Cómo tomar la temperatura?</h3>
-                  <p>18/06/2025 | 3 min lectura</p>
-                </div>
-                <Link href="/blog/como-tomar-la-temperatura" className="text-in-cyan">Leer más</Link>
-              </article>
-              <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
-                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Síntomas y enfermedades</p>
-                <div className="space-y-1">
-                  <h3>¿Cómo tomar la temperatura?</h3>
-                  <p>18/06/2025 | 3 min lectura</p>
-                </div>
-                <Link href="/blog/como-tomar-la-temperatura" className="text-in-cyan">Leer más</Link>
-              </article>
-              <article className="space-y-4 bg-white shadow-xl p-8 rounded-2xl">
-                <p className="py-2 px-4 text-in-cyan bg-in-bg-testimonials inline-block">Síntomas y enfermedades</p>
-                <div className="space-y-1">
-                  <h3>¿Cómo tomar la temperatura?</h3>
-                  <p>18/06/2025 | 3 min lectura</p>
-                </div>
-                <Link href="/blog/como-tomar-la-temperatura" className="text-in-cyan">Leer más</Link>
-              </article>
-            </div>
-          </TabsContent>
-        </Tabs>
+        <div className="flex justify-center mt-10">
+          <Link
+            href="/blog"
+            className="font-in-poppins text-in-cyan border border-in-cyan rounded-full py-3 px-8 hover:bg-in-cyan hover:text-white transition-colors"
+          >
+            Ver todos los artículos
+          </Link>
+        </div>
       </section>
     </div>
   )

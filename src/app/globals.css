@@ -188,3 +188,16 @@ select option:checked {
 .gradient-us {
   background: linear-gradient(180deg, #012436 0%, #070910 100%);
 }
+
+/* Barra CTA fija en mobile (<StickyCta />).
+   Mientras está visible ocultamos el FAB de WhatsApp para no tener dos botones
+   flotantes en la misma esquina, y reservamos el alto que la barra ocupa. */
+@media (max-width: 767px) {
+  body[data-sticky-cta="on"] {
+    padding-bottom: 76px;
+  }
+
+  body[data-sticky-cta="on"] #whatsapp-fab {
+    display: none;
+  }
+}

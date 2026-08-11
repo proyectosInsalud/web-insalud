@@ -7,7 +7,7 @@ import { useModalStore } from "../../store/modalStore";
 export const SexualHealthFeatures = () => {
   const { openReservationModal } = useModalStore();
   const handleOpenReservationModal = () => {
-    eventRegisterGtm("booking_start");
+    eventRegisterGtm("booking_start", { cta_source: "nosotros_salud_sexual" });
     openReservationModal();
   };
 

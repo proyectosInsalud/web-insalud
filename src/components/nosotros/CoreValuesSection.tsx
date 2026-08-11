@@ -7,7 +7,7 @@ import Image from "next/image";
 export const CoreValuesSection = () => {
   const { openReservationModal } = useModalStore();
   const handleOpenReservationModal = () => {
-    eventRegisterGtm("booking_start");
+    eventRegisterGtm("booking_start", { cta_source: "nosotros_valores" });
     openReservationModal();
   };
   return (
