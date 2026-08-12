@@ -112,7 +112,7 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                 <p className="font-in-poppins text-[13px] md:text-base">Descubre cómo mejorar tu salud con información práctica y respaldada por expertos.</p>
             </div>
             <div className="max-w-7xl mx-auto px-4">
-              <section className="p-4 md:p-8 rounded-3xl bg-white mb-8">
+              <section className="p-4 md:p-8 rounded-3xl bg-white border shadow-lg mb-8">
                 <Swiper
                   modules={[Pagination]}
                   className="mySwiper"
@@ -127,7 +127,7 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                   <SwiperSlide key={item.slug}>
                     <Link href={`/blog/${item.slug}`} className="block cursor-pointer">
                       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:space-x-6 h-auto md:h-[280px]">
-                        <div className="col-span-1 md:col-span-6 bg-[#F7FAFA] rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
+                        <div className="col-span-1 md:col-span-6 bg-in-cyan/10 rounded-2xl p-6 md:py-8 md:px-8 flex flex-col h-full">
                           <div className="space-y-4">
                             <div className="flex flex-col md:flex-row items-center justify-between">
                               <p className="bg-in-cyan order-2 md:order-1 text-white inline-block text-sm px-4 rounded-full">{item.category?.title || 'Sin categoría'}</p>
@@ -146,8 +146,11 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                               </div>
                             </div>
                             <h3 className="font-in-nunito text-lg md:text-xl line-clamp-2 md:pr-8">{item.title}</h3>
+                            {item.excerpt && (
+                              <p className="font-in-poppins text-sm text-in-gray line-clamp-3 md:pr-8">{item.excerpt}</p>
+                            )}
                           </div>
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-auto space-y-2 md:space-y-0">
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-auto pt-4 space-y-2 md:space-y-0">
                               <div className="flex items-center">
                                 {item.author?.image?.url ? (
                                   <Image
@@ -168,7 +171,7 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                             </div>
 
                         </div>
-                        <div className="hidden md:block md:col-span-6 h-full">
+                        <div className="hidden md:block md:col-span-6 h-full rounded-2xl overflow-hidden border shadow-md">
                           <Image
                             src={item.image?.url || ""}
                             alt={item.image?.alt || ""}
@@ -176,7 +179,7 @@ export const HeroBlog = ({ latestPosts }: HeroBlogProps) => {
                             height={500}
                             priority={index < 2}
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            className={`rounded-2xl w-full h-full object-cover`}
+                            className="w-full h-full object-cover"
                           />
                         </div>
                       </div>

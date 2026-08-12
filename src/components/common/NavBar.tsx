@@ -3,22 +3,45 @@ import { Button } from "@/components/ui/button";
 import { cdn } from "@/utils/cdn";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HamburguerMenu } from "../home/HamburguerMenu";
 import { usePathname } from "next/navigation";
 import { cn, eventRegisterGtm } from "@/lib/utils";
-// import { usePathname } from "next/navigation";
 
 
 export const NavBar = ({ className }: { className?: string }) => {
 
-  
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
-  
+
+  // Se fija arriba recién después de pasar el cintillo de bienvenida,
+  // para no tapar ese mensaje mientras está visible.
+  const [isFixed, setIsFixed] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (navRef.current) setNavHeight(navRef.current.offsetHeight);
+
+    const onScroll = () => setIsFixed(window.scrollY > 60);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className={cn("md:bg-white/10 text-black", className)}>
+    <>
+    {isFixed && <div style={{ height: navHeight }} />}
+    <div
+      ref={navRef}
+      className={cn(
+        "text-black transition-colors duration-200",
+        isFixed
+          ? "fixed top-0 left-0 w-full z-50 bg-in-blue-title shadow-md"
+          : "md:bg-white/10",
+        className
+      )}
+    >
       <section className="max-w-7xl mx-auto px-4 container py-4 font-in-nunito">
         <div className="flex justify-between items-center">
           <Link href="/">
@@ -97,5 +120,6 @@ export const NavBar = ({ className }: { className?: string }) => {
       {/* Renderizar el menú hamburguesa aquí */}
       <HamburguerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
+    </>
   );
 };

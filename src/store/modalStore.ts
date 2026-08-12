@@ -19,10 +19,14 @@ interface ModalStore {
     resetReservationData: () => void;
 }
 
+// fecha empieza en null (no en "hoy"): si arrancara en la fecha actual, un
+// usuario que abre el modal de reserva sin pasar antes por el formulario del
+// hero (la mayoría de los CTAs "Reservar cita" del sitio) enviaría la cita
+// con la fecha de hoy sin haberla elegido ni visto en ningún lado.
 const initialReservationData: ReservationData = {
     problemaSalud: '',
     sede: '',
-    fecha: new Date(),  
+    fecha: null,
 };
 
 export const useModalStore = create<ModalStore>((set) => ({

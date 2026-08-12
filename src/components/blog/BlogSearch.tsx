@@ -101,7 +101,7 @@ export const BlogSearch = ({ onSearchChange }: BlogSearchProps) => {
           {loading && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="flex flex-col space-y-4 p-4 rounded-2xl border border-gray-100">
+                <div key={i} className="flex flex-col space-y-4 p-4 rounded-2xl bg-white border shadow-lg">
                   <div className="w-full h-[200px] rounded-3xl bg-gray-200 animate-pulse" />
                   <div className="flex gap-2">
                     <div className="h-6 w-20 rounded-full bg-gray-200 animate-pulse" />

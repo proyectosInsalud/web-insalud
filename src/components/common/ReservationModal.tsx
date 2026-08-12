@@ -18,17 +18,29 @@ import {
   FormMessage,
 } from "../ui/form";
 import { useForm } from "react-hook-form";
-import { FormReservationType } from "@/types";
-import { formReservationSchema } from "@/schema";
+import { FormReservationModalType } from "@/types";
+import { formReservationModalSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { eventRegisterGtm } from "@/lib/utils";
 import { sendReservationEmail } from "@/services/SendEmail";
 import { saveLead } from "@/services/SaveLeads";
 import { usePathname } from "next/navigation";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { Calendar } from "../ui/calendar";
+import { CalendarDays, ChevronDownIcon } from "lucide-react";
+import { problemasSalud } from "@/data/problemasSalud";
+import { sedesAccordion } from "@/data/sedesAccordion";
 
 export function ReservationModal() {
   const {
@@ -38,12 +50,12 @@ export function ReservationModal() {
     resetReservationData,
   } = useModalStore();
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const [openCalendar, setOpenCalendar] = useState(false);
 
   const pathname = usePathname();
 
-  const form = useForm<FormReservationType>({
-    resolver: zodResolver(formReservationSchema),
+  const form = useForm<FormReservationModalType>({
+    resolver: zodResolver(formReservationModalSchema),
     defaultValues: {
       nombres: "",
       apellidos: "",
@@ -52,29 +64,41 @@ export function ReservationModal() {
       detalleConsulta: "Sin detalles",
       sede: "",
       turno: "",
+      problemaSalud: "",
+      fecha: undefined,
     },
   });
 
-  async function onSubmit(data: FormReservationType) {
+  // Si el usuario ya eligió consulta/sede/fecha en el formulario del hero,
+  // se precargan acá. Si entró por cualquier otro botón "Reservar cita" del
+  // sitio, estos campos llegan vacíos y el usuario los completa en el modal
+  // (antes quedaban ocultos y sin forma de verlos o editarlos).
+  useEffect(() => {
+    if (!isReservationModalOpen) return;
+    form.setValue("problemaSalud", reservationData.problemaSalud || "");
+    form.setValue("sede", reservationData.sede || "");
+    if (reservationData.fecha) {
+      form.setValue("fecha", reservationData.fecha);
+    } else {
+      form.resetField("fecha");
+    }
+  }, [isReservationModalOpen, reservationData, form]);
+
+  async function onSubmit(data: FormReservationModalType) {
     try {
-      // Preparar los datos de la reserva
       const reservationDetails = {
-        // Información personal del paciente
         nombres: data.nombres,
         apellidos: data.apellidos,
         correo: data.email,
         telefono: data.telefono,
-
-        // Detalles de la consulta médica
-        problemaSalud: reservationData.problemaSalud,
-        sede: reservationData.sede,
-        fecha: reservationData.fecha ? reservationData.fecha.toISOString().split('T')[0] : '',
-        detalleConsulta: data.detalleConsulta || 'Sin detalles adicionales',
+        problemaSalud: data.problemaSalud,
+        sede: data.sede,
+        fecha: data.fecha.toISOString().split("T")[0],
+        detalleConsulta: data.detalleConsulta || "Sin detalles adicionales",
       };
 
       setIsSubmitting(true);
 
-      // Enviar confirmación por correo electrónico
       await sendReservationEmail(reservationDetails);
 
       await saveLead({
@@ -89,17 +113,13 @@ export function ReservationModal() {
         id_announcement: "",
       });
 
-      // Registro del evento en Google Tag Manager
       eventRegisterGtm("form_submission");
 
-      // Mostrar mensaje de éxito al usuario
       toast.success("Cita agendada correctamente");
 
-      // Limpiar el formulario y estado
       form.reset();
       resetReservationData();
       closeReservationModal();
-
     } catch (error) {
       console.error("Error al procesar la reserva:", error);
       toast.error("Error al agendar la cita. Por favor, intenta nuevamente.");
@@ -133,22 +153,92 @@ export function ReservationModal() {
           <div className="font-in-poppins">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)}>
-                {/* Campos ocultos para los datos de selección */}
-                <input
-                  type="hidden"
-                  name="problemaSalud"
-                  value={reservationData.problemaSalud}
-                />
-                <input type="hidden" name="sede" value={reservationData.sede} />
-                <input
-                  type="hidden"
-                  name="fecha"
-                  value={
-                    reservationData.fecha
-                      ? reservationData.fecha.toISOString().slice(0, 10)
-                      : ""
-                  }
-                />
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <FormField
+                    control={form.control}
+                    name="problemaSalud"
+                    render={({ field }) => (
+                      <FormItem>
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <SelectTrigger className="w-full font-in-nunito py-5 text-sm">
+                            <SelectValue placeholder="Consulta médica" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {problemasSalud.map((problema) => (
+                              <SelectItem key={problema.id} value={problema.value}>
+                                {problema.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="sede"
+                    render={({ field }) => (
+                      <FormItem>
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <SelectTrigger className="w-full font-in-nunito py-5 text-sm">
+                            <SelectValue placeholder="Sede" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {sedesAccordion.map((sede) => (
+                              <SelectItem key={sede.id} value={sede.name}>
+                                {sede.name}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="fecha"
+                    render={({ field }) => (
+                      <FormItem className="md:col-span-2">
+                        <Popover open={openCalendar} onOpenChange={setOpenCalendar}>
+                          <PopoverTrigger className="relative w-full" asChild>
+                            <Button
+                              type="button"
+                              variant="outline"
+                              className="w-full h-full py-5 hover:text-in-gray-base text-in-gray-base font-in-nunito justify-between font-normal"
+                            >
+                              <p className="pl-9">
+                                {field.value ? field.value.toLocaleDateString() : "Fecha"}
+                              </p>
+                              <CalendarDays className="w-4 h-4 left-4 absolute text-in-cyan" />
+                              <ChevronDownIcon className="text-in-gray-light" />
+                            </Button>
+                          </PopoverTrigger>
+                          <PopoverContent className="w-auto overflow-hidden p-0" align="start">
+                            <Calendar
+                              mode="single"
+                              selected={field.value}
+                              onSelect={(date) => {
+                                field.onChange(date);
+                                setOpenCalendar(false);
+                              }}
+                              captionLayout="dropdown"
+                              disabled={(date) => {
+                                const startOfToday = new Date();
+                                startOfToday.setHours(0, 0, 0, 0);
+                                return date < startOfToday || date.getDay() === 0;
+                              }}
+                            />
+                          </PopoverContent>
+                        </Popover>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <FormField

@@ -43,7 +43,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
 
     return (
         <section className="container mx-auto max-w-7xl px-4 pt-16 md:pt-24">
-            <div className="bg-in-bg-testimonials rounded-2xl p-6 py-8 md:py-12 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
+            <div className="bg-in-cyan/10 rounded-2xl p-6 py-8 md:py-12 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
                 <div>
                     <h2 className="text-[28px] md:leading-12 leading-8 lg:text-4xl xl:text-5xl font-bold text-in-blue-dark font-in-nunito text-center md:text-left pb-2">
                         Testimonios reales de 
@@ -64,7 +64,7 @@ export const Testimonials = ({ testimonials }: TestimonialsProps) => {
                             <CarouselContent className="font-in-poppins -ml-4">
                                 {testimonials.map((testimonial) => (
                                     <CarouselItem key={testimonial.id} className="pl-4 md:basis-[95%]">
-                                        <div className="bg-white py-6 md:py-8 px-6 md:px-12 rounded-2xl h-full">
+                                        <div className="bg-white border shadow-md py-6 md:py-8 px-6 md:px-12 rounded-2xl h-full">
                                             <div className="flex flex-col justify-between h-full">
                                                 <p className="text-in-gray-base text-sm md:text-base font-medium">{testimonial.description}</p>
                                                 <div className="flex items-center gap-4 mt-6">

@@ -48,3 +48,13 @@ export const formReservationSchema = z.object({
     .max(500, { message: "Demasiado largo (máximo 500 caracteres)" })
     .optional(),
 });
+
+// Usado solo por el modal de reserva final: a diferencia del formulario de
+// contacto (que reutiliza formReservationSchema con estos 3 campos opcionales
+// porque no los pide), aquí sede/fecha/problemaSalud son obligatorios porque
+// son justo los datos de la cita que se está agendando.
+export const formReservationModalSchema = formReservationSchema.extend({
+  problemaSalud: z.string().min(1, { message: "Selecciona un motivo de consulta" }),
+  sede: z.string().min(1, { message: "La sede es requerida" }),
+  fecha: z.date({ message: "La fecha es requerida" }),
+});

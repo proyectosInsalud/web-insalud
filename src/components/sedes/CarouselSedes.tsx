@@ -48,13 +48,13 @@ export const CarouselSedes = () => {
               >
                 {" "}
                 {/* ml-4 en primer slide, mr-4 en último para espacio desde bordes */}
-                <article className="relative">
+                <article className="relative group cursor-pointer rounded-3xl overflow-hidden ring-2 ring-transparent hover:ring-in-cyan transition-all duration-300">
                   <Image
                     src={sede.image || cdn(`web/home/main/sede-accordion-${sede.id}.png`)}
                     alt={`Sede ${sede.name} de InSalud`}
                     width={500}
                     height={300}
-                    className="w-full h-[480px] md:h-full object-cover rounded-3xl"
+                    className="w-full h-[480px] md:h-full object-cover rounded-3xl transition-transform duration-300 group-hover:scale-105"
                     quality={85}
                     sizes="(max-width: 768px) 0px, 66vw"
                   />

@@ -5,6 +5,7 @@ import { cdn } from "@/utils/cdn";
 import { STATS_LABEL } from "@/data/stats";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoLinkedin } from "react-icons/io";
@@ -94,21 +95,22 @@ export const Footer = () => {
             </div>
           </article>
           <article className="space-y-2 sm:col-span-3 md:col-span-2 xl:col-span-3">
-            <div className="space-y-4">
-              <div
-                onClick={handleOpenReservationModal}
-                className="bg-in-blue pt-16 pb-4 px-6 rounded-2xl h-full flex items-end col-span-1 relative cursor-pointer max-w-[320px]"
-              >
-                <p className="text-white font-medium">Empezar un tratamiento</p>
-                <Image
-                  src={cdn("/shared/otros/u-icon-circle.svg")}
-                  alt="arrow right"
-                  width={32}
-                  height={32}
-                  className="absolute right-4 top-4"
-                />
+            <button
+              onClick={handleOpenReservationModal}
+              className="group w-full max-w-[320px] h-full min-h-[180px] rounded-2xl bg-gradient-to-br from-in-cyan to-in-blue p-6 flex flex-col justify-between text-left shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            >
+              <div className="space-y-1">
+                <p className="text-white font-in-nunito font-semibold text-lg leading-tight">
+                  Empezar un tratamiento
+                </p>
+                <p className="text-white/80 font-in-poppins text-sm">
+                  Agenda tu cita con un especialista
+                </p>
               </div>
-            </div>
+              <span className="self-end flex items-center justify-center w-10 h-10 rounded-full bg-white/15 text-white group-hover:bg-white group-hover:text-in-blue transition-colors duration-300">
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              </span>
+            </button>
           </article>
         </div>
         <div className="flex order-2 md:order-3 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 mb-16">

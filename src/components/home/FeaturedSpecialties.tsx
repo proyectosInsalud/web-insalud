@@ -30,7 +30,7 @@ export const FeaturedSpecialties = () => {
       </div>
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
+        <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl hover:border-in-cyan transition-all duration-300 hover:-translate-y-1 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
               src={"/images/tratamiento-disfuncion-erectil.png"}
@@ -73,7 +73,7 @@ export const FeaturedSpecialties = () => {
             </div>
           </div>
         </div>
-        <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
+        <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl hover:border-in-cyan transition-all duration-300 hover:-translate-y-1 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
               src={"/images/tratamiento-vph.png"}
@@ -118,7 +118,7 @@ export const FeaturedSpecialties = () => {
             </div>
           </div>
         </div>
-        <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
+        <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl hover:border-in-cyan transition-all duration-300 hover:-translate-y-1 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
               src={"/images/tratamiento-prostatitis.png"}

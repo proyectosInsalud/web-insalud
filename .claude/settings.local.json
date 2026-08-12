@@ -34,7 +34,18 @@
       "PowerShell(Get-NetTCPConnection -State Listen | Where-Object { $_.LocalPort -ge 3000 -and $_.LocalPort -le 60000 } | Select-Object LocalPort,OwningProcess | Sort-Object LocalPort)",
       "PowerShell(Get-CimInstance Win32_Process -Filter \"Name='node.exe'\")",
       "PowerShell(Stop-Process -Id 9600,19836,21656 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 1; Remove-Item \"C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\.next\\\\dev\\\\lock\" -Force -ErrorAction SilentlyContinue; Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -eq 3000 })",
-      "PowerShell(Stop-Process -Id 33452,21984,30104 -Force -ErrorAction SilentlyContinue)"
+      "PowerShell(Stop-Process -Id 33452,21984,30104 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 22040,12764,23680 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 21148,36476,20944 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 12688,25316,11080 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 23364,35372,34920,34392 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 12056,28160,6224 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 28160,31372 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 24096,35656,26272,36492 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 39628,1716,8952 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 39636,37708,37804,33588 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 26912,12864,39240,8468,37128 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Id 18700,39180,16340 -Force -ErrorAction SilentlyContinue)"
     ]
   }
 }

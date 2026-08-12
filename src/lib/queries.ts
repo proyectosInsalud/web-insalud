@@ -110,3 +110,20 @@ export const LATEST_POSTS = /* groq */ `
   }
 }
 `;
+
+// Igual que LATEST_POSTS pero con 6 posts: alimenta el carousel de la home.
+// Separada de LATEST_POSTS para no afectar el hero del blog ni /api/latest-posts.
+export const HOME_POSTS = /* groq */ `
+{
+  "items": *[
+    ${VISIBILITY_FILTER}
+  ]
+  | order(publishedAt desc)[0...6]{
+    title,
+    excerpt,
+    "image": { "url": cover.asset->url + "?auto=format", "alt": cover.alt },
+    category->{ title },
+    "slug": slug.current
+  }
+}
+`;

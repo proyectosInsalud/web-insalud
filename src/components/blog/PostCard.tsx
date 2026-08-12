@@ -15,7 +15,7 @@ export type PostCardData = {
 
 export const PostCard = ({ post }: { post: PostCardData }) => (
   <Link href={`/blog/${post.slug}`} className="h-full">
-    <article className="h-full flex flex-col space-y-4 hover:shadow-2xl p-4 rounded-2xl transition-all cursor-pointer duration-300">
+    <article className="h-full flex flex-col space-y-4 bg-white border hover:border-in-cyan shadow-lg hover:shadow-xl p-4 rounded-2xl transition-all duration-300 hover:-translate-y-1.5 cursor-pointer">
       <div className="w-full h-[200px] overflow-hidden rounded-3xl bg-gray-100 flex items-center justify-center">
         <Image
           src={post.cover.url || ""}
