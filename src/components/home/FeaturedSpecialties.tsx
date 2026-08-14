@@ -33,7 +33,7 @@ export const FeaturedSpecialties = () => {
         <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl hover:border-in-cyan transition-all duration-300 hover:-translate-y-1 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
-              src={"/images/tratamiento-disfuncion-erectil.png"}
+              src={"/images/ONDAS.png"}
               alt={"Disfunción Eréctil"}
               width={200}
               height={200}
@@ -76,7 +76,7 @@ export const FeaturedSpecialties = () => {
         <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl hover:border-in-cyan transition-all duration-300 hover:-translate-y-1 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
-              src={"/images/tratamiento-vph.png"}
+              src={"/images/VPH.png"}
               alt={"Tratamiento del Virus del Papiloma Humano (VPH)"}
               width={200}
               height={200}
@@ -121,7 +121,7 @@ export const FeaturedSpecialties = () => {
         <div className="h-full bg-white rounded-lg shadow-lg hover:shadow-xl hover:border-in-cyan transition-all duration-300 hover:-translate-y-1 p-3 flex flex-row md:flex-col gap-4 border items-center justify-center">
           <div className="p-0 w-5/12 md:w-full h-full grid">
             <Image
-              src={"/images/tratamiento-prostatitis.png"}
+              src={"/images/CHEQUEO.png"}
               alt={"Tratamiento de la Prostatitis"}
               width={200}
               height={200}
