@@ -45,7 +45,13 @@
       "PowerShell(Stop-Process -Id 39628,1716,8952 -Force -ErrorAction SilentlyContinue)",
       "PowerShell(Stop-Process -Id 39636,37708,37804,33588 -Force -ErrorAction SilentlyContinue)",
       "PowerShell(Stop-Process -Id 26912,12864,39240,8468,37128 -Force -ErrorAction SilentlyContinue)",
-      "PowerShell(Stop-Process -Id 18700,39180,16340 -Force -ErrorAction SilentlyContinue)"
+      "PowerShell(Stop-Process -Id 18700,39180,16340 -Force -ErrorAction SilentlyContinue)",
+      "Bash(npx tsc *)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\public\\\\images\\\\sedes\\\\afuera-salvador.png'\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\public\\\\images\\\\sede_costa_rica.jpeg'\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))",
+      "Bash(cp \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\crop-test2.png\" \"C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\public\\\\images\\\\sedes\\\\afuera-salvador-card.png\")",
+      "Bash(netstat -ano)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\('C:\\\\Users\\\\user\\\\Desktop\\\\Fabricio\\\\web-insalud\\\\public\\\\images\\\\sedes\\\\afuera-salvador-card.png'\\); \"$\\($img.Width\\)x$\\($img.Height\\)\"; $img.Dispose\\(\\))"
     ]
   }
 }

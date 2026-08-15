@@ -42,4 +42,13 @@ export const sedesAccordion = [
         link: "https://maps.app.goo.gl/oDzNMchUCLEmq9DT6?g_st=ipc",
         image: "/images/sede_costa_rica.jpeg"
     },
+    {
+        id: 8,
+        name: "El Salvador",
+        description: "TORRE MÉDICA HUMANA, Av la Capilla 101, Piso 12, Consultorio 1205, San Salvador - El Salvador",
+        link: "https://maps.app.goo.gl/1234567890",
+        image: "/images/sedes/afuera-salvador-card.png",
+        interiorImage: "/images/sedes/adentro-salvador.png",
+        phone: "50366939907"
+    },
 ]

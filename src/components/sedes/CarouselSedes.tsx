@@ -87,9 +87,10 @@ export const CarouselSedes = () => {
                       {(() => {
                         const whatsappMessage = `Hola, vi su web de Insalud y estoy interesado en atenderme en la sede de: ${sede.name}`;
                         const encodedMessage = encodeURIComponent(whatsappMessage);
+                        const phone = sede.phone || "51957016010";
                         return (
                           <Link
-                            href={`https://wa.me/51957016010?text=${encodedMessage}`}
+                            href={`https://wa.me/${phone}?text=${encodedMessage}`}
                             target="_blank"
                             onClick={() => eventRegisterGtm("whatsapp_click")}
                             className="text-sm border border-[rgba(255, 255, 255, 0.10)] py-1 px-6 rounded-full bg-gradient-to-b from-[rgba(255,255,255,0.02)] to-[rgba(255,255,255,0.10)] hover:bg-gradient-to-b hover:from-[rgba(255,255,255,0.10)] hover:to-[rgba(255,255,255,0.20)] transition-colors duration-300 self-start"

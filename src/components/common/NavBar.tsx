@@ -38,8 +38,7 @@ export const NavBar = ({ className }: { className?: string }) => {
         "text-black transition-colors duration-200",
         isFixed
           ? "fixed top-0 left-0 w-full z-50 bg-in-blue-title shadow-md"
-          : "md:bg-white/10",
-        className
+          : cn("md:bg-white/10", className)
       )}
     >
       <section className="max-w-7xl mx-auto px-4 container py-4 font-in-nunito">

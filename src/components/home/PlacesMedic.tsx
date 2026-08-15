@@ -23,11 +23,11 @@ export const PlacesMedic = () => {
     ? sedesAccordion.find(sede => sede.id.toString() === selectedSede)
     : undefined;
 
-  const getWhatsAppLink = (sedeName: string) => {
+  const getWhatsAppLink = (sedeName: string, phone?: string) => {
     const message = encodeURIComponent(
       `¡Hola! vi su pagina web y me gustaría agendar una cita en la sede ${sedeName}. ¿Podrían brindarme más información?`
     );
-    return `https://wa.me/51957016010?text=${message}`;
+    return `https://wa.me/${phone || "51957016010"}?text=${message}`;
   };
 
   return (
@@ -61,7 +61,7 @@ export const PlacesMedic = () => {
                   <AccordionContent className="text-in-gray space-y-4 -mt-1">
                     <p>{sede.description}</p>
                     <Link
-                      href={getWhatsAppLink(sede.name)}
+                      href={getWhatsAppLink(sede.name, sede.phone)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-in-blue-dark font-in-poppins inline-flex items-center hover:text-in-cyan transition-colors duration-300"
@@ -83,7 +83,7 @@ export const PlacesMedic = () => {
                   <>
                                   {selectedSedeInfo ? (
                 <Image 
-                  src={selectedSedeInfo.image || cdn(`web/home/main/sede-accordion-${selectedSedeInfo.id}.png`)}
+                  src={selectedSedeInfo.interiorImage || selectedSedeInfo.image || cdn(`web/home/main/sede-accordion-${selectedSedeInfo.id}.png`)}
                   alt={`Sede ${selectedSedeInfo.name} de InSalud`} 
                   width={500} 
                   height={500}
