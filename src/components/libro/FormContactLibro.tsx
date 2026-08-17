@@ -609,7 +609,7 @@ export const FormContactLibro = () => {
         </form>
       </Form>
       <div className="py-16 space-y-4">
-        <p className="text-in-gray-base font-in-poppins text-sm">(*) La presente sección será completada por INSALUD CORP E.I.R.L. le hará llegar al correo electrónico proporcionado en la presente Hoja de Reclamación las observaciones y acciones que se adopten en atención al reclamo o queja presentado.</p>
+        <p className="text-in-gray-base font-in-poppins text-sm">(*) La presente sección será completada por INSALUD SUR MEDIC S.A.C. E.I.R.L. le hará llegar al correo electrónico proporcionado en la presente Hoja de Reclamación las observaciones y acciones que se adopten en atención al reclamo o queja presentado.</p>
         
         <div className="space-y-2 font-in-poppins">
             <p className="text-in-blue-dark font-in-poppins font-semibold text-lg">Notas:</p>

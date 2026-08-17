@@ -186,7 +186,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex order-4 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 font-in-poppins">
-          <p className="text-in-gray-base text-sm">© {new Date().getFullYear()} INSALUD CORP</p>
+          <p className="text-in-gray-base text-sm">© {new Date().getFullYear()} INSALUD SUR MEDIC S.A.C.</p>
           <div className="flex flex-col md:flex-row gap-4 text-sm text-in-gray-base [&_a]:hover:text-in-cyan [&_a]:transition-colors">
             <Link target="_blank" href="/docs/terminos-y-condiciones.pdf">Terminos y condiciones</Link>
             <Link href="/">Politica y privacidad</Link>
