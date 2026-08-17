@@ -256,7 +256,7 @@ export async function POST(request: NextRequest) {
                         <tr>
                             <td style="padding: 24px 32px 32px 32px;">
                                 <div style="background: #e3f2fd; border-radius: 8px; padding: 16px; text-align: center; color: #1976d2; font-size: 1rem;">
-                                    Este correo fue enviado desde el formulario del Libro de Reclamaciones de <strong>INSALUD</strong>.
+                                    Este correo fue enviado desde el formulario del Libro de Reclamaciones de <strong>INSALUD SUR MEDIC S.A.C.</strong>, disponible en <a href="https://insalud.pe" style="color: #1565c0; text-decoration: underline;">insalud.pe</a>.
                                 </div>
                             </td>
                         </tr>
