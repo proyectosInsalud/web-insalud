@@ -67,7 +67,7 @@ export const Footer = () => {
               Pacientes
             </p>
             <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
-              <Link href="#">Términos y Condiciones</Link>
+              <Link target="_blank" href="/docs/terminos-y-condiciones.pdf">Términos y Condiciones</Link>
               <Link target="_blank" href="/docs/politica-de-privacidad.pdf">Política de privacidad CRM</Link>
               <Link href="/libro-de-reclamaciones">Libro de reclamaciones</Link>
             </div>
@@ -188,7 +188,7 @@ export const Footer = () => {
         <div className="flex order-4 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 font-in-poppins">
           <p className="text-in-gray-base text-sm">© {new Date().getFullYear()} INSALUD CORP</p>
           <div className="flex flex-col md:flex-row gap-4 text-sm text-in-gray-base [&_a]:hover:text-in-cyan [&_a]:transition-colors">
-            <Link href="/">Terminos y condiciones</Link>
+            <Link target="_blank" href="/docs/terminos-y-condiciones.pdf">Terminos y condiciones</Link>
             <Link href="/">Politica y privacidad</Link>
             <Link href="/">Cookie settings</Link>
           </div>
