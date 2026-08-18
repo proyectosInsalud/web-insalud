@@ -71,6 +71,7 @@ export const Footer = () => {
               <Link target="_blank" href="/docs/Terminos_y_Condiciones_InSalud.pdf">Términos y Condiciones</Link>
               <Link target="_blank" href="/docs/Politica_de_Privacidad_InSalud.pdf">Política de privacidad CRM</Link>
               <Link target="_blank" href="/docs/Politica_de_Cookies_InSalud.pdf">Política de Cookies</Link>
+              <Link target="_blank" href="/docs/Politica_de_Cambios_Cancelaciones_Reembolsos_InSalud.pdf">Política de Cambios, Cancelaciones y Reembolsos</Link>
               <Link href="/libro-de-reclamaciones">Libro de reclamaciones</Link>
             </div>
           </article>
