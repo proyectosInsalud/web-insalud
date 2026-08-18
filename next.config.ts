@@ -64,13 +64,13 @@ const nextConfig: NextConfig = {
 
       // PDF de política de privacidad (estaba dando 404 en la ruta con /tratamientos/)
       {
-        source: "/tratamientos/docs/politica-de-privacidad.pdf",
-        destination: "/docs/politica-de-privacidad.pdf",
+        source: "/tratamientos/docs/Politica_de_Privacidad_InSalud.pdf",
+        destination: "/docs/Politica_de_Privacidad_InSalud.pdf",
         permanent: true,
       },
       {
-        source: "/blog/docs/politica-de-privacidad.pdf",
-        destination: "/docs/politica-de-privacidad.pdf",
+        source: "/blog/docs/Politica_de_Privacidad_InSalud.pdf",
+        destination: "/docs/Politica_de_Privacidad_InSalud.pdf",
         permanent: true,
       },
 

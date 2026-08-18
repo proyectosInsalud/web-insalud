@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "@/components/ui/sonner";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
@@ -6,7 +5,8 @@ import "./globals.css";
 import { Footer } from "@/components/common/Footer";
 import { WhatsAppButton } from "@/components/common/WhatsAppButton";
 import { PopUpTienda } from "@/components/ui/PopUpTienda";
-import Script from "next/script";
+import { CookieConsent } from "@/components/common/CookieConsent";
+import { TrackingScripts } from "@/components/common/TrackingScripts";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -72,74 +72,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cdn.insalud.pe" />
         <link rel="dns-prefetch" href="https://prensa.insalud.pe" />
         <link rel="dns-prefetch" href="https://cdn.sanity.io" />
-
-        {/* Meta Pixel */}
-        <Script id="facebook-pixel" strategy="lazyOnload">
-          {`
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '${PIXEL_ID}');
-        fbq('track', 'PageView');
-      `}
-        </Script>
-
-        {/* Metricool */}
-        <Script id="metricool" strategy="lazyOnload">
-          {`
-            function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"783f01c798a80046537beee829751fd8"})});
-          `}
-        </Script>
-
-        <Script id="gtm" strategy="lazyOnload">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id=GTM-PR66DQ7B'+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PR66DQ7B');
-          `}
-        </Script>
-
-        <Script
-          id="microsoft-clarity"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "sygd6wo4ge");
-            `,
-          }}
-        />
       </head>
       <body
         suppressHydrationWarning
         className={`${nunito.variable} ${poppins.variable} antialiased`}
       >
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PR66DQ7B"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
-            alt=""
-          />
-        </noscript>
+        {/* GTM, Meta Pixel, Metricool y Clarity solo se cargan si el usuario acepta cookies */}
+        <TrackingScripts pixelId={PIXEL_ID} />
         <Toaster />
         {children}
 
@@ -153,6 +92,9 @@ export default function RootLayout({
           phoneNumber="+51957016010"
           message="Vi su página web y me gustaría agendar una cita"
         />
+
+        {/* Banner de consentimiento de cookies */}
+        <CookieConsent />
       </body>
     </html>
   );

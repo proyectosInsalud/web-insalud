@@ -1,5 +1,6 @@
 "use client";
 import { eventRegisterGtm } from "@/lib/utils";
+import { resetCookieConsent } from "@/lib/cookieConsent";
 import { useModalStore } from "../../store/modalStore";
 import { cdn } from "@/utils/cdn";
 import { STATS_LABEL } from "@/data/stats";
@@ -67,8 +68,9 @@ export const Footer = () => {
               Pacientes
             </p>
             <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
-              <Link target="_blank" href="/docs/terminos-y-condiciones.pdf">Términos y Condiciones</Link>
-              <Link target="_blank" href="/docs/politica-de-privacidad.pdf">Política de privacidad CRM</Link>
+              <Link target="_blank" href="/docs/Terminos_y_Condiciones_InSalud.pdf">Términos y Condiciones</Link>
+              <Link target="_blank" href="/docs/Politica_de_Privacidad_InSalud.pdf">Política de privacidad CRM</Link>
+              <Link target="_blank" href="/docs/Politica_de_Cookies_InSalud.pdf">Política de Cookies</Link>
               <Link href="/libro-de-reclamaciones">Libro de reclamaciones</Link>
             </div>
           </article>
@@ -188,9 +190,15 @@ export const Footer = () => {
         <div className="flex order-4 flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0 font-in-poppins">
           <p className="text-in-gray-base text-sm">© {new Date().getFullYear()} INSALUD SUR MEDIC S.A.C.</p>
           <div className="flex flex-col md:flex-row gap-4 text-sm text-in-gray-base [&_a]:hover:text-in-cyan [&_a]:transition-colors">
-            <Link target="_blank" href="/docs/terminos-y-condiciones.pdf">Terminos y condiciones</Link>
+            <Link target="_blank" href="/docs/Terminos_y_Condiciones_InSalud.pdf">Terminos y condiciones</Link>
             <Link href="/">Politica y privacidad</Link>
-            <Link href="/">Cookie settings</Link>
+            <button
+              type="button"
+              onClick={resetCookieConsent}
+              className="text-left cursor-pointer"
+            >
+              Configuración de cookies
+            </button>
           </div>
         </div>
       </footer>
