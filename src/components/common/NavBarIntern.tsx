@@ -70,6 +70,12 @@ export const NavBarIntern = () => {
             Sedes
           </Link>
           <Link
+            className="hover:text-in-cyan transition-all duration-150"
+            href="/convenios"
+          >
+            Convenios
+          </Link>
+          <Link
             className="relative hover:text-in-cyan transition-all duration-150 text-in-orange font-semibold inline-flex items-center gap-1"
             href="https://tienda.insalud.pe"
             target="_blank"
@@ -109,7 +115,7 @@ export const NavBarIntern = () => {
           </Link>
           <div
             onClick={() => setIsOpen(!isOpen)}
-            className="flex md:hidden flex-col items-end gap-1 cursor-pointer"
+            className="flex lg:hidden flex-col items-end gap-1 cursor-pointer"
           >
             <div className="w-10 h-1 rounded-full bg-white"></div>
             <div className="w-8 h-1 rounded-full bg-white"></div>

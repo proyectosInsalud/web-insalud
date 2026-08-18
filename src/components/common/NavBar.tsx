@@ -54,7 +54,7 @@ export const NavBar = ({ className }: { className?: string }) => {
             />
           </Link>
           <div
-            className="flex md:hidden flex-col"
+            className="flex lg:hidden flex-col"
             onClick={() => setIsOpen(!isOpen)}
           >
             <div className="flex items-center gap-3">
@@ -63,14 +63,14 @@ export const NavBar = ({ className }: { className?: string }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button 
+                <Button
                   className="bg-in-orange hover:bg-in-orange/80 cursor-pointer text-white px-6 py-3 rounded-full"
                   onClick={() => eventRegisterGtm("btn-intranet")}
                 >
                   <p className="font-semibold">Intranet</p>
                 </Button>
               </Link>
-              <div className="flex md:hidden flex-col items-end gap-1 cursor-pointer">
+              <div className="flex lg:hidden flex-col items-end gap-1 cursor-pointer">
                 <div className="w-10 h-1 rounded-full bg-white"></div>
                 <div className="w-8 h-1 rounded-full bg-white"></div>
                 <div className="w-6 h-1 rounded-full bg-white"></div>
@@ -82,8 +82,9 @@ export const NavBar = ({ className }: { className?: string }) => {
             <Link className={`${pathName === '/enfermedades' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/enfermedades">Enfermedades</Link>
             <Link className={`${pathName === '/tratamientos' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/tratamientos">Tratamientos</Link>
             <Link className={`${pathName === '/sedes' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/sedes">Sedes</Link>
-            <Link 
-              className="relative hover:text-in-cyan transition-all duration-150 text-in-orange font-semibold inline-flex items-center gap-1" 
+            <Link className={`${pathName === '/convenios' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`} href="/convenios">Convenios</Link>
+            <Link
+              className="relative hover:text-in-cyan transition-all duration-150 text-in-orange font-semibold inline-flex items-center gap-1"
               href="https://tienda.insalud.pe"
               target="_blank"
               rel="noopener noreferrer"
@@ -99,7 +100,7 @@ export const NavBar = ({ className }: { className?: string }) => {
               >Blog</Link>
             <Link className={`${pathName === '/contacto' ? 'text-in-cyan': pathName === '/blog' || pathName.startsWith('/blog/') ? 'text-in-blue-title' : ''} hover:text-in-cyan transition-all duration-150`}  href="/contacto">Contacto</Link>
           </nav>
-          <div className="hidden md:block relative font-in-poppins">
+          <div className="hidden lg:block relative font-in-poppins">
             <Link
               href="https://portal.qa.insalud.pe/auth/login"
               target="_blank"

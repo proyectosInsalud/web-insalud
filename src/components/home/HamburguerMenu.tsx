@@ -13,7 +13,7 @@ type HamburguerMenuProps = {
 
 export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
   useEffect(() => {
-    const isMobile = () => window.innerWidth < 768;
+    const isMobile = () => window.innerWidth < 1024;
 
     if (isMobile() && isOpen) {
       document.body.style.overflow = "hidden";
@@ -33,14 +33,14 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
       {/* Overlay de fondo */}
       {isOpen && (
         <div
-          className="block md:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/50 z-40"
+          className="block lg:hidden fixed top-0 left-0 right-0 bottom-0 bg-black/50 z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Menú que se desliza desde la derecha */}
       <div
-        className={`block md:hidden fixed top-0 right-0 h-full w-full bg-in-cyan/40 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`block lg:hidden fixed top-0 right-0 h-full w-full bg-in-cyan/40 backdrop-blur-sm z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -114,6 +114,13 @@ export const HamburguerMenu = ({ isOpen, setIsOpen }: HamburguerMenuProps) => {
                 onClick={() => setIsOpen(false)}
               >
                 Sedes
+              </Link>
+              <Link
+                href="/convenios"
+                className="text-white hover:text-in-orange transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Convenios
               </Link>
               <Link
                 href="https://tienda.insalud.pe"

@@ -1,13 +1,6 @@
 import Image from "next/image";
-
-const CLIENTS = [
-    { src: "/images/convenios/logo_convenio_1.png", name: "Colegio de Abogados de Lima" },
-    { src: "/images/convenios/logo_convenio_2.png", name: "Bonda" },
-    { src: "/images/convenios/logo_convenio_3.png", name: "GOintegro by Edenred" },
-    { src: "/images/convenios/logo_convenio_4.png", name: "Colegio Regional de Licenciados en Administración" },
-    { src: "/images/convenios/logo_convenio_5.png", name: "IDAT" },
-    { src: "/images/convenios/logo_convenio_6.png", name: "Zegel" },
-];
+import Link from "next/link";
+import { CONVENIOS } from "@/data/convenios";
 
 export const OurClients = () => {
     return (
@@ -20,11 +13,17 @@ export const OurClients = () => {
                     Si perteneces a alguna de estas instituciones o empresas, accedes a
                     tarifas preferenciales en tus consultas y tratamientos.
                 </p>
+                <Link
+                    href="/convenios"
+                    className="inline-block mt-4 text-in-cyan font-in-poppins font-semibold text-sm hover:underline underline-offset-4"
+                >
+                    Ver todos los convenios →
+                </Link>
             </div>
 
             <div className="relative w-full overflow-hidden bg-gray-50/50 py-10 flex border-y border-gray-100">
                 <div className="marquee-track flex w-max hover:[animation-play-state:paused]">
-                    {[...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS].map((client, idx) => (
+                    {[...CONVENIOS, ...CONVENIOS, ...CONVENIOS, ...CONVENIOS].map((client, idx) => (
                         <div key={`${client.name}-${idx}`} className="w-56 md:w-80 h-28 md:h-36 mx-4 md:mx-8 flex-shrink-0 flex items-center justify-center">
                             <Image
                                 src={client.src}
