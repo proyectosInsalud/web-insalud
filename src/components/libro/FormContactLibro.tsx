@@ -1,5 +1,5 @@
 "use client";
-import { libroSchema } from "@/schema/libro";
+import { libroSchema, SEDES_RECLAMO } from "@/schema/libro";
 import { LibroReclamacionesType } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -53,27 +53,45 @@ export const FormContactLibro = () => {
       tipoProducto: "",
       monto: "",
       fechaCompra: "",
-      lugarCompra: "",
+      sede: "",
       menorDeEdad: false,
+      representante: {
+        nombreCompleto: "",
+        documento: "",
+        domicilio: "",
+        telefono: "",
+        correo: "",
+      },
+      aceptaPrivacidad: false,
       documento1: undefined,
       documento2: undefined,
       documento3: undefined,
     },
   });
 
+  const esMenorDeEdad = form.watch("menorDeEdad");
+
   function onSubmit(data: LibroReclamacionesType) {
     const formData = new FormData();
 
-    Object.keys(data).forEach(key => {
-      const value = (data as Record<string, unknown>)[key];
+    const appendValue = (key: string, value: unknown) => {
       if (value instanceof FileList) {
         for (let i = 0; i < value.length; i++) {
           formData.append(key, value[i]);
         }
-      } else if (value !== undefined && value !== null) {
-        formData.append(key, String(value));
+        return;
       }
-    });
+      if (value === undefined || value === null) return;
+      if (typeof value === "object") {
+        Object.entries(value as Record<string, unknown>).forEach(([nestedKey, nestedValue]) =>
+          appendValue(`${key}.${nestedKey}`, nestedValue)
+        );
+        return;
+      }
+      formData.append(key, String(value));
+    };
+
+    Object.entries(data).forEach(([key, value]) => appendValue(key, value));
 
     fetch("/api/reclamacion", {
       method: "POST",
@@ -171,6 +189,7 @@ export const FormContactLibro = () => {
                   <div className="space-y-2">
                     <FormLabel className="text-in-blue-dark">
                       Tipo de documento
+                      <span className="text-red-500"> *</span>
                     </FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <SelectTrigger className="bg-white border-in-cyan w-full mb-0">
@@ -236,6 +255,7 @@ export const FormContactLibro = () => {
                   <FormItem>
                     <FormLabel className="text-in-blue-dark">
                       Correo electrónico
+                      <span className="text-red-500"> *</span>
                     </FormLabel>
                     <FormControl>
                       <Input
@@ -244,6 +264,9 @@ export const FormContactLibro = () => {
                         {...field}
                       />
                     </FormControl>
+                    <p className="text-in-gray-base text-xs">
+                      Necesario para enviar el código de seguimiento automáticamente.
+                    </p>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -390,6 +413,115 @@ export const FormContactLibro = () => {
               />
             </section>
 
+            {esMenorDeEdad && (
+              <div className="border border-dashed border-in-orange rounded-xl p-6 space-y-4 bg-white/60">
+                <p className="text-in-blue-dark font-in-poppins text-sm">
+                  <strong>Datos del padre, madre o representante legal</strong> — exigido por el Anexo I del D.S. N.° 011-2011-PCM cuando el reclamante es menor de edad.
+                </p>
+                <section className="grid md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="representante.nombreCompleto"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-in-blue-dark">
+                          Nombre completo
+                          <span className="text-red-500"> *</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            className="input_form"
+                            placeholder="Nombre del padre/madre/representante"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="representante.documento"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-in-blue-dark">
+                          Documento de identidad
+                          <span className="text-in-gray-base text-xs font-normal"> (recomendado)</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            className="input_form"
+                            placeholder="DNI del representante"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="representante.domicilio"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-in-blue-dark">
+                          Domicilio
+                          <span className="text-red-500"> *</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            className="input_form"
+                            placeholder="Domicilio del representante"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="representante.telefono"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-in-blue-dark">
+                          Teléfono
+                          <span className="text-red-500"> *</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            className="input_form"
+                            placeholder="Teléfono del representante"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="representante.correo"
+                    render={({ field }) => (
+                      <FormItem className="md:col-span-2">
+                        <FormLabel className="text-in-blue-dark">
+                          Correo electrónico
+                          <span className="text-red-500"> *</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            className="input_form"
+                            placeholder="Correo del representante — aquí llegará el código de seguimiento"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </section>
+              </div>
+            )}
           </div>
 
           <div className="bg-in-cyan/10 rounded-2xl py-10 px-6 space-y-6">
@@ -475,17 +607,28 @@ export const FormContactLibro = () => {
               />
              <FormField
                 control={form.control}
-                name="lugarCompra"
+                name="sede"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-in-blue-dark">Lugar de Compra o Servicio</FormLabel>
-                    <FormControl>
-                      <Input
-                        className="input_form"
-                        placeholder="Ingrese la sede o direccion"
-                        {...field}
-                      />
-                    </FormControl>
+                    <FormLabel className="text-in-blue-dark">
+                      Sede
+                      <span className="text-red-500"> *</span>
+                    </FormLabel>
+                    <Select onValueChange={field.onChange} value={field.value}>
+                      <SelectTrigger className="bg-white w-full border-in-cyan">
+                        <SelectValue
+                          className="text-in-blue-dark"
+                          placeholder="Seleccione la sede"
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {SEDES_RECLAMO.map((sede) => (
+                          <SelectItem key={sede} value={sede}>
+                            {sede}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -505,6 +648,7 @@ export const FormContactLibro = () => {
                   <FormItem className="col-span-2">
                     <FormLabel className="text-in-blue-dark">
                       Tipo de Reclamación
+                      <span className="text-red-500"> *</span>
                     </FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <SelectTrigger className="bg-white w-full border-in-cyan">
@@ -527,7 +671,10 @@ export const FormContactLibro = () => {
                 name="detalleReclamacion"
                 render={({ field }) => (
                   <FormItem className="col-span-2">
-                    <FormLabel className="text-in-blue-dark">Detalle de la reclamación</FormLabel>
+                    <FormLabel className="text-in-blue-dark">
+                      Detalle de la reclamación
+                      <span className="text-red-500"> *</span>
+                    </FormLabel>
                     <Textarea
                       className="input_form resize-none"
                       placeholder="Ingrese el detalle"
@@ -598,6 +745,40 @@ export const FormContactLibro = () => {
             </section>
 
           </div>
+
+          <FormField
+            control={form.control}
+            name="aceptaPrivacidad"
+            render={({ field }) => (
+              <FormItem className="flex items-start gap-3 bg-in-cyan/10 rounded-2xl py-6 px-6">
+                <FormControl>
+                  <input
+                    type="checkbox"
+                    className="mt-1 w-4 h-4 cursor-pointer accent-in-blue-dark"
+                    checked={field.value}
+                    onChange={(e) => field.onChange(e.target.checked)}
+                  />
+                </FormControl>
+                <div className="space-y-1">
+                  <FormLabel className="text-in-blue-dark font-normal">
+                    Declaro que la información proporcionada es verídica y acepto el
+                    tratamiento de mis datos conforme a la{" "}
+                    <a
+                      href="/docs/Politica_de_Privacidad_InSalud.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-in-blue-dark underline underline-offset-2"
+                    >
+                      Política de Privacidad
+                    </a>
+                    .
+                  </FormLabel>
+                  <FormMessage />
+                </div>
+              </FormItem>
+            )}
+          />
+
           <div className="flex justify-center">
             <Button
                 type="submit"
@@ -609,7 +790,7 @@ export const FormContactLibro = () => {
         </form>
       </Form>
       <div className="py-16 space-y-4">
-        <p className="text-in-gray-base font-in-poppins text-sm">(*) La presente sección será completada por INSALUD SUR MEDIC S.A.C. E.I.R.L. le hará llegar al correo electrónico proporcionado en la presente Hoja de Reclamación las observaciones y acciones que se adopten en atención al reclamo o queja presentado.</p>
+        <p className="text-in-gray-base font-in-poppins text-sm">(*) La presente sección será completada por INSALUD SUR MEDIC S.A.C., quien le hará llegar al correo electrónico proporcionado en la presente Hoja de Reclamación las observaciones y acciones que se adopten en atención al reclamo o queja presentado.</p>
         
         <div className="space-y-2 font-in-poppins">
             <p className="text-in-blue-dark font-in-poppins font-semibold text-lg">Notas:</p>

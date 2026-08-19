@@ -65,7 +65,7 @@ export const Footer = () => {
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
             <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
-              Pacientes
+              Información legal
             </p>
             <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
               <Link target="_blank" href="/docs/Terminos_y_Condiciones_InSalud.pdf">Términos y Condiciones</Link>
