@@ -23,6 +23,13 @@ const CONVENIOS_WHATSAPP = "+51943583887";
 const formatDiscount = (discount: string) =>
   discount.charAt(0) + discount.slice(1).toLowerCase();
 
+const getDiscountItems = (discount: string) =>
+  discount
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .map((item) => item.charAt(0).toUpperCase() + item.slice(1).toLowerCase());
+
 export const ConvenioCard = ({ src, name, discount }: Convenio) => {
   const [open, setOpen] = useState(false);
   const [userPhone, setUserPhone] = useState("");
@@ -115,10 +122,14 @@ export const ConvenioCard = ({ src, name, discount }: Convenio) => {
 
         {discount && (
           <div className="rounded-xl bg-in-cyan/10 border border-in-cyan/20 px-4 py-3">
-            <p className="font-in-poppins text-sm text-in-blue-title">
-              <span className="font-semibold">Tu descuento: </span>
-              {formatDiscount(discount)}
+            <p className="font-in-poppins text-sm font-semibold text-in-blue-title mb-1">
+              Tu descuento:
             </p>
+            <ul className="font-in-poppins text-sm text-in-blue-title list-disc pl-5 space-y-0.5">
+              {getDiscountItems(discount).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         )}
 
