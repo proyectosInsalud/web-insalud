@@ -76,13 +76,13 @@ export const Footer = () => {
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-2">
-            {/* <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
+            <p className="font-in-nunito font-bold md:font-medium text-in-blue-dark md:text-in-gray-base">
               Sobre INSALUD
-            </p> */}
+            </p>
             <div className="flex flex-col gap-3 text-in-gray md:font-medium font-in-poppins [&_a]:hover:text-in-cyan [&_a]:transition-colors">
               <Link href="#nosotros">Nosotros</Link>
               <Link href="/blog">Blog</Link>
-              <Link href="#">Trabaja con nosotros</Link>
+              {/* <Link href="#">Trabaja con nosotros</Link> */}
             </div>
           </article>
           <article className="space-y-2 sm:col-span-2 md:col-span-1 xl:col-span-3">
