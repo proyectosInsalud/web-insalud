@@ -3,6 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
+import { BadgePercent } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -92,6 +93,14 @@ export const ConvenioCard = ({ src, name, discount }: Convenio) => {
           className="group relative flex flex-col items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-in-gray-light/20 bg-white p-4 sm:p-6 min-h-38 sm:min-h-44 shadow-sm overflow-hidden transition-all duration-300 cursor-pointer hover:border-in-cyan/40 hover:shadow-xl hover:shadow-in-cyan/10 hover:-translate-y-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-in-cyan focus-visible:ring-offset-2"
         >
           <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-in-cyan/0 to-in-cyan/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          {discount && (
+            <span
+              className="absolute top-2 right-2 z-10 flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-in-orange text-white shadow-md"
+              title="Tiene descuento por convenio"
+            >
+              <BadgePercent className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            </span>
+          )}
           <Image
             src={src}
             alt={`Convenio de InSalud con ${name}`}
