@@ -95,10 +95,10 @@ export const ConvenioCard = ({ src, name, discount }: Convenio) => {
           <span className="pointer-events-none absolute inset-0 bg-gradient-to-b from-in-cyan/0 to-in-cyan/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           {discount && (
             <span
-              className="absolute top-2 right-2 z-10 flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-in-orange text-white shadow-md"
+              className="absolute top-2 right-2 z-10 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-red-500 text-white shadow-md ring-2 ring-white"
               title="Tiene descuento por convenio"
             >
-              <BadgePercent className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <BadgePercent className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.25} />
             </span>
           )}
           <Image
