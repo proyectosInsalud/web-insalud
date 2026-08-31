@@ -109,7 +109,7 @@ export const ListDiagnostico = () => {
                     <div className="flex flex-col md:flex-row gap-4 mt-auto pt-4">
                       <Link
                       onClick={() => eventRegisterGtm("whatsapp_click")}
-                        href={`https://wa.me/+51957016010?text=Hola%2C%20vi%20su%20web%20de%20Insalud%20y%20quisiera%20información%20sobre%20el%20tratamiento%20de%20${encodeURIComponent(tratamiento.titulo)}`}
+                        href={`https://wa.me/+51997231931?text=Hola%2C%20vi%20su%20web%20de%20Insalud%20y%20quisiera%20información%20sobre%20el%20tratamiento%20de%20${encodeURIComponent(tratamiento.titulo)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full"

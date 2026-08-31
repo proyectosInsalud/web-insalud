@@ -11,7 +11,7 @@ type WhatsAppSectionProps = {
 
 export const WhatsAppSection = ({title, subtext}: WhatsAppSectionProps) => {
 
-    const whatsappNumber = "51957016010";
+    const whatsappNumber = "51997231931";
     const whatsappMessage = encodeURIComponent(`Hola, vi su pagina web Insalud y me gustaria agendar una cita`);
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

@@ -89,7 +89,7 @@ export default function RootLayout({
 
         {/* Botón de WhatsApp flotante */}
         <WhatsAppButton
-          phoneNumber="+51957016010"
+          phoneNumber="+51997231931"
           message="Vi su página web y me gustaría agendar una cita"
         />
 

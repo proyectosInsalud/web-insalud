@@ -87,7 +87,7 @@ export const CarouselSedes = () => {
                       {(() => {
                         const whatsappMessage = `Hola, vi su web de Insalud y estoy interesado en atenderme en la sede de: ${sede.name}`;
                         const encodedMessage = encodeURIComponent(whatsappMessage);
-                        const phone = sede.phone || "51957016010";
+                        const phone = sede.phone || "51997231931";
                         return (
                           <Link
                             href={`https://wa.me/${phone}?text=${encodedMessage}`}

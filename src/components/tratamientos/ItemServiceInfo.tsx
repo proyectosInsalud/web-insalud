@@ -33,7 +33,7 @@ export const ItemServiceInfo = ({
           className="flex-1"
           onClick={() => eventRegisterGtm("whatsapp_click")}
           target="_blank"
-          href={`https://wa.me/51957016010?text=${encodedMessage}`}
+          href={`https://wa.me/51997231931?text=${encodedMessage}`}
         >
           <Button
             className="w-full py-2.5 bg-in-cyan text-base font-in-nunito rounded-2xl hover:bg-in-cyan/80 cursor-pointer"

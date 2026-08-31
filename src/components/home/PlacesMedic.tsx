@@ -27,7 +27,7 @@ export const PlacesMedic = () => {
     const message = encodeURIComponent(
       `¡Hola! vi su pagina web y me gustaría agendar una cita en la sede ${sedeName}. ¿Podrían brindarme más información?`
     );
-    return `https://wa.me/${phone || "51957016010"}?text=${message}`;
+    return `https://wa.me/${phone || "51997231931"}?text=${message}`;
   };
 
   return (

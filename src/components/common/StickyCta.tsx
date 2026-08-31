@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useModalStore } from "../../store/modalStore";
 import { eventRegisterGtm } from "@/lib/utils";
 
-const WHATSAPP_URL = `https://wa.me/51957016010?text=${encodeURIComponent(
+const WHATSAPP_URL = `https://wa.me/51997231931?text=${encodeURIComponent(
   "¡Hola! vi su página web y me gustaría agendar una cita"
 )}`;
 

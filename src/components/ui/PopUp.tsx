@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export const PopUp = () => {
   const message = "Hola, vi su web y me interesa la promoción del Día del Shopping"
-  const phoneNumber = "51957016010"
+  const phoneNumber = "51997231931"
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   const [isOpen, setIsOpen] = useState(false);

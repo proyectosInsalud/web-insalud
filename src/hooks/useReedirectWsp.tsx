@@ -1,4 +1,4 @@
-export const useReedirectWsp = (number:string = "51957016010", message:string = "¡Hola! vi su pagina web Insalud y me gustaría agendar una cita") => {
+export const useReedirectWsp = (number:string = "51997231931", message:string = "¡Hola! vi su pagina web Insalud y me gustaría agendar una cita") => {
     const link = `https://wa.me/${number}?text=${encodeURIComponent(message)}`
 
     const redirect = () => {

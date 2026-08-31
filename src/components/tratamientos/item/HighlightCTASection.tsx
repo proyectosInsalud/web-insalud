@@ -9,7 +9,7 @@ type HighlightCTASectionProps = {
 
 export const HighlightCTASection = ({tratamiento}: HighlightCTASectionProps) => {
 
-    const whatsappNumber = "51957016010";
+    const whatsappNumber = "51997231931";
     const whatsappMessage = encodeURIComponent(`Hola, vi su pagina web Insalud y me gustaria agendar una cita para ${tratamiento.title}`);
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
