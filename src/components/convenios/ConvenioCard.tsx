@@ -50,6 +50,7 @@ export const ConvenioCard = ({ src, name, discount }: Convenio) => {
     }
     setError("");
     setIsLoading(true);
+
     try {
       await saveLead({
         phone: `51${userPhone}`,
@@ -62,20 +63,20 @@ export const ConvenioCard = ({ src, name, discount }: Convenio) => {
         date: "",
         id_announcement: "convenios",
       });
-
-      const message = `Hola, yo pertenezco a esta empresa/institución: ${name}. Quisiera conocer más sobre el convenio con InSalud${discount ? ` (descuento: ${formatDiscount(discount)})` : ""}.`;
-      const whatsappUrl = `https://wa.me/${CONVENIOS_WHATSAPP}?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, "_blank");
-
-      setOpen(false);
-      eventRegisterGtm("convenio_lead_submit", { empresa: name });
-      setUserPhone("");
     } catch (err) {
+      // No bloqueamos el contacto por WhatsApp si falla el registro del lead:
+      // para el usuario, hablar con InSalud es lo importante, no que quede guardado.
       console.error("Error saving lead:", err);
-      setError("Error al guardar el lead. Inténtalo de nuevo.");
-    } finally {
-      setIsLoading(false);
     }
+
+    const message = `Hola, yo pertenezco a esta empresa/institución: ${name}. Quisiera conocer más sobre el convenio con InSalud${discount ? ` (descuento: ${formatDiscount(discount)})` : ""}.`;
+    const whatsappUrl = `https://wa.me/${CONVENIOS_WHATSAPP}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+
+    setOpen(false);
+    eventRegisterGtm("convenio_lead_submit", { empresa: name });
+    setUserPhone("");
+    setIsLoading(false);
   };
 
   return (

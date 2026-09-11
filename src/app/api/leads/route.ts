@@ -38,36 +38,16 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
-    // Intentar guardar en CallHub primero
-    const callhubUrl = process.env.CALLHUB_LEADS_URL || "http://callhub.insalud.pe:4000/api/leads/web";
-    
-    try {
-      const res = await axios.post(callhubUrl, data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        timeout: 10000,
-      });
-
-      return NextResponse.json({ success: true, data: res.data, source: "callhub" });
-    } catch (callhubError) {
-      // Si CallHub falla, guardar en Google Sheets como respaldo
-      console.warn("CallHub no disponible, guardando en Google Sheets:", callhubError);
-      
-      try {
-        const sheetsResult = await saveToGoogleSheets(data);
-        return NextResponse.json({ 
-          success: true, 
-          data: sheetsResult, 
-          source: "google_sheets",
-          message: "Guardado en Google Sheets (CallHub no disponible)" 
-        });
-      } catch (sheetsError) {
-        console.error("Error guardando en Google Sheets:", sheetsError);
-        // Si ambos fallan, retornar error
-        throw new Error("No se pudo guardar el lead ni en CallHub ni en Google Sheets");
-      }
-    }
+    // CallHub (CALLHUB_LEADS_URL, endpoint /api/leads/web) lleva caído desde antes de
+    // dic. 2025 -- confirmado 404 y ausente de su propio Swagger -- sin que nadie lo haya
+    // reactivado desde entonces. Se quita el intento para no perder ~10s de timeout en
+    // cada lead; reactivar aquí si backend confirma una URL vigente.
+    const sheetsResult = await saveToGoogleSheets(data);
+    return NextResponse.json({
+      success: true,
+      data: sheetsResult,
+      source: "google_sheets",
+    });
   } catch (error) {
     console.error("Error saving lead:", error);
     const errorMessage = error instanceof Error ? error.message : "Error desconocido";
