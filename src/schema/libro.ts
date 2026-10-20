@@ -9,6 +9,18 @@ export const SEDES_RECLAMO = [
   "No corresponde a una sede específica",
 ] as const;
 
+// Archivos opcionales: el input arranca en undefined y, si el usuario abre el
+// selector y cancela, llega un FileList vacío — ambos casos son válidos.
+const archivosOpcionales = z
+  .custom<FileList | undefined>(
+    (val) => val === undefined || val === null || (typeof FileList !== "undefined" && val instanceof FileList)
+  )
+  .refine(
+    (files) => !files || Array.from(files).every((f) => f.size <= MAX_FILE_SIZE),
+    `Cada archivo no debe superar los ${MAX_FILE_SIZE / 1024 / 1024}MB`
+  )
+  .optional();
+
 export const schemaDocumento = z.object({
     tipoDocumento: z.string().min(1, "Seleccione un tipo"),
     numeroDocumento: z.string().min(1, "Complete el campo"),
@@ -52,8 +64,8 @@ export const libroSchema = z.object({
     documento: schemaDocumento,
     telefono: z.string().min(1, "Complete el campo").max(30, "Maximo 30 digitos"),
     correo: z.string().min(1, "Complete el campo").email("Correo electrónico inválido").max(80, "Máximo 80 caracteres"),
-    direccion: z.string().min(1, "Complete el campo").optional(),
-    referencia: z.string().min(1, "Complete el campo").optional(),
+    direccion: z.string().optional(),
+    referencia: z.string().optional(),
     departamento: z.string().min(1, "Complete el campo"),
     provincia: z.string().min(1, "Complete el campo"),
     distrito: z.string().min(1, "Complete el campo"),
@@ -72,7 +84,7 @@ export const libroSchema = z.object({
     // Detalle de Reclamación y Pedido del Consumidor
     tipoReclamacion: z.string().min(1, "Complete el campo"),
     detalleReclamacion: z.string().min(1, "Complete el campo"),
-    pedidoConsumidor: z.string().min(1, "Complete el campo").optional(),
+    pedidoConsumidor: z.string().optional(),
 
     // Declaración jurada — reemplaza la firma física del libro tradicional.
     aceptaPrivacidad: z.boolean().refine((val) => val === true, {
@@ -80,36 +92,9 @@ export const libroSchema = z.object({
     }),
 
     // Adjuntar documentos (opcional)
-    documento1: z
-    .custom<FileList>((val) => val instanceof FileList, {
-      message: "Se requiere un archivo",
-    })
-    .refine((files) => files && files.length > 0, "Debes subir un archivo")
-    .refine(
-      (files) => files && files[0].size <= MAX_FILE_SIZE,
-      `El archivo no debe superar los ${MAX_FILE_SIZE / 1024 / 1024}MB`
-    )
-    .optional(),
-    documento2: z
-    .custom<FileList>((val) => val instanceof FileList, {
-      message: "Se requiere un archivo",
-    })
-    .refine((files) => files && files.length > 0, "Debes subir un archivo")
-    .refine(
-      (files) => files && files[0].size <= MAX_FILE_SIZE,
-      `El archivo no debe superar los ${MAX_FILE_SIZE / 1024 / 1024}MB`
-    )
-    .optional(),
-    documento3: z
-    .custom<FileList>((val) => val instanceof FileList, {
-      message: "Se requiere un archivo",
-    })
-    .refine((files) => files && files.length > 0, "Debes subir un archivo")
-    .refine(
-      (files) => files && files[0].size <= MAX_FILE_SIZE,
-      `El archivo no debe superar los ${MAX_FILE_SIZE / 1024 / 1024}MB`
-    )
-    .optional(),
+    documento1: archivosOpcionales,
+    documento2: archivosOpcionales,
+    documento3: archivosOpcionales,
 }).superRefine((data, ctx) => {
   if (!data.menorDeEdad) return;
 

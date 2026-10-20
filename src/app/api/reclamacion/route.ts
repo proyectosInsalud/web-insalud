@@ -55,6 +55,14 @@ function sumarDiasHabiles(fecha: Date, dias: number) {
   return resultado;
 }
 
+function escapeHtml(valor: string) {
+  return valor
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function formatearFecha(fecha: Date) {
   return fecha.toLocaleDateString("es-PE", {
     day: "numeric",
@@ -93,7 +101,7 @@ function buildCorreoPacienteHtml({
         </tr>
         <tr>
           <td style="padding: 32px;">
-            <p style="margin: 0 0 16px;">Hola ${nombre},</p>
+            <p style="margin: 0 0 16px;">Hola ${escapeHtml(nombre)},</p>
             <p style="margin: 0 0 16px;">Confirmamos que hemos recibido tu ${tipo.toLowerCase()} el ${fechaRecepcion}.</p>
             <p style="margin: 0 0 8px;">Tu código de seguimiento es:</p>
             <div style="background: #E8F7F6; border: 1.5px solid #2AACA4; border-radius: 10px; padding: 16px; text-align: center; margin-bottom: 16px;">
@@ -132,7 +140,7 @@ function buildCorreoInternoHtml({
 }) {
   const fila = (label: string, valor?: string) =>
     valor
-      ? `<tr><td style="padding:8px 0;border-bottom:1px solid #CDE4E2;"><strong style="color:#0B3D5C;">${label}:</strong><span style="margin-left:8px;color:#16323A;">${valor}</span></td></tr>`
+      ? `<tr><td style="padding:8px 0;border-bottom:1px solid #CDE4E2;"><strong style="color:#0B3D5C;">${label}:</strong><span style="margin-left:8px;color:#16323A;">${escapeHtml(valor)}</span></td></tr>`
       : "";
 
   const seccionMenor = esMenorDeEdad
@@ -288,10 +296,20 @@ export async function POST(request: NextRequest) {
       }),
     };
 
-    await Promise.all([
-      transporter.sendMail(correoPaciente),
+    // El correo interno es el que garantiza que el reclamo llegue al gestor:
+    // si falla, devolvemos error. Si solo falla la confirmación al paciente,
+    // el reclamo ya fue recibido, así que no hacemos que reintente (duplicaría).
+    const [resInterno, resPaciente] = await Promise.allSettled([
       transporter.sendMail(correoInterno),
+      transporter.sendMail(correoPaciente),
     ]);
+
+    if (resInterno.status === "rejected") {
+      throw resInterno.reason;
+    }
+    if (resPaciente.status === "rejected") {
+      console.error("No se pudo enviar la confirmación al paciente:", resPaciente.reason);
+    }
 
     return NextResponse.json(
       { message: "Reclamación enviada exitosamente", codigo },
