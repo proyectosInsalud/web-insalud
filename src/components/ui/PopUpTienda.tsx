@@ -139,10 +139,10 @@ export const PopUpTienda = () => {
           }}
         >
           <Image
-            src="/images/popup/popup-tienda.png"
+            src="/images/popup/popup-tienda.webp"
             alt="Conoce la tienda virtual de InSalud"
-            width={480}
-            height={600}
+            width={1247}
+            height={1261}
             quality={75}
             loading="lazy"
             sizes="(max-width: 520px) 100vw, 480px"
